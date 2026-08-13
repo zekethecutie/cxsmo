@@ -89,3 +89,21 @@
 - [ ] Validate the expanded C✦SMO poster interactions, dark-mode setting, responsive layouts, TypeScript, focused tests, and production build before saving the next checkpoint.
 - [ ] Verify the C✦SMO appearance setting in dark and light modes and record route-level results.
 - [ ] Run and document a direct interaction QA pass for poster parallax, scroll-led surfaces, product controls, and studio actions.
+- [x] Define an original C✦SMO visual brief for dynamic East-Asian streetwear fit shoots, transparent garment mockups, graphic poster crops, and an upgraded hero without copying the supplied references or depicting identifiable people from them.
+- [ ] Generate and integrate distinct original C✦SMO visual assets: an upgraded hero, multiple full-body fit-shoot compositions, transparent-background garment renders, and product-level mockups.
+- [ ] Replace repeated campaign imagery across the public storefront with the distinct C✦SMO image set and retain accurate alternative text.
+- [x] Build a premium animated C✦SMO fit carousel with visible controls, responsive interaction feedback, reduced-motion handling, and direct shop links.
+- [x] Add an explicitly honest community-feedback module with a no-verified-testimonials state and no fabricated ratings, testimonials, or comments.
+- [ ] Refine the appearance setting with a smooth theme transition and expand consistent interactive feedback across key controls.
+- [ ] Improve the C✦SMO studio dashboard’s scanning, quick-action, and operational-readiness patterns while retaining the portfolio-safe boundary.
+- [ ] Validate the enhanced C✦SMO image system, carousel, themes, interactions, responsive layouts, tests, and production build before saving the next checkpoint.
+- [x] Define a C✦SMO interaction hierarchy that assigns deliberate hover, press, reveal, menu, scroll, and reduced-motion behavior to public controls without compromising readability or performance.
+- [ ] Create original C✦SMO product-mockup and transparent-garment imagery informed by the supplied flat-lay and poster references when image generation becomes available, without copying logos, people, or compositions.
+- [x] Rebuild the C✦SMO product-detail interface with layered product media, more graphic material and size controls, tactile motion feedback, cleaner product information hierarchy, and responsive accessibility.
+- [ ] Upgrade C✦SMO navigation and dropdown surfaces with animated menu states, clear keyboard behavior, focus treatment, and reduced-motion fallbacks.
+- [ ] Add selective text-reveal, typewriter, and morphographic treatments to high-impact C✦SMO editorial and information-desk copy, avoiding motion overload.
+- [ ] Apply scroll-linked depth and parallax treatment to appropriate campaign, category, and product surfaces with static fallbacks for reduced-motion preferences.
+- [ ] Add Escape, outside-dismiss, focus-return, and direct keyboard QA coverage for the C✦SMO navigation menu.
+- [ ] Implement a deliberately limited typewriter or morphographic text treatment with a reduced-motion fallback.
+- [ ] Add and document scroll-linked depth on C✦SMO category and product surfaces with a static reduced-motion equivalent.
+- [ ] Thoroughly audit and improve public C✦SMO routes for graphic rhythm, dimensional layering, purposeful transitions, and interactive feedback before the next checkpoint.
