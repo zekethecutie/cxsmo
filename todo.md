@@ -95,7 +95,8 @@
 - [x] Build a premium animated C✦SMO fit carousel with visible controls, responsive interaction feedback, reduced-motion handling, and direct shop links.
 - [x] Add an explicitly honest community-feedback module with a no-verified-testimonials state and no fabricated ratings, testimonials, or comments.
 - [ ] Refine the appearance setting with a smooth theme transition and expand consistent interactive feedback across key controls.
-- [ ] Improve the C✦SMO studio dashboard’s scanning, quick-action, and operational-readiness patterns while retaining the portfolio-safe boundary.
+- [x] Improve the C✦SMO studio dashboard’s scanning, quick-action, and operational-readiness patterns while retaining the portfolio-safe boundary.
+- [x] Implement concrete studio overview refinements for faster scanning, new quick-action controls, and clearer readiness summaries, then capture route-level QA evidence.
 - [ ] Validate the enhanced C✦SMO image system, carousel, themes, interactions, responsive layouts, tests, and production build before saving the next checkpoint.
 - [x] Define a C✦SMO interaction hierarchy that assigns deliberate hover, press, reveal, menu, scroll, and reduced-motion behavior to public controls without compromising readability or performance.
 - [ ] Create original C✦SMO product-mockup and transparent-garment imagery informed by the supplied flat-lay and poster references when image generation becomes available, without copying logos, people, or compositions.
@@ -107,3 +108,4 @@
 - [ ] Implement a deliberately limited typewriter or morphographic text treatment with a reduced-motion fallback.
 - [ ] Add and document scroll-linked depth on C✦SMO category and product surfaces with a static reduced-motion equivalent.
 - [ ] Thoroughly audit and improve public C✦SMO routes for graphic rhythm, dimensional layering, purposeful transitions, and interactive feedback before the next checkpoint.
+- [ ] When image generation is available again, create and integrate an original C✦SMO asset suite with dynamic full-body fit poses, transparent garment silhouettes, clearer product mockups, a sharper hero focal point, and photogenic black-red editorial lighting informed by the user-supplied references without copying them.
