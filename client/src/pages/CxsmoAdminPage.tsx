@@ -4,6 +4,7 @@ import { CxsmoMark } from "@/components/CxsmoMark";
 import { cxsmoProducts, formatCxsmoPrice } from "@/lib/cxsmo";
 import "./cxsmo-admin.css";
 import "./cxsmo-admin-variants.css";
+import "./cxsmo-admin-poster.css";
 
 type Module = "Overview" | "Products" | "Categories" | "Inventory" | "Orders" | "POS" | "Shipping" | "Customers" | "Content" | "Reports";
 const modules: { name: Module; icon: typeof Layers3 }[] = [

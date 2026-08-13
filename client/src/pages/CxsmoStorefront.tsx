@@ -3,19 +3,24 @@ import { ArrowDownRight, ArrowUpRight, Check, ChevronDown, Heart, Minus, Package
 import { useState, type ReactNode } from "react";
 import { Link, useRoute } from "wouter";
 import { CxsmoMark } from "@/components/CxsmoMark";
+import { CxsmoAppearanceToggle } from "@/components/CxsmoAppearanceToggle";
 import { useCxsmoDemo } from "@/contexts/CxsmoDemoContext";
 import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct, type CxsmoProduct } from "@/lib/cxsmo";
 import "./cxsmo.css";
 import "./cxsmo-media-overrides.css";
 import "./cxsmo-reduced-motion.css";
+import "./cxsmo-poster-theme.css";
+import "./cxsmo-footer-credit.css";
+import "./cxsmo-appearance.css";
+import "./cxsmo-route-effects.css";
 
 const heroImage = "/manus-storage/cxsmo-hero-campaign_c252324b.jpg";
 const ease = [0.16, 1, 0.3, 1] as const;
 
-function CxsmoShell({ children }: { children: ReactNode }) {
+export function CxsmoShell({ children }: { children: ReactNode }) {
   const { bag } = useCxsmoDemo();
   const reducedMotion = useReducedMotion();
-  return <MotionConfig reducedMotion={reducedMotion ? "always" : "never"}><main className="cxsmo-site"><div className="cxsmo-disclaimer">C✦SMO is a fictional fashion-commerce demonstration. No payments or personal information are transmitted.</div><header className="cxsmo-header"><Link href="/cxsmo" aria-label="C✦SMO home"><CxsmoMark /></Link><nav aria-label="Main navigation"><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/edits">Fit edits</Link><Link href="/cxsmo/support">Info</Link><Link href="/cxsmo/admin">Studio</Link></nav><Link className="cxsmo-bag-link" href="/cxsmo/bag"><ShoppingBag size={16} /> Bag <b>{bag.length}</b></Link></header>{children}<footer className="cxsmo-footer"><CxsmoMark inverse /><p>Future-pop wardrobe objects, fashioned as a portfolio demonstration.</p><div><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/account">Account</Link><Link href="/cxsmo/support">Info</Link></div></footer></main></MotionConfig>;
+  return <MotionConfig reducedMotion={reducedMotion ? "always" : "never"}><main className="cxsmo-site"><div className="cxsmo-disclaimer">C✦SMO is a fictional fashion-commerce demonstration. No payments or personal information are transmitted.</div><header className="cxsmo-header"><Link href="/cxsmo" aria-label="C✦SMO home"><CxsmoMark /></Link><nav aria-label="Main navigation"><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/edits">Fit edits</Link><Link href="/cxsmo/support">Info</Link><Link href="/cxsmo/admin">Studio</Link></nav><div className="cxsmo-header__tools"><CxsmoAppearanceToggle /><Link className="cxsmo-bag-link" href="/cxsmo/bag"><ShoppingBag size={16} /> Bag <b>{bag.length}</b></Link></div></header>{children}<footer className="cxsmo-footer"><CxsmoMark inverse /><p>Future-pop wardrobe objects, fashioned as a portfolio demonstration.</p><p className="cxsmo-footer__credit">Developed by zxke</p><div><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/account">Account</Link><Link href="/cxsmo/support">Info</Link></div></footer></main></MotionConfig>;
 }
 
 function ProductCard({ product, order = "01" }: { product: CxsmoProduct; order?: string }) {

@@ -10,6 +10,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import { CxsmoAdminPage } from "./pages/CxsmoAdminPage";
 import { CxsmoAccountPage, CxsmoBagPage, CxsmoEditsPage, CxsmoHomePage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage } from "./pages/CxsmoStorefront";
+import { CxsmoPosterHome } from "./pages/CxsmoPosterHome";
 import { KinformAdminPage } from "./pages/KinformAdminPage";
 import { KinformAccountPage, KinformBagPage, KinformCollectionPage, KinformInventoryPage, KinformJournalEntryPage, KinformJournalPage, KinformProductPage, KinformSupportPage } from "./pages/KinformPages";
 
@@ -19,8 +20,8 @@ function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path="/" component={CxsmoHomePage} />
-      <Route path="/cxsmo" component={CxsmoHomePage} />
+      <Route path="/" component={CxsmoPosterHome} />
+      <Route path="/cxsmo" component={CxsmoPosterHome} />
       <Route path="/cxsmo/shop" component={CxsmoShopPage} />
       <Route path="/cxsmo/products/:id" component={CxsmoProductPage} />
       <Route path="/cxsmo/edits" component={CxsmoEditsPage} />
@@ -47,7 +48,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="dark" switchable>
         <TooltipProvider>
           <CartProvider>
             <CxsmoDemoProvider>
