@@ -1,0 +1,70 @@
+# KNIALL Revision Todo
+
+- [x] Upgrade the project to the database-backed full-stack template required for Shopify.
+- [x] Provision a fresh Shopify development store for KNIALL after confirming the irreversible store choice.
+- [x] Register the injected commerce router and required Shopify environment exports before storefront integration.
+- [ ] Seed only one or two genuine KNIALL clothing products after final product names, prices, variants, and approved media are available.
+- [ ] Verify the live Shopify catalog through the supplied storefront probe before rendering commerce data in the UI.
+- [ ] Resolve the live Shopify smoke-test failure by adding approved purchasable KNIALL apparel with real price and media. The current fresh store correctly returns zero products.
+- [x] Define the light cinematic art direction from Jacket Masters, Webflow showcase patterns, Awwwards level ecommerce references, and selective 21st.dev interaction primitives.
+- [x] Rebuild the visual system from scratch with a calm spatial layout, premium typography pairing, softer surfaces, and clothing first merchandising.
+- [x] Remove all pickleball equipment implications and treat basketball, pickleball, and gym only as clothing use contexts.
+- [x] Create a product first hero with approved KNIALL apparel imagery, atmospheric lighting, subtle motion, and an immediate commerce path.
+- [ ] Implement collections, filters, product detail, variants, size selection, bag, and checkout handoff against real commerce data once KNIALL’s verified product catalog is supplied.
+- [x] Add refined scroll choreography, text reveals, marquees, button microinteractions, and reduced motion fallbacks.
+- [x] Add one intentional morph interaction to the visual system without adding visual noise.
+- [x] Replace the interim canvas study with a true WebGL material scene plus a reliable static fallback and performance guardrails.
+- [x] Validate desktop and mobile layouts plus the real empty-cart state. Full product, checkout, and keyboard-flow validation waits for catalog data.
+- [x] Capture a new checkpoint only after the first rebuilt production milestone is visually and technically verified.
+- [x] Inspect both supplied Spline editor URLs and record that neither exposes a public embeddable scene or inspectable interaction pattern. A public share or `.splinecode` URL is required for direct Spline integration.
+- [x] Define a fictional apparel brand name, positioning, product architecture, visual palette, typography, and voice for the portfolio flagship.
+- [x] Create original transparent-background apparel renders for the fictional product line.
+- [x] Generate coordinated fictional campaign and editorial material that matches the apparel render system.
+- [x] Design a polished 3D hero object or garment study with a real Spline integration if the supplied scenes are suitable, or a purpose-built WebGL fallback if they are not.
+- [x] Build the fictional fashion-commerce flagship as a clearly separate portfolio route without implying affiliation with KNIALL.
+- [x] Implement portfolio brand catalogue, product detail, bag, and checkout-style flows using explicitly fictional product data.
+- [x] Add a portfolio-safe checkout summary handoff that remains clearly fictional and collects no payment.
+- [x] Run and document a complete accessibility pass for KINFORM covering keyboard traversal of hero, product detail, bag, and checkout, reduced-motion behavior, visible focus states, dialog labels, and product-image alternative text.
+- [x] Inspect Ruixen’s live visual and interaction language, recording only transferable product-supportive patterns.
+- [x] Extract the supplied 21st.dev gradient-shimmer component’s animation principles and adapt them to the KINFORM visual system with reduced-motion support.
+- [x] Upgrade KINFORM’s text, transitions, and interaction surfaces using the selected Ruixen and 21st.dev principles without overloading the page.
+- [x] Verify and document the complete keyboard-only path from the hero CTA through product sizes, bag, checkout, and exit.
+- [x] Verify and document live reduced-motion behavior for the WebGL scene, gradient shimmer, and interface transitions.
+- [x] Verify and document checkout focus trapping with forward and reverse Tab navigation.
+- [x] Strengthen KINFORM runtime reduced-motion handling so smooth scrolling and Framer Motion transitions also respect the user preference.
+- [x] Define the expanded KINFORM route map for collection, product discovery, journal, support, account, bag, and a clearly labelled portfolio administration demonstration.
+- [x] Integrate a tailored interactive-hover button pattern and additional restrained motion surfaces inspired by Asceternity and the supplied component reference.
+- [x] Create original campaign and admin showcase visuals that improve merchandising, collection browsing, and dashboard storytelling.
+- [x] Build natural ecommerce routes for collection discovery, product details, journal, support, account, and saved bag states using fictional KINFORM catalogue data.
+- [x] Build a portfolio-safe administration dashboard for product operations, inventory posture, campaign planning, and customer-service workflows without implying live KNIALL access.
+- [x] Design a customer-feedback section with an honest no-verified-reviews state and data-ready verified-review structure, without creating fabricated reviews, ratings, testimonials, or comments.
+- [x] Document recommended complementary design and commerce libraries with clear integration rationale and bundle-impact considerations.
+- [x] Confirm the generated KINFORM expansion visuals complete successfully and are suitable for use.
+- [x] Integrate the approved new visuals into the collection, product, journal, and administration surfaces.
+- [x] Document the final visual asset URLs and their route-level usage in the expanded KINFORM experience.
+- [x] Replace inert support-page controls with complete portfolio-safe destinations or clearly disabled states.
+- [x] Run a live route-quality pass across collection, product, journal, support, account, and bag states after the expansion visuals are ready.
+- [x] Add a portfolio-safe customer-service triage surface with an honest empty state to the KINFORM administration console.
+- [x] Add a distinct inventory-posture module with per-product operational readiness states to the KINFORM administration console.
+- [x] Run a live administration QA pass after completing the service and inventory modules.
+- [x] Confirm and integrate a distinct original administration showcase visual after the replacement generation completes.
+- [x] Complete the final KINFORM route QA in both empty and populated saved-object and bag states after the final asset selection.
+- [x] Record the completed administration-flatlay visual approval and final generated-asset disposition in the KINFORM asset register.
+- [x] Re-run and document the account and bag routes in both empty and populated states after the final asset selection.
+- [x] Replace the non-transparent KINFORM Aero Shell, Form Overshirt, and Arc Trouser catalogue imagery with original transparent-background garment renders.
+- [x] Repair the gradient shimmer visibility and move its strongest use to a deliberate hero headline word or phrase with reduced-motion support retained.
+- [x] Add a portfolio-safe inventory ordering route that lists available fictional products, stock posture, variant options, and a non-payment order-request flow.
+- [x] Extend the owner console with inventory-order review and fulfilment-style workflow states, clearly marked as fictional portfolio data rather than a live Shopify backend.
+- [x] Verify the corrected apparel assets, hero shimmer, inventory order flow, owner workflow, responsive views, TypeScript, tests, and production build.
+- [x] Save a clean checkpoint and prepare the updated project for GitHub export.
+- [x] Record final approval of the Aero Shell, Form Overshirt, and Arc Trouser transparent renders after their completed live collection review.
+- [x] Run and document a final collection and product-route visual QA pass confirming all four product renders are completed, cleanly isolated, and free of placeholder or background artifacts.
+- [x] Verify GitHub export hygiene for ignored secrets, generated output, and repository status.
+- [x] Add a concise GitHub handoff guide describing the export workflow, required real-commerce configuration, and known empty-Shopify-store limitation.
+- [x] Remove the hero shimmer treatment that obscures the KINFORM headline and replace it with a stable, intentional emphasis.
+- [x] Make all principal KINFORM routes discoverable from the landing page and public route navigation, including collection, inventory, journal, support, account, bag, and portfolio administration.
+- [x] Expand the KINFORM administration dashboard with practical portfolio store-management modules informed by the KNIALL PRD, including orders, inventory, products, campaigns, customers, reporting, and store settings states.
+- [x] Add a clearly labelled portfolio-only administration access gate using the supplied demonstration password, without representing it as real authentication or security.
+- [x] Verify hero visibility, route navigation, responsive dashboard behavior, portfolio gate behavior, TypeScript, tests, and production build.
+- [x] Run and document a final live visual QA pass confirming the KINFORM hero headline remains fully readable without shimmer.
+- [x] Run and document a final responsive QA pass for both the portfolio admin gate and unlocked store-management dashboard at mobile width.

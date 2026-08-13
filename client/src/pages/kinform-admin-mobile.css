@@ -1,0 +1,8 @@
+@media screen and (max-width: 960px) {
+  .kinform-admin { display: block !important; grid-template-columns: none !important; width: 100%; }
+  .kinform-admin-sidebar { border-bottom: 1px solid rgba(255,255,255,.12); border-right: 0; box-sizing: border-box; height: auto; padding: 18px 20px; position: relative; width: 100%; }
+  .kinform-admin-sidebar__label, .kinform-admin-sidebar__bottom { display: none; }
+  .kinform-admin-sidebar nav { display: flex; margin-top: 17px; max-width: 100%; overflow-x: auto; }
+  .kinform-admin-sidebar nav button { flex: 0 0 auto; }
+  .kinform-admin-main { min-width: 0; width: 100%; }
+}
