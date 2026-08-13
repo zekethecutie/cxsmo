@@ -68,3 +68,15 @@
 - [x] Verify hero visibility, route navigation, responsive dashboard behavior, portfolio gate behavior, TypeScript, tests, and production build.
 - [x] Run and document a final live visual QA pass confirming the KINFORM hero headline remains fully readable without shimmer.
 - [x] Run and document a final responsive QA pass for both the portfolio admin gate and unlocked store-management dashboard at mobile width.
+- [x] Replace the public KINFORM presentation with a clearly distinct C✦SMO fashion-and-lifestyle identity, including a four-point-star X mark, Y2K-pop visual direction, and an explicit portfolio-demo boundary.
+- [x] Define a fictional, trend-led C✦SMO catalogue covering baggy denim, graphic and embroidered tees, tailored streetwear, outerwear, accessories, footwear, beauty, and lifestyle objects.
+- [ ] Create distinct original high-fidelity product renders and additional editorial visuals for the C✦SMO concept without representing third-party products or endorsements.
+- [x] Rebuild public navigation, category discovery, collection filters, product storytelling, styling edits, and product-detail journeys around C✦SMO.
+- [x] Expand shopper-facing bag, saved-item, order-information, shipping, size-guidance, account, and portfolio-safe checkout-request experiences.
+- [x] Expand the portfolio administration console with category management, product and variant editing, inventory operations, orders, receipts, point-of-sale, shipping, customer information, reporting, and content-management states.
+- [x] Preserve honest empty states for customer-generated content and do not fabricate reviews, ratings, testimonials, orders, payments, or live fulfilment data.
+- [x] Validate desktop and mobile presentation, keyboard and reduced-motion behavior, TypeScript, focused tests, and the production build before saving a C✦SMO checkpoint.
+- [x] Apply the exact C✦SMO construction throughout the demonstration so the four-point star visibly replaces the X rather than appearing as a separate accent mark.
+- [x] Correct the brand construction to C✦SMO across the experience: the four-point star replaces the X immediately after the initial C.
+- [ ] Run and document a keyboard-only QA pass across C✦SMO storefront and studio controls, including navigation, product actions, bag form, and fit-guide dialog.
+- [ ] Verify and document reduced-motion behavior across C✦SMO animated surfaces after the MotionConfig change.

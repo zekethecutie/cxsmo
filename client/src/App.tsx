@@ -4,9 +4,12 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { CartProvider } from "./contexts/CartContext";
+import { CxsmoDemoProvider } from "./contexts/CxsmoDemoContext";
 import { KinformDemoProvider } from "./contexts/KinformDemoContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import { CxsmoAdminPage } from "./pages/CxsmoAdminPage";
+import { CxsmoAccountPage, CxsmoBagPage, CxsmoEditsPage, CxsmoHomePage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage } from "./pages/CxsmoStorefront";
 import { KinformAdminPage } from "./pages/KinformAdminPage";
 import { KinformAccountPage, KinformBagPage, KinformCollectionPage, KinformInventoryPage, KinformJournalEntryPage, KinformJournalPage, KinformProductPage, KinformSupportPage } from "./pages/KinformPages";
 
@@ -16,7 +19,15 @@ function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={CxsmoHomePage} />
+      <Route path="/cxsmo" component={CxsmoHomePage} />
+      <Route path="/cxsmo/shop" component={CxsmoShopPage} />
+      <Route path="/cxsmo/products/:id" component={CxsmoProductPage} />
+      <Route path="/cxsmo/edits" component={CxsmoEditsPage} />
+      <Route path="/cxsmo/support" component={CxsmoSupportPage} />
+      <Route path="/cxsmo/account" component={CxsmoAccountPage} />
+      <Route path="/cxsmo/bag" component={CxsmoBagPage} />
+      <Route path="/cxsmo/admin" component={CxsmoAdminPage} />
       <Route path="/kinform" component={Home} />
       <Route path="/kinform/collection" component={KinformCollectionPage} />
       <Route path="/kinform/inventory" component={KinformInventoryPage} />
@@ -39,10 +50,12 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <CartProvider>
-            <KinformDemoProvider>
-              <Toaster />
-              <Router />
-            </KinformDemoProvider>
+            <CxsmoDemoProvider>
+              <KinformDemoProvider>
+                <Toaster />
+                <Router />
+              </KinformDemoProvider>
+            </CxsmoDemoProvider>
           </CartProvider>
         </TooltipProvider>
       </ThemeProvider>
