@@ -3,6 +3,7 @@ import { ArrowDownRight, ArrowUpRight, MoveDown, Sparkles } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "wouter";
 import { CxsmoShell } from "./CxsmoStorefront";
+import { CxsmoCommunityEmptyState, CxsmoFitCarousel } from "@/components/CxsmoFitCarousel";
 import { cxsmoProducts, formatCxsmoPrice } from "@/lib/cxsmo";
 import "./cxsmo-poster-home.css";
 
@@ -30,5 +31,5 @@ export function CxsmoPosterHome() {
 
   <section className="poster-lookbook"><div className="poster-section-head"><p>SCROLL THE LOOKBOOK</p><h2>WORN IN<br /><em>MOTION.</em></h2><span>03 fictional styling chapters / 08 portfolio objects</span></div><div className="poster-lookbook__grid">{looks.map((look, index) => <motion.article key={look.tag} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .7, delay: index * .08 }}><div className="poster-lookbook__image"><img src={heroImage} alt="C✦SMO campaign fit composition" style={{ objectPosition: look.position }} /><i>✦</i></div><p>{look.tag}</p><h3>{look.title}</h3><span>{look.note}</span><Link href="/cxsmo/shop">Shop the formula <ArrowUpRight size={14} /></Link></motion.article>)}</div></section>
 
-  <section className="poster-catalogue-pull"><div><p>THE DROP HAS A PULSE</p><h2>Eight objects.<br /><em>One visual temperature.</em></h2></div><div className="poster-catalogue-pull__actions"><Link href="/cxsmo/shop" className="poster-button poster-button--bone">Enter catalogue <ArrowUpRight size={17} /></Link><span>Denim / graphics / outerwear / accessories / footwear / beauty / lifestyle</span></div></section></div></CxsmoShell>;
+  <CxsmoFitCarousel /><section className="poster-catalogue-pull"><div><p>THE DROP HAS A PULSE</p><h2>Eight objects.<br /><em>One visual temperature.</em></h2></div><div className="poster-catalogue-pull__actions"><Link href="/cxsmo/shop" className="poster-button poster-button--bone">Enter catalogue <ArrowUpRight size={17} /></Link><span>Denim / graphics / outerwear / accessories / footwear / beauty / lifestyle</span></div></section><CxsmoCommunityEmptyState /></div></CxsmoShell>;
 }
