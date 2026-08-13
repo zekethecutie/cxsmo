@@ -80,3 +80,12 @@
 - [x] Correct the brand construction to C✦SMO across the experience: the four-point star replaces the X immediately after the initial C.
 - [ ] Run and document a keyboard-only QA pass across C✦SMO storefront and studio controls, including navigation, product actions, bag form, and fit-guide dialog.
 - [ ] Verify and document reduced-motion behavior across C✦SMO animated surfaces after the MotionConfig change.
+- [x] Define and document an original black, red, and bone C✦SMO poster system with layered depth, editorial type hierarchy, cinematic blur, and four-point-star visual language informed by the supplied references without copying them.
+- [ ] Create and integrate original C✦SMO fashion visual treatments, including transparent-ready garment treatments and high-fidelity model-led editorial composition when generation or licensed source assets are available.
+- [x] Rebuild the C✦SMO landing page as an immersive parallax poster composition with readable product context, scroll-led text treatment, dimensional layers, and reduced-motion fallbacks.
+- [x] Enhance shop, product, styling-edit, information, account, bag, and studio routes with consistent poster composition, animated feedback, depth, interactive controls, and responsive visual rhythm.
+- [x] Add a user-controlled appearance setting with a polished theme transition and persistent preference for C✦SMO.
+- [x] Add the creator credit “Developed by zxke” to the C✦SMO footer and confirm it remains visible across public routes.
+- [ ] Validate the expanded C✦SMO poster interactions, dark-mode setting, responsive layouts, TypeScript, focused tests, and production build before saving the next checkpoint.
+- [ ] Verify the C✦SMO appearance setting in dark and light modes and record route-level results.
+- [ ] Run and document a direct interaction QA pass for poster parallax, scroll-led surfaces, product controls, and studio actions.
