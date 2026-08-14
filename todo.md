@@ -177,5 +177,6 @@
 - [x] Improve the persistent studio product workflow so an operator can review the expanded 12-object catalogue, see its assigned presentation media, and identify which product image replacements are still awaiting supplied source files.
 - [x] Synchronize the C✦SMO studio overview product-object count and readiness copy with the expanded twelve-object public catalogue.
 - [x] Synchronize C✦SMO poster object-count and index copy with the expanded twelve-object catalogue.
+- [x] Extend opt-in C✦SMO hover feedback from selected controls to all standard public and studio buttons and links, while preserving per-element throttling and silent-control opt-outs.
 - [x] Add a browser-local saved-recommendations flow that lets visitors explicitly keep or remove recommendation-driven objects separately from the general save list.
 - [x] Add a distinct pre-tour C✦SMO brand-build intro scene that constructs the mark before the visitor-started route tour begins.

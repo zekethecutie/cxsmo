@@ -61,8 +61,6 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
       if (event.pointerType === "touch") return;
       const element = event.target instanceof Element ? event.target.closest<HTMLElement>("button, a") : null;
       if (!element || element.closest("[data-cxsmo-hover-silent]") || !element.closest(".cxsmo-site")) return;
-      const isDeliberateSurface = element.matches(".cxsmo-button,.poster-button,.poster-text-link,.cxsmo-header__menu-trigger,.cxsmo-product-card__visual,.cxsmo-fit-carousel__controls button,.cxsmo-footer a,.cxsmo-legal-nav a") || element.hasAttribute("data-cxsmo-hover");
-      if (!isDeliberateSurface) return;
       const now = Date.now();
       if (now - (hoverTargets.current.get(element) ?? 0) < 900) return;
       hoverTargets.current.set(element, now);
