@@ -187,3 +187,9 @@
 - [x] Add restrained scroll-linked perspective depth to the C✦SMO category rail and inventory surfaces, with no pointer-led movement and explicit reduced-motion static equivalents.
 - [x] Audit the revised C✦SMO public routes for responsive hierarchy, accessible motion, portfolio-boundary clarity, and interaction feedback after the depth refinement.
 - [x] Add a focus-trapped, Escape-dismissible C✦SMO fit-guide dialog that returns keyboard focus to its trigger on close, then document the code-backed contract.
+- [x] Register the user-supplied custom C✦SMO cursor asset and replace the player’s temporary framed CSS cursor treatment with animated cursor choreography.
+- [x] Recompose the C✦SMO player into a smoother promotional mograph edit with zoomed UI emphasis, cutout-like component focus, blur-safe C✦SMO intro/outro, animated brand subtitle, falling/spinning star punctuation, and improved ad-style copy.
+- [x] Remove the player’s scene-number navigation controls while retaining direct pause, restart, and exit controls plus keyboard-safe scene access through directed play behavior.
+- [x] Increase C✦SMO sound cue presence with deliberate per-cue volumes while preserving opt-in playback, touch exclusion, and cooldown safeguards.
+- [x] Add an explicit optional hover cue to object and mockup surfaces that visually zoom, including the Worn in Motion lookbook cards.
+- [x] Shift the transparent C✦SMO campaign hero further left and correct Play C✦SMO contrast in dark appearance mode.

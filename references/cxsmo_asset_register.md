@@ -21,3 +21,4 @@ The following original C✦SMO assets are generated for this portfolio’s ficti
 | BLXCK UNIV3RSE Longsleeve / Simple | `/manus-storage/cxsmo-blxck-universe-longsleeve-simple_131cb472.png` | New transparent catalogue object; user-supplied approved asset |
 | BLXCK UNIV3RSE Pants | `/manus-storage/cxsmo-blxck-universe-pants_bdd10130.png` | New transparent catalogue object; user-supplied approved asset |
 | BLXCK UNIV3RSE Longsleeve / Heavy | `/manus-storage/cxsmo-blxck-universe-longsleeve-heavy_5b6f6634.png` | New transparent catalogue object; user-supplied approved asset |
+| Custom C✦SMO cursor | `/manus-storage/cxsmo-custom-cursor_922d53fe.png` | User-supplied visual cursor for the directed-player focus choreography; rendered with screen blending so its dark field remains visually integrated with the player surface |
