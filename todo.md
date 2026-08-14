@@ -186,3 +186,4 @@
 - [x] Replace the C✦SMO appearance effect with a slower two-second origin-aware circular reveal that changes the theme only inside the expanding shape, removes the current glow treatment, and retains a reduced-motion fallback.
 - [x] Add restrained scroll-linked perspective depth to the C✦SMO category rail and inventory surfaces, with no pointer-led movement and explicit reduced-motion static equivalents.
 - [x] Audit the revised C✦SMO public routes for responsive hierarchy, accessible motion, portfolio-boundary clarity, and interaction feedback after the depth refinement.
+- [x] Add a focus-trapped, Escape-dismissible C✦SMO fit-guide dialog that returns keyboard focus to its trigger on close, then document the code-backed contract.
