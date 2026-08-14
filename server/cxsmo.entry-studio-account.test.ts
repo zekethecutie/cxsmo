@@ -7,6 +7,13 @@ const app = source("client/src/App.tsx");
 const entry = source("client/src/pages/CxsmoEntryPage.tsx");
 const entryStyle = source("client/src/pages/cxsmo-entry.css");
 const entryAppearance = source("client/src/pages/cxsmo-entry-appearance.css");
+const entryPoster = source("client/src/pages/cxsmo-entry-poster.css");
+const heroCorrection = source("client/src/pages/cxsmo-hero-correction.css");
+const heroLayerRepair = source("client/src/pages/cxsmo-hero-layer-repair.css");
+const mobileBridgePolish = source("client/src/pages/cxsmo-mobile-bridge-polish.css");
+const cursor = source("client/src/components/CxsmoCustomCursor.tsx");
+const cursorStyle = source("client/src/pages/cxsmo-custom-cursor.css");
+const poster = source("client/src/pages/CxsmoPosterHome.tsx");
 const studio = source("client/src/pages/CxsmoAdminPage.tsx");
 const gateStyle = source("client/src/pages/cxsmo-admin-gate.css");
 const account = source("client/src/pages/CxsmoAccountPages.tsx");
@@ -21,9 +28,12 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("Sound on");
     expect(entry).toContain("Switch to");
     expect(entry).toContain("Wide screen recommended");
-    expect(entry).toContain("cxsmostudios@cxsmo.io");
+    expect(entry).toContain("zheviant2@gmail.com");
+    expect(entry).toContain("github.com/zekethecutie");
     expect(entryStyle).toContain("cxsmo-entry__orbit");
     expect(entryAppearance).toContain("html:not(.dark) .cxsmo-entry");
+    expect(entry).toContain("BLXCK");
+    expect(entryPoster).toContain("cxsmo-entry__stage-axis");
   });
 
   it("gates the studio with the supplied portfolio code and preserves a storefront return path", () => {
@@ -59,5 +69,27 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(polish).toContain(".poster-hero__object-layer--campaign");
     expect(polish).toContain("html.dark .poster-entry-flow");
     expect(polish).toContain("@media(prefers-reduced-motion:reduce)");
+  });
+
+  it("uses a flat toolbar treatment, a controlled campaign-only crossover, and a clean light-mode bridge", () => {
+    expect(heroCorrection).toContain("background:transparent!important");
+    expect(heroCorrection).toContain(".cxsmo-header:before");
+    expect(heroLayerRepair).toContain(".poster-hero__object-layer--campaign");
+    expect(heroLayerRepair).toContain("z-index:45");
+    expect(heroCorrection).toContain("html:not(.dark) .cxsmo-poster-home .poster-entry-flow");
+    expect(mobileBridgePolish).toContain("html:not(.dark) .cxsmo-poster-home .poster-hero");
+    expect(mobileBridgePolish).toContain(".cxsmo-entry__desktop-note{display:none}");
+  });
+
+  it("keeps the refined custom cursor frame-synced, compact, and free of a target ring", () => {
+    expect(cursor).toContain("window.requestAnimationFrame");
+    expect(cursor).toContain("latestPosition");
+    expect(cursorStyle).toContain("width:52px");
+    expect(cursorStyle).toContain(".cxsmo-entry");
+    expect(cursorStyle).not.toContain("cxsmo-global-cursor span");
+  });
+
+  it("removes non-brand sparkle decorations from the active poster route", () => {
+    expect(poster).not.toContain("Sparkles");
   });
 });

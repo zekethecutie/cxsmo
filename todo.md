@@ -225,3 +225,12 @@
 - [x] Add an intentional route-transition treatment with reduced-motion fallback and complete responsive mobile polish across the new entry, account, studio, and storefront routes.
 - [x] Rate the pre-polish C✦SMO experience candidly across design, motion, messaging, flow, functionality, completeness, and realistic portfolio conversion before reporting the implementation outcome.
 - [x] Validate the expanded C✦SMO entry, studio gate, account paths, appearance states, mobile layouts, transitions, TypeScript, tests, build, and GitHub synchronization after checkpointing.
+
+- [x] Remove the unintended gradient treatment from C✦SMO’s storefront toolbar and restore a deliberate flat, legible header surface in both appearance modes.
+- [x] Rebuild the light-mode C✦SMO hero-to-entry bridge so it has no uncontrolled red glow, leak, or bleed while retaining the clean dark-mode transition quality.
+- [x] Correct C✦SMO hero z-index behavior so only the transparent campaign PNG crosses the toolbar plane, never hides a model’s face, and keeps the Static Bloom study card in its intended foreground layer.
+- [x] Redesign the `/` C✦SMO pre-store landing around a more disciplined BLXCK UNIV3RSE poster composition with visible directional guides, stronger typography hierarchy, and less arbitrary floating-object motion.
+- [x] Refine low-emphasis C✦SMO type and the `/` footer into a more editorial, high-legibility system and add the developer contact links `zheviant2@gmail.com` and `zekethecutie` on GitHub.
+- [x] Remove decorative sparkle-style text glyphs from active C✦SMO copy and retain only the intentional four-point brand-star mark where semantically required.
+- [x] Recalibrate the C✦SMO custom cursor for dependable display, smaller scale, quicker placement, appropriate interaction-target alignment, and reduced-motion-safe fallback.
+- [x] Audit and validate the corrected C✦SMO toolbar, hero layers, root landing, cursor, light/dark desktop and mobile states, tests, production build, and GitHub synchronization before checkpointing.
