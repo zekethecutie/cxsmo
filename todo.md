@@ -135,7 +135,7 @@
 - [ ] Simplify the C✦SMO hero to one primary transparent fashion object, clearer negative space, and fewer competing background layers.
 - [ ] Replace pointer-driven hero movement with deliberate scroll-linked parallax and retain a static reduced-motion fallback.
 - [x] Update the C✦SMO topbar to identify the fictional portfolio demonstration as designed and developed by zxke while retaining the non-payment and privacy boundary.
-- [ ] Add controlled CSS drop-shadow and poster-layer separation to C✦SMO mockups where it improves legibility and depth without visual clutter.
+- [x] Add controlled CSS drop-shadow and poster-layer separation to C✦SMO mockups where it improves legibility and depth without visual clutter.
 
 - [ ] Rework the C✦SMO hero into a cleaner scroll-led hierarchy with one focal object, gradient headline treatment, restrained shadows, and distinct scroll rates for background, object, type, and divider.
 - [x] Add a motion-graphic product carousel with scroll-based transitions, layered object choreography, and reduced-motion fallback.
