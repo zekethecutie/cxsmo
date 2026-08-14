@@ -107,7 +107,7 @@
 - [ ] Add Escape, outside-dismiss, focus-return, and direct keyboard QA coverage for the C✦SMO navigation menu.
 - [x] Implement a deliberately limited typewriter or morphographic text treatment with a reduced-motion fallback.
 - [x] Add and document scroll-linked depth on C✦SMO category and product surfaces with a static reduced-motion equivalent.
-- [ ] Thoroughly audit and improve public C✦SMO routes for graphic rhythm, dimensional layering, purposeful transitions, and interactive feedback before the next checkpoint.
+- [x] Thoroughly audit and improve public C✦SMO routes for graphic rhythm, dimensional layering, purposeful transitions, and interactive feedback before the next checkpoint.
 - [x] When image generation is available again, create and integrate an original C✦SMO asset suite with dynamic full-body fit poses, transparent garment silhouettes, clearer product mockups, a sharper hero focal point, and photogenic black-red editorial lighting informed by the user-supplied references without copying them.
 - [x] Resume the prepared C✦SMO image batch with an upgraded hero, three distinct fit-shoot compositions, and isolated transparent garment renders for the core product stories.
 - [x] Verify every generated C✦SMO asset URL resolves to a completed final image rather than a generating or failed placeholder, and replace any unsuccessful output.
