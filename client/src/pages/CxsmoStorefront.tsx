@@ -8,6 +8,7 @@ import { CxsmoCommunityEmptyState, CxsmoFitCarousel } from "@/components/CxsmoFi
 import { CxsmoAccountPanel } from "@/components/CxsmoAccountPanel";
 import { CxsmoCheckoutSimulation } from "@/components/CxsmoCheckoutSimulation";
 import { CxsmoShowcaseButton } from "@/components/CxsmoGuidedShowcase";
+import { CxsmoCustomCursor } from "@/components/CxsmoCustomCursor";
 import { CxsmoPromotionPopup } from "@/components/CxsmoPromotionPopup";
 import { useCxsmoDemo } from "@/contexts/CxsmoDemoContext";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -29,6 +30,7 @@ import "./cxsmo-content-overrides.css";
 import "./cxsmo-legal-editorial.css";
 import "./cxsmo-morphographic.css";
 import "./cxsmo-scroll-depth.css";
+import "./cxsmo-custom-cursor.css";
 
 const heroImage = "/manus-storage/cxsmo-hero-v2_cadfe55c.jpg";
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -38,7 +40,7 @@ export function CxsmoShell({ children }: { children: ReactNode }) {
   const { isTransitioning, transitionTarget } = useTheme();
   const { promotion, global } = useCxsmoPublishedContent();
   const reducedMotion = useReducedMotion();
-  return <MotionConfig reducedMotion={reducedMotion ? "always" : "never"}><main className="cxsmo-site"><div className={`cxsmo-theme-wash${isTransitioning ? " is-active" : ""}`} data-target={transitionTarget} aria-hidden="true">{isTransitioning && Array.from({ length: 144 }, (_, index) => <i key={index} style={{ "--pixel": index } as CSSProperties} />)}</div><div className="cxsmo-disclaimer">{global.notice}</div>{promotion.enabled && <div className="cxsmo-promo-bar">{promotion.message}</div>}<CxsmoPromotionPopup promotion={promotion} /><header className="cxsmo-header"><Link href="/cxsmo" aria-label="C✦SMO home"><CxsmoMark /></Link><CxsmoMenu /><div className="cxsmo-header__tools"><CxsmoAppearanceToggle /><Link className="cxsmo-bag-link" href="/cxsmo/bag"><ShoppingBag size={16} /> Bag <b>{bag.length}</b></Link></div></header>{children}<footer className="cxsmo-footer"><CxsmoMark inverse /><p>{global.footerIntro}</p><p className="cxsmo-footer__credit">{global.footerCredit}</p><div><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/account">Account</Link><Link href="/cxsmo/checkout">Checkout</Link><Link href="/cxsmo/legal">Terms + privacy</Link><CxsmoShowcaseButton /></div></footer></main></MotionConfig>;
+  return <MotionConfig reducedMotion={reducedMotion ? "always" : "never"}><CxsmoCustomCursor /><main className="cxsmo-site"><div className={`cxsmo-theme-wash${isTransitioning ? " is-active" : ""}`} data-target={transitionTarget} aria-hidden="true">{isTransitioning && Array.from({ length: 144 }, (_, index) => <i key={index} style={{ "--pixel": index } as CSSProperties} />)}</div><div className="cxsmo-disclaimer">{global.notice}</div>{promotion.enabled && <div className="cxsmo-promo-bar">{promotion.message}</div>}<CxsmoPromotionPopup promotion={promotion} /><header className="cxsmo-header"><Link href="/cxsmo" aria-label="C✦SMO home"><CxsmoMark /></Link><CxsmoMenu /><div className="cxsmo-header__tools"><CxsmoAppearanceToggle /><Link className="cxsmo-bag-link" href="/cxsmo/bag"><ShoppingBag size={16} /> Bag <b>{bag.length}</b></Link></div></header>{children}<footer className="cxsmo-footer"><CxsmoMark inverse /><p>{global.footerIntro}</p><p className="cxsmo-footer__credit">{global.footerCredit}</p><div><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/account">Account</Link><Link href="/cxsmo/checkout">Checkout</Link><Link href="/cxsmo/legal">Terms + privacy</Link><CxsmoShowcaseButton /></div></footer></main></MotionConfig>;
 }
 
 function CxsmoMenu() {
