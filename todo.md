@@ -193,3 +193,4 @@
 - [x] Increase C✦SMO sound cue presence with deliberate per-cue volumes while preserving opt-in playback, touch exclusion, and cooldown safeguards.
 - [x] Add an explicit optional hover cue to object and mockup surfaces that visually zoom, including the Worn in Motion lookbook cards.
 - [x] Shift the transparent C✦SMO campaign hero further left and correct Play C✦SMO contrast in dark appearance mode.
+- [x] Expand the C✦SMO guided player with additional focused route scenes before the final brand outro, while preserving its cursor-led motion, copy clarity, and reduced-motion control path.
