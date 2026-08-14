@@ -9,6 +9,7 @@ const account = source("client/src/components/CxsmoAccountPanel.tsx");
 const demo = source("client/src/contexts/CxsmoDemoContext.tsx");
 const player = source("client/src/components/CxsmoGuidedShowcase.tsx");
 const userflowStyle = source("client/src/pages/cxsmo-userflow.css");
+const studio = source("client/src/pages/CxsmoAdminPage.tsx");
 
 describe("C✦SMO presentation-first user flow", () => {
   it("keeps a browser-dismissible portfolio notice and permanent footer boundary", () => {
@@ -30,6 +31,15 @@ describe("C✦SMO presentation-first user flow", () => {
     expect(demo).toContain("signOutLocalAccount");
     expect(account).toContain("no credentials");
     expect(account).toContain("Sign out on this device");
+  });
+
+  it("makes shopper and operator paths explicit without fabricating commerce records", () => {
+    expect(account).toContain('SHOPPER FLOW / LOCAL ONLY');
+    expect(account).toContain('Nothing becomes a customer profile, payment, or fulfilment record.');
+    expect(account).toContain('state: "No order"');
+    expect(studio).toContain('STORE FLOW / HONEST HANDOFF');
+    expect(studio).toContain('The final stage stays visibly disconnected until a real commerce source exists.');
+    expect(studio).toContain('label: "Connect operations"');
   });
 
   it("adds product-forward landing motion and an exit-only explainer film", () => {

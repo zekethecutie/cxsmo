@@ -39,11 +39,15 @@ describe("C✦SMO guided player", () => {
     expect(showcaseSource).not.toContain('<nav aria-label="Tour scenes">');
   });
 
-  it("retains blur-safe type, custom-cursor motion, and a reduced-motion fallback", () => {
+  it("keeps a restrained red-gradient intro, animated cursor entry, and a reduced-motion fallback", () => {
     expect(tourStyleSource).toContain('.cxsmo-route-tour__cursor img');
     expect(tourStyleSource).toContain('mix-blend-mode:screen');
     expect(tourStyleSource).toContain('@media(prefers-reduced-motion:reduce)');
-    expect(introStyleSource).toContain('backdrop-filter:blur(34px)');
+    expect(showcaseSource).toContain('reducedMotion ? 0 : 6700');
+    expect(showcaseSource).toContain('x: [-130, 12, 0]');
+    expect(showcaseSource).not.toContain('cxsmo-route-tour__spotlight');
+    expect(introStyleSource).toContain('background:radial-gradient(circle at 50% 42%');
+    expect(introStyleSource).not.toContain('repeating-linear-gradient');
     expect(introStyleSource).toContain('@keyframes cxsmo-intro-star');
   });
 
