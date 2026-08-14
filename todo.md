@@ -133,7 +133,7 @@
 - [x] Replace the C✦SMO theme wash with a fast corner-origin stack of small pixel blocks, while preserving an instant reduced-motion fallback.
 - [x] Correct C✦SMO information-desk active-state contrast in both themes so the open row’s title, label, icon, and answer stay readable.
 - [ ] Simplify the C✦SMO hero to one primary transparent fashion object, clearer negative space, and fewer competing background layers.
-- [ ] Replace pointer-driven hero movement with deliberate scroll-linked parallax and retain a static reduced-motion fallback.
+- [x] Replace pointer-driven hero movement with deliberate scroll-linked parallax and retain a static reduced-motion fallback.
 - [x] Update the C✦SMO topbar to identify the fictional portfolio demonstration as designed and developed by zxke while retaining the non-payment and privacy boundary.
 - [x] Add controlled CSS drop-shadow and poster-layer separation to C✦SMO mockups where it improves legibility and depth without visual clutter.
 
