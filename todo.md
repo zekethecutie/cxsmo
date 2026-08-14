@@ -224,4 +224,4 @@
 - [x] Fix light-mode C✦SMO sound-toggle and route text visibility, refine the entry-flow color bridge, and rebalance hero z-index/parallax so the campaign breaks the header plane while preserving the Static Bloom study foreground.
 - [x] Add an intentional route-transition treatment with reduced-motion fallback and complete responsive mobile polish across the new entry, account, studio, and storefront routes.
 - [x] Rate the pre-polish C✦SMO experience candidly across design, motion, messaging, flow, functionality, completeness, and realistic portfolio conversion before reporting the implementation outcome.
-- [ ] Validate the expanded C✦SMO entry, studio gate, account paths, appearance states, mobile layouts, transitions, TypeScript, tests, build, and GitHub synchronization after checkpointing.
+- [x] Validate the expanded C✦SMO entry, studio gate, account paths, appearance states, mobile layouts, transitions, TypeScript, tests, build, and GitHub synchronization after checkpointing.
