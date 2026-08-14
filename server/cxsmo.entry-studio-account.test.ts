@@ -41,6 +41,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(app).toContain('path="/cxsmo/account/saves"');
     expect(app).toContain('path="/cxsmo/account/activity"');
     expect(account).toContain('role="dialog"');
+    expect(account).toContain('event.key !== "Tab"');
+    expect(account).toContain('dialogRef.current?.querySelectorAll');
     expect(account).toContain("No password, personal data, or account record is sent anywhere.");
     expect(account).toContain("Nothing shipped.");
   });
