@@ -209,3 +209,4 @@
 - [x] Refine remaining light-mode route treatment, move the hero composition further left, reduce global custom-cursor scale, use the explainer-pop cue for zooming object hovers, and add a branded logo-star spin interaction.
 - [x] Reframe the C✦SMO player as a product-and-platform explainer with a longer held intro and only Exit visible during directed playback.
 - [x] Map the user-supplied explainer-pop audio to C✦SMO zooming object hover surfaces while preserving opt-in playback and cooldown safeguards.
+- [ ] Run and document a manual interaction QA pass for poster parallax, lookbook controls, product actions, hover/press cues, local account access, checkout-preview, studio actions, and the exit-only player sequence.
