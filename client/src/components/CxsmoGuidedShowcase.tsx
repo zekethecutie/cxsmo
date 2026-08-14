@@ -1,30 +1,55 @@
 import { ArrowRight, Pause, Play, RotateCcw, Sparkles, Volume2, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { Link } from "wouter";
-import { useCxsmoSound } from "@/contexts/CxsmoSoundContext";
-import "@/pages/cxsmo-showcase.css";
+import { createContext, ReactNode, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useLocation } from "wouter";
+import { useCxsmoSound, type CxsmoSoundCue } from "@/contexts/CxsmoSoundContext";
+import "@/pages/cxsmo-route-tour.css";
+import "@/pages/cxsmo-route-tour-intro.css";
 
-const chapters = [
-  { code: "01", eyebrow: "Signal in / brand system", title: ["C✦SMO", "IS NOT", "QUIET."], copy: "A future-pop identity built from compressed type, a four-point-star X, and a deliberate black, bone, and signal-red frequency.", route: "/cxsmo", action: "See the poster" },
-  { code: "02", eyebrow: "Objects, not templates", title: ["THE", "FIT", "HAS", "VOLUME."], copy: "Campaign layers, isolated fashion objects, and graphic product stages make editorial discovery feel tangible instead of generic.", route: "/cxsmo/shop", action: "Open objects" },
-  { code: "03", eyebrow: "Commerce / simulated honestly", title: ["LOCAL", "STATE.", "NO", "PRETEND."], copy: "Bag, profile, locale, map-preview, and checkout interactions demonstrate a considered flow while never claiming payment, orders, or personal-data collection.", route: "/cxsmo/checkout", action: "View checkout" },
-  { code: "04", eyebrow: "Operator mode / content system", title: ["SHAPE", "THE", "SIGNAL."], copy: "A studio workspace brings campaign media, hero copy, product presentation, and lookbook sequencing into a controlled operator surface.", route: "/cxsmo/admin?studio=Content", action: "Open studio" },
-  { code: "05", eyebrow: "Motion with an exit", title: ["BUILT", "TO BE", "FELT."], copy: "The system pairs deliberate animation, optional sound, theme shifts, keyboard controls, and reduced-motion fallbacks so the spectacle stays visitor-controlled.", route: "/cxsmo/support", action: "Read the system" },
-] as const;
+type TourScene = { code: string; route: string; eyebrow: string; title: string[]; copy: string; target: string; cursor: [number, number]; scrollY: number; cue: CxsmoSoundCue };
+const scenes: TourScene[] = [
+  { code: "00", route: "/cxsmo", eyebrow: "C✦SMO / signal in", title: ["C✦SMO", "IS NOT", "QUIET."], copy: "A black, bone, and signal-red identity builds from the first frame.", target: "POSTER HERO / BRAND BUILD", cursor: [64, 57], scrollY: 0, cue: "theme" },
+  { code: "01", route: "/cxsmo/shop", eyebrow: "Objects / catalogue scan", title: ["EIGHT", "OBJECTS.", "ONE", "PULSE."], copy: "The tour moves through real catalogue surfaces, focusing the product grid without claiming a live transaction.", target: "OBJECT GRID / CAMERA SCAN", cursor: [53, 62], scrollY: 260, cue: "shutter" },
+  { code: "02", route: "/cxsmo/products/gravity-01", eyebrow: "Product dossier / depth", title: ["A FIT", "WITH", "VOLUME."], copy: "A close crop frames product media, size controls, and the tactile information hierarchy.", target: "PRODUCT STAGE / DETAIL FRAME", cursor: [71, 58], scrollY: 0, cue: "chapter" },
+  { code: "03", route: "/cxsmo/edits", eyebrow: "Editorial motion / lookbook", title: ["WORN", "IN", "MOTION."], copy: "Editorial cards, carousels, and styling chapters turn objects into a visual language.", target: "LOOKBOOK / POSTER PAN", cursor: [58, 47], scrollY: 160, cue: "chapter" },
+  { code: "04", route: "/cxsmo/account", eyebrow: "Local profile / no fiction", title: ["YOUR", "SIGNAL,", "NOT A", "PROFILE."], copy: "Taste, fit, locale, and recommendations remain browser-local. Empty commerce states stay honest.", target: "ACCOUNT / LOCAL SIGNAL", cursor: [47, 55], scrollY: 240, cue: "success" },
+  { code: "05", route: "/cxsmo/checkout", eyebrow: "Checkout / clear boundary", title: ["STAGE", "THE", "FLOW."], copy: "Map preview, delivery hierarchy, and consent show a commerce flow without inventing a payment or order.", target: "CHECKOUT / CONSENT FRAME", cursor: [63, 48], scrollY: 0, cue: "click" },
+  { code: "06", route: "/cxsmo/admin", eyebrow: "Operator mode / studio", title: ["SHAPE", "EVERY", "SIGNAL."], copy: "Owner-controlled media, lookbook, promotion, and product-presentation systems prove the design is editable.", target: "STUDIO / CONTENT CANVAS", cursor: [73, 43], scrollY: 0, cue: "open" },
+  { code: "07", route: "/cxsmo", eyebrow: "C✦SMO / built to be felt", title: ["DIRECTED", "BY", "ZXKE."], copy: "Motion, optional sound, clear controls, and a visible exit turn the platform into a portfolio-grade demonstration.", target: "CLOSING SIGNAL / EXIT READY", cursor: [70, 29], scrollY: 0, cue: "finish" },
+];
 
-export function CxsmoShowcaseButton() {
-  const [open, setOpen] = useState(false);
-  const [chapter, setChapter] = useState(0);
+type TourContextValue = { start: () => void };
+const TourContext = createContext<TourContextValue | undefined>(undefined);
+
+export function CxsmoTourProvider({ children }: { children: ReactNode }) {
+  const [location, setLocation] = useLocation();
+  const [active, setActive] = useState(false);
+  const [sceneIndex, setSceneIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [intro, setIntro] = useState(false);
+  const [origin, setOrigin] = useState("/cxsmo");
   const closeRef = useRef<HTMLButtonElement>(null);
   const reducedMotion = useReducedMotion();
   const { enabled, play } = useCxsmoSound();
-  const close = () => { setOpen(false); setPlaying(false); };
-  const start = () => { setChapter(0); setOpen(true); setPlaying(reducedMotion !== true); play("launch"); };
-  const selectChapter = (next: number) => { setChapter(next); if (!reducedMotion) setPlaying(true); play("chapter"); };
-  useEffect(() => { if (!open) return; window.setTimeout(() => closeRef.current?.focus(), 0); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") close(); }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [open]);
-  useEffect(() => { if (!open || !playing || reducedMotion) return; const timeout = window.setTimeout(() => { if (chapter === chapters.length - 1) { setPlaying(false); play("finish"); } else { setChapter((current) => current + 1); play("chapter"); } }, 4400); return () => window.clearTimeout(timeout); }, [chapter, open, play, playing, reducedMotion]);
-  const current = chapters[chapter];
-  return <><button data-cxsmo-sound-silent className="cxsmo-showcase-launch" type="button" onClick={start}><Play size={14} fill="currentColor" /> Play C✦SMO</button><AnimatePresence>{open && <motion.section className="cxsmo-showcase" role="dialog" aria-modal="true" aria-label="C✦SMO guided portfolio showcase" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><div className="cxsmo-showcase__noise" aria-hidden="true" /><header><span>C✦SMO / PLAY MODE</span><div><span>{enabled ? <><Volume2 size={13} /> Optional sound</> : "Sound muted"}</span><button ref={closeRef} type="button" onClick={close} aria-label="Exit C✦SMO guided showcase"><X size={19} /> Exit</button></div></header><nav aria-label="Showcase chapter progress">{chapters.map((item, index) => <button key={item.code} type="button" className={index === chapter ? "is-active" : ""} onClick={() => selectChapter(index)} aria-current={index === chapter ? "step" : undefined}><span>{item.code}</span></button>)}</nav><AnimatePresence mode="wait"><motion.div className="cxsmo-showcase__chapter" key={current.code} initial={reducedMotion ? false : { opacity: 0, y: 34, rotate: .7 }} animate={{ opacity: 1, y: 0, rotate: 0 }} exit={reducedMotion ? {} : { opacity: 0, y: -24, rotate: -.5 }} transition={{ duration: .54, ease: [0.16, 1, .3, 1] }}><div className="cxsmo-showcase__index"><span>CHAPTER</span><b>{current.code}</b><i>✦</i></div><div className="cxsmo-showcase__copy"><p>{current.eyebrow}</p><h2>{current.title.map((line) => <span key={line}>{line}</span>)}</h2><article>{current.copy}</article><Link href={current.route} onClick={close}>{current.action} <ArrowRight size={15} /></Link></div><div className="cxsmo-showcase__annotation"><Sparkles size={16} /><p>Interactive portfolio edit</p><span>Watch the message. Control the pace. Exit any time.</span></div></motion.div></AnimatePresence><footer><div><button type="button" onClick={() => setPlaying(!playing)} disabled={reducedMotion === true}>{playing ? <><Pause size={14} /> Pause edit</> : <><Play size={14} /> {reducedMotion ? "Step through" : "Play edit"}</>}</button><button type="button" onClick={() => selectChapter(0)}><RotateCcw size={14} /> Restart</button></div><p>{reducedMotion ? "Reduced motion is active. Chapters remain manually controlled." : playing ? "Playing the C✦SMO showcase. Press Escape to exit." : "Paused. Select a chapter or press Play edit."}</p></footer></motion.section>}</AnimatePresence></>;
+  const scene = scenes[sceneIndex];
+  const goToScene = useCallback((next: number, shouldPlayCue = true) => {
+    const resolved = Math.max(0, Math.min(next, scenes.length - 1));
+    const nextScene = scenes[resolved];
+    setSceneIndex(resolved);
+    setLocation(nextScene.route);
+    window.setTimeout(() => window.scrollTo({ top: nextScene.scrollY, behavior: reducedMotion ? "auto" : "smooth" }), 100);
+    if (shouldPlayCue) window.setTimeout(() => play(nextScene.cue), 160);
+  }, [play, reducedMotion, setLocation]);
+  const start = useCallback(() => { setOrigin(location); setActive(true); setIntro(true); setPlaying(false); setLocation("/cxsmo"); window.scrollTo({ top: 0, behavior: "auto" }); play("launch"); }, [location, play, setLocation]);
+  const exit = useCallback(() => { setActive(false); setIntro(false); setPlaying(false); setLocation(origin); window.setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 0); }, [origin, setLocation]);
+  useEffect(() => { if (!active) return; document.documentElement.dataset.cxsmoTour = "active"; window.setTimeout(() => closeRef.current?.focus(), 0); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") exit(); }; window.addEventListener("keydown", escape); return () => { delete document.documentElement.dataset.cxsmoTour; window.removeEventListener("keydown", escape); }; }, [active, exit]);
+  useEffect(() => { if (!active || !playing || reducedMotion) return; const timeout = window.setTimeout(() => { if (sceneIndex === scenes.length - 1) setPlaying(false); else goToScene(sceneIndex + 1); }, 5600); return () => window.clearTimeout(timeout); }, [active, goToScene, playing, reducedMotion, sceneIndex]);
+  useEffect(() => { if (!active || !intro) return; const timeout = window.setTimeout(() => { setIntro(false); setPlaying(reducedMotion !== true); goToScene(0, false); play("replay"); }, reducedMotion ? 0 : 1850); return () => window.clearTimeout(timeout); }, [active, goToScene, intro, play, reducedMotion]);
+  return <TourContext.Provider value={{ start }}>{children}<AnimatePresence>{active && <motion.aside className="cxsmo-route-tour" role="dialog" aria-label="C✦SMO route-aware portfolio tour" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><div className="cxsmo-route-tour__wash" aria-hidden="true" /><div className="cxsmo-route-tour__corner cxsmo-route-tour__corner--a" aria-hidden="true" /><div className="cxsmo-route-tour__corner cxsmo-route-tour__corner--b" aria-hidden="true" /><header><span>{intro ? "C✦SMO / BRAND BUILD" : "C✦SMO / DIRECTED TOUR"}</span><div><span>{enabled ? <><Volume2 size={13} /> Sound on</> : "Sound muted"}</span><button ref={closeRef} type="button" onClick={exit}><X size={17} /> Exit</button></div></header><AnimatePresence mode="wait">{intro ? <motion.section className="cxsmo-route-tour__intro" key="intro" initial={reducedMotion ? false : { opacity: 0, scale: .93 }} animate={{ opacity: 1, scale: 1 }} exit={reducedMotion ? {} : { opacity: 0, scale: 1.08 }} transition={{ duration: .42, ease: [0.16, 1, .3, 1] }}><span>DESIGNED + DEVELOPED BY ZXKE</span><h2><i>C</i><b>✦</b><i>SMO</i></h2><p>Signal building / 01—08</p></motion.section> : <motion.section className="cxsmo-route-tour__scene" key={scene.code} initial={reducedMotion ? false : { opacity: 0, scale: 1.07, rotate: -.45 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} exit={reducedMotion ? {} : { opacity: 0, scale: .97, rotate: .35 }} transition={{ duration: .56, ease: [0.16, 1, .3, 1] }}><div className="cxsmo-route-tour__number">{scene.code}</div><div className="cxsmo-route-tour__copy"><p>{scene.eyebrow}</p><h2>{scene.title.map((line) => <span key={line}>{line}</span>)}</h2><article>{scene.copy}</article><small><Sparkles size={13} /> {scene.target}</small></div><div className="cxsmo-route-tour__focus" style={{ "--tour-x": `${scene.cursor[0]}%`, "--tour-y": `${scene.cursor[1]}%` } as React.CSSProperties}><i /><b>●</b><span>VISUAL CURSOR / DIRECTED ONLY</span></div></motion.section>}</AnimatePresence>{!intro && <><nav aria-label="Tour scenes">{scenes.map((item, index) => <button key={item.code} type="button" onClick={() => goToScene(index)} className={index === sceneIndex ? "is-active" : ""} aria-current={index === sceneIndex ? "step" : undefined}><span>{item.code}</span></button>)}</nav><footer><div><button type="button" onClick={() => setPlaying((value) => !value)} disabled={reducedMotion === true}>{playing ? <><Pause size={14} /> Pause directed play</> : <><Play size={14} /> {reducedMotion ? "Step scenes" : "Resume directed play"}</>}</button><button type="button" onClick={() => { play("replay"); goToScene(0, false); }}><RotateCcw size={14} /> Restart</button></div><p>{reducedMotion ? "Reduced motion is active. Move through scenes manually." : playing ? "Real portfolio routes are being presented. Escape exits immediately." : "Directed play paused. Choose any chapter to continue."}</p></footer></>}</motion.aside>}</AnimatePresence></TourContext.Provider>;
+}
+
+export function CxsmoShowcaseButton() {
+  const tour = useContext(TourContext);
+  if (!tour) throw new Error("CxsmoShowcaseButton must be used within CxsmoTourProvider");
+  return <button data-cxsmo-sound-silent className="cxsmo-showcase-launch" type="button" onClick={tour.start}><Play size={14} fill="currentColor" /> Play C✦SMO</button>;
 }

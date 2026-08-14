@@ -14,6 +14,7 @@ export type CxsmoHeroContent = {
 };
 
 export type CxsmoPromotionContent = { enabled: boolean; message: string };
+export type CxsmoGlobalContent = { notice: string; footerIntro: string; footerCredit: string };
 export type CxsmoLookbookCard = { tag: string; title: string; note: string; productId: string; tone: "red" | "bone" | "ink" };
 export type CxsmoProductOverride = Partial<Pick<CxsmoProduct, "name" | "description" | "image">>;
 
@@ -32,6 +33,11 @@ export const defaultCxsmoHero: CxsmoHeroContent = {
 export const defaultCxsmoPromotion: CxsmoPromotionContent = {
   enabled: false,
   message: "DROP 01 / THE AFTER-IMAGE IS LIVE — PORTFOLIO DEMONSTRATION ONLY",
+};
+export const defaultCxsmoGlobal: CxsmoGlobalContent = {
+  notice: "C✦SMO is a fictional fashion-commerce presentation, designed and developed by zxke. No payments or personal information are transmitted.",
+  footerIntro: "Future-pop wardrobe objects, fashioned as a portfolio demonstration.",
+  footerCredit: "Developed by zxke",
 };
 
 export const defaultCxsmoLookbook: CxsmoLookbookCard[] = [
@@ -57,6 +63,7 @@ export function useCxsmoPublishedContent() {
   return {
     hero: objectPayload(find("hero") ?? "", defaultCxsmoHero),
     promotion: objectPayload(find("promotion") ?? "", defaultCxsmoPromotion),
+    global: objectPayload(find("global") ?? "", defaultCxsmoGlobal),
     lookbook: lookbookPayload.cards,
     productOverrides,
     isLoading: contentQuery.isLoading,

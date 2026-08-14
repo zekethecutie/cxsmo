@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useRef, useState } from "react";
 
-export type CxsmoSoundCue = "open" | "click" | "success" | "theme" | "shutter" | "launch" | "chapter" | "finish";
+export type CxsmoSoundCue = "open" | "click" | "success" | "theme" | "shutter" | "launch" | "chapter" | "finish" | "nav" | "primary" | "select" | "treasure" | "lock" | "double" | "replay";
 type SoundContextValue = { enabled: boolean; toggle: () => void; play: (cue: CxsmoSoundCue) => void };
 
 const soundSources: Record<CxsmoSoundCue, string> = {
@@ -12,19 +12,26 @@ const soundSources: Record<CxsmoSoundCue, string> = {
   launch: "/manus-storage/mixkit-game-bonus-reached-2065_6a20f363.wav",
   chapter: "/manus-storage/mixkit-explainer-video-pops-whoosh-light-pop-3005_c618143d.wav",
   finish: "/manus-storage/mixkit-quick-win-video-game-notification-269_6c476a70.wav",
+  nav: "/manus-storage/mixkit-game-click-1114_ccfb20bb.wav",
+  primary: "/manus-storage/mixkit-hard-pop-click-2364_776e6480.wav",
+  select: "/manus-storage/mixkit-select-click-1109_176ff20b.wav",
+  treasure: "/manus-storage/mixkit-video-game-treasure-2066_800e9e65.wav",
+  lock: "/manus-storage/mixkit-computer-digital-lock-2859_6e99bea6.wav",
+  double: "/manus-storage/mixkit-fast-double-click-on-mouse-275_35c59510.wav",
+  replay: "/manus-storage/mixkit-bonus-earned-in-video-game-2058_6edf4d2a.wav",
 };
-const soundVolume: Record<CxsmoSoundCue, number> = { open: .18, click: .09, success: .15, theme: .18, shutter: .12, launch: .24, chapter: .14, finish: .18 };
+const soundVolume: Record<CxsmoSoundCue, number> = { open: .18, click: .09, success: .15, theme: .18, shutter: .12, launch: .24, chapter: .14, finish: .18, nav: .1, primary: .13, select: .1, treasure: .15, lock: .12, double: .08, replay: .18 };
 const soundStorageKey = "cxsmo-sound-enabled";
 const CxsmoSoundContext = createContext<SoundContextValue | undefined>(undefined);
 
 export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
-  const [enabled, setEnabled] = useState(() => window.localStorage.getItem(soundStorageKey) === "true");
+  const [enabled, setEnabled] = useState(() => { const stored = window.localStorage.getItem(soundStorageKey); return stored === null ? true : stored === "true"; });
   const enabledRef = useRef(enabled);
   const lastPlayed = useRef(0);
   useEffect(() => { enabledRef.current = enabled; window.localStorage.setItem(soundStorageKey, String(enabled)); }, [enabled]);
   const playRaw = useCallback((cue: CxsmoSoundCue) => {
     const now = Date.now();
-    if (cue === "click" && now - lastPlayed.current < 80) return;
+    if (["click", "nav", "select", "double"].includes(cue) && now - lastPlayed.current < 80) return;
     lastPlayed.current = now;
     const audio = new Audio(soundSources[cue]);
     audio.volume = soundVolume[cue];
@@ -36,10 +43,21 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
     const handlePointer = (event: PointerEvent) => {
       const element = event.target instanceof Element ? event.target.closest<HTMLElement>("button, a") : null;
       if (!element || element.closest("[data-cxsmo-sound-silent]")) return;
-      if (element.closest(".cxsmo-site")) play("click");
+      if (!element.closest(".cxsmo-site")) return;
+      const explicit = element.dataset.cxsmoSound as CxsmoSoundCue | undefined;
+      if (explicit && explicit in soundSources) { play(explicit); return; }
+      if (element.classList.contains("cxsmo-header__menu-trigger") || element.tagName === "A") { play("nav"); return; }
+      if (element.classList.contains("cxsmo-button") || element.classList.contains("poster-button")) { play("primary"); return; }
+      if (element.getAttribute("aria-label")?.toLowerCase().startsWith("save")) { play("treasure"); return; }
+      play("click");
+    };
+    const handleChange = (event: Event) => {
+      const element = event.target instanceof Element ? event.target : null;
+      if (element?.closest(".cxsmo-site") && (element.matches("select") || element.matches("input[type=checkbox],input[type=radio]"))) play("select");
     };
     document.addEventListener("pointerdown", handlePointer, { passive: true });
-    return () => document.removeEventListener("pointerdown", handlePointer);
+    document.addEventListener("change", handleChange, { passive: true });
+    return () => { document.removeEventListener("pointerdown", handlePointer); document.removeEventListener("change", handleChange); };
   }, [play]);
   return <CxsmoSoundContext.Provider value={{ enabled, toggle, play }}>{children}</CxsmoSoundContext.Provider>;
 }
