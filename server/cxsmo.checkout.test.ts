@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 const checkoutSource = readFileSync(resolve(process.cwd(), "client/src/components/CxsmoCheckoutSimulation.tsx"), "utf8");
 const demoSource = readFileSync(resolve(process.cwd(), "client/src/contexts/CxsmoDemoContext.tsx"), "utf8");
 const appSource = readFileSync(resolve(process.cwd(), "client/src/App.tsx"), "utf8");
+const promotionPopupSource = readFileSync(resolve(process.cwd(), "client/src/components/CxsmoPromotionPopup.tsx"), "utf8");
 
 describe("C✦SMO locale and checkout simulation", () => {
   it("keeps the delivery map as a browser-only preview with an explicit staged-state boundary", () => {
@@ -27,5 +28,15 @@ describe("C✦SMO locale and checkout simulation", () => {
 
   it("keeps the legal-information routes publicly registered", () => {
     ["/cxsmo/legal", "/cxsmo/privacy", "/cxsmo/terms", "/cxsmo/disclosure"].forEach((path) => expect(appSource).toContain(`path="${path}"`));
+  });
+
+  it("keeps the owner-controlled promotion popup focus-trapped and browser-dismissible", () => {
+    expect(promotionPopupSource).toContain('role="dialog"');
+    expect(promotionPopupSource).toContain('aria-modal="true"');
+    expect(promotionPopupSource).toContain('event.key === "Escape"');
+    expect(promotionPopupSource).toContain('event.key !== "Tab"');
+    expect(promotionPopupSource).toContain('document.body.style.overflow = "hidden"');
+    expect(promotionPopupSource).toContain('previous?.isConnected');
+    expect(promotionPopupSource).toContain('window.sessionStorage.setItem(key, "true")');
   });
 });

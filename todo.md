@@ -198,3 +198,4 @@
 - [x] Fix the C✦SMO guided-player Information Desk scene so it links to an active public route instead of returning a 404, then protect that mapping with a regression check.
 - [x] Extend the supplied C✦SMO custom cursor to fine-pointer storefront interaction while preserving native cursors for touch, forms, keyboard use, and reduced-motion preferences.
 - [x] Refine C✦SMO navigation disclosure semantics, focus return, and regression coverage while retaining its animated visual language and reduced-motion behavior.
+- [x] Add focus-trapping, Escape dismissal, and restoration-safe lifecycle behavior to the owner-controlled C✦SMO promotion popup, then protect it with regression coverage.
