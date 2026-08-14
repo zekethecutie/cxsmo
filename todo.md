@@ -234,3 +234,15 @@
 - [x] Remove decorative sparkle-style text glyphs from active C✦SMO copy and retain only the intentional four-point brand-star mark where semantically required.
 - [x] Recalibrate the C✦SMO custom cursor for dependable display, smaller scale, quicker placement, appropriate interaction-target alignment, and reduced-motion-safe fallback.
 - [x] Audit and validate the corrected C✦SMO toolbar, hero layers, root landing, cursor, light/dark desktop and mobile states, tests, production build, and GitHub synchronization before checkpointing.
+
+- [ ] Add a visible, reduced-motion-safe route-transition treatment to the C✦SMO pre-store landing and route changes.
+- [ ] Recenter the `/` C✦SMO mark as the dominant visual, simplify the animated BLXCK UNIV3RSE object staging, and add restrained gradient and blurred dark depth without clutter.
+- [ ] Keep the `/cxsmo` Navigate menu and all header controls above the hero stacking context while allowing only the intended transparent campaign image edge to cross the toolbar plane.
+- [ ] Repair the custom cursor so it remains viewport-anchored during scroll and matches pointer coordinates without lag or drift.
+- [ ] Increase dark-mode C✦SMO brand-word emphasis with controlled gradient/light treatment while preserving the quieter light-mode bridge.
+- [ ] Validate the new motion, menu stacking, campaign face clearance, cursor anchoring, dark/light desktop and mobile states, tests, build, checkpoint, and GitHub synchronization.
+
+- [ ] Audit the supplied editorial-poster direction against the current C✦SMO landing and document concrete hierarchy, spacing, typography, depth, motion, and clutter corrections.
+- [ ] Resolve all remaining C✦SMO interface defects found during the audit, including missing landing transitions, hero/menu overlap, campaign-face occlusion, cursor anchoring, dark-mode brand emphasis, and mobile layout regressions.
+- [ ] Recompose the `/` landing using the poster references as an original C✦SMO direction with a centered focal mark, restrained metadata, clean brutalist framing, and only purposeful animated objects.
+- [ ] Validate the complete C✦SMO visual audit across dark/light desktop/mobile states, interaction contracts, tests, build, tracker, checkpoint, and GitHub synchronization.
