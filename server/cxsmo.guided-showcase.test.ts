@@ -8,6 +8,7 @@ const tourStyleSource = readFileSync(resolve(process.cwd(), "client/src/pages/cx
 const introStyleSource = readFileSync(resolve(process.cwd(), "client/src/pages/cxsmo-route-tour-intro.css"), "utf8");
 const globalCursorSource = readFileSync(resolve(process.cwd(), "client/src/components/CxsmoCustomCursor.tsx"), "utf8");
 const globalCursorStyle = readFileSync(resolve(process.cwd(), "client/src/pages/cxsmo-custom-cursor.css"), "utf8");
+const storefrontSource = readFileSync(resolve(process.cwd(), "client/src/pages/CxsmoStorefront.tsx"), "utf8");
 
 describe("C✦SMO guided player", () => {
   it("keeps the custom cursor and expanded ten-shot portfolio sequence", () => {
@@ -52,5 +53,16 @@ describe("C✦SMO guided player", () => {
     expect(globalCursorStyle).toContain('cursor:text');
     expect(globalCursorStyle).toContain('html[data-cxsmo-tour="active"] .cxsmo-global-cursor');
     expect(globalCursorStyle).toContain('@media (prefers-reduced-motion:reduce),(hover:none),(pointer:coarse)');
+  });
+
+  it("keeps the animated navigation as an accessible disclosure menu", () => {
+    expect(storefrontSource).toContain('aria-haspopup="menu"');
+    expect(storefrontSource).toContain('role="menu"');
+    expect(storefrontSource).toContain('role="menuitem"');
+    expect(storefrontSource).toContain('event.key === "ArrowDown"');
+    expect(storefrontSource).toContain('event.key === "ArrowUp"');
+    expect(storefrontSource).toContain('event.key === "Home"');
+    expect(storefrontSource).toContain('event.key === "End"');
+    expect(storefrontSource).toContain('closeAndRestoreFocus');
   });
 });

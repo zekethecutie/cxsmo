@@ -49,16 +49,28 @@ function CxsmoMenu() {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const links = [["Shop", "/cxsmo/shop", "01"], ["Fit edits", "/cxsmo/edits", "02"], ["Information", "/cxsmo/support", "03"], ["Studio", "/cxsmo/admin", "04"]] as const;
+  const menuItems = () => Array.from(panelRef.current?.querySelectorAll<HTMLAnchorElement>("a[role=menuitem]") ?? []);
+  const closeAndRestoreFocus = () => { setOpen(false); window.requestAnimationFrame(() => triggerRef.current?.focus()); };
+  const openAndFocus = (position: "first" | "last") => { setOpen(true); window.requestAnimationFrame(() => { const items = menuItems(); (position === "first" ? items[0] : items.at(-1))?.focus(); }); };
   useEffect(() => {
     if (!open) return;
     const dismissOnPointer = (event: PointerEvent) => { if (!panelRef.current?.contains(event.target as Node) && !triggerRef.current?.contains(event.target as Node)) setOpen(false); };
-    const dismissOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") { setOpen(false); triggerRef.current?.focus(); } };
+    const dismissOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") { event.preventDefault(); closeAndRestoreFocus(); } };
     window.addEventListener("pointerdown", dismissOnPointer);
     window.addEventListener("keydown", dismissOnEscape);
     return () => { window.removeEventListener("pointerdown", dismissOnPointer); window.removeEventListener("keydown", dismissOnEscape); };
   }, [open]);
-  const openFromKeyboard = (event: React.KeyboardEvent<HTMLButtonElement>) => { if (event.key === "ArrowDown") { event.preventDefault(); setOpen(true); window.requestAnimationFrame(() => panelRef.current?.querySelector<HTMLAnchorElement>("a")?.focus()); } };
-  return <nav className="cxsmo-header__menu" aria-label="Main navigation"><button ref={triggerRef} className="cxsmo-header__menu-trigger" type="button" aria-expanded={open} aria-controls="cxsmo-main-menu" onClick={() => setOpen(!open)} onKeyDown={openFromKeyboard}>Navigate <span aria-hidden="true">{open ? "−" : "+"}</span></button><AnimatePresence>{open && <motion.div ref={panelRef} id="cxsmo-main-menu" className="cxsmo-header__menu-panel" initial={{ opacity: 0, y: -10, scale: .97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -8, scale: .98 }} transition={{ duration: .23, ease }}>{links.map(([label, href, number], index) => <motion.div key={href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * .045, duration: .2, ease }}><Link href={href} onClick={() => { setOpen(false); triggerRef.current?.focus(); }}><span>{number}</span>{label}<ArrowUpRight size={14} /></Link></motion.div>)}</motion.div>}</AnimatePresence></nav>;
+  const onTriggerKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => { if (event.key === "ArrowDown") { event.preventDefault(); openAndFocus("first"); } if (event.key === "ArrowUp") { event.preventDefault(); openAndFocus("last"); } };
+  const onMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const items = menuItems();
+    const current = items.findIndex((item) => item === document.activeElement);
+    if (!items.length) return;
+    if (event.key === "Escape") { event.preventDefault(); closeAndRestoreFocus(); return; }
+    if (event.key === "Home") { event.preventDefault(); items[0]?.focus(); return; }
+    if (event.key === "End") { event.preventDefault(); items.at(-1)?.focus(); return; }
+    if (["ArrowDown", "ArrowUp"].includes(event.key)) { event.preventDefault(); const direction = event.key === "ArrowDown" ? 1 : -1; items[(current + direction + items.length) % items.length]?.focus(); }
+  };
+  return <nav className="cxsmo-header__menu" aria-label="Main navigation"><button ref={triggerRef} className="cxsmo-header__menu-trigger" type="button" aria-expanded={open} aria-haspopup="menu" aria-controls="cxsmo-main-menu" onClick={() => setOpen((current) => !current)} onKeyDown={onTriggerKeyDown}>Navigate <span aria-hidden="true">{open ? "−" : "+"}</span></button><AnimatePresence>{open && <motion.div ref={panelRef} id="cxsmo-main-menu" role="menu" aria-label="C✦SMO destinations" className="cxsmo-header__menu-panel" initial={{ opacity: 0, y: -10, scale: .97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -8, scale: .98 }} transition={{ duration: .23, ease }} onKeyDown={onMenuKeyDown}>{links.map(([label, href, number], index) => <motion.div role="none" key={href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * .045, duration: .2, ease }}><Link role="menuitem" href={href} onClick={() => setOpen(false)}><span>{number}</span>{label}<ArrowUpRight size={14} /></Link></motion.div>)}</motion.div>}</AnimatePresence></nav>;
 }
 
 function ProductMediaStage({ product }: { product: CxsmoProduct }) {
