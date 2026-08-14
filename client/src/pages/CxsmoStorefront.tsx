@@ -27,6 +27,7 @@ import "./cxsmo-interaction-upgrade.css";
 import "./cxsmo-account-settings.css";
 import "./cxsmo-content-overrides.css";
 import "./cxsmo-legal-editorial.css";
+import "./cxsmo-morphographic.css";
 
 const heroImage = "/manus-storage/cxsmo-hero-v2_cadfe55c.jpg";
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -66,6 +67,10 @@ function ProductMediaStage({ product }: { product: CxsmoProduct }) {
 function TextReveal({ text }: { text: string }) {
   const words = text.split(" ");
   return <span className="cxsmo-reveal" aria-label={text}>{words.map((word, index) => <motion.span key={`${word}-${index}`} initial={{ y: "115%", opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true, amount: .55 }} transition={{ duration: .34, delay: index * .055, ease }}>{word}{index < words.length - 1 ? " " : ""}</motion.span>)}</span>;
+}
+
+function MorphographicWord({ text }: { text: string }) {
+  return <em className="cxsmo-morphographic" aria-label={text}>{Array.from(text).map((letter, index) => <span aria-hidden="true" key={`${letter}-${index}`} style={{ "--morph-index": index } as CSSProperties}>{letter === " " ? " " : letter}</span>)}</em>;
 }
 
 export function ProductCard({ product, order = "01" }: { product: CxsmoProduct; order?: string }) {
@@ -125,7 +130,7 @@ export function CxsmoSupportPage() {
     ["returns", "Returns and exchanges", "A live policy requires retailer-approved conditions. This portfolio experience intentionally does not invent terms."],
     ["contact", "Contact the studio", "A production build can connect a protected support channel. No customer messages are collected here."],
   ];
-  return <CxsmoShell><section className="cxsmo-page-intro cxsmo-page-intro--compact"><p className="section-label">Information desk</p><h1><TextReveal text="Need a" /><br /><em>little clarity?</em></h1><p>Product and service information should feel as considered as the clothes.</p></section><section className="cxsmo-info-list">{items.map(([id, title, body], index) => <article className={open === id ? "is-open" : ""} key={id}><button aria-expanded={open === id} onClick={() => setOpen(open === id ? "" : id)}><span>0{index + 1}</span><b>{title}</b><Plus size={20} /></button><AnimatePresence>{open === id && <motion.div className="cxsmo-info-answer" initial={{ height: 0, opacity: 0, y: -8 }} animate={{ height: "auto", opacity: 1, y: 0 }} exit={{ height: 0, opacity: 0, y: -8 }} transition={{ duration: .25, ease }}><p>{body}</p></motion.div>}</AnimatePresence></article>)}</section></CxsmoShell>;
+  return <CxsmoShell><section className="cxsmo-page-intro cxsmo-page-intro--compact"><p className="section-label">Information desk</p><h1><TextReveal text="Need a" /><br /><MorphographicWord text="little clarity?" /></h1><p>Product and service information should feel as considered as the clothes.</p></section><section className="cxsmo-info-list">{items.map(([id, title, body], index) => <article className={open === id ? "is-open" : ""} key={id}><button aria-expanded={open === id} onClick={() => setOpen(open === id ? "" : id)}><span>0{index + 1}</span><b>{title}</b><Plus size={20} /></button><AnimatePresence>{open === id && <motion.div className="cxsmo-info-answer" initial={{ height: 0, opacity: 0, y: -8 }} animate={{ height: "auto", opacity: 1, y: 0 }} exit={{ height: 0, opacity: 0, y: -8 }} transition={{ duration: .25, ease }}><p>{body}</p></motion.div>}</AnimatePresence></article>)}</section></CxsmoShell>;
 }
 
 export function CxsmoAccountPage() { return <CxsmoShell><CxsmoAccountPanel /></CxsmoShell>; }
