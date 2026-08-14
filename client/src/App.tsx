@@ -7,9 +7,10 @@ import { CartProvider } from "./contexts/CartContext";
 import { CxsmoDemoProvider } from "./contexts/CxsmoDemoContext";
 import { KinformDemoProvider } from "./contexts/KinformDemoContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { CxsmoSoundProvider } from "./contexts/CxsmoSoundContext";
 import Home from "./pages/Home";
 import { CxsmoAdminPage } from "./pages/CxsmoAdminPage";
-import { CxsmoAccountPage, CxsmoBagPage, CxsmoCheckoutPage, CxsmoEditsPage, CxsmoHomePage, CxsmoLegalPage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage } from "./pages/CxsmoStorefront";
+import { CxsmoAccountPage, CxsmoBagPage, CxsmoCheckoutPage, CxsmoDisclosurePage, CxsmoEditsPage, CxsmoHomePage, CxsmoLegalPage, CxsmoPrivacyPage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage, CxsmoTermsPage } from "./pages/CxsmoStorefront";
 import { CxsmoPosterHome } from "./pages/CxsmoPosterHome";
 import { KinformAdminPage } from "./pages/KinformAdminPage";
 import { KinformAccountPage, KinformBagPage, KinformCollectionPage, KinformInventoryPage, KinformJournalEntryPage, KinformJournalPage, KinformProductPage, KinformSupportPage } from "./pages/KinformPages";
@@ -30,6 +31,9 @@ function Router() {
       <Route path="/cxsmo/bag" component={CxsmoBagPage} />
       <Route path="/cxsmo/checkout" component={CxsmoCheckoutPage} />
       <Route path="/cxsmo/legal" component={CxsmoLegalPage} />
+      <Route path="/cxsmo/privacy" component={CxsmoPrivacyPage} />
+      <Route path="/cxsmo/terms" component={CxsmoTermsPage} />
+      <Route path="/cxsmo/disclosure" component={CxsmoDisclosurePage} />
       <Route path="/cxsmo/admin" component={CxsmoAdminPage} />
       <Route path="/kinform" component={Home} />
       <Route path="/kinform/collection" component={KinformCollectionPage} />
@@ -51,6 +55,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark" switchable>
+        <CxsmoSoundProvider>
         <TooltipProvider>
           <CartProvider>
             <CxsmoDemoProvider>
@@ -61,6 +66,7 @@ function App() {
             </CxsmoDemoProvider>
           </CartProvider>
         </TooltipProvider>
+        </CxsmoSoundProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
