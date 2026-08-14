@@ -166,7 +166,7 @@
 - [x] Use every supplied C✦SMO sound effect in a deliberate, distinct, opt-in interaction or tour moment, without autoplay or repetitive generic clicks.
 - [x] Refine the C✦SMO privacy, terms, and portfolio-disclosure pages with stronger poster composition, interactive section navigation, motion feedback, and preserved legal clarity.
 - [x] Remove public KINFORM routes and legacy imports from the active C✦SMO application router without deleting reusable historical source files.
-- [ ] Complete a route-by-route C✦SMO design audit covering the storefront, studio, legal, account, checkout, parallax, typography, motion, and accessibility surfaces.
+- [x] Complete a route-by-route C✦SMO design audit covering the storefront, studio, legal, account, checkout, parallax, typography, motion, and accessibility surfaces.
 - [x] Add an owner-controlled, dismissible C✦SMO promotional popup that reuses the existing published campaign message and preserves the fictional-commerce boundary.
 - [x] Register and use the supplied transparent one-man/two-women C✦SMO hero asset, replacing the older full-background campaign image throughout the public hero.
 - [ ] Replace the Starlight Moto Shell and Static Bloom Lip Glaze mockups with the newly supplied transparent approved product renders.
