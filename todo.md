@@ -87,7 +87,7 @@
 - [x] Add a user-controlled appearance setting with a polished theme transition and persistent preference for C✦SMO.
 - [x] Add the creator credit “Developed by zxke” to the C✦SMO footer and confirm it remains visible across public routes.
 - [ ] Validate the expanded C✦SMO poster interactions, dark-mode setting, responsive layouts, TypeScript, focused tests, and production build before saving the next checkpoint.
-- [ ] Verify the C✦SMO appearance setting in dark and light modes and record route-level results.
+- [x] Verify the C✦SMO appearance setting in dark and light modes and record route-level results.
 - [ ] Run and document a direct interaction QA pass for poster parallax, scroll-led surfaces, product controls, and studio actions.
 - [x] Define an original C✦SMO visual brief for dynamic East-Asian streetwear fit shoots, transparent garment mockups, graphic poster crops, and an upgraded hero without copying the supplied references or depicting identifiable people from them.
 - [x] Generate and integrate distinct original C✦SMO visual assets: an upgraded hero, multiple full-body fit-shoot compositions, transparent-background garment renders, and product-level mockups.
@@ -134,7 +134,7 @@
 - [x] Correct C✦SMO information-desk active-state contrast in both themes so the open row’s title, label, icon, and answer stay readable.
 - [ ] Simplify the C✦SMO hero to one primary transparent fashion object, clearer negative space, and fewer competing background layers.
 - [ ] Replace pointer-driven hero movement with deliberate scroll-linked parallax and retain a static reduced-motion fallback.
-- [ ] Update the C✦SMO topbar to identify the fictional portfolio demonstration as designed and developed by zxke while retaining the non-payment and privacy boundary.
+- [x] Update the C✦SMO topbar to identify the fictional portfolio demonstration as designed and developed by zxke while retaining the non-payment and privacy boundary.
 - [ ] Add controlled CSS drop-shadow and poster-layer separation to C✦SMO mockups where it improves legibility and depth without visual clutter.
 
 - [ ] Rework the C✦SMO hero into a cleaner scroll-led hierarchy with one focal object, gradient headline treatment, restrained shadows, and distinct scroll rates for background, object, type, and divider.
@@ -167,5 +167,6 @@
 - [x] Refine the C✦SMO privacy, terms, and portfolio-disclosure pages with stronger poster composition, interactive section navigation, motion feedback, and preserved legal clarity.
 - [x] Remove public KINFORM routes and legacy imports from the active C✦SMO application router without deleting reusable historical source files.
 - [ ] Complete a route-by-route C✦SMO design audit covering the storefront, studio, legal, account, checkout, parallax, typography, motion, and accessibility surfaces.
+- [x] Add an owner-controlled, dismissible C✦SMO promotional popup that reuses the existing published campaign message and preserves the fictional-commerce boundary.
 - [x] Add a browser-local saved-recommendations flow that lets visitors explicitly keep or remove recommendation-driven objects separately from the general save list.
 - [x] Add a distinct pre-tour C✦SMO brand-build intro scene that constructs the mark before the visitor-started route tour begins.
