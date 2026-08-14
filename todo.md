@@ -159,7 +159,7 @@
 - [x] Redesign the C✦SMO appearance transition around a more deliberate brand-level scene change with a clear reduced-motion fallback.
 - [x] Build a footer-launched C✦SMO guided showcase that uses optional sound, mograph-style overlays, contextual tooltips, visible progress, pause/exit controls, and never simulates user input or actions on behalf of visitors.
 - [x] Create an animated C✦SMO brand-build introduction within the guided showcase using the supplied game-bonus sound only after an explicit user gesture.
-- [ ] Locate and wire the correct newer transparent campaign asset featuring one man and two women into the public C✦SMO hero, replacing the outdated full-background group image.
+- [x] Locate and wire the correct newer transparent campaign asset featuring one man and two women into the public C✦SMO hero, replacing the outdated full-background group image.
 - [ ] Import the canvas-approved transparent C✦SMO hero and product-cutout assets once exported into the project workspace, then update all affected catalogue and poster assignments.
 - [ ] Reconcile every remaining C✦SMO-specific requirement in the task tracker, separating only genuine external blockers from implementation work that can be completed in the current project.
 - [x] Replace the current overlay-only showcase with a visitor-started, route-aware C✦SMO motion-graphics tour that demonstrates actual public and studio interfaces through controlled navigation, visual cursor choreography, camera-like scene transitions, and pause or exit controls.
@@ -168,5 +168,11 @@
 - [x] Remove public KINFORM routes and legacy imports from the active C✦SMO application router without deleting reusable historical source files.
 - [ ] Complete a route-by-route C✦SMO design audit covering the storefront, studio, legal, account, checkout, parallax, typography, motion, and accessibility surfaces.
 - [x] Add an owner-controlled, dismissible C✦SMO promotional popup that reuses the existing published campaign message and preserves the fictional-commerce boundary.
+- [x] Register and use the supplied transparent one-man/two-women C✦SMO hero asset, replacing the older full-background campaign image throughout the public hero.
+- [ ] Replace the Starlight Moto Shell and Static Bloom Lip Glaze mockups with the newly supplied transparent approved product renders.
+- [x] Add the supplied Bluestar C✦SMO Jersey, BLXCK UNIV3RSE Pants, and two BLXCK UNIV3RSE Longsleeve variations as new fictional C✦SMO catalogue objects with clear portfolio-safe product context.
+- [x] Rebuild the object-led lookbook into a timed three-second product-only morph sequence that retains persistent editorial context rather than moving or remounting the entire section on scroll.
+- [x] Extend C✦SMO’s optional sound system to provide subtle, varied hover cues on appropriate interactive controls without playback storms or autoplay.
+- [x] Replace the current appearance change effect with a coherent C✦SMO scene-blend transition that feels intentional in both directions and preserves a reduced-motion fallback.
 - [x] Add a browser-local saved-recommendations flow that lets visitors explicitly keep or remove recommendation-driven objects separately from the general save list.
 - [x] Add a distinct pre-tour C✦SMO brand-build intro scene that constructs the mark before the visitor-started route tour begins.

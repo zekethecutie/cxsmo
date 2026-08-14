@@ -16,3 +16,8 @@ The following original C✦SMO assets are generated for this portfolio’s ficti
 | Tread Phase Sneaker | `/manus-storage/cxsmo-tread-sneaker-v2_3da5c5ee.png` | Transparent catalogue object render |
 | Static Bloom Lip Glaze | `/manus-storage/cxsmo-static-lip-glaze-v2_2fa824b0.png` | Transparent catalogue beauty-object render |
 | Transit Camera Bag | `/manus-storage/cxsmo-transit-bag-v2_fffacd6e.png` | Transparent catalogue lifestyle-object render |
+| One-man/two-women campaign hero | `/manus-storage/cxsmo-hero-one-man-two-women_f25e55a6.webp` | Updated root poster hero and worn-context reference; user-supplied approved asset |
+| Bluestar C✦SMO Jersey | `/manus-storage/cxsmo-bluestar-jersey_1762d5e8.png` | New transparent catalogue object; user-supplied approved asset |
+| BLXCK UNIV3RSE Longsleeve / Simple | `/manus-storage/cxsmo-blxck-universe-longsleeve-simple_131cb472.png` | New transparent catalogue object; user-supplied approved asset |
+| BLXCK UNIV3RSE Pants | `/manus-storage/cxsmo-blxck-universe-pants_bdd10130.png` | New transparent catalogue object; user-supplied approved asset |
+| BLXCK UNIV3RSE Longsleeve / Heavy | `/manus-storage/cxsmo-blxck-universe-longsleeve-heavy_5b6f6634.png` | New transparent catalogue object; user-supplied approved asset |
