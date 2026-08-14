@@ -194,3 +194,5 @@
 - [x] Add an explicit optional hover cue to object and mockup surfaces that visually zoom, including the Worn in Motion lookbook cards.
 - [x] Shift the transparent C✦SMO campaign hero further left and correct Play C✦SMO contrast in dark appearance mode.
 - [x] Expand the C✦SMO guided player with additional focused route scenes before the final brand outro, while preserving its cursor-led motion, copy clarity, and reduced-motion control path.
+- [x] Add regression coverage for the C✦SMO guided-player’s custom cursor, expanded scene sequence, simplified controls, focus/scroll safeguards, and reduced-motion path.
+- [x] Fix the C✦SMO guided-player Information Desk scene so it links to an active public route instead of returning a 404, then protect that mapping with a regression check.
