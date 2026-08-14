@@ -6,6 +6,7 @@ interface ThemeContextType {
   theme: Theme;
   toggleTheme?: () => void;
   switchable: boolean;
+  isTransitioning: boolean;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -21,8 +22,11 @@ export function ThemeProvider({
   defaultTheme = "light",
   switchable = false,
 }: ThemeProviderProps) {
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [theme, setTheme] = useState<Theme>(() => {
     if (switchable) {
+      const previewTheme = new URLSearchParams(window.location.search).get("appearance");
+      if (previewTheme === "dark" || previewTheme === "light") return previewTheme;
       const stored = localStorage.getItem("theme");
       return (stored as Theme) || defaultTheme;
     }
@@ -44,12 +48,14 @@ export function ThemeProvider({
 
   const toggleTheme = switchable
     ? () => {
+        setIsTransitioning(true);
         setTheme(prev => (prev === "light" ? "dark" : "light"));
+        window.setTimeout(() => setIsTransitioning(false), 760);
       }
     : undefined;
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, switchable }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, switchable, isTransitioning }}>
       {children}
     </ThemeContext.Provider>
   );

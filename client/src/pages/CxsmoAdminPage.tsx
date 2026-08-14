@@ -1,11 +1,13 @@
 import { useMemo, useState } from "react";
 import { Archive, ArrowUpRight, BarChart3, Boxes, ChevronRight, ClipboardList, CreditCard, FileText, Layers3, LayoutTemplate, MapPinned, Menu, PackageCheck, Pencil, Plus, Search, Settings2, ShoppingBag, Sparkles, Truck, UserRound, X } from "lucide-react";
 import { CxsmoMark } from "@/components/CxsmoMark";
+import { CxsmoStudioContentPanel } from "@/components/CxsmoStudioContentPanel";
 import { cxsmoProducts, formatCxsmoPrice } from "@/lib/cxsmo";
 import "./cxsmo-admin.css";
 import "./cxsmo-admin-variants.css";
 import "./cxsmo-admin-poster.css";
 import "./cxsmo-admin-quickbar.css";
+import "./cxsmo-admin-cms.css";
 
 type Module = "Overview" | "Products" | "Categories" | "Inventory" | "Orders" | "POS" | "Shipping" | "Customers" | "Content" | "Reports";
 const modules: { name: Module; icon: typeof Layers3 }[] = [
@@ -20,7 +22,10 @@ function EmptyLiveData({ title, detail }: { title: string; detail: string }) {
 }
 
 export function CxsmoAdminPage() {
-  const [active, setActive] = useState<Module>("Overview");
+  const [active, setActive] = useState<Module>(() => {
+    const requested = new URLSearchParams(window.location.search).get("studio");
+    return modules.some((module) => module.name === requested) ? requested as Module : "Overview";
+  });
   const [menuOpen, setMenuOpen] = useState(false);
   const [categories, setCategories] = useState(initialCategories);
   const [newCategory, setNewCategory] = useState("");
@@ -32,7 +37,7 @@ export function CxsmoAdminPage() {
   const addCategory = () => { const name = newCategory.trim(); if (!name || categories.some((item) => item.toLowerCase() === name.toLowerCase())) return; setCategories((items) => [...items, name]); setNewCategory(""); };
   const addPosLine = (id: string) => setPosLines((items) => [...items, id]);
 
-  return <div className="cx-admin"><aside className={menuOpen ? "cx-admin__side is-open" : "cx-admin__side"}><div className="cx-admin__side-head"><CxsmoMark inverse /><button aria-label="Close studio navigation" onClick={() => setMenuOpen(false)}><X size={19} /></button></div><p className="cx-admin__side-label">Studio operations / demo</p><nav>{modules.map(({ name, icon: Icon }) => <button className={active === name ? "is-active" : ""} onClick={() => { setActive(name); setMenuOpen(false); }} key={name}><Icon size={17} /><span>{name}</span>{active === name && <ChevronRight size={14} />}</button>)}</nav><div className="cx-admin__side-foot"><span>Demo mode</span><p>Fictional product and allocation data. No customer, payment, order, or shipment data is connected.</p><a href="/cxsmo">View storefront <ArrowUpRight size={14} /></a></div></aside><main className="cx-admin__main"><header className="cx-admin__header"><button className="cx-admin__menu" onClick={() => setMenuOpen(true)} aria-label="Open studio navigation"><Menu size={20} /></button><div><p>Studio / {active}</p><h1>{active}</h1></div><div className="cx-admin__header-actions"><button><Search size={17} /><span>Search</span></button><button className="cx-admin__avatar" aria-label="Portfolio operator">C</button></div></header><div className="cx-admin__notice"><Sparkles size={15} /><p><b>Portfolio operations preview.</b> Interactions below demonstrate information architecture only; they do not create live store records.</p></div>{active === "Overview" && <Overview setActive={setActive} />}{active === "Products" && <Products />}{active === "Categories" && <Categories categories={categories} newCategory={newCategory} setNewCategory={setNewCategory} addCategory={addCategory} />}{active === "Inventory" && <Inventory inventory={inventory} setInventory={setInventory} />}{active === "Orders" && <Orders />}{active === "POS" && <PointOfSale posLines={posLines} posTotal={posTotal} addPosLine={addPosLine} removeLine={(index) => setPosLines((items) => items.filter((_, itemIndex) => itemIndex !== index))} clear={() => setPosLines([])} />}{active === "Shipping" && <Shipping />}{active === "Customers" && <Customers />}{active === "Content" && <Content published={contentPublished} setPublished={setContentPublished} />}{active === "Reports" && <Reports />}</main></div>;
+  return <div className="cx-admin"><aside className={menuOpen ? "cx-admin__side is-open" : "cx-admin__side"}><div className="cx-admin__side-head"><CxsmoMark inverse /><button aria-label="Close studio navigation" onClick={() => setMenuOpen(false)}><X size={19} /></button></div><p className="cx-admin__side-label">Studio operations / demo</p><nav>{modules.map(({ name, icon: Icon }) => <button className={active === name ? "is-active" : ""} onClick={() => { setActive(name); setMenuOpen(false); }} key={name}><Icon size={17} /><span>{name}</span>{active === name && <ChevronRight size={14} />}</button>)}</nav><div className="cx-admin__side-foot"><span>Demo mode</span><p>Fictional product and allocation data. No customer, payment, order, or shipment data is connected.</p><a href="/cxsmo">View storefront <ArrowUpRight size={14} /></a></div></aside><main className="cx-admin__main"><header className="cx-admin__header"><button className="cx-admin__menu" onClick={() => setMenuOpen(true)} aria-label="Open studio navigation"><Menu size={20} /></button><div><p>Studio / {active}</p><h1>{active}</h1></div><div className="cx-admin__header-actions"><button><Search size={17} /><span>Search</span></button><button className="cx-admin__avatar" aria-label="Portfolio operator">C</button></div></header><div className="cx-admin__notice"><Sparkles size={15} /><p><b>Portfolio operations preview.</b> Interactions below demonstrate information architecture only; they do not create live store records.</p></div>{active === "Overview" && <Overview setActive={setActive} />}{active === "Products" && <Products />}{active === "Categories" && <Categories categories={categories} newCategory={newCategory} setNewCategory={setNewCategory} addCategory={addCategory} />}{active === "Inventory" && <Inventory inventory={inventory} setInventory={setInventory} />}{active === "Orders" && <Orders />}{active === "POS" && <PointOfSale posLines={posLines} posTotal={posTotal} addPosLine={addPosLine} removeLine={(index) => setPosLines((items) => items.filter((_, itemIndex) => itemIndex !== index))} clear={() => setPosLines([])} />}{active === "Shipping" && <Shipping />}{active === "Customers" && <Customers />}{active === "Content" && <CxsmoStudioContentPanel published={contentPublished} setPublished={setContentPublished} />}{active === "Reports" && <Reports />}</main></div>;
 }
 
 function Overview({ setActive }: { setActive: (module: Module) => void }) {
