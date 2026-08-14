@@ -6,6 +6,8 @@ const showcaseSource = readFileSync(resolve(process.cwd(), "client/src/component
 const appSource = readFileSync(resolve(process.cwd(), "client/src/App.tsx"), "utf8");
 const tourStyleSource = readFileSync(resolve(process.cwd(), "client/src/pages/cxsmo-route-tour.css"), "utf8");
 const introStyleSource = readFileSync(resolve(process.cwd(), "client/src/pages/cxsmo-route-tour-intro.css"), "utf8");
+const globalCursorSource = readFileSync(resolve(process.cwd(), "client/src/components/CxsmoCustomCursor.tsx"), "utf8");
+const globalCursorStyle = readFileSync(resolve(process.cwd(), "client/src/pages/cxsmo-custom-cursor.css"), "utf8");
 
 describe("C✦SMO guided player", () => {
   it("keeps the custom cursor and expanded ten-shot portfolio sequence", () => {
@@ -40,5 +42,15 @@ describe("C✦SMO guided player", () => {
     expect(tourStyleSource).toContain('@media(prefers-reduced-motion:reduce)');
     expect(introStyleSource).toContain('backdrop-filter:blur(34px)');
     expect(introStyleSource).toContain('@keyframes cxsmo-intro-star');
+  });
+
+  it("keeps the sitewide cursor limited to fine pointers with form and player fallbacks", () => {
+    expect(globalCursorSource).toContain('(hover: hover) and (pointer: fine)');
+    expect(globalCursorSource).toContain('(prefers-reduced-motion: reduce)');
+    expect(globalCursorSource).toContain('/manus-storage/cxsmo-custom-cursor_922d53fe.png');
+    expect(globalCursorStyle).toContain('input');
+    expect(globalCursorStyle).toContain('cursor:text');
+    expect(globalCursorStyle).toContain('html[data-cxsmo-tour="active"] .cxsmo-global-cursor');
+    expect(globalCursorStyle).toContain('@media (prefers-reduced-motion:reduce),(hover:none),(pointer:coarse)');
   });
 });

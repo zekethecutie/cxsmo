@@ -196,3 +196,4 @@
 - [x] Expand the C✦SMO guided player with additional focused route scenes before the final brand outro, while preserving its cursor-led motion, copy clarity, and reduced-motion control path.
 - [x] Add regression coverage for the C✦SMO guided-player’s custom cursor, expanded scene sequence, simplified controls, focus/scroll safeguards, and reduced-motion path.
 - [x] Fix the C✦SMO guided-player Information Desk scene so it links to an active public route instead of returning a 404, then protect that mapping with a regression check.
+- [x] Extend the supplied C✦SMO custom cursor to fine-pointer storefront interaction while preserving native cursors for touch, forms, keyboard use, and reduced-motion preferences.
