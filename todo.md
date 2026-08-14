@@ -215,3 +215,13 @@
 - [x] Speed up the scroll-led depth of the STYLE IS A SIGNAL and LOUD ENOUGH sections, let the background C✦SMO, group study, and refined barcode travel deliberately, and remove visual clutter from the barcode treatment.
 - [x] Improve light/dark appearance blending across the dark campaign hero and the new entry-flow section so each surface is intentional in both modes.
 - [x] Validate and push the latest C✦SMO simulation and visual-flow polish to GitHub after checkpointing.
+
+- [x] Add a password-gated C✦SMO studio entrance using the user-specified portfolio demo password, a clear storefront return control, and persistent browser-local unlock state.
+- [x] Upgrade the C✦SMO studio simulation with practical browser-local product, category, inventory, POS, shipment-preview, and content-workflow feedback rather than inert controls.
+- [x] Create a dedicated C✦SMO brand landing route before `/cxsmo`, with original high-contrast condensed editorial typography, layered product depth, brief portfolio positioning, and fake studio contact/social links.
+- [x] Add a discreet desktop-experience advisory on the pre-store entry while retaining a fully considered mobile presentation.
+- [x] Reorganize browser-local C✦SMO shopper account creation, local sign-in, onboarding, profile, saved objects, staged bag, and delivery-preview status into dedicated routes with accessible modal-assisted entry points.
+- [x] Fix light-mode C✦SMO sound-toggle and route text visibility, refine the entry-flow color bridge, and rebalance hero z-index/parallax so the campaign breaks the header plane while preserving the Static Bloom study foreground.
+- [x] Add an intentional route-transition treatment with reduced-motion fallback and complete responsive mobile polish across the new entry, account, studio, and storefront routes.
+- [x] Rate the pre-polish C✦SMO experience candidly across design, motion, messaging, flow, functionality, completeness, and realistic portfolio conversion before reporting the implementation outcome.
+- [ ] Validate the expanded C✦SMO entry, studio gate, account paths, appearance states, mobile layouts, transitions, TypeScript, tests, build, and GitHub synchronization after checkpointing.
