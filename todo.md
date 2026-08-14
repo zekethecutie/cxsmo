@@ -104,7 +104,7 @@
 - [x] Upgrade C✦SMO navigation and dropdown surfaces with animated menu states, clear keyboard behavior, focus treatment, and reduced-motion fallbacks.
 - [x] Add selective text-reveal, typewriter, and morphographic treatments to high-impact C✦SMO editorial and information-desk copy, avoiding motion overload.
 - [x] Apply scroll-linked depth and parallax treatment to appropriate campaign, category, and product surfaces with static fallbacks for reduced-motion preferences.
-- [ ] Add Escape, outside-dismiss, focus-return, and direct keyboard QA coverage for the C✦SMO navigation menu.
+- [x] Add Escape, outside-dismiss, focus-return, and direct keyboard QA coverage for the C✦SMO navigation menu.
 - [x] Implement a deliberately limited typewriter or morphographic text treatment with a reduced-motion fallback.
 - [x] Add and document scroll-linked depth on C✦SMO category and product surfaces with a static reduced-motion equivalent.
 - [x] Thoroughly audit and improve public C✦SMO routes for graphic rhythm, dimensional layering, purposeful transitions, and interactive feedback before the next checkpoint.

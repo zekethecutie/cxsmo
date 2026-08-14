@@ -33,6 +33,16 @@ describe("C✦SMO presentation-first user flow", () => {
     expect(account).toContain("Sign out on this device");
   });
 
+  it("keeps the animated navigation keyboard-safe and dismissal-safe", () => {
+    expect(storefront).toContain('window.addEventListener("pointerdown", dismissOnPointer)');
+    expect(storefront).toContain('window.addEventListener("keydown", dismissOnEscape)');
+    expect(storefront).toContain("closeAndRestoreFocus");
+    expect(storefront).toContain('event.key === "ArrowDown"');
+    expect(storefront).toContain('event.key === "ArrowUp"');
+    expect(storefront).toContain('event.key === "Home"');
+    expect(storefront).toContain('event.key === "End"');
+  });
+
   it("makes shopper and operator paths explicit without fabricating commerce records", () => {
     expect(account).toContain('SHOPPER FLOW / LOCAL ONLY');
     expect(account).toContain('Nothing becomes a customer profile, payment, or fulfilment record.');
