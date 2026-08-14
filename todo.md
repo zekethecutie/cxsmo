@@ -79,7 +79,7 @@
 - [x] Apply the exact C✦SMO construction throughout the demonstration so the four-point star visibly replaces the X rather than appearing as a separate accent mark.
 - [x] Correct the brand construction to C✦SMO across the experience: the four-point star replaces the X immediately after the initial C.
 - [ ] Run and document a keyboard-only QA pass across C✦SMO storefront and studio controls, including navigation, product actions, bag form, and fit-guide dialog.
-- [ ] Verify and document reduced-motion behavior across C✦SMO animated surfaces after the MotionConfig change.
+- [x] Verify and document reduced-motion behavior across C✦SMO animated surfaces after the MotionConfig change.
 - [x] Define and document an original black, red, and bone C✦SMO poster system with layered depth, editorial type hierarchy, cinematic blur, and four-point-star visual language informed by the supplied references without copying them.
 - [x] Create and integrate original C✦SMO fashion visual treatments, including transparent-ready garment treatments and high-fidelity model-led editorial composition when generation or licensed source assets are available.
 - [x] Rebuild the C✦SMO landing page as an immersive parallax poster composition with readable product context, scroll-led text treatment, dimensional layers, and reduced-motion fallbacks.
