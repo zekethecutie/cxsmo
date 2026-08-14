@@ -8,6 +8,7 @@ interface ThemeContextType {
   toggleThemeAt?: (origin: { x: number; y: number }) => void;
   switchable: boolean;
   isTransitioning: boolean;
+  transitionTarget: Theme;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -24,6 +25,7 @@ export function ThemeProvider({
   switchable = false,
 }: ThemeProviderProps) {
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [transitionTarget, setTransitionTarget] = useState<Theme>(defaultTheme);
   const [theme, setTheme] = useState<Theme>(() => {
     if (switchable) {
       const previewTheme = new URLSearchParams(window.location.search).get("appearance");
@@ -48,17 +50,20 @@ export function ThemeProvider({
   }, [theme, switchable]);
 
   const performToggle = (origin?: { x: number; y: number }) => {
+        const nextTheme = theme === "light" ? "dark" : "light";
         document.documentElement.style.setProperty("--cxsmo-eclipse-x", `${origin?.x ?? window.innerWidth - 74}px`);
         document.documentElement.style.setProperty("--cxsmo-eclipse-y", `${origin?.y ?? 72}px`);
+        setTransitionTarget(nextTheme);
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setTheme(nextTheme); return; }
         setIsTransitioning(true);
-        setTheme(prev => (prev === "light" ? "dark" : "light"));
-        window.setTimeout(() => setIsTransitioning(false), 650);
+        window.setTimeout(() => setTheme(nextTheme), 170);
+        window.setTimeout(() => setIsTransitioning(false), 820);
       };
   const toggleTheme = switchable ? () => performToggle() : undefined;
   const toggleThemeAt = switchable ? (origin: { x: number; y: number }) => performToggle(origin) : undefined;
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, toggleThemeAt, switchable, isTransitioning }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, toggleThemeAt, switchable, isTransitioning, transitionTarget }}>
       {children}
     </ThemeContext.Provider>
   );

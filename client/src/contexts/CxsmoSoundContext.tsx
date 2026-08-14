@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useRef, useState } from "react";
 
-export type CxsmoSoundCue = "open" | "click" | "success" | "theme" | "shutter" | "launch" | "chapter" | "finish" | "nav" | "primary" | "select" | "treasure" | "lock" | "double" | "replay";
+export type CxsmoSoundCue = "open" | "click" | "success" | "theme" | "shutter" | "launch" | "chapter" | "finish" | "nav" | "primary" | "select" | "treasure" | "lock" | "double" | "replay" | "hover";
 type SoundContextValue = { enabled: boolean; toggle: () => void; play: (cue: CxsmoSoundCue) => void };
 
 const soundSources: Record<CxsmoSoundCue, string> = {
@@ -19,8 +19,9 @@ const soundSources: Record<CxsmoSoundCue, string> = {
   lock: "/manus-storage/mixkit-computer-digital-lock-2859_6e99bea6.wav",
   double: "/manus-storage/mixkit-fast-double-click-on-mouse-275_35c59510.wav",
   replay: "/manus-storage/mixkit-bonus-earned-in-video-game-2058_6edf4d2a.wav",
+  hover: "/manus-storage/mixkit-fast-double-click-on-mouse-275_35c59510.wav",
 };
-const soundVolume: Record<CxsmoSoundCue, number> = { open: .18, click: .09, success: .15, theme: .18, shutter: .12, launch: .24, chapter: .14, finish: .18, nav: .1, primary: .13, select: .1, treasure: .15, lock: .12, double: .08, replay: .18 };
+const soundVolume: Record<CxsmoSoundCue, number> = { open: .18, click: .09, success: .15, theme: .18, shutter: .12, launch: .24, chapter: .14, finish: .18, nav: .1, primary: .13, select: .1, treasure: .15, lock: .12, double: .08, replay: .18, hover: .032 };
 const soundStorageKey = "cxsmo-sound-enabled";
 const CxsmoSoundContext = createContext<SoundContextValue | undefined>(undefined);
 
@@ -28,10 +29,11 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
   const [enabled, setEnabled] = useState(() => { const stored = window.localStorage.getItem(soundStorageKey); return stored === null ? true : stored === "true"; });
   const enabledRef = useRef(enabled);
   const lastPlayed = useRef(0);
+  const hoverTargets = useRef(new WeakMap<HTMLElement, number>());
   useEffect(() => { enabledRef.current = enabled; window.localStorage.setItem(soundStorageKey, String(enabled)); }, [enabled]);
   const playRaw = useCallback((cue: CxsmoSoundCue) => {
     const now = Date.now();
-    if (["click", "nav", "select", "double"].includes(cue) && now - lastPlayed.current < 80) return;
+    if (["click", "nav", "select", "double", "hover"].includes(cue) && now - lastPlayed.current < 80) return;
     lastPlayed.current = now;
     const audio = new Audio(soundSources[cue]);
     audio.volume = soundVolume[cue];
@@ -55,9 +57,21 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
       const element = event.target instanceof Element ? event.target : null;
       if (element?.closest(".cxsmo-site") && (element.matches("select") || element.matches("input[type=checkbox],input[type=radio]"))) play("select");
     };
+    const handleHover = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      const element = event.target instanceof Element ? event.target.closest<HTMLElement>("button, a") : null;
+      if (!element || element.closest("[data-cxsmo-hover-silent]") || !element.closest(".cxsmo-site")) return;
+      const isDeliberateSurface = element.matches(".cxsmo-button,.poster-button,.poster-text-link,.cxsmo-header__menu-trigger,.cxsmo-product-card__visual,.cxsmo-fit-carousel__controls button,.cxsmo-footer a,.cxsmo-legal-nav a") || element.hasAttribute("data-cxsmo-hover");
+      if (!isDeliberateSurface) return;
+      const now = Date.now();
+      if (now - (hoverTargets.current.get(element) ?? 0) < 900) return;
+      hoverTargets.current.set(element, now);
+      play("hover");
+    };
     document.addEventListener("pointerdown", handlePointer, { passive: true });
     document.addEventListener("change", handleChange, { passive: true });
-    return () => { document.removeEventListener("pointerdown", handlePointer); document.removeEventListener("change", handleChange); };
+    document.addEventListener("pointerover", handleHover, { passive: true });
+    return () => { document.removeEventListener("pointerdown", handlePointer); document.removeEventListener("change", handleChange); document.removeEventListener("pointerover", handleHover); };
   }, [play]);
   return <CxsmoSoundContext.Provider value={{ enabled, toggle, play }}>{children}</CxsmoSoundContext.Provider>;
 }

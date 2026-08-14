@@ -1,35 +1,33 @@
-import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowDownRight, ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
-import { useRef, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ArrowDownRight, ArrowLeft, ArrowRight, Pause, Play, Sparkles } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { cxsmoProducts } from "@/lib/cxsmo";
 import "@/pages/cxsmo-fit-carousel-motion.css";
 
 const fitNotes = [
   ["Long break", "Low-slung denim / close tee / chrome hit", "gravity-01"],
-  ["Silver rain", "Fitted ringer / washed base / object bag", "orbit-02"],
+  ["Blue star", "Mesh jersey / soft orbit / night-rail balance", "bluestar-09"],
   ["Soft authority", "Check overshirt / wide relation / clean stage", "signal-04"],
-  ["Static bloom", "Transit object / puddle jean / red signal", "transit-08"],
+  ["Black universe", "Wide leather-look pant / white orbit layer / chrome interruption", "blxck-pants-10"],
 ] as const;
 
 export function CxsmoFitCarousel() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const reducedMotion = useReducedMotion();
-  const carouselRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: carouselRef, offset: ["start 82%", "end 24%"] });
-  const artY = useTransform(scrollYProgress, [0, 1], ["11%", "-12%"]);
-  const ringRotate = useTransform(scrollYProgress, [0, 1], [-15, 52]);
-  const ringScale = useTransform(scrollYProgress, [0, .55, 1], [.84, 1.03, .91]);
-  const signalY = useTransform(scrollYProgress, [0, 1], ["18%", "-16%"]);
-  useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    if (reducedMotion) return;
-    const next = Math.min(fitNotes.length - 1, Math.max(0, Math.floor(progress * fitNotes.length)));
-    setActive((current) => current === next ? current : next);
-  });
+  useEffect(() => {
+    if (paused || reducedMotion) return;
+    const timer = window.setInterval(() => setActive((current) => (current + 1) % fitNotes.length), 3000);
+    return () => window.clearInterval(timer);
+  }, [paused, reducedMotion]);
   const note = fitNotes[active];
   const product = cxsmoProducts.find((item) => item.id === note[2]) ?? cxsmoProducts[0];
-  const move = (direction: number) => setActive((current) => (current + direction + fitNotes.length) % fitNotes.length);
-  return <section ref={carouselRef} className="cxsmo-fit-carousel cxsmo-fit-carousel--scroll-led" aria-label="C✦SMO transparent product lookbook"><div className="cxsmo-fit-carousel__top"><div><p className="section-label">Object rotation / scroll-led 01—04</p><h2>Lookbook<br /><em>in motion.</em></h2></div><div className="cxsmo-fit-carousel__controls"><button aria-label="Previous lookbook object" type="button" onClick={() => move(-1)}><ArrowLeft size={17} /></button><span>{String(active + 1).padStart(2, "0")} / 04</span><button aria-label="Next lookbook object" type="button" onClick={() => move(1)}><ArrowRight size={17} /></button></div></div><div className="cxsmo-fit-carousel__stage"><AnimatePresence mode="wait">{product && <motion.article key={`${product.id}-${active}`} initial={reducedMotion ? false : { opacity: 0, x: 46, rotate: 1.5 }} animate={{ opacity: 1, x: 0, rotate: 0 }} exit={reducedMotion ? {} : { opacity: 0, x: -40, rotate: -1 }} transition={{ duration: .42, ease: [0.16, 1, 0.3, 1] }}><div className="cxsmo-fit-carousel__art"><span>Layer / {String(active + 1).padStart(2, "0")}</span><motion.div className="cxsmo-fit-carousel__rings" style={reducedMotion ? undefined : { rotate: ringRotate, scale: ringScale }} /><motion.div className="cxsmo-fit-carousel__object-motion" style={reducedMotion ? undefined : { y: artY }}><img src={product.image} alt={`Transparent ${product.name} object layer for the ${note[0]} lookbook study`} /></motion.div><motion.div className="cxsmo-fit-carousel__signal" style={reducedMotion ? undefined : { y: signalY, rotate: ringRotate }}><i>✦</i></motion.div><p>{note[0]}</p></div><div className="cxsmo-fit-carousel__copy"><p className="section-label">{product.category} / object relation</p><h3>{note[0]}</h3><p>{note[1]}. Built from the fictional {product.name} as a portfolio styling study.</p><Link href={`/cxsmo/products/${product.id}`}>Shop this object <ArrowDownRight size={16} /></Link></div></motion.article>}</AnimatePresence><aside><Sparkles size={18} /><b>Object-led lookbook / campaign set two.</b><span>Scroll through the section to choreograph each object’s entry, or use the controls for direct selection. The poster environment is composed in the interface.</span></aside></div></section>;
+  const move = (direction: number) => { setPaused(true); setActive((current) => (current + direction + fitNotes.length) % fitNotes.length); };
+  return <section className="cxsmo-fit-carousel cxsmo-fit-carousel--timed" aria-label="C✦SMO transparent product lookbook">
+    <div className="cxsmo-fit-carousel__top"><div><p className="section-label">Object rotation / timed 03s</p><h2>Lookbook<br /><em>in motion.</em></h2></div><div className="cxsmo-fit-carousel__controls"><button data-cxsmo-sound="select" aria-label="Previous lookbook object" type="button" onClick={() => move(-1)}><ArrowLeft size={17} /></button><span aria-live="polite">{String(active + 1).padStart(2, "0")} / 04</span><button data-cxsmo-sound="select" aria-label="Next lookbook object" type="button" onClick={() => move(1)}><ArrowRight size={17} /></button><button data-cxsmo-sound="click" className="cxsmo-fit-carousel__pause" type="button" onClick={() => setPaused((current) => !current)}>{paused ? <><Play size={14} /> Resume</> : <><Pause size={14} /> Pause</>}</button></div></div>
+    <div className="cxsmo-fit-carousel__stage"><article><div className="cxsmo-fit-carousel__art"><span>Layer / {String(active + 1).padStart(2, "0")}</span><div className="cxsmo-fit-carousel__rings" /><AnimatePresence mode="sync" initial={false}>{product && <motion.div key={product.id} className="cxsmo-fit-carousel__object-motion" initial={reducedMotion ? false : { opacity: 0, scale: .84, rotate: -2, filter: "blur(10px)" }} animate={{ opacity: 1, scale: 1, rotate: 0, filter: "blur(0px)" }} exit={reducedMotion ? {} : { opacity: 0, scale: 1.12, rotate: 2, filter: "blur(8px)" }} transition={{ duration: .62, ease: [0.16, 1, 0.3, 1] }}><img src={product.image} alt={`Transparent ${product.name} object layer for the ${note[0]} lookbook study`} /></motion.div>}</AnimatePresence><div className="cxsmo-fit-carousel__signal"><i>✦</i></div><p>{note[0]}</p></div><div className="cxsmo-fit-carousel__copy"><p className="section-label">{product.category} / object relation</p><AnimatePresence mode="wait" initial={false}><motion.div key={`${product.id}-copy`} initial={reducedMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? {} : { opacity: 0, y: -7 }} transition={{ duration: .26, ease: [0.16, 1, 0.3, 1] }}><h3>{note[0]}</h3><p>{note[1]}. Built from the fictional {product.name} as a portfolio styling study.</p><Link href={`/cxsmo/products/${product.id}`}>Shop this object <ArrowDownRight size={16} /></Link></motion.div></AnimatePresence></div></article><aside><Sparkles size={18} /><b>Object-led lookbook / campaign set two.</b><span>Each object morphs in every three seconds. The poster environment remains fixed while only the transparent product layer changes.</span></aside></div>
+  </section>;
 }
 
 export function CxsmoCommunityEmptyState() {

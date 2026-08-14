@@ -3,9 +3,11 @@ import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct } fro
 
 describe("C✦SMO portfolio catalogue", () => {
   it("keeps unique, route-ready fictional products", () => {
-    expect(cxsmoProducts).toHaveLength(8);
+    expect(cxsmoProducts).toHaveLength(12);
     expect(new Set(cxsmoProducts.map((product) => product.id)).size).toBe(cxsmoProducts.length);
     expect(getCxsmoProduct("gravity-01").name).toBe("Gravity Puddle Jean");
+    expect(getCxsmoProduct("bluestar-09").name).toBe("Bluestar C✦SMO Jersey");
+    expect(getCxsmoProduct("blxck-pants-10").name).toBe("BLXCK UNIV3RSE Pants");
     expect(getCxsmoProduct("missing-product").id).toBe("gravity-01");
   });
 

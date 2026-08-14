@@ -4,7 +4,7 @@ import { defaultCxsmoHero, resolveCxsmoProduct } from "../client/src/lib/cxsmoCo
 
 describe("C✦SMO centralized content defaults", () => {
   it("sets the approved three-person campaign as the editable hero default", () => {
-    expect(defaultCxsmoHero.assetUrl).toContain("cxsmo-hero-campaign_f5a1c0fc");
+    expect(defaultCxsmoHero.assetUrl).toContain("cxsmo-hero-one-man-two-women_f25e55a6");
     expect(defaultCxsmoHero.assetAlt).toMatch(/three adult/i);
   });
 
