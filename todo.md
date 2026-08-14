@@ -124,7 +124,7 @@
 - [x] Expand C✦SMO account, comments, order, saved-item, address, and account-preference simulations with explicit portfolio-only states and no fabricated user-generated content.
 - [x] Add modern studio simulations for storefront customization, workflow comments, and operational settings while preserving the fictional non-payment boundary.
 - [ ] Audit public and studio surfaces for deliberate motion, keyboard behavior, hover/press feedback, hierarchy, spacing, and reduced-motion fallbacks.
-- [ ] Push the completed C✦SMO project history and current work to the selected GitHub repository after final validation and checkpointing.
+- [x] Push the completed C✦SMO project history and current work to the selected GitHub repository after final validation and checkpointing.
 - [x] Capture and review C✦SMO preview screenshots in both light and dark themes across public and studio routes, recording text-contrast, clipping, overflow, and spacing defects.
 - [x] Correct light- and dark-theme text visibility so display, support, label, and control copy remains readable against every route-specific surface.
 - [x] Prevent oversized display type from clipping or visually colliding with adjacent text at desktop and mobile widths while retaining the condensed C✦SMO hierarchy.
@@ -144,7 +144,7 @@
 
 # Deferred asset note
 - [ ] When the image-creation allowance is available, replace all remaining opaque product mockups with verified true-alpha PNGs.
-- [ ] Push the validated C✦SMO project to the selected GitHub repository after final checkpointing.
+- [x] Push the validated C✦SMO project to the selected GitHub repository after final checkpointing.
 - [x] Add country and currency preferences with locale-aware C✦SMO product-price display, an explicit manual override, and clear portfolio-simulation disclosure.
 - [x] Build a non-payment checkout and delivery-address simulation with browser-local inputs, a Google Maps-ready location preview, and no saved personal information.
 - [x] Add Privacy, Terms of Use, Portfolio Disclosure, and checkout-consent surfaces explaining fictional commerce boundaries, local-only simulation data, and no transaction processing.
