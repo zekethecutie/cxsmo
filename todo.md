@@ -103,10 +103,10 @@
 - [x] Rebuild the C✦SMO product-detail interface with layered product media, more graphic material and size controls, tactile motion feedback, cleaner product information hierarchy, and responsive accessibility.
 - [ ] Upgrade C✦SMO navigation and dropdown surfaces with animated menu states, clear keyboard behavior, focus treatment, and reduced-motion fallbacks.
 - [x] Add selective text-reveal, typewriter, and morphographic treatments to high-impact C✦SMO editorial and information-desk copy, avoiding motion overload.
-- [ ] Apply scroll-linked depth and parallax treatment to appropriate campaign, category, and product surfaces with static fallbacks for reduced-motion preferences.
+- [x] Apply scroll-linked depth and parallax treatment to appropriate campaign, category, and product surfaces with static fallbacks for reduced-motion preferences.
 - [ ] Add Escape, outside-dismiss, focus-return, and direct keyboard QA coverage for the C✦SMO navigation menu.
 - [x] Implement a deliberately limited typewriter or morphographic text treatment with a reduced-motion fallback.
-- [ ] Add and document scroll-linked depth on C✦SMO category and product surfaces with a static reduced-motion equivalent.
+- [x] Add and document scroll-linked depth on C✦SMO category and product surfaces with a static reduced-motion equivalent.
 - [ ] Thoroughly audit and improve public C✦SMO routes for graphic rhythm, dimensional layering, purposeful transitions, and interactive feedback before the next checkpoint.
 - [x] When image generation is available again, create and integrate an original C✦SMO asset suite with dynamic full-body fit poses, transparent garment silhouettes, clearer product mockups, a sharper hero focal point, and photogenic black-red editorial lighting informed by the user-supplied references without copying them.
 - [x] Resume the prepared C✦SMO image batch with an upgraded hero, three distinct fit-shoot compositions, and isolated transparent garment renders for the core product stories.
@@ -184,3 +184,5 @@
 - [x] Ensure the opt-in hover cue is present on product and inventory-media interactions while retaining interaction throttling and silent-control exceptions.
 - [x] Recompose the C✦SMO guided player as a scroll-locked mograph layer with a readable half-screen black-blur type panel, stronger Y2K brand-build, animated depth and tilt, and controlled visual-cursor choreography.
 - [x] Replace the C✦SMO appearance effect with a slower two-second origin-aware circular reveal that changes the theme only inside the expanding shape, removes the current glow treatment, and retains a reduced-motion fallback.
+- [x] Add restrained scroll-linked perspective depth to the C✦SMO category rail and inventory surfaces, with no pointer-led movement and explicit reduced-motion static equivalents.
+- [x] Audit the revised C✦SMO public routes for responsive hierarchy, accessible motion, portfolio-boundary clarity, and interaction feedback after the depth refinement.

@@ -1,0 +1,38 @@
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 721px) {
+    .cxsmo-category-rail__grid { perspective: 1100px; }
+    .category-card { animation: cxsmo-category-depth linear both; animation-range: entry 5% cover 74%; animation-timeline: view(); transform-style: preserve-3d; will-change: transform; }
+    .category-card:nth-child(2n) { animation-name: cxsmo-category-depth-reverse; }
+    .category-card:hover { animation-play-state: paused; }
+    .cxsmo-product-card { animation: cxsmo-object-depth linear both; animation-range: entry 4% cover 71%; animation-timeline: view(); transform-style: preserve-3d; will-change: transform; }
+    .cxsmo-product-card:nth-child(3n) { animation-name: cxsmo-object-depth-reverse; }
+  }
+}
+
+@keyframes cxsmo-category-depth {
+  0% { opacity: .72; transform: perspective(1100px) translate3d(0,54px,-30px) rotateX(-4deg) rotateY(-1.4deg); }
+  46% { opacity: 1; transform: perspective(1100px) translate3d(0,0,0) rotateX(0) rotateY(0); }
+  100% { opacity: 1; transform: perspective(1100px) translate3d(0,-14px,18px) rotateX(1.5deg) rotateY(.7deg); }
+}
+
+@keyframes cxsmo-category-depth-reverse {
+  0% { opacity: .72; transform: perspective(1100px) translate3d(0,54px,-30px) rotateX(-4deg) rotateY(1.4deg); }
+  46% { opacity: 1; transform: perspective(1100px) translate3d(0,0,0) rotateX(0) rotateY(0); }
+  100% { opacity: 1; transform: perspective(1100px) translate3d(0,-14px,18px) rotateX(1.5deg) rotateY(-.7deg); }
+}
+
+@keyframes cxsmo-object-depth {
+  0% { opacity: .7; transform: perspective(1000px) translate3d(0,46px,-24px) rotateX(-3deg) rotateY(-.8deg); }
+  50% { opacity: 1; transform: perspective(1000px) translate3d(0,0,0) rotateX(0) rotateY(0); }
+  100% { opacity: 1; transform: perspective(1000px) translate3d(0,-10px,12px) rotateX(1deg) rotateY(.45deg); }
+}
+
+@keyframes cxsmo-object-depth-reverse {
+  0% { opacity: .7; transform: perspective(1000px) translate3d(0,46px,-24px) rotateX(-3deg) rotateY(.8deg); }
+  50% { opacity: 1; transform: perspective(1000px) translate3d(0,0,0) rotateX(0) rotateY(0); }
+  100% { opacity: 1; transform: perspective(1000px) translate3d(0,-10px,12px) rotateX(1deg) rotateY(-.45deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card, .cxsmo-product-card { animation: none !important; opacity: 1; transform: none; will-change: auto; }
+}
