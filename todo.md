@@ -101,7 +101,7 @@
 - [x] Define a C✦SMO interaction hierarchy that assigns deliberate hover, press, reveal, menu, scroll, and reduced-motion behavior to public controls without compromising readability or performance.
 - [x] Create original C✦SMO product-mockup and transparent-garment imagery informed by the supplied flat-lay and poster references when image generation becomes available, without copying logos, people, or compositions.
 - [x] Rebuild the C✦SMO product-detail interface with layered product media, more graphic material and size controls, tactile motion feedback, cleaner product information hierarchy, and responsive accessibility.
-- [ ] Upgrade C✦SMO navigation and dropdown surfaces with animated menu states, clear keyboard behavior, focus treatment, and reduced-motion fallbacks.
+- [x] Upgrade C✦SMO navigation and dropdown surfaces with animated menu states, clear keyboard behavior, focus treatment, and reduced-motion fallbacks.
 - [x] Add selective text-reveal, typewriter, and morphographic treatments to high-impact C✦SMO editorial and information-desk copy, avoiding motion overload.
 - [x] Apply scroll-linked depth and parallax treatment to appropriate campaign, category, and product surfaces with static fallbacks for reduced-motion preferences.
 - [ ] Add Escape, outside-dismiss, focus-return, and direct keyboard QA coverage for the C✦SMO navigation menu.
