@@ -2,6 +2,14 @@
   .cxsmo-filter-scroll { -ms-overflow-style:none; -webkit-overflow-scrolling:touch; mask-image:linear-gradient(90deg,#000 0 90%,transparent 100%); padding-right:34px; scrollbar-width:none; scroll-padding-inline:17px; }
   .cxsmo-filter-scroll::-webkit-scrollbar { display:none; }
   .cxsmo-filter-scroll button { scroll-snap-align:start; }
+  .cxsmo-header .cxsmo-header__menu { display:block; margin-left:auto; }
+  .cxsmo-header__menu-trigger { border:1px solid currentColor; justify-content:center; min-width:36px; padding:0; }
+  .cxsmo-header__menu-trigger:after { display:none; }
+  .cxsmo-header__menu-trigger span { font-size:0; }
+  .cxsmo-header__menu-trigger span::after { content:"☰"; font:18px/1 Arial,sans-serif; }
+  .cxsmo-header__menu-trigger[aria-expanded="true"] span::after { content:"×"; }
+  .cxsmo-header__tools { gap:6px; margin-left:5px; }
+  .cxsmo-header__menu-panel { left:auto; min-width:min(244px,calc(100vw - 34px)); right:0; }
 }
 
 @media (prefers-reduced-motion:reduce) {

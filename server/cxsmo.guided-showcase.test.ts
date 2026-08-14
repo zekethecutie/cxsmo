@@ -9,6 +9,7 @@ const introStyleSource = readFileSync(resolve(process.cwd(), "client/src/pages/c
 const globalCursorSource = readFileSync(resolve(process.cwd(), "client/src/components/CxsmoCustomCursor.tsx"), "utf8");
 const globalCursorStyle = readFileSync(resolve(process.cwd(), "client/src/pages/cxsmo-custom-cursor.css"), "utf8");
 const storefrontSource = readFileSync(resolve(process.cwd(), "client/src/pages/CxsmoStorefront.tsx"), "utf8");
+const auditRefinementStyle = readFileSync(resolve(process.cwd(), "client/src/pages/cxsmo-audit-refinements.css"), "utf8");
 
 describe("C✦SMO guided player", () => {
   it("keeps the custom cursor and expanded ten-shot portfolio sequence", () => {
@@ -64,5 +65,7 @@ describe("C✦SMO guided player", () => {
     expect(storefrontSource).toContain('event.key === "Home"');
     expect(storefrontSource).toContain('event.key === "End"');
     expect(storefrontSource).toContain('closeAndRestoreFocus');
+    expect(auditRefinementStyle).toContain('.cxsmo-header .cxsmo-header__menu { display:block; margin-left:auto; }');
+    expect(auditRefinementStyle).toContain('.cxsmo-header__menu-panel { left:auto; min-width:min(244px,calc(100vw - 34px)); right:0; }');
   });
 });
