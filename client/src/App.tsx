@@ -21,6 +21,7 @@ function Router() {
       <Route path="/cxsmo/products/:id" component={CxsmoProductPage} />
       <Route path="/cxsmo/edits" component={CxsmoEditsPage} />
       <Route path="/cxsmo/support" component={CxsmoSupportPage} />
+      <Route path="/cxsmo/information" component={CxsmoSupportPage} />
       <Route path="/cxsmo/account" component={CxsmoAccountPage} />
       <Route path="/cxsmo/bag" component={CxsmoBagPage} />
       <Route path="/cxsmo/checkout" component={CxsmoCheckoutPage} />
