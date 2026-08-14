@@ -5,6 +5,7 @@ type Theme = "light" | "dark";
 interface ThemeContextType {
   theme: Theme;
   toggleTheme?: () => void;
+  toggleThemeAt?: (origin: { x: number; y: number }) => void;
   switchable: boolean;
   isTransitioning: boolean;
 }
@@ -46,16 +47,18 @@ export function ThemeProvider({
     }
   }, [theme, switchable]);
 
-  const toggleTheme = switchable
-    ? () => {
+  const performToggle = (origin?: { x: number; y: number }) => {
+        document.documentElement.style.setProperty("--cxsmo-eclipse-x", `${origin?.x ?? window.innerWidth - 74}px`);
+        document.documentElement.style.setProperty("--cxsmo-eclipse-y", `${origin?.y ?? 72}px`);
         setIsTransitioning(true);
         setTheme(prev => (prev === "light" ? "dark" : "light"));
-        window.setTimeout(() => setIsTransitioning(false), 760);
-      }
-    : undefined;
+        window.setTimeout(() => setIsTransitioning(false), 650);
+      };
+  const toggleTheme = switchable ? () => performToggle() : undefined;
+  const toggleThemeAt = switchable ? (origin: { x: number; y: number }) => performToggle(origin) : undefined;
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, switchable, isTransitioning }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, toggleThemeAt, switchable, isTransitioning }}>
       {children}
     </ThemeContext.Provider>
   );
