@@ -6,6 +6,7 @@ const source = (path: string) => readFileSync(resolve(process.cwd(), path), "utf
 const app = source("client/src/App.tsx");
 const entry = source("client/src/pages/CxsmoEntryPage.tsx");
 const entryStyle = source("client/src/pages/cxsmo-entry.css");
+const entryAppearance = source("client/src/pages/cxsmo-entry-appearance.css");
 const studio = source("client/src/pages/CxsmoAdminPage.tsx");
 const gateStyle = source("client/src/pages/cxsmo-admin-gate.css");
 const account = source("client/src/pages/CxsmoAccountPages.tsx");
@@ -22,6 +23,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("Wide screen recommended");
     expect(entry).toContain("cxsmostudios@cxsmo.io");
     expect(entryStyle).toContain("cxsmo-entry__orbit");
+    expect(entryAppearance).toContain("html:not(.dark) .cxsmo-entry");
   });
 
   it("gates the studio with the supplied portfolio code and preserves a storefront return path", () => {
