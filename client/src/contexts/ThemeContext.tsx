@@ -56,8 +56,8 @@ export function ThemeProvider({
         setTransitionTarget(nextTheme);
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setTheme(nextTheme); return; }
         setIsTransitioning(true);
-        window.setTimeout(() => setTheme(nextTheme), 170);
-        window.setTimeout(() => setIsTransitioning(false), 820);
+        window.setTimeout(() => setTheme(nextTheme), 1580);
+        window.setTimeout(() => setIsTransitioning(false), 2000);
       };
   const toggleTheme = switchable ? () => performToggle() : undefined;
   const toggleThemeAt = switchable ? (origin: { x: number; y: number }) => performToggle(origin) : undefined;

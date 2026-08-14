@@ -59,12 +59,13 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
     };
     const handleHover = (event: PointerEvent) => {
       if (event.pointerType === "touch") return;
-      const element = event.target instanceof Element ? event.target.closest<HTMLElement>("button, a") : null;
+      const element = event.target instanceof Element ? event.target.closest<HTMLElement>("button, a, [data-cxsmo-hover-sound]") : null;
       if (!element || element.closest("[data-cxsmo-hover-silent]") || !element.closest(".cxsmo-site")) return;
       const now = Date.now();
       if (now - (hoverTargets.current.get(element) ?? 0) < 900) return;
       hoverTargets.current.set(element, now);
-      play("hover");
+      const explicit = element.dataset.cxsmoHoverSound as CxsmoSoundCue | undefined;
+      play(explicit && explicit in soundSources ? explicit : "hover");
     };
     document.addEventListener("pointerdown", handlePointer, { passive: true });
     document.addEventListener("change", handleChange, { passive: true });

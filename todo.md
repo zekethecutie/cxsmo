@@ -180,3 +180,7 @@
 - [x] Extend opt-in C✦SMO hover feedback from selected controls to all standard public and studio buttons and links, while preserving per-element throttling and silent-control opt-outs.
 - [x] Add a browser-local saved-recommendations flow that lets visitors explicitly keep or remove recommendation-driven objects separately from the general save list.
 - [x] Add a distinct pre-tour C✦SMO brand-build intro scene that constructs the mark before the visitor-started route tour begins.
+- [x] Shift the transparent C✦SMO hero composition approximately 10px left and add a controlled blurred-black depth shadow without reducing copy-safe space.
+- [x] Ensure the opt-in hover cue is present on product and inventory-media interactions while retaining interaction throttling and silent-control exceptions.
+- [x] Recompose the C✦SMO guided player as a scroll-locked mograph layer with a readable half-screen black-blur type panel, stronger Y2K brand-build, animated depth and tilt, and controlled visual-cursor choreography.
+- [x] Replace the C✦SMO appearance effect with a slower two-second origin-aware circular reveal that changes the theme only inside the expanding shape, removes the current glow treatment, and retains a reduced-motion fallback.
