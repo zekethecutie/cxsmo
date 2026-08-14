@@ -70,7 +70,7 @@
 - [x] Run and document a final responsive QA pass for both the portfolio admin gate and unlocked store-management dashboard at mobile width.
 - [x] Replace the public KINFORM presentation with a clearly distinct C✦SMO fashion-and-lifestyle identity, including a four-point-star X mark, Y2K-pop visual direction, and an explicit portfolio-demo boundary.
 - [x] Define a fictional, trend-led C✦SMO catalogue covering baggy denim, graphic and embroidered tees, tailored streetwear, outerwear, accessories, footwear, beauty, and lifestyle objects.
-- [ ] Create distinct original high-fidelity product renders and additional editorial visuals for the C✦SMO concept without representing third-party products or endorsements.
+- [x] Create distinct original high-fidelity product renders and additional editorial visuals for the C✦SMO concept without representing third-party products or endorsements.
 - [x] Rebuild public navigation, category discovery, collection filters, product storytelling, styling edits, and product-detail journeys around C✦SMO.
 - [x] Expand shopper-facing bag, saved-item, order-information, shipping, size-guidance, account, and portfolio-safe checkout-request experiences.
 - [x] Expand the portfolio administration console with category management, product and variant editing, inventory operations, orders, receipts, point-of-sale, shipping, customer information, reporting, and content-management states.
@@ -81,7 +81,7 @@
 - [ ] Run and document a keyboard-only QA pass across C✦SMO storefront and studio controls, including navigation, product actions, bag form, and fit-guide dialog.
 - [ ] Verify and document reduced-motion behavior across C✦SMO animated surfaces after the MotionConfig change.
 - [x] Define and document an original black, red, and bone C✦SMO poster system with layered depth, editorial type hierarchy, cinematic blur, and four-point-star visual language informed by the supplied references without copying them.
-- [ ] Create and integrate original C✦SMO fashion visual treatments, including transparent-ready garment treatments and high-fidelity model-led editorial composition when generation or licensed source assets are available.
+- [x] Create and integrate original C✦SMO fashion visual treatments, including transparent-ready garment treatments and high-fidelity model-led editorial composition when generation or licensed source assets are available.
 - [x] Rebuild the C✦SMO landing page as an immersive parallax poster composition with readable product context, scroll-led text treatment, dimensional layers, and reduced-motion fallbacks.
 - [x] Enhance shop, product, styling-edit, information, account, bag, and studio routes with consistent poster composition, animated feedback, depth, interactive controls, and responsive visual rhythm.
 - [x] Add a user-controlled appearance setting with a polished theme transition and persistent preference for C✦SMO.
@@ -90,8 +90,8 @@
 - [ ] Verify the C✦SMO appearance setting in dark and light modes and record route-level results.
 - [ ] Run and document a direct interaction QA pass for poster parallax, scroll-led surfaces, product controls, and studio actions.
 - [x] Define an original C✦SMO visual brief for dynamic East-Asian streetwear fit shoots, transparent garment mockups, graphic poster crops, and an upgraded hero without copying the supplied references or depicting identifiable people from them.
-- [ ] Generate and integrate distinct original C✦SMO visual assets: an upgraded hero, multiple full-body fit-shoot compositions, transparent-background garment renders, and product-level mockups.
-- [ ] Replace repeated campaign imagery across the public storefront with the distinct C✦SMO image set and retain accurate alternative text.
+- [x] Generate and integrate distinct original C✦SMO visual assets: an upgraded hero, multiple full-body fit-shoot compositions, transparent-background garment renders, and product-level mockups.
+- [x] Replace repeated campaign imagery across the public storefront with the distinct C✦SMO image set and retain accurate alternative text.
 - [x] Build a premium animated C✦SMO fit carousel with visible controls, responsive interaction feedback, reduced-motion handling, and direct shop links.
 - [x] Add an explicitly honest community-feedback module with a no-verified-testimonials state and no fabricated ratings, testimonials, or comments.
 - [ ] Refine the appearance setting with a smooth theme transition and expand consistent interactive feedback across key controls.
@@ -99,7 +99,7 @@
 - [x] Implement concrete studio overview refinements for faster scanning, new quick-action controls, and clearer readiness summaries, then capture route-level QA evidence.
 - [ ] Validate the enhanced C✦SMO image system, carousel, themes, interactions, responsive layouts, tests, and production build before saving the next checkpoint.
 - [x] Define a C✦SMO interaction hierarchy that assigns deliberate hover, press, reveal, menu, scroll, and reduced-motion behavior to public controls without compromising readability or performance.
-- [ ] Create original C✦SMO product-mockup and transparent-garment imagery informed by the supplied flat-lay and poster references when image generation becomes available, without copying logos, people, or compositions.
+- [x] Create original C✦SMO product-mockup and transparent-garment imagery informed by the supplied flat-lay and poster references when image generation becomes available, without copying logos, people, or compositions.
 - [x] Rebuild the C✦SMO product-detail interface with layered product media, more graphic material and size controls, tactile motion feedback, cleaner product information hierarchy, and responsive accessibility.
 - [ ] Upgrade C✦SMO navigation and dropdown surfaces with animated menu states, clear keyboard behavior, focus treatment, and reduced-motion fallbacks.
 - [ ] Add selective text-reveal, typewriter, and morphographic treatments to high-impact C✦SMO editorial and information-desk copy, avoiding motion overload.
@@ -108,4 +108,31 @@
 - [ ] Implement a deliberately limited typewriter or morphographic text treatment with a reduced-motion fallback.
 - [ ] Add and document scroll-linked depth on C✦SMO category and product surfaces with a static reduced-motion equivalent.
 - [ ] Thoroughly audit and improve public C✦SMO routes for graphic rhythm, dimensional layering, purposeful transitions, and interactive feedback before the next checkpoint.
-- [ ] When image generation is available again, create and integrate an original C✦SMO asset suite with dynamic full-body fit poses, transparent garment silhouettes, clearer product mockups, a sharper hero focal point, and photogenic black-red editorial lighting informed by the user-supplied references without copying them.
+- [x] When image generation is available again, create and integrate an original C✦SMO asset suite with dynamic full-body fit poses, transparent garment silhouettes, clearer product mockups, a sharper hero focal point, and photogenic black-red editorial lighting informed by the user-supplied references without copying them.
+- [x] Resume the prepared C✦SMO image batch with an upgraded hero, three distinct fit-shoot compositions, and isolated transparent garment renders for the core product stories.
+- [x] Verify every generated C✦SMO asset URL resolves to a completed final image rather than a generating or failed placeholder, and replace any unsuccessful output.
+- [x] Document route-level visual QA for the C✦SMO hero, fit carousel, catalogue, and product pages, including clean transparency, distinct media, and accurate alt text.
+- [ ] Replace any C✦SMO product render that retains a solid background with a true-alpha transparent cutout, beginning with the Tread Phase Sneaker.
+- [ ] Create true-alpha replacements for the C✦SMO Starlight Moto Shell, Orbit Key Charm, Tread Phase Sneaker, and Static Lip Glaze, then update the catalogue assignments.
+- [ ] Re-run alpha-channel verification and storefront media QA after the final transparent-cutout replacements resolve.
+- [ ] Replace every remaining solid-background C✦SMO image with a true-alpha PNG and place typography, gradients, texture, and dimensional effects in the interface layer behind it.
+- [x] Repair the C✦SMO fit-loop carousel so every “FALLEN / FITTED” study visibly loads its own original image, uses deliberate sizing, and keeps accessible controls.
+- [x] Recompose the C✦SMO hero around a clear transparent fashion object with copy-safe space, stronger focal depth, cleaner visual hierarchy, and less nonessential clutter.
+- [x] Add layered poster techniques behind transparent media, including gradient-depth star shapes, selective geometric accents, clipping, restrained parallax, and editorial typography without copying the supplied reference work.
+- [x] Replace thin or weak C✦SMO interface typography with a compact high-legibility system built from condensed display type and stronger mobile-readable support text.
+- [x] Improve the C✦SMO dark/light transition with a brief, accessible pixel-field effect and retain an instant reduced-motion fallback.
+- [x] Expand C✦SMO account, comments, order, saved-item, address, and account-preference simulations with explicit portfolio-only states and no fabricated user-generated content.
+- [x] Add modern studio simulations for storefront customization, workflow comments, and operational settings while preserving the fictional non-payment boundary.
+- [ ] Audit public and studio surfaces for deliberate motion, keyboard behavior, hover/press feedback, hierarchy, spacing, and reduced-motion fallbacks.
+- [ ] Push the completed C✦SMO project history and current work to the selected GitHub repository after final validation and checkpointing.
+- [x] Capture and review C✦SMO preview screenshots in both light and dark themes across public and studio routes, recording text-contrast, clipping, overflow, and spacing defects.
+- [x] Correct light- and dark-theme text visibility so display, support, label, and control copy remains readable against every route-specific surface.
+- [x] Prevent oversized display type from clipping or visually colliding with adjacent text at desktop and mobile widths while retaining the condensed C✦SMO hierarchy.
+- [x] Remove duplicate “Developed by zxke” footer treatment and retain one clear, deliberate credit across public routes.
+- [x] Verify the revised C✦SMO preview in both appearance modes after all contrast and clipping corrections are applied.
+- [x] Replace the C✦SMO theme wash with a fast corner-origin stack of small pixel blocks, while preserving an instant reduced-motion fallback.
+- [x] Correct C✦SMO information-desk active-state contrast in both themes so the open row’s title, label, icon, and answer stay readable.
+- [ ] Simplify the C✦SMO hero to one primary transparent fashion object, clearer negative space, and fewer competing background layers.
+- [ ] Replace pointer-driven hero movement with deliberate scroll-linked parallax and retain a static reduced-motion fallback.
+- [ ] Update the C✦SMO topbar to identify the fictional portfolio demonstration as designed and developed by zxke while retaining the non-payment and privacy boundary.
+- [ ] Add controlled CSS drop-shadow and poster-layer separation to C✦SMO mockups where it improves legibility and depth without visual clutter.

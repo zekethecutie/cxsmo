@@ -1,11 +1,13 @@
 import { motion, AnimatePresence, MotionConfig, useReducedMotion } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight, Check, ChevronDown, Heart, Minus, PackageCheck, Plus, Search, ShoppingBag, Sparkles, X } from "lucide-react";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Link, useRoute } from "wouter";
 import { CxsmoMark } from "@/components/CxsmoMark";
 import { CxsmoAppearanceToggle } from "@/components/CxsmoAppearanceToggle";
 import { CxsmoCommunityEmptyState, CxsmoFitCarousel } from "@/components/CxsmoFitCarousel";
+import { CxsmoAccountPanel } from "@/components/CxsmoAccountPanel";
 import { useCxsmoDemo } from "@/contexts/CxsmoDemoContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct, type CxsmoProduct } from "@/lib/cxsmo";
 import "./cxsmo.css";
 import "./cxsmo-media-overrides.css";
@@ -16,14 +18,17 @@ import "./cxsmo-appearance.css";
 import "./cxsmo-route-effects.css";
 import "./cxsmo-product-story.css";
 import "./cxsmo-fit-carousel.css";
+import "./cxsmo-interaction-upgrade.css";
+import "./cxsmo-account-settings.css";
 
-const heroImage = "/manus-storage/cxsmo-hero-campaign_c252324b.jpg";
+const heroImage = "/manus-storage/cxsmo-hero-v2_cadfe55c.jpg";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export function CxsmoShell({ children }: { children: ReactNode }) {
   const { bag } = useCxsmoDemo();
+  const { isTransitioning } = useTheme();
   const reducedMotion = useReducedMotion();
-  return <MotionConfig reducedMotion={reducedMotion ? "always" : "never"}><main className="cxsmo-site"><div className="cxsmo-disclaimer">C✦SMO is a fictional fashion-commerce demonstration. No payments or personal information are transmitted.</div><header className="cxsmo-header"><Link href="/cxsmo" aria-label="C✦SMO home"><CxsmoMark /></Link><CxsmoMenu /><div className="cxsmo-header__tools"><CxsmoAppearanceToggle /><Link className="cxsmo-bag-link" href="/cxsmo/bag"><ShoppingBag size={16} /> Bag <b>{bag.length}</b></Link></div></header>{children}<footer className="cxsmo-footer"><CxsmoMark inverse /><p>Future-pop wardrobe objects, fashioned as a portfolio demonstration.</p><p className="cxsmo-footer__credit">Developed by zxke</p><div><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/account">Account</Link><Link href="/cxsmo/support">Info</Link></div></footer></main></MotionConfig>;
+  return <MotionConfig reducedMotion={reducedMotion ? "always" : "never"}><main className="cxsmo-site"><div className={`cxsmo-theme-wash${isTransitioning ? " is-active" : ""}`} aria-hidden="true">{isTransitioning && Array.from({ length: 144 }, (_, index) => <i key={index} style={{ "--pixel": index } as CSSProperties} />)}</div><div className="cxsmo-disclaimer">C✦SMO is a fictional fashion-commerce presentation, designed and developed by zxke. No payments or personal information are transmitted.</div><header className="cxsmo-header"><Link href="/cxsmo" aria-label="C✦SMO home"><CxsmoMark /></Link><CxsmoMenu /><div className="cxsmo-header__tools"><CxsmoAppearanceToggle /><Link className="cxsmo-bag-link" href="/cxsmo/bag"><ShoppingBag size={16} /> Bag <b>{bag.length}</b></Link></div></header>{children}<footer className="cxsmo-footer"><CxsmoMark inverse /><p>Future-pop wardrobe objects, fashioned as a portfolio demonstration.</p><p className="cxsmo-footer__credit">Developed by zxke</p><div><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/account">Account</Link><Link href="/cxsmo/support">Info</Link></div></footer></main></MotionConfig>;
 }
 
 function CxsmoMenu() {
@@ -53,7 +58,7 @@ function TextReveal({ text }: { text: string }) {
   return <span className="cxsmo-reveal" aria-label={text}>{words.map((word, index) => <motion.span key={`${word}-${index}`} initial={{ y: "115%", opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true, amount: .55 }} transition={{ duration: .34, delay: index * .055, ease }}>{word}{index < words.length - 1 ? " " : ""}</motion.span>)}</span>;
 }
 
-function ProductCard({ product, order = "01" }: { product: CxsmoProduct; order?: string }) {
+export function ProductCard({ product, order = "01" }: { product: CxsmoProduct; order?: string }) {
   const { addToBag, savedIds, toggleSaved } = useCxsmoDemo();
   const [added, setAdded] = useState(false);
   const save = savedIds.includes(product.id);
@@ -108,11 +113,7 @@ export function CxsmoSupportPage() {
   return <CxsmoShell><section className="cxsmo-page-intro cxsmo-page-intro--compact"><p className="section-label">Information desk</p><h1><TextReveal text="Need a" /><br /><em>little clarity?</em></h1><p>Product and service information should feel as considered as the clothes.</p></section><section className="cxsmo-info-list">{items.map(([id, title, body], index) => <article className={open === id ? "is-open" : ""} key={id}><button aria-expanded={open === id} onClick={() => setOpen(open === id ? "" : id)}><span>0{index + 1}</span><b>{title}</b><Plus size={20} /></button><AnimatePresence>{open === id && <motion.div className="cxsmo-info-answer" initial={{ height: 0, opacity: 0, y: -8 }} animate={{ height: "auto", opacity: 1, y: 0 }} exit={{ height: 0, opacity: 0, y: -8 }} transition={{ duration: .25, ease }}><p>{body}</p></motion.div>}</AnimatePresence></article>)}</section></CxsmoShell>;
 }
 
-export function CxsmoAccountPage() {
-  const { savedIds } = useCxsmoDemo();
-  const saved = cxsmoProducts.filter((product) => savedIds.includes(product.id));
-  return <CxsmoShell><section className="cxsmo-account"><div><p className="section-label">Your frequency</p><h1>Saved<br /><em>for later.</em></h1><p>Saved product states are stored in this browser for the purpose of this demonstration. No account or contact data is created.</p></div><aside><span>Portfolio account</span><b>0 connected orders</b><p>Sign-in, purchase history, and real customer details are intentionally not represented.</p></aside></section><section className="cxsmo-saved-grid">{saved.length ? saved.map((product, index) => <ProductCard product={product} order={`0${index + 1}`} key={product.id} />) : <div className="cxsmo-empty-state"><Heart size={24} /><h2>Your save list is clear.</h2><p>Tap the heart on a C✦SMO object to keep it here.</p><Link className="cxsmo-button" href="/cxsmo/shop">Browse the drop <ArrowDownRight size={16} /></Link></div>}</section></CxsmoShell>;
-}
+export function CxsmoAccountPage() { return <CxsmoShell><CxsmoAccountPanel /></CxsmoShell>; }
 
 export function CxsmoBagPage() {
   const { bag, removeFromBag, clearBag } = useCxsmoDemo();

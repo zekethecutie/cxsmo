@@ -1,0 +1,25 @@
+.poster-hero { isolation:isolate; }
+.poster-hero__backword { font-size:clamp(142px,21vw,315px); left:-.8vw; opacity:.42; top:9%; }
+.poster-hero__red-frame { opacity:.68; }
+.poster-hero::before { background:radial-gradient(circle at 70% 35%,rgba(223,26,34,.16),transparent 24%),linear-gradient(112deg,transparent 0 62%,rgba(240,236,230,.05) 62% 63%,transparent 63%); content:""; inset:0; pointer-events:none; position:absolute; z-index:0; }
+.poster-hero__pixel-lattice { background-image:linear-gradient(90deg,rgba(240,236,230,.13) 1px,transparent 1px),linear-gradient(rgba(240,236,230,.13) 1px,transparent 1px); background-size:52px 52px; bottom:16%; clip-path:polygon(0 0,100% 32%,86% 100%,21% 82%); mask-image:linear-gradient(90deg,transparent,black 42%,black 68%,transparent); opacity:.13; position:absolute; right:7%; top:15%; transform:perspective(600px) rotateY(-18deg); width:45%; z-index:1; }
+.poster-hero__object-layer { pointer-events:none; position:absolute; z-index:2; }
+.poster-hero__object-layer img { filter:drop-shadow(0 44px 30px rgba(0,0,0,.7)) drop-shadow(16px 18px 0 rgba(223,26,34,.22)); height:100%; object-fit:contain; width:100%; }
+.poster-hero__object-layer--jean { bottom:1%; height:min(82vh,825px); right:18%; width:min(36vw,525px); }
+.poster-hero__gradient-star { background:linear-gradient(145deg,#fff 0%,#f0ece6 25%,#df1a22 52%,#4c0508 100%); background-clip:text; color:transparent; filter:drop-shadow(9px 11px 0 rgba(223,26,34,.22)); font-family:Georgia,serif; font-size:clamp(88px,10vw,164px); line-height:.8; opacity:.74; position:absolute; right:9%; text-shadow:1px 1px 0 rgba(255,255,255,.15); top:16%; transform:rotate(10deg); z-index:3; }
+.poster-hero__object { backdrop-filter:blur(16px); background:linear-gradient(135deg,rgba(240,236,230,.96),rgba(197,187,180,.81)); box-shadow:18px 21px 0 rgba(223,26,34,.52); }
+.poster-story__image--cutout > div { align-items:center; background:radial-gradient(circle,#df1a22 0 2%,transparent 2.5% 100%),linear-gradient(142deg,#f0ece6 0 49%,#df1a22 49% 52%,#121215 52%); display:flex; justify-content:center; }
+.poster-story__image--cutout img { filter:drop-shadow(0 31px 20px rgba(0,0,0,.4)); object-fit:contain; padding:8%; }
+.poster-lookbook__card { --stage:#1a1a1d; }
+.poster-lookbook__card--red { --stage:#df1a22; }.poster-lookbook__card--bone { --stage:#d8d1cb; }.poster-lookbook__card--ink { --stage:#202127; }
+.poster-lookbook__image { background:var(--stage); display:grid; place-items:center; }
+.poster-lookbook__image::before { background:repeating-linear-gradient(90deg,transparent 0 27px,rgba(240,236,230,.19) 27px 28px),repeating-linear-gradient(0deg,transparent 0 27px,rgba(240,236,230,.19) 27px 28px); content:""; inset:0; opacity:.35; position:absolute; z-index:0; }
+.poster-lookbook__image:after { background:linear-gradient(150deg,transparent 54%,rgba(8,8,9,.36) 55%); }
+.poster-lookbook__image img { filter:drop-shadow(0 26px 19px rgba(0,0,0,.38)); object-fit:contain; padding:8% 13%; position:relative; z-index:1; }
+.poster-lookbook__stage-label { color:rgba(240,236,230,.8); font:800 9px/1 "DM Mono",monospace; left:14px; letter-spacing:.09em; position:absolute; top:14px; z-index:3; }
+.poster-lookbook__card--bone .poster-lookbook__stage-label { color:#080809; }.poster-lookbook__card--bone .poster-lookbook__image i { color:#df1a22; }
+.cxsmo-fit-carousel__art { background:linear-gradient(128deg,#09090b 0 49%,#df1a22 49% 51%,#201419 51%); }
+.cxsmo-fit-carousel__art::before { background:repeating-linear-gradient(90deg,transparent 0 29px,rgba(240,236,230,.14) 29px 30px),repeating-linear-gradient(0deg,transparent 0 29px,rgba(240,236,230,.14) 29px 30px); content:""; inset:0; mask-image:linear-gradient(135deg,black,transparent 72%); position:absolute; z-index:0; }
+.cxsmo-fit-carousel__art img { height:86%; top:7%; width:76%; }
+@media (max-width:800px) { .poster-hero__pixel-lattice { right:-23%; width:100%; }.poster-hero__object-layer--jean { bottom:15%; height:470px; right:5%; width:290px; }.poster-hero__gradient-star { font-size:110px; right:3%; top:14%; }.poster-story__image--cutout img { padding:5%; }.poster-lookbook__image img { padding:8% 17%; } }
+@media (prefers-reduced-motion:reduce) { .poster-hero__object-layer,.poster-hero__gradient-star,.poster-hero__pixel-lattice { transform:none; }.poster-lookbook__image img { transition:none; } }

@@ -1,4 +1,4 @@
-.cxsmo-product-card__visual img { height: 100%; inset: 0; object-fit: cover; position: absolute; transform: scale(1.02); transition: transform .4s cubic-bezier(.16,1,.3,1); width: 100%; z-index: 1; }
-.cxsmo-product-card:hover .cxsmo-product-card__visual img { transform: scale(1.1); }
+.cxsmo-product-card__visual img { height: 88%; inset: auto; left: 50%; object-fit: contain; position: absolute; top: 8%; transform: translateX(-50%) rotate(-4deg) scale(1.02); transition: transform .4s cubic-bezier(.16,1,.3,1); width: 86%; z-index: 1; }
+.cxsmo-product-card:hover .cxsmo-product-card__visual img { transform: translateX(-50%) rotate(0) scale(1.08); }
 .cxsmo-product-card__visual:before { background: linear-gradient(180deg, rgba(17,18,25,.28), transparent 38%, rgba(17,18,25,.18)); content: ""; inset: 0; position: absolute; z-index: 2; }
 .cxsmo-product-card__visual span,.cxsmo-product-card__visual em { color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.45); z-index: 3; }
