@@ -28,12 +28,13 @@ describe("C✦SMO guided player", () => {
     expect(registeredRoutes).toContain("/cxsmo/information");
   });
 
-  it("retains its safe directed-play controls without scene-number navigation", () => {
+  it("retains exit-only chrome without scene-number navigation", () => {
     expect(showcaseSource).toContain('document.body.style.overflow = "hidden"');
     expect(showcaseSource).toContain('event.key === "Escape"');
-    expect(showcaseSource).toContain('Pause film');
-    expect(showcaseSource).toContain('Next shot');
-    expect(showcaseSource).toContain('Restart');
+    expect(showcaseSource).toContain('<X size={17} /> Exit');
+    expect(showcaseSource).not.toContain('Pause film');
+    expect(showcaseSource).not.toContain('Next shot');
+    expect(showcaseSource).not.toContain('Restart');
     expect(showcaseSource).not.toContain('cxsmo-route-tour__number');
     expect(showcaseSource).not.toContain('<nav aria-label="Tour scenes">');
   });

@@ -17,5 +17,8 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(new Set(cxsmoProducts.map((product) => product.category))).toEqual(new Set(["Denim", "Graphics", "Outerwear", "Tailoring", "Accessories", "Footwear", "Beauty", "Lifestyle"]));
     expect(formatCxsmoPrice(184)).toBe("$184");
     expect(cxsmoProducts.every((product) => product.image.includes("/manus-storage/") && product.details.length > 0 && product.price > 0)).toBe(true);
+    expect(getCxsmoProduct("starlight-03").image).toBe("/manus-storage/cxsmo-starlight-shell-v3_d0c90120.webp");
+    expect(getCxsmoProduct("gloss-07").image).toBe("/manus-storage/cxsmo-static-lip-glaze-v2_7f407941.webp");
+    expect(getCxsmoProduct("orbit-05").image).toBe("/manus-storage/cxsmo-key-charm-v2_2f9d899d.webp");
   });
 });

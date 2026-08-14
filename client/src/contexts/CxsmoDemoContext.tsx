@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useEffect, useMemo, useState } fr
 import { CxsmoProduct } from "@/lib/cxsmo";
 
 export type CxsmoBagLine = { productId: string; size: string };
-export type CxsmoProfile = { displayName: string; styleMode: "Signal" | "Quiet" | "Chrome"; destination: string; country: string; locale: string; currency: "USD" | "PHP" | "JPY" | "CNY" | "EUR"; tastes: string[]; height: string; waist: string; shoeSize: string; updatesEnabled: boolean; isConfigured: boolean };
+export type CxsmoProfile = { displayName: string; styleMode: "Signal" | "Quiet" | "Chrome"; destination: string; country: string; locale: string; currency: "USD" | "PHP" | "JPY" | "CNY" | "EUR"; tastes: string[]; height: string; waist: string; shoeSize: string; updatesEnabled: boolean; isConfigured: boolean; isSignedIn: boolean };
 
 type CxsmoDemoState = {
   bag: CxsmoBagLine[];
@@ -15,11 +15,13 @@ type CxsmoDemoState = {
   toggleSavedRecommendation: (id: string) => void;
   profile: CxsmoProfile;
   updateProfile: (update: Partial<CxsmoProfile>) => void;
+  startLocalAccount: (displayName: string) => void;
+  signOutLocalAccount: () => void;
 };
 
 const CxsmoDemoContext = createContext<CxsmoDemoState | undefined>(undefined);
 const storageKey = "cxsmo-demo-state";
-const initialProfile: CxsmoProfile = { displayName: "", styleMode: "Signal", destination: "", country: "United States", locale: "en-US", currency: "USD", tastes: [], height: "", waist: "", shoeSize: "", updatesEnabled: false, isConfigured: false };
+const initialProfile: CxsmoProfile = { displayName: "", styleMode: "Signal", destination: "", country: "United States", locale: "en-US", currency: "USD", tastes: [], height: "", waist: "", shoeSize: "", updatesEnabled: false, isConfigured: false, isSignedIn: false };
 
 export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
   const [bag, setBag] = useState<CxsmoBagLine[]>([]);
@@ -63,6 +65,8 @@ export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
     toggleSavedRecommendation: (id) => setSavedRecommendationIds((ids) => ids.includes(id) ? ids.filter((item) => item !== id) : [...ids, id]),
     profile,
     updateProfile: (update) => setProfile((current) => ({ ...current, ...update, isConfigured: true })),
+    startLocalAccount: (displayName) => setProfile((current) => ({ ...current, displayName: displayName.trim() || current.displayName || "signal", isConfigured: true, isSignedIn: true })),
+    signOutLocalAccount: () => setProfile((current) => ({ ...current, isSignedIn: false })),
   }), [bag, savedIds, savedRecommendationIds, profile]);
 
   return <CxsmoDemoContext.Provider value={value}>{children}</CxsmoDemoContext.Provider>;
