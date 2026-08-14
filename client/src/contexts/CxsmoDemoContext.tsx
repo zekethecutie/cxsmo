@@ -7,10 +7,12 @@ export type CxsmoProfile = { displayName: string; styleMode: "Signal" | "Quiet" 
 type CxsmoDemoState = {
   bag: CxsmoBagLine[];
   savedIds: string[];
+  savedRecommendationIds: string[];
   addToBag: (product: CxsmoProduct, size: string) => void;
   removeFromBag: (index: number) => void;
   clearBag: () => void;
   toggleSaved: (id: string) => void;
+  toggleSavedRecommendation: (id: string) => void;
   profile: CxsmoProfile;
   updateProfile: (update: Partial<CxsmoProfile>) => void;
 };
@@ -22,6 +24,7 @@ const initialProfile: CxsmoProfile = { displayName: "", styleMode: "Signal", des
 export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
   const [bag, setBag] = useState<CxsmoBagLine[]>([]);
   const [savedIds, setSavedIds] = useState<string[]>([]);
+  const [savedRecommendationIds, setSavedRecommendationIds] = useState<string[]>([]);
   const [profile, setProfile] = useState<CxsmoProfile>(initialProfile);
 
   useEffect(() => {
@@ -35,9 +38,10 @@ export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
         if (detected) setProfile({ ...initialProfile, locale, ...detected });
         return;
       }
-      const parsed = JSON.parse(saved) as { bag?: CxsmoBagLine[]; savedIds?: string[]; profile?: Partial<CxsmoProfile> };
+      const parsed = JSON.parse(saved) as { bag?: CxsmoBagLine[]; savedIds?: string[]; savedRecommendationIds?: string[]; profile?: Partial<CxsmoProfile> };
       setBag(parsed.bag ?? []);
       setSavedIds(parsed.savedIds ?? []);
+      setSavedRecommendationIds(parsed.savedRecommendationIds ?? []);
       setProfile({ ...initialProfile, ...parsed.profile });
     } catch {
       window.localStorage.removeItem(storageKey);
@@ -45,19 +49,21 @@ export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(storageKey, JSON.stringify({ bag, savedIds, profile }));
-  }, [bag, savedIds, profile]);
+    window.localStorage.setItem(storageKey, JSON.stringify({ bag, savedIds, savedRecommendationIds, profile }));
+  }, [bag, savedIds, savedRecommendationIds, profile]);
 
   const value = useMemo<CxsmoDemoState>(() => ({
     bag,
     savedIds,
+    savedRecommendationIds,
     addToBag: (product, size) => setBag((lines) => [...lines, { productId: product.id, size }]),
     removeFromBag: (index) => setBag((lines) => lines.filter((_, lineIndex) => lineIndex !== index)),
     clearBag: () => setBag([]),
     toggleSaved: (id) => setSavedIds((ids) => ids.includes(id) ? ids.filter((item) => item !== id) : [...ids, id]),
+    toggleSavedRecommendation: (id) => setSavedRecommendationIds((ids) => ids.includes(id) ? ids.filter((item) => item !== id) : [...ids, id]),
     profile,
     updateProfile: (update) => setProfile((current) => ({ ...current, ...update, isConfigured: true })),
-  }), [bag, savedIds, profile]);
+  }), [bag, savedIds, savedRecommendationIds, profile]);
 
   return <CxsmoDemoContext.Provider value={value}>{children}</CxsmoDemoContext.Provider>;
 }

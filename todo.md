@@ -94,7 +94,7 @@
 - [x] Replace repeated campaign imagery across the public storefront with the distinct C✦SMO image set and retain accurate alternative text.
 - [x] Build a premium animated C✦SMO fit carousel with visible controls, responsive interaction feedback, reduced-motion handling, and direct shop links.
 - [x] Add an explicitly honest community-feedback module with a no-verified-testimonials state and no fabricated ratings, testimonials, or comments.
-- [ ] Refine the appearance setting with a smooth theme transition and expand consistent interactive feedback across key controls.
+- [x] Refine the appearance setting with a smooth theme transition and expand consistent interactive feedback across key controls.
 - [x] Improve the C✦SMO studio dashboard’s scanning, quick-action, and operational-readiness patterns while retaining the portfolio-safe boundary.
 - [x] Implement concrete studio overview refinements for faster scanning, new quick-action controls, and clearer readiness summaries, then capture route-level QA evidence.
 - [ ] Validate the enhanced C✦SMO image system, carousel, themes, interactions, responsive layouts, tests, and production build before saving the next checkpoint.
@@ -162,3 +162,10 @@
 - [ ] Locate and wire the correct newer transparent campaign asset featuring one man and two women into the public C✦SMO hero, replacing the outdated full-background group image.
 - [ ] Import the canvas-approved transparent C✦SMO hero and product-cutout assets once exported into the project workspace, then update all affected catalogue and poster assignments.
 - [ ] Reconcile every remaining C✦SMO-specific requirement in the task tracker, separating only genuine external blockers from implementation work that can be completed in the current project.
+- [x] Replace the current overlay-only showcase with a visitor-started, route-aware C✦SMO motion-graphics tour that demonstrates actual public and studio interfaces through controlled navigation, visual cursor choreography, camera-like scene transitions, and pause or exit controls.
+- [x] Use every supplied C✦SMO sound effect in a deliberate, distinct, opt-in interaction or tour moment, without autoplay or repetitive generic clicks.
+- [x] Refine the C✦SMO privacy, terms, and portfolio-disclosure pages with stronger poster composition, interactive section navigation, motion feedback, and preserved legal clarity.
+- [x] Remove public KINFORM routes and legacy imports from the active C✦SMO application router without deleting reusable historical source files.
+- [ ] Complete a route-by-route C✦SMO design audit covering the storefront, studio, legal, account, checkout, parallax, typography, motion, and accessibility surfaces.
+- [x] Add a browser-local saved-recommendations flow that lets visitors explicitly keep or remove recommendation-driven objects separately from the general save list.
+- [x] Add a distinct pre-tour C✦SMO brand-build intro scene that constructs the mark before the visitor-started route tour begins.
