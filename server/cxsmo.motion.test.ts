@@ -36,8 +36,11 @@ describe("C✦SMO reduced-motion contract", () => {
 
   it("keeps poster hero depth scroll-led rather than pointer-led", () => {
     expect(posterHomeSource).toContain('useScroll({ target: heroRef, offset: ["start start", "end start"] })');
-    expect(posterHomeSource).toContain('useTransform(heroScroll, [0, 1], ["0%", "-8%"])');
-    expect(posterHomeSource).toContain('useTransform(heroScroll, [0, 1], ["0%", "30%"])');
+    expect(posterHomeSource).toContain('useTransform(heroScroll, [0, 1], ["0%", "-14%"])');
+    expect(posterHomeSource).toContain('useTransform(heroScroll, [0, 1], ["0%", "48%"])');
+    expect(posterHomeSource).toContain('useTransform(scrollYProgress, [0, 1], ["-25%", "28%"])');
+    expect(posterHomeSource).toContain('useTransform(scrollYProgress, [0, 1], ["38%", "-30%"])');
+    expect(posterHomeSource).toContain('heroBarcodeY');
     expect(posterHomeSource).not.toContain("onPointerMove");
     expect(posterHomeSource).not.toContain("onMouseMove");
     expect(reducedMotionStyle).toContain("scroll-behavior: auto !important");

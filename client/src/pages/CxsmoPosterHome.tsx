@@ -8,6 +8,7 @@ import { cxsmoProducts, formatCxsmoPrice } from "@/lib/cxsmo";
 import { resolveCxsmoProduct, useCxsmoPublishedContent } from "@/lib/cxsmoContent";
 import "./cxsmo-poster-home.css";
 import "./cxsmo-transparent-editorial.css";
+import "./cxsmo-poster-polish.css";
 
 const getProduct = (id: string) => cxsmoProducts.find((product) => product.id === id) ?? cxsmoProducts[0];
 
@@ -19,13 +20,14 @@ export function CxsmoPosterHome() {
   const storyRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const { scrollYProgress } = useScroll({ target: storyRef, offset: ["start end", "end start"] });
-  const heroObjectY = useTransform(heroScroll, [0, 1], ["0%", "-8%"]);
+  const heroObjectY = useTransform(heroScroll, [0, 1], ["0%", "-14%"]);
   const heroObjectRotate = useTransform(heroScroll, [0, 1], [-4, -1]);
   const heroTypeY = useTransform(heroScroll, [0, 1], ["0%", "18%"]);
   const heroWordX = useTransform(heroScroll, [0, 1], ["0%", "2%"]);
-  const heroWordY = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
-  const posterX = useTransform(scrollYProgress, [0, 1], ["-11%", "14%"]);
-  const redX = useTransform(scrollYProgress, [0, 1], ["18%", "-12%"]);
+  const heroWordY = useTransform(heroScroll, [0, 1], ["0%", "48%"]);
+  const heroBarcodeY = useTransform(heroScroll, [0, 1], ["0%", "44%"]);
+  const posterX = useTransform(scrollYProgress, [0, 1], ["-25%", "28%"]);
+  const redX = useTransform(scrollYProgress, [0, 1], ["38%", "-30%"]);
   const heroJean = resolveCxsmoProduct(getProduct("gravity-01"), productOverrides["gravity-01"]);
   const resolvedStoryObject = resolveCxsmoProduct(storyObject, productOverrides[storyObject.id]);
   const looks = lookbook.map((look) => ({ ...look, product: resolveCxsmoProduct(getProduct(look.productId), productOverrides[look.productId]) }));
@@ -42,7 +44,7 @@ export function CxsmoPosterHome() {
       <div className="poster-hero__gradient-star" aria-hidden="true">✦</div>
       <motion.div className="poster-hero__type" style={{ y: heroTypeY }}><p>{hero.eyebrow}</p><h1>{hero.lineOne}<br /><span>{hero.emphasis}</span><br />{hero.lineThree}</h1><div><Link href="/cxsmo/shop" className="poster-button">Shop the drop <ArrowDownRight size={17} /></Link><Link href="/cxsmo/edits" className="poster-text-link">Open fit edits <ArrowUpRight size={15} /></Link></div></motion.div>
       <aside className="poster-hero__object"><span>{hero.objectLabel}</span><b>{hero.objectName}</b><small>{hero.objectPriceNote}</small><i>✦</i></aside>
-      <div className="poster-hero__barcode"><span>CSX-2002</span><i /><b>01—12</b></div><div className="poster-hero__scroll"><MoveDown size={15} /><span>Scroll for the fit signal</span></div>
+      <motion.div className="poster-hero__barcode" style={{ y: heroBarcodeY }}><span>CSX-2002</span><b>01—12</b></motion.div><div className="poster-hero__scroll"><MoveDown size={15} /><span>Scroll for the fit signal</span></div>
     </section>
 
     <section className="poster-entry-flow"><div><p className="section-label">C✦SMO / 01</p><h2>A drop is not a grid.<br /><em>It is a way in.</em></h2><p>Start with the campaign, follow a shape that catches your eye, then let the object page, fit edit, local bag, and studio layer explain how the system would work.</p></div><Link href="/cxsmo/shop" className="poster-button">Browse every object <ArrowDownRight size={17} /></Link></section>
