@@ -15,6 +15,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
   it("uses a distinct editorial pre-store entry at the root route", () => {
     expect(app).toContain('<Route path="/" component={CxsmoEntryPage} />');
     expect(entry).toContain("C✦SMO STUDIOS / DIGITAL FASHION SYSTEM");
+    expect(entry).toContain("<CxsmoMark inverse />");
     expect(entry).toContain("Wide screen recommended");
     expect(entry).toContain("cxsmostudios@cxsmo.io");
     expect(entryStyle).toContain("cxsmo-entry__orbit");
