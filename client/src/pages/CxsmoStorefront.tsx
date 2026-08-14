@@ -31,6 +31,7 @@ import "./cxsmo-legal-editorial.css";
 import "./cxsmo-morphographic.css";
 import "./cxsmo-scroll-depth.css";
 import "./cxsmo-custom-cursor.css";
+import "./cxsmo-audit-refinements.css";
 
 const heroImage = "/manus-storage/cxsmo-hero-v2_cadfe55c.jpg";
 const ease = [0.16, 1, 0.3, 1] as const;
