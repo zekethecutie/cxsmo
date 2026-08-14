@@ -8,6 +8,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { cxsmoProducts } from "@/lib/cxsmo";
 import "./cxsmo-entry.css";
 import "./cxsmo-entry-tools.css";
+import "./cxsmo-entry-appearance.css";
 
 const orbitObjects = [cxsmoProducts[0], cxsmoProducts[4], cxsmoProducts[8], cxsmoProducts[10]].filter(Boolean);
 
