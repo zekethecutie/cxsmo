@@ -1,0 +1,9 @@
+@media (max-width:800px) {
+  .cxsmo-filter-scroll { -ms-overflow-style:none; -webkit-overflow-scrolling:touch; mask-image:linear-gradient(90deg,#000 0 90%,transparent 100%); padding-right:34px; scrollbar-width:none; scroll-padding-inline:17px; }
+  .cxsmo-filter-scroll::-webkit-scrollbar { display:none; }
+  .cxsmo-filter-scroll button { scroll-snap-align:start; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .cxsmo-filter-scroll { scroll-behavior:auto; }
+}
