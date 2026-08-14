@@ -161,7 +161,7 @@
 - [x] Create an animated C✦SMO brand-build introduction within the guided showcase using the supplied game-bonus sound only after an explicit user gesture.
 - [x] Locate and wire the correct newer transparent campaign asset featuring one man and two women into the public C✦SMO hero, replacing the outdated full-background group image.
 - [ ] Import the canvas-approved transparent C✦SMO hero and product-cutout assets once exported into the project workspace, then update all affected catalogue and poster assignments.
-- [ ] Reconcile every remaining C✦SMO-specific requirement in the task tracker, separating only genuine external blockers from implementation work that can be completed in the current project.
+- [x] Reconcile every remaining C✦SMO-specific requirement in the task tracker, separating only genuine external blockers from implementation work that can be completed in the current project.
 - [x] Replace the current overlay-only showcase with a visitor-started, route-aware C✦SMO motion-graphics tour that demonstrates actual public and studio interfaces through controlled navigation, visual cursor choreography, camera-like scene transitions, and pause or exit controls.
 - [x] Use every supplied C✦SMO sound effect in a deliberate, distinct, opt-in interaction or tour moment, without autoplay or repetitive generic clicks.
 - [x] Refine the C✦SMO privacy, terms, and portfolio-disclosure pages with stronger poster composition, interactive section navigation, motion feedback, and preserved legal clarity.
