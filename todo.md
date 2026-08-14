@@ -148,7 +148,7 @@
 - [x] Add country and currency preferences with locale-aware C✦SMO product-price display, an explicit manual override, and clear portfolio-simulation disclosure.
 - [x] Build a non-payment checkout and delivery-address simulation with browser-local inputs, a Google Maps-ready location preview, and no saved personal information.
 - [x] Add Privacy, Terms of Use, Portfolio Disclosure, and checkout-consent surfaces explaining fictional commerce boundaries, local-only simulation data, and no transaction processing.
-- [ ] Validate the locale, checkout, map-preview, consent, and legal-information experiences for responsive behavior, clarity, accessibility, and safe empty states.
+- [x] Validate the locale, checkout, map-preview, consent, and legal-information experiences for responsive behavior, clarity, accessibility, and safe empty states.
 - [x] Reframe the C✦SMO poster hero around the newer three-person campaign composition, while accurately distinguishing its full photographic background from true-alpha product renders.
 - [x] Correct the C✦SMO background word parallax so it descends as the page scrolls down, at a deliberately distinct scroll rate from the campaign layer.
 - [x] Build a centralized, permissioned C✦SMO media library for existing campaign assets and owner-uploaded images, with reusable image metadata and portfolio-safe storage.

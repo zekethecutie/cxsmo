@@ -1,0 +1,31 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { describe, expect, it } from "vitest";
+
+const checkoutSource = readFileSync(resolve(process.cwd(), "client/src/components/CxsmoCheckoutSimulation.tsx"), "utf8");
+const demoSource = readFileSync(resolve(process.cwd(), "client/src/contexts/CxsmoDemoContext.tsx"), "utf8");
+const appSource = readFileSync(resolve(process.cwd(), "client/src/App.tsx"), "utf8");
+
+describe("C✦SMO locale and checkout simulation", () => {
+  it("keeps the delivery map as a browser-only preview with an explicit staged-state boundary", () => {
+    expect(checkoutSource).toContain('const steps = ["Review", "Address", "Delivery", "Confirm"]');
+    expect(checkoutSource).toContain("MapView");
+    expect(checkoutSource).toContain('title: "Browser-only delivery preview"');
+    expect(checkoutSource).toContain("No payment, order, address, or contact information is transmitted or retained by C✦SMO");
+    expect(checkoutSource).toContain('disabled={!acknowledged}');
+    expect(checkoutSource).toContain("No order reference, receipt, payment, or personal-data record has been created.");
+    expect(checkoutSource).not.toContain("fetch(");
+  });
+
+  it("keeps locale preferences browser-local with region-aware default currencies", () => {
+    expect(demoSource).toContain('const storageKey = "cxsmo-demo-state"');
+    expect(demoSource).toContain("navigator.language");
+    expect(demoSource).toContain('PH: { country: "Philippines", currency: "PHP" }');
+    expect(demoSource).toContain('JP: { country: "Japan", currency: "JPY" }');
+    expect(demoSource).toContain('window.localStorage.setItem(storageKey');
+  });
+
+  it("keeps the legal-information routes publicly registered", () => {
+    ["/cxsmo/legal", "/cxsmo/privacy", "/cxsmo/terms", "/cxsmo/disclosure"].forEach((path) => expect(appSource).toContain(`path="${path}"`));
+  });
+});
