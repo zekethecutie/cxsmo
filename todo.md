@@ -199,3 +199,4 @@
 - [x] Extend the supplied C✦SMO custom cursor to fine-pointer storefront interaction while preserving native cursors for touch, forms, keyboard use, and reduced-motion preferences.
 - [x] Refine C✦SMO navigation disclosure semantics, focus return, and regression coverage while retaining its animated visual language and reduced-motion behavior.
 - [x] Add focus-trapping, Escape dismissal, and restoration-safe lifecycle behavior to the owner-controlled C✦SMO promotion popup, then protect it with regression coverage.
+- [x] Verify C✦SMO optional-sound cue coverage and calibrated audibility while retaining no-autoplay, touch exclusion, mute control, and hover cooldown safeguards.
