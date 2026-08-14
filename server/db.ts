@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { cxsmoContentEntries, cxsmoMediaAssets, InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,30 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+export async function listCxsmoMediaAssets() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(cxsmoMediaAssets).orderBy(desc(cxsmoMediaAssets.createdAt));
+}
+
+export async function createCxsmoMediaAsset(asset: typeof cxsmoMediaAssets.$inferInsert) {
+  const db = await getDb();
+  if (!db) throw new Error("C✦SMO studio storage is not available.");
+  await db.insert(cxsmoMediaAssets).values(asset);
+}
+
+export async function listCxsmoContentEntries(status?: "draft" | "published") {
+  const db = await getDb();
+  if (!db) return [];
+  return status
+    ? db.select().from(cxsmoContentEntries).where(eq(cxsmoContentEntries.status, status)).orderBy(desc(cxsmoContentEntries.updatedAt))
+    : db.select().from(cxsmoContentEntries).orderBy(desc(cxsmoContentEntries.updatedAt));
+}
+
+export async function upsertCxsmoContentEntry(entry: Pick<typeof cxsmoContentEntries.$inferInsert, "contentKey" | "payload" | "status" | "updatedByUserId">) {
+  const db = await getDb();
+  if (!db) throw new Error("C✦SMO studio content is not available.");
+  await db.insert(cxsmoContentEntries).values(entry).onDuplicateKeyUpdate({
+    set: { payload: entry.payload, status: entry.status, updatedByUserId: entry.updatedByUserId },
+  });
+}

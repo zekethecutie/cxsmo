@@ -25,4 +25,26 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+export const cxsmoMediaAssets = mysqlTable("cxsmoMediaAssets", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 180 }).notNull(),
+  alt: text("alt").notNull(),
+  url: text("url").notNull(),
+  storageKey: varchar("storageKey", { length: 280 }),
+  mimeType: varchar("mimeType", { length: 80 }).notNull(),
+  createdByUserId: int("createdByUserId"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export const cxsmoContentEntries = mysqlTable("cxsmoContentEntries", {
+  id: int("id").autoincrement().primaryKey(),
+  contentKey: varchar("contentKey", { length: 120 }).notNull().unique(),
+  payload: text("payload").notNull(),
+  status: mysqlEnum("status", ["draft", "published"]).default("draft").notNull(),
+  updatedByUserId: int("updatedByUserId"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type CxsmoMediaAsset = typeof cxsmoMediaAssets.$inferSelect;
+export type CxsmoContentEntry = typeof cxsmoContentEntries.$inferSelect;

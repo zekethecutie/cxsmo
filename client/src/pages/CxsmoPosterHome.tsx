@@ -5,48 +5,48 @@ import { Link } from "wouter";
 import { CxsmoShell } from "./CxsmoStorefront";
 import { CxsmoCommunityEmptyState, CxsmoFitCarousel } from "@/components/CxsmoFitCarousel";
 import { cxsmoProducts, formatCxsmoPrice } from "@/lib/cxsmo";
+import { resolveCxsmoProduct, useCxsmoPublishedContent } from "@/lib/cxsmoContent";
 import "./cxsmo-poster-home.css";
 import "./cxsmo-transparent-editorial.css";
 
 const getProduct = (id: string) => cxsmoProducts.find((product) => product.id === id) ?? cxsmoProducts[0];
 
-const heroJean = getProduct("gravity-01");
 const storyObject = getProduct("signal-04");
-const looks = [
-  { tag: "LOOP 01", title: "FALLEN / FITTED", note: "Gravity jean · Orbit tee", product: getProduct("gravity-01"), tone: "red" },
-  { tag: "LOOP 02", title: "CHROME WEATHER", note: "Orbit tee · chrome interruption", product: getProduct("orbit-02"), tone: "bone" },
-  { tag: "LOOP 03", title: "SIGNAL CHECK", note: "Signal overshirt · Transit bag", product: getProduct("signal-04"), tone: "ink" },
-];
 
 export function CxsmoPosterHome() {
+  const { hero, lookbook, productOverrides } = useCxsmoPublishedContent();
   const heroRef = useRef<HTMLElement>(null);
   const storyRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const { scrollYProgress } = useScroll({ target: storyRef, offset: ["start end", "end start"] });
-  const heroObjectY = useTransform(heroScroll, [0, 1], ["0%", "-14%"]);
+  const heroObjectY = useTransform(heroScroll, [0, 1], ["0%", "-8%"]);
   const heroObjectRotate = useTransform(heroScroll, [0, 1], [-4, -1]);
   const heroTypeY = useTransform(heroScroll, [0, 1], ["0%", "18%"]);
-  const heroWordX = useTransform(heroScroll, [0, 1], ["0%", "-7%"]);
+  const heroWordX = useTransform(heroScroll, [0, 1], ["0%", "2%"]);
+  const heroWordY = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
   const posterX = useTransform(scrollYProgress, [0, 1], ["-11%", "14%"]);
   const redX = useTransform(scrollYProgress, [0, 1], ["18%", "-12%"]);
+  const heroJean = resolveCxsmoProduct(getProduct("gravity-01"), productOverrides["gravity-01"]);
+  const resolvedStoryObject = resolveCxsmoProduct(storyObject, productOverrides[storyObject.id]);
+  const looks = lookbook.map((look) => ({ ...look, product: resolveCxsmoProduct(getProduct(look.productId), productOverrides[look.productId]) }));
 
   return <CxsmoShell><div className="cxsmo-poster-home">
     <section ref={heroRef} className="poster-hero">
       <div className="poster-hero__pixel-lattice" aria-hidden="true" />
-      <motion.div className="poster-hero__backword" style={{ x: heroWordX }}>C✦SMO</motion.div>
+      <motion.div className="poster-hero__backword" style={{ x: heroWordX, y: heroWordY }}>C✦SMO</motion.div>
       <div className="poster-hero__red-frame" aria-hidden="true" />
-      <motion.div className="poster-hero__object-layer poster-hero__object-layer--jean" style={{ y: heroObjectY, rotate: heroObjectRotate }}>
-        <img src={heroJean.image} alt={`Transparent ${heroJean.name} product layer`} />
+      <motion.div className="poster-hero__object-layer poster-hero__object-layer--campaign" style={{ y: heroObjectY, rotate: heroObjectRotate }}>
+        <img src={hero.assetUrl} alt={hero.assetAlt} />
       </motion.div>
       <div className="poster-hero__gradient-star" aria-hidden="true">✦</div>
-      <motion.div className="poster-hero__type" style={{ y: heroTypeY }}><p>DROP 01 / DRESS THE AFTER-IMAGE</p><h1>NO<br /><span>SOFT</span><br />LANDING.</h1><div><Link href="/cxsmo/shop" className="poster-button">Shop the drop <ArrowDownRight size={17} /></Link><Link href="/cxsmo/edits" className="poster-text-link">Open fit edits <ArrowUpRight size={15} /></Link></div></motion.div>
-      <aside className="poster-hero__object"><span>OBJECT {heroJean.drop}</span><b>{heroJean.name}</b><small>{formatCxsmoPrice(heroJean.price)} / fictional portfolio price</small><i>✦</i></aside>
+      <motion.div className="poster-hero__type" style={{ y: heroTypeY }}><p>{hero.eyebrow}</p><h1>{hero.lineOne}<br /><span>{hero.emphasis}</span><br />{hero.lineThree}</h1><div><Link href="/cxsmo/shop" className="poster-button">Shop the drop <ArrowDownRight size={17} /></Link><Link href="/cxsmo/edits" className="poster-text-link">Open fit edits <ArrowUpRight size={15} /></Link></div></motion.div>
+      <aside className="poster-hero__object"><span>{hero.objectLabel}</span><b>{hero.objectName}</b><small>{hero.objectPriceNote}</small><i>✦</i></aside>
       <div className="poster-hero__barcode"><span>CSX-2002</span><i /><b>01—08</b></div><div className="poster-hero__scroll"><MoveDown size={15} /><span>Scroll for the fit signal</span></div>
     </section>
 
     <section className="poster-marquee" aria-label="C✦SMO style statement"><div><span>BIG FIT / SMALL DETAIL / RED ALERT / BIG FIT / SMALL DETAIL / RED ALERT / </span><span>BIG FIT / SMALL DETAIL / RED ALERT / BIG FIT / SMALL DETAIL / RED ALERT / </span></div></section>
 
-    <section className="poster-story" ref={storyRef}><motion.div className="poster-story__ghost" style={{ x: posterX }}>STYLE<br />IS A<br />SIGNAL</motion.div><motion.div className="poster-story__redword" style={{ x: redX }}>LOUD<br />ENOUGH</motion.div><div className="poster-story__copy"><p className="poster-kicker"><Sparkles size={14} /> THE C✦SMO FORMULA</p><h2>Loose where<br />the world pulls.<br /><em>Close where it counts.</em></h2><p>Oversized denim, fitted graphic layers, a chrome interruption. The first C✦SMO drop is built as a style world—and as a clear fashion-commerce story.</p><Link href="/cxsmo/products/gravity-01">Study object 01 <ArrowUpRight size={15} /></Link></div><div className="poster-story__image poster-story__image--cutout"><div><img src={storyObject.image} alt={`Transparent ${storyObject.name} portfolio product layer`} /></div><span>STYLE FRAME / 01</span></div></section>
+    <section className="poster-story" ref={storyRef}><motion.div className="poster-story__ghost" style={{ x: posterX }}>STYLE<br />IS A<br />SIGNAL</motion.div><motion.div className="poster-story__redword" style={{ x: redX }}>LOUD<br />ENOUGH</motion.div><div className="poster-story__copy"><p className="poster-kicker"><Sparkles size={14} /> THE C✦SMO FORMULA</p><h2>Loose where<br />the world pulls.<br /><em>Close where it counts.</em></h2><p>Oversized denim, fitted graphic layers, a chrome interruption. The first C✦SMO drop is built as a style world—and as a clear fashion-commerce story.</p><Link href="/cxsmo/products/gravity-01">Study object 01 <ArrowUpRight size={15} /></Link></div><div className="poster-story__image poster-story__image--cutout"><div><img src={resolvedStoryObject.image} alt={`Transparent ${resolvedStoryObject.name} portfolio product layer`} /></div><span>STYLE FRAME / 01</span></div></section>
 
     <section className="poster-lookbook"><div className="poster-section-head"><p>SCROLL THE LOOKBOOK</p><h2>WORN IN<br /><em>MOTION.</em></h2><span>03 object-led styling chapters / 08 portfolio objects</span></div><div className="poster-lookbook__grid">{looks.map((look, index) => <motion.article className={`poster-lookbook__card poster-lookbook__card--${look.tone}`} key={look.tag} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .7, delay: index * .08 }}><div className="poster-lookbook__image"><span className="poster-lookbook__stage-label">{look.product.drop}</span><img src={look.product.image} alt={`Transparent ${look.product.name} product layer for ${look.title}`} /><i>✦</i></div><p>{look.tag}</p><h3>{look.title}</h3><span>{look.note}</span><Link href={`/cxsmo/products/${look.product.id}`}>Shop the formula <ArrowUpRight size={14} /></Link></motion.article>)}</div></section>
 
