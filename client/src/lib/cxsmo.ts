@@ -114,4 +114,4 @@ export const cxsmoProducts: CxsmoProduct[] = [
 
 export const getCxsmoProduct = (id?: string) => cxsmoProducts.find((product) => product.id === id) ?? cxsmoProducts[0];
 
-export const formatCxsmoPrice = (price: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(price);
+export const formatCxsmoPrice = (price: number, locale = "en-US", currency: "USD" | "PHP" | "JPY" | "CNY" | "EUR" = "USD") => new Intl.NumberFormat(locale, { style: "currency", currency, maximumFractionDigits: 0 }).format(price);

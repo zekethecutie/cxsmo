@@ -9,7 +9,7 @@ import { KinformDemoProvider } from "./contexts/KinformDemoContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import { CxsmoAdminPage } from "./pages/CxsmoAdminPage";
-import { CxsmoAccountPage, CxsmoBagPage, CxsmoEditsPage, CxsmoHomePage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage } from "./pages/CxsmoStorefront";
+import { CxsmoAccountPage, CxsmoBagPage, CxsmoCheckoutPage, CxsmoEditsPage, CxsmoHomePage, CxsmoLegalPage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage } from "./pages/CxsmoStorefront";
 import { CxsmoPosterHome } from "./pages/CxsmoPosterHome";
 import { KinformAdminPage } from "./pages/KinformAdminPage";
 import { KinformAccountPage, KinformBagPage, KinformCollectionPage, KinformInventoryPage, KinformJournalEntryPage, KinformJournalPage, KinformProductPage, KinformSupportPage } from "./pages/KinformPages";
@@ -28,6 +28,8 @@ function Router() {
       <Route path="/cxsmo/support" component={CxsmoSupportPage} />
       <Route path="/cxsmo/account" component={CxsmoAccountPage} />
       <Route path="/cxsmo/bag" component={CxsmoBagPage} />
+      <Route path="/cxsmo/checkout" component={CxsmoCheckoutPage} />
+      <Route path="/cxsmo/legal" component={CxsmoLegalPage} />
       <Route path="/cxsmo/admin" component={CxsmoAdminPage} />
       <Route path="/kinform" component={Home} />
       <Route path="/kinform/collection" component={KinformCollectionPage} />

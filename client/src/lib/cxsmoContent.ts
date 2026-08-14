@@ -1,0 +1,68 @@
+import { trpc } from "@/lib/trpc";
+import type { CxsmoProduct } from "@/lib/cxsmo";
+
+export type CxsmoHeroContent = {
+  eyebrow: string;
+  lineOne: string;
+  emphasis: string;
+  lineThree: string;
+  assetUrl: string;
+  assetAlt: string;
+  objectLabel: string;
+  objectName: string;
+  objectPriceNote: string;
+};
+
+export type CxsmoPromotionContent = { enabled: boolean; message: string };
+export type CxsmoLookbookCard = { tag: string; title: string; note: string; productId: string; tone: "red" | "bone" | "ink" };
+export type CxsmoProductOverride = Partial<Pick<CxsmoProduct, "name" | "description" | "image">>;
+
+export const defaultCxsmoHero: CxsmoHeroContent = {
+  eyebrow: "DROP 01 / DRESS THE AFTER-IMAGE",
+  lineOne: "NO",
+  emphasis: "SOFT",
+  lineThree: "LANDING.",
+  assetUrl: "/manus-storage/cxsmo-hero-campaign_f5a1c0fc.jpg",
+  assetAlt: "Three adult C✦SMO campaign models in coordinated Y2K streetwear, photographed on a cool chrome-blue set",
+  objectLabel: "CAMPAIGN / 01",
+  objectName: "STATIC BLOOM / GROUP STUDY",
+  objectPriceNote: "fictional portfolio campaign",
+};
+
+export const defaultCxsmoPromotion: CxsmoPromotionContent = {
+  enabled: false,
+  message: "DROP 01 / THE AFTER-IMAGE IS LIVE — PORTFOLIO DEMONSTRATION ONLY",
+};
+
+export const defaultCxsmoLookbook: CxsmoLookbookCard[] = [
+  { tag: "LOOP 01", title: "FALLEN / FITTED", note: "Gravity jean · Orbit tee", productId: "gravity-01", tone: "red" },
+  { tag: "LOOP 02", title: "CHROME WEATHER", note: "Orbit tee · chrome interruption", productId: "orbit-02", tone: "bone" },
+  { tag: "LOOP 03", title: "SIGNAL CHECK", note: "Signal overshirt · Transit bag", productId: "signal-04", tone: "ink" },
+];
+
+function objectPayload<T>(payload: string, fallback: T): T {
+  try {
+    const parsed = JSON.parse(payload) as unknown;
+    return parsed && typeof parsed === "object" ? { ...fallback, ...(parsed as Partial<T>) } : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export function useCxsmoPublishedContent() {
+  const contentQuery = trpc.cxsmoStudio.content.publicList.useQuery(undefined, { staleTime: 30_000, retry: false });
+  const find = (contentKey: string) => contentQuery.data?.find((entry) => entry.contentKey === contentKey)?.payload;
+  const lookbookPayload = objectPayload<{ cards: CxsmoLookbookCard[] }>(find("lookbook") ?? "", { cards: defaultCxsmoLookbook });
+  const productOverrides = Object.fromEntries((contentQuery.data ?? []).filter((entry) => entry.contentKey.startsWith("product.")).map((entry) => [entry.contentKey.replace("product.", ""), objectPayload<CxsmoProductOverride>(entry.payload, {})]));
+  return {
+    hero: objectPayload(find("hero") ?? "", defaultCxsmoHero),
+    promotion: objectPayload(find("promotion") ?? "", defaultCxsmoPromotion),
+    lookbook: lookbookPayload.cards,
+    productOverrides,
+    isLoading: contentQuery.isLoading,
+  };
+}
+
+export function resolveCxsmoProduct(product: CxsmoProduct, override?: CxsmoProductOverride): CxsmoProduct {
+  return override ? { ...product, ...override } : product;
+}

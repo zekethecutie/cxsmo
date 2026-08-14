@@ -136,3 +136,21 @@
 - [ ] Replace pointer-driven hero movement with deliberate scroll-linked parallax and retain a static reduced-motion fallback.
 - [ ] Update the C✦SMO topbar to identify the fictional portfolio demonstration as designed and developed by zxke while retaining the non-payment and privacy boundary.
 - [ ] Add controlled CSS drop-shadow and poster-layer separation to C✦SMO mockups where it improves legibility and depth without visual clutter.
+
+- [ ] Rework the C✦SMO hero into a cleaner scroll-led hierarchy with one focal object, gradient headline treatment, restrained shadows, and distinct scroll rates for background, object, type, and divider.
+- [ ] Add a motion-graphic product carousel with scroll-based transitions, layered object choreography, and reduced-motion fallback.
+- [ ] Expand the portfolio account simulation with onboarding, taste and genre preferences, style suggestions, measurements, saved recommendations, orders, shipping states, ratings, and comment-ready empty states without fabricating social proof.
+- [ ] Validate the revised hero, carousel, account simulation, theme states, accessibility, tests, and build before the next checkpoint.
+
+# Deferred asset note
+- [ ] When the image-creation allowance is available, replace all remaining opaque product mockups with verified true-alpha PNGs.
+- [ ] Push the validated C✦SMO project to the selected GitHub repository after final checkpointing.
+- [ ] Add country and currency preferences with locale-aware C✦SMO product-price display, an explicit manual override, and clear portfolio-simulation disclosure.
+- [ ] Build a non-payment checkout and delivery-address simulation with browser-local inputs, a Google Maps-ready location preview, and no saved personal information.
+- [ ] Add Privacy, Terms of Use, Portfolio Disclosure, and checkout-consent surfaces explaining fictional commerce boundaries, local-only simulation data, and no transaction processing.
+- [ ] Validate the locale, checkout, map-preview, consent, and legal-information experiences for responsive behavior, clarity, accessibility, and safe empty states.
+- [x] Reframe the C✦SMO poster hero around the newer three-person campaign composition, while accurately distinguishing its full photographic background from true-alpha product renders.
+- [x] Correct the C✦SMO background word parallax so it descends as the page scrolls down, at a deliberately distinct scroll rate from the campaign layer.
+- [x] Build a centralized, permissioned C✦SMO media library for existing campaign assets and owner-uploaded images, with reusable image metadata and portfolio-safe storage.
+- [x] Add a sitewide content-management workspace for editable hero copy, campaign asset selection, promotion messaging, lookbook entries, and product visual/copy overrides.
+- [x] Connect published studio content to public C✦SMO surfaces with fallback defaults, visible preview states, and no fabricated commerce or user-generated data.
