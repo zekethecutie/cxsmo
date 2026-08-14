@@ -102,10 +102,10 @@
 - [x] Create original C✦SMO product-mockup and transparent-garment imagery informed by the supplied flat-lay and poster references when image generation becomes available, without copying logos, people, or compositions.
 - [x] Rebuild the C✦SMO product-detail interface with layered product media, more graphic material and size controls, tactile motion feedback, cleaner product information hierarchy, and responsive accessibility.
 - [ ] Upgrade C✦SMO navigation and dropdown surfaces with animated menu states, clear keyboard behavior, focus treatment, and reduced-motion fallbacks.
-- [ ] Add selective text-reveal, typewriter, and morphographic treatments to high-impact C✦SMO editorial and information-desk copy, avoiding motion overload.
+- [x] Add selective text-reveal, typewriter, and morphographic treatments to high-impact C✦SMO editorial and information-desk copy, avoiding motion overload.
 - [ ] Apply scroll-linked depth and parallax treatment to appropriate campaign, category, and product surfaces with static fallbacks for reduced-motion preferences.
 - [ ] Add Escape, outside-dismiss, focus-return, and direct keyboard QA coverage for the C✦SMO navigation menu.
-- [ ] Implement a deliberately limited typewriter or morphographic text treatment with a reduced-motion fallback.
+- [x] Implement a deliberately limited typewriter or morphographic text treatment with a reduced-motion fallback.
 - [ ] Add and document scroll-linked depth on C✦SMO category and product surfaces with a static reduced-motion equivalent.
 - [ ] Thoroughly audit and improve public C✦SMO routes for graphic rhythm, dimensional layering, purposeful transitions, and interactive feedback before the next checkpoint.
 - [x] When image generation is available again, create and integrate an original C✦SMO asset suite with dynamic full-body fit poses, transparent garment silhouettes, clearer product mockups, a sharper hero focal point, and photogenic black-red editorial lighting informed by the user-supplied references without copying them.
