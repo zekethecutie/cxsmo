@@ -169,7 +169,7 @@
 - [x] Complete a route-by-route C✦SMO design audit covering the storefront, studio, legal, account, checkout, parallax, typography, motion, and accessibility surfaces.
 - [x] Add an owner-controlled, dismissible C✦SMO promotional popup that reuses the existing published campaign message and preserves the fictional-commerce boundary.
 - [x] Register and use the supplied transparent one-man/two-women C✦SMO hero asset, replacing the older full-background campaign image throughout the public hero.
-- [ ] Replace the Starlight Moto Shell and Static Bloom Lip Glaze mockups with the newly supplied transparent approved product renders.
+- [x] Replace the Starlight Moto Shell and Static Bloom Lip Glaze mockups with the newly supplied transparent approved product renders.
 - [x] Add the supplied Bluestar C✦SMO Jersey, BLXCK UNIV3RSE Pants, and two BLXCK UNIV3RSE Longsleeve variations as new fictional C✦SMO catalogue objects with clear portfolio-safe product context.
 - [x] Rebuild the object-led lookbook into a timed three-second product-only morph sequence that retains persistent editorial context rather than moving or remounting the entire section on scroll.
 - [x] Extend C✦SMO’s optional sound system to provide subtle, varied hover cues on appropriate interactive controls without playback storms or autoplay.
@@ -200,3 +200,11 @@
 - [x] Refine C✦SMO navigation disclosure semantics, focus return, and regression coverage while retaining its animated visual language and reduced-motion behavior.
 - [x] Add focus-trapping, Escape dismissal, and restoration-safe lifecycle behavior to the owner-controlled C✦SMO promotion popup, then protect it with regression coverage.
 - [x] Verify C✦SMO optional-sound cue coverage and calibrated audibility while retaining no-autoplay, touch exclusion, mute control, and hover cooldown safeguards.
+- [x] Rebuild the C✦SMO entry flow as a presentation-first landing page with an editorial brand introduction, a naturally moving sideways product marquee, and concise footer/disclosure context.
+- [x] Make the top portfolio disclosure dismissible with a browser-local close control while retaining it in the footer and legal surfaces.
+- [x] Add a browser-local catalogue search experience for available C✦SMO items and clarify simulated store-management discovery paths.
+- [x] Add simulated account creation, sign-in/sign-out, account settings, and onboarding continuity without creating real credentials or transmitting personal data.
+- [x] Replace Starlight Moto Shell, Static Bloom Lip Glaze, and Orbit Key Charm catalogue media with the newly supplied transparent approved renders.
+- [x] Rework C✦SMO product-detail media into the Worn in Motion-style object stage; improve human editorial copy and remove the blurred BLXCK UNIV3RSE pants inventory presentation.
+- [x] Refine remaining light-mode route treatment, move the hero composition further left, reduce global custom-cursor scale, use the explainer-pop cue for zooming object hovers, and add a branded logo-star spin interaction.
+- [x] Reframe the C✦SMO player as a product-and-platform explainer with a longer held intro and only Exit visible during directed playback.

@@ -19,10 +19,10 @@ describe("C✦SMO reduced-motion contract", () => {
     expect(shellSource).toContain('reducedMotion={reducedMotion ? "always" : "never"}');
   });
 
-  it("pauses directed and timed sequences while retaining visitor-controlled progress", () => {
+  it("pauses directed and timed sequences when reduced motion is requested", () => {
     expect(tourSource).toContain('behavior: reducedMotion ? "auto" : "smooth"');
-    expect(tourSource).toContain('disabled={reducedMotion === true}');
-    expect(tourSource).toContain('Use Next shot to move through the film.');
+    expect(tourSource).toContain('if (!active || !playing || reducedMotion) return;');
+    expect(tourSource).toContain('setPlaying(reducedMotion !== true)');
     expect(carouselSource).toContain("if (paused || reducedMotion) return");
     expect(carouselSource).toContain("initial={reducedMotion ? false");
   });
