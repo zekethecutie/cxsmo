@@ -6,7 +6,7 @@
 .poster-hero__object-layer { pointer-events:none; position:absolute; z-index:2; }
 .poster-hero__object-layer img { filter:drop-shadow(0 44px 30px rgba(0,0,0,.7)) drop-shadow(16px 18px 0 rgba(223,26,34,.22)); height:100%; object-fit:contain; width:100%; }
 .poster-hero__object-layer--jean { bottom:1%; height:min(82vh,825px); right:18%; width:min(36vw,525px); }
-.poster-hero__object-layer--campaign { bottom:0; height:100%; overflow:hidden; right:calc(-5% + 10px); width:min(71vw,1040px); mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 14%,#000 31% 100%); -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 14%,#000 31% 100%); }
+.poster-hero__object-layer--campaign { bottom:0; height:100%; overflow:hidden; right:calc(-5% + 28px); width:min(71vw,1040px); mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 14%,#000 31% 100%); -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 14%,#000 31% 100%); }
 .poster-hero__object-layer--campaign img { filter:drop-shadow(-20px 46px 36px rgba(0,0,0,.82)) drop-shadow(0 16px 14px rgba(0,0,0,.46)); object-fit:cover; object-position:61% 50%; }
 .poster-hero__gradient-star { background:linear-gradient(145deg,#fff 0%,#f0ece6 25%,#df1a22 52%,#4c0508 100%); background-clip:text; color:transparent; filter:drop-shadow(9px 11px 0 rgba(223,26,34,.22)); font-family:Georgia,serif; font-size:clamp(88px,10vw,164px); line-height:.8; opacity:.74; position:absolute; right:9%; text-shadow:1px 1px 0 rgba(255,255,255,.15); top:16%; transform:rotate(10deg); z-index:3; }
 .poster-hero__object { backdrop-filter:blur(16px); background:linear-gradient(135deg,rgba(240,236,230,.96),rgba(197,187,180,.81)); box-shadow:18px 21px 0 rgba(223,26,34,.52); }
@@ -34,5 +34,5 @@
 .poster-hero__object-layer--campaign img { filter:drop-shadow(-20px 46px 36px rgba(0,0,0,.82)) drop-shadow(0 16px 14px rgba(0,0,0,.46)); }
 .poster-hero__object { box-shadow:18px 21px 0 rgba(8,8,9,.44),0 16px 24px rgba(0,0,0,.36); }
 .poster-marquee { position:relative; z-index:5; }
-@media (max-width:800px) { .poster-hero__object-layer--campaign { bottom:0; height:64%; right:0; top:auto; width:100%; mask-image:linear-gradient(0deg,#000 0%,#000 76%,transparent 100%); -webkit-mask-image:linear-gradient(0deg,#000 0%,#000 76%,transparent 100%); }.poster-hero__object-layer--campaign img { object-position:60% 48%; } }
+@media (max-width:800px) { .poster-hero__object-layer--campaign { bottom:0; height:64%; right:12px; top:auto; width:100%; mask-image:linear-gradient(0deg,#000 0%,#000 76%,transparent 100%); -webkit-mask-image:linear-gradient(0deg,#000 0%,#000 76%,transparent 100%); }.poster-hero__object-layer--campaign img { object-position:60% 48%; } }
 @media (prefers-reduced-motion:reduce) { .poster-hero__type h1 span { filter:none; } }

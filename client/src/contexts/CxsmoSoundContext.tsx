@@ -21,7 +21,7 @@ const soundSources: Record<CxsmoSoundCue, string> = {
   replay: "/manus-storage/mixkit-bonus-earned-in-video-game-2058_6edf4d2a.wav",
   hover: "/manus-storage/mixkit-fast-double-click-on-mouse-275_35c59510.wav",
 };
-const soundVolume: Record<CxsmoSoundCue, number> = { open: .18, click: .09, success: .15, theme: .18, shutter: .12, launch: .24, chapter: .14, finish: .18, nav: .1, primary: .13, select: .1, treasure: .15, lock: .12, double: .08, replay: .18, hover: .032 };
+const soundVolume: Record<CxsmoSoundCue, number> = { open: .28, click: .19, success: .3, theme: .33, shutter: .24, launch: .42, chapter: .28, finish: .36, nav: .19, primary: .25, select: .2, treasure: .3, lock: .25, double: .16, replay: .34, hover: .13 };
 const soundStorageKey = "cxsmo-sound-enabled";
 const CxsmoSoundContext = createContext<SoundContextValue | undefined>(undefined);
 
