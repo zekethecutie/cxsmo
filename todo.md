@@ -214,4 +214,4 @@
 - [x] Rebuild the C✦SMO player intro as a simpler red-gradient brand field with a longer hold, no cursor target box, and animated cursor choreography that points to meaningful route areas.
 - [x] Speed up the scroll-led depth of the STYLE IS A SIGNAL and LOUD ENOUGH sections, let the background C✦SMO, group study, and refined barcode travel deliberately, and remove visual clutter from the barcode treatment.
 - [x] Improve light/dark appearance blending across the dark campaign hero and the new entry-flow section so each surface is intentional in both modes.
-- [ ] Validate and push the latest C✦SMO simulation and visual-flow polish to GitHub after checkpointing.
+- [x] Validate and push the latest C✦SMO simulation and visual-flow polish to GitHub after checkpointing.
