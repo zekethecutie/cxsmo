@@ -41,6 +41,9 @@ try {
     route: location.pathname,
     hasSpotlight: Boolean(document.querySelector('.cxsmo-route-tour__spotlight')),
     hasTooltip: Boolean(document.querySelector('.cxsmo-route-tour__tooltip')),
+    hasAttachedTarget: Boolean(document.querySelector('[data-cxsmo-tour-target="true"]')),
+    hasFakeCursor: Boolean(document.querySelector('.cxsmo-route-tour__cursor')),
+    calloutSide: Array.from(document.querySelector('.cxsmo-route-tour__tooltip')?.classList ?? []).find((name) => name.startsWith('is-')) || null,
     tooltip: document.querySelector('.cxsmo-route-tour__tooltip article')?.textContent?.trim() || null,
     scrollLocked: document.body.style.overflow === 'hidden' && document.documentElement.style.overflow === 'hidden',
   }))()`);
@@ -49,7 +52,7 @@ try {
   await inspect("document.querySelector('.cxsmo-route-tour header button')?.click()");
   await sleep(520);
   const exited = await inspect(`(() => ({ active: Boolean(document.querySelector('.cxsmo-route-tour')), route: location.pathname, scrollRestored: document.body.style.overflow !== 'hidden' }))()`);
-  const passed = firstScene.active && firstScene.scene === "00" && firstScene.route === "/cxsmo" && firstScene.hasSpotlight && firstScene.hasTooltip && firstScene.scrollLocked && nextScene.scene === "01" && nextScene.route === "/cxsmo/shop" && !exited.active && exited.route === "/cxsmo" && exited.scrollRestored;
+  const passed = firstScene.active && firstScene.scene === "00" && firstScene.route === "/cxsmo" && firstScene.hasSpotlight && firstScene.hasTooltip && firstScene.hasAttachedTarget && !firstScene.hasFakeCursor && Boolean(firstScene.calloutSide) && firstScene.scrollLocked && nextScene.scene === "01" && nextScene.route === "/cxsmo/shop" && !exited.active && exited.route === "/cxsmo" && exited.scrollRestored;
   console.log(JSON.stringify({ passed, firstScene, nextScene, exited }, null, 2));
   if (!passed) process.exitCode = 1;
 } finally {
