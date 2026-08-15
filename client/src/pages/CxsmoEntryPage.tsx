@@ -39,14 +39,10 @@ function CxsmoEntryTools() {
 
 export function CxsmoEntryPage() {
   const reducedMotion = useReducedMotion();
-  const { isTransitioning, transitionTarget } = useTheme();
 
   return (
     <main className="cxsmo-entry">
       <CxsmoCustomCursor />
-      <div className={`cxsmo-theme-wash${isTransitioning ? " is-active" : ""}`} data-target={transitionTarget} aria-hidden="true">
-        {isTransitioning && Array.from({ length: 144 }, (_, index) => <i key={index} style={{ "--pixel": index } as React.CSSProperties} />)}
-      </div>
       <header className="cxsmo-entry__header"><CxsmoMark inverse /><p>ZXKE / FASHION COMMERCE STUDY / 2026</p><CxsmoEntryTools /></header>
       <section className="cxsmo-entry__hero cxsmo-entry__hero--poster">
         <p className="cxsmo-entry__poster-kicker">C✦SMO / DIGITAL FASHION SYSTEM</p>

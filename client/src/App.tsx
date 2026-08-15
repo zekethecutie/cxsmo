@@ -10,6 +10,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { CxsmoSoundProvider } from "./contexts/CxsmoSoundContext";
 import { useCxsmoSound } from "./contexts/CxsmoSoundContext";
 import { CxsmoTourProvider } from "./components/CxsmoGuidedShowcase";
+import { CxsmoThemeWash } from "./components/CxsmoThemeWash";
 import { CxsmoStudioGate } from "./pages/CxsmoAdminPage";
 import { CxsmoAccountPage, CxsmoBagPage, CxsmoCheckoutPage, CxsmoDisclosurePage, CxsmoEditsPage, CxsmoHomePage, CxsmoLegalPage, CxsmoPrivacyPage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage, CxsmoTermsPage } from "./pages/CxsmoStorefront";
 import { CxsmoPosterHome } from "./pages/CxsmoPosterHome";
@@ -60,11 +61,12 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark" switchable>
-        <CxsmoSoundProvider>
-        <TooltipProvider>
-          <CxsmoDemoProvider>
-            <Toaster />
-            <CxsmoTourProvider><Router /></CxsmoTourProvider>
+	      <CxsmoSoundProvider>
+	      <TooltipProvider>
+	        <CxsmoDemoProvider>
+	          <Toaster />
+	          <CxsmoThemeWash />
+	          <CxsmoTourProvider><Router /></CxsmoTourProvider>
           </CxsmoDemoProvider>
         </TooltipProvider>
         </CxsmoSoundProvider>

@@ -56,8 +56,8 @@ describe("C✦SMO presentation-first user flow", () => {
     expect(poster).toContain("poster-entry-flow");
     expect(poster).toContain("poster-product-conveyor");
     expect(userflowStyle).toContain("@keyframes cxsmo-conveyor");
-    expect(player).toContain("PRODUCT + PLATFORM FILM");
-    expect(player).toContain("setPlaying(reducedMotion !== true)");
+    expect(player).toContain("INTERFACE SHOWCASE");
+    expect(player).toContain("setPlaying(!reducedMotion)");
     expect(player).not.toContain("Pause film");
     expect(player).not.toContain("Next shot");
     expect(player).not.toContain("Restart");
