@@ -46,7 +46,7 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
     const handlePointer = (event: PointerEvent) => {
       const element = event.target instanceof Element ? event.target.closest<HTMLElement>("button, a") : null;
       if (!element || element.closest("[data-cxsmo-sound-silent]")) return;
-      if (!element.closest(".cxsmo-site")) return;
+      if (!element.closest(".cxsmo-site, .cxsmo-entry")) return;
       const explicit = element.dataset.cxsmoSound as CxsmoSoundCue | undefined;
       if (explicit && explicit in soundSources) { play(explicit); return; }
       if (element.classList.contains("cxsmo-header__menu-trigger") || element.tagName === "A") { play("nav"); return; }
@@ -56,14 +56,14 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
     };
     const handleChange = (event: Event) => {
       const element = event.target instanceof Element ? event.target : null;
-      if (element?.closest(".cxsmo-site") && (element.matches("select") || element.matches("input[type=checkbox],input[type=radio]"))) play("select");
+      if (element?.closest(".cxsmo-site, .cxsmo-entry") && (element.matches("select") || element.matches("input[type=checkbox],input[type=radio]"))) play("select");
     };
     const handleHover = (event: PointerEvent) => {
       if (event.pointerType === "touch") return;
       const element = event.target instanceof Element ? event.target.closest<HTMLElement>("button, a, [data-cxsmo-hover-sound]") : null;
-      if (!element || element.closest("[data-cxsmo-hover-silent]") || !element.closest(".cxsmo-site")) return;
+      if (!element || element.closest("[data-cxsmo-hover-silent]") || !element.closest(".cxsmo-site, .cxsmo-entry")) return;
       const now = Date.now();
-      if (now - (hoverTargets.current.get(element) ?? 0) < 900) return;
+      if (now - (hoverTargets.current.get(element) ?? 0) < 340) return;
       hoverTargets.current.set(element, now);
       const explicit = element.dataset.cxsmoHoverSound as CxsmoSoundCue | undefined;
       play(explicit && explicit in soundSources ? explicit : "hover");

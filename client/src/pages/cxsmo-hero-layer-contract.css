@@ -1,0 +1,79 @@
+/* Final storefront hierarchy: the image crosses the toolbar; the panel stays clickable beneath it. */
+.cxsmo-site:has(.poster-hero) .cxsmo-header {
+  isolation: auto;
+  overflow: visible;
+  position: sticky;
+  z-index: 40;
+}
+
+.cxsmo-site:has(.poster-hero) .cxsmo-header__menu {
+  position: relative;
+  z-index: 1;
+}
+
+.cxsmo-site:has(.poster-hero) .cxsmo-header__menu-panel {
+  left: 0;
+  pointer-events: auto;
+  position: absolute;
+  right: auto;
+  top: calc(100% + 11px);
+  z-index: 2;
+}
+
+.cxsmo-poster-home .poster-hero {
+  isolation: auto;
+  overflow: visible;
+  position: relative;
+  z-index: 100;
+}
+
+.cxsmo-poster-home .poster-hero__object-layer--campaign {
+  bottom: auto;
+  height: calc(100% + 84px);
+  overflow: visible;
+  pointer-events: none;
+  right: calc(-5% + 34px);
+  top: -84px;
+  width: min(71vw, 1040px);
+  z-index: 180;
+}
+
+.cxsmo-poster-home .poster-hero__object-layer--campaign img {
+  object-fit: contain;
+  object-position: 100% 100%;
+  transform: none;
+}
+
+/* The screenshot’s light red field becomes a controlled shared campaign light. */
+.cxsmo-poster-home .poster-hero::before {
+  background:
+    radial-gradient(ellipse 44% 78% at 10% 52%, rgba(223, 26, 34, .34), transparent 68%),
+    radial-gradient(ellipse 30% 44% at 70% 34%, rgba(223, 26, 34, .12), transparent 74%),
+    linear-gradient(112deg, transparent 0 62%, rgba(240, 236, 230, .05) 62% 63%, transparent 63%);
+}
+
+html:not(.dark) .cxsmo-poster-home .poster-hero::before {
+  background:
+    radial-gradient(ellipse 46% 82% at 10% 51%, rgba(223, 26, 34, .28), transparent 69%),
+    radial-gradient(ellipse 30% 44% at 70% 34%, rgba(223, 26, 34, .1), transparent 74%),
+    linear-gradient(112deg, transparent 0 62%, rgba(8, 8, 9, .07) 62% 63%, transparent 63%);
+}
+
+@media (max-width: 800px) {
+  .cxsmo-site:has(.poster-hero) .cxsmo-header__menu-panel {
+    left: auto;
+    right: 0;
+    top: calc(100% + 9px);
+  }
+
+  .cxsmo-poster-home .poster-hero__object-layer--campaign {
+    height: 70%;
+    right: 8px;
+    top: -44px;
+    width: 98%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cxsmo-poster-home .poster-hero__object-layer--campaign { transform: none !important; }
+}

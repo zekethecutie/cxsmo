@@ -1,1 +1,14 @@
-.cxsmo-route-transition{min-height:100svh}@media(prefers-reduced-motion:reduce){.cxsmo-route-transition{filter:none!important;transform:none!important}}
+.cxsmo-route-transition { min-height: 100svh; }
+
+.cxsmo-route-wipe {
+  background: radial-gradient(circle at 74% 42%, rgba(240,236,230,.22), transparent 20%), linear-gradient(110deg, #df1a22 0%, #df1a22 44%, #080809 44%, #080809 100%);
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 2147483600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cxsmo-route-transition { filter: none !important; transform: none !important; }
+  .cxsmo-route-wipe { display: none; }
+}

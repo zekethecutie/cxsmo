@@ -26,7 +26,7 @@ const polish = source("client/src/pages/cxsmo-final-polish.css");
 describe("C✦SMO entry, studio, and account expansion", () => {
   it("uses a distinct editorial pre-store entry at the root route", () => {
     expect(app).toContain('<Route path="/" component={CxsmoEntryPage} />');
-    expect(entry).toContain("C✦SMO STUDIOS / DIGITAL FASHION SYSTEM");
+    expect(entry).toContain("C✦SMO / DIGITAL FASHION SYSTEM");
     expect(entry).toContain("<CxsmoMark inverse />");
     expect(entry).toContain("function CxsmoEntryTools()");
     expect(entry).toContain("Sound on");
@@ -36,7 +36,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("github.com/zekethecutie");
     expect(entryStyle).toContain("cxsmo-entry__orbit");
     expect(entryAppearance).toContain("html:not(.dark) .cxsmo-entry");
-    expect(entry).toContain("BLXCK");
+    expect(entry).toContain("fashion-commerce system built to make the drop feel inevitable");
+    expect(entry).toContain("cxsmo-y2k-editorial-portrait");
     expect(entryPoster).toContain("cxsmo-entry__stage-axis");
   });
 
@@ -91,7 +92,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(cursor).toContain("createPortal");
     expect(cursor).toContain('document.addEventListener("pointermove"');
     expect(cursorStyle).toContain("width:34px");
-    expect(cursorStyle).toContain("z-index:2147483000");
+    expect(cursorStyle).toContain("z-index:2147483647");
     expect(cursorStyle).toContain(".cxsmo-entry");
     expect(cursorStyle).not.toContain("cxsmo-global-cursor span");
   });

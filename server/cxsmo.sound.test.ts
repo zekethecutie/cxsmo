@@ -20,6 +20,6 @@ describe("C✦SMO optional sound contract", () => {
     expect(soundSource).toContain("if (enabledRef.current) playRaw(cue)");
     expect(soundSource).toContain('if (event.pointerType === "touch") return');
     expect(soundSource).toContain("now - lastPlayed.current < 80");
-    expect(soundSource).toContain("hoverTargets.current.get(element) ?? 0) < 900");
+    expect(soundSource).toContain("hoverTargets.current.get(element) ?? 0) < 340");
   });
 });

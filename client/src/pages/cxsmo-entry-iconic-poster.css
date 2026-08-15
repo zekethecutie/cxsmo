@@ -1,0 +1,111 @@
+/* Root landing: one large word, one portrait, one action system. */
+.cxsmo-entry__hero--poster {
+  background:
+    radial-gradient(ellipse 55% 90% at 11% 52%, rgba(223,26,34,.32), transparent 68%),
+    linear-gradient(113deg, #190607 0%, #080809 54%, #030304 100%);
+  min-height: calc(100svh - 128px);
+  overflow: hidden;
+}
+
+.cxsmo-entry__hero--poster::before,
+.cxsmo-entry__hero--poster::after,
+.cxsmo-entry__poster-stage,
+.cxsmo-entry__numbers { display: none; }
+
+.cxsmo-entry__poster-kicker {
+  color: #f0ece6;
+  font: 800 10px/1 "DM Mono", monospace;
+  left: clamp(24px, 5vw, 84px);
+  letter-spacing: .13em;
+  margin: 0;
+  position: absolute;
+  text-transform: uppercase;
+  top: 16%;
+  z-index: 4;
+}
+
+.cxsmo-entry__poster-word {
+  background: linear-gradient(135deg, rgba(240,236,230,.14), rgba(223,26,34,.18) 52%, transparent 78%);
+  background-clip: text;
+  color: transparent;
+  font: 400 clamp(150px, 27vw, 440px)/.72 "Archivo Black", sans-serif;
+  left: 50%;
+  letter-spacing: -.105em;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-51%, -51%);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.cxsmo-entry__portrait {
+  bottom: -2%;
+  filter: drop-shadow(-28px 32px 34px rgba(0,0,0,.7));
+  height: min(78%, 720px);
+  position: absolute;
+  right: clamp(4%, 9vw, 15%);
+  width: min(42vw, 510px);
+  z-index: 3;
+}
+
+.cxsmo-entry__portrait::after {
+  background: radial-gradient(circle, rgba(223,26,34,.42), transparent 67%);
+  content: "";
+  inset: 10% -15% -4%;
+  mix-blend-mode: screen;
+  position: absolute;
+  z-index: -1;
+}
+
+.cxsmo-entry__portrait img { display: block; height: 100%; object-fit: contain; object-position: 50% 100%; width: 100%; }
+
+.cxsmo-entry__copy {
+  left: clamp(24px, 9vw, 160px);
+  max-width: min(52vw, 670px);
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  transform: translateY(-35%);
+  width: auto;
+  z-index: 5;
+}
+
+.cxsmo-entry__copy h1 {
+  background: linear-gradient(140deg, #fff 0%, #f0ece6 34%, #ff3e47 65%, #a10810 100%);
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 20px 24px rgba(0,0,0,.68));
+  font-size: clamp(88px, 12vw, 204px);
+  letter-spacing: -.11em;
+  line-height: .75;
+  margin: 0 0 30px;
+  white-space: nowrap;
+}
+
+.cxsmo-entry__copy h1 span { color: inherit; }
+.cxsmo-entry__statement { color: rgba(240,236,230,.88); font: 700 clamp(13px, 1.25vw, 17px)/1.35 Inter, sans-serif; margin: 0 0 28px; max-width: 330px; }
+.cxsmo-entry__intro > div { justify-content: flex-start; }
+.cxsmo-entry__creator-line { color: #df1a22; font: 800 9px/1 "DM Mono", monospace; letter-spacing: .12em; margin-top: 18px; text-transform: uppercase; }
+.cxsmo-entry__desktop-note { background: transparent; border: 0; bottom: 7%; box-shadow: none; max-width: 255px; right: clamp(24px, 5vw, 78px); z-index: 6; }
+.cxsmo-entry__desktop-note b { color: #f0ece6; }
+.cxsmo-entry__desktop-note span { color: rgba(240,236,230,.64); }
+
+html:not(.dark) .cxsmo-entry__hero--poster { background: radial-gradient(ellipse 55% 90% at 11% 52%, rgba(223,26,34,.22), transparent 68%), linear-gradient(113deg, #efeae4 0%, #f8f5f0 54%, #ded5cc 100%); }
+html:not(.dark) .cxsmo-entry__poster-kicker,html:not(.dark) .cxsmo-entry__statement,html:not(.dark) .cxsmo-entry__desktop-note b { color: #080809; }
+html:not(.dark) .cxsmo-entry__desktop-note span { color: rgba(8,8,9,.62); }
+html:not(.dark) .cxsmo-entry__poster-word { background-image: linear-gradient(135deg, rgba(8,8,9,.13), rgba(223,26,34,.22) 52%, transparent 78%); }
+
+@media (max-width: 840px) {
+  .cxsmo-entry__hero--poster { min-height: calc(100svh - 122px); }
+  .cxsmo-entry__poster-kicker { left: 22px; top: 13%; }
+  .cxsmo-entry__poster-word { font-size: 33vw; top: 34%; }
+  .cxsmo-entry__portrait { bottom: 3%; height: 52%; right: -4%; width: 88%; }
+  .cxsmo-entry__copy { bottom: 13%; left: 22px; max-width: 70vw; top: auto; transform: none; }
+  .cxsmo-entry__copy h1 { font-size: 25vw; margin-bottom: 20px; }
+  .cxsmo-entry__statement { font-size: 13px; max-width: 270px; }
+  .cxsmo-entry__desktop-note { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { .cxsmo-entry__portrait { transform: none !important; } }
