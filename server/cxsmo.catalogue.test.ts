@@ -3,7 +3,7 @@ import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct } fro
 
 describe("C✦SMO portfolio catalogue", () => {
   it("keeps unique, route-ready fictional products", () => {
-    expect(cxsmoProducts).toHaveLength(17);
+    expect(cxsmoProducts).toHaveLength(18);
     expect(new Set(cxsmoProducts.map((product) => product.id)).size).toBe(cxsmoProducts.length);
     expect(getCxsmoProduct("gravity-01").name).toBe("Gravity Puddle Jean");
     expect(getCxsmoProduct("bluestar-09").name).toBe("Bluestar C✦SMO Jersey");
@@ -13,6 +13,7 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(getCxsmoProduct("lunar-veil-15").name).toBe("Lunar Veil Eyewear");
     expect(getCxsmoProduct("redline-moto-16").name).toBe("Redline Moto Jacket");
     expect(getCxsmoProduct("silver-crown-case-17").name).toBe("Silver Crown Cosmetic Case");
+    expect(getCxsmoProduct("stellar-cargo-18").name).toBe("Stellar Cargo Pants");
     expect(getCxsmoProduct("missing-product").id).toBe("gravity-01");
   });
 
@@ -27,10 +28,11 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(getCxsmoProduct("gloss-07").image).toBe("/manus-storage/cxsmo-static-bloom-lip-glaze-alpha_40b6478e.png");
     expect(getCxsmoProduct("orbit-05").image).toBe("/manus-storage/cxsmo-key-charm-alpha-fallback_3dd702fb.png");
     expect(getCxsmoProduct("tread-06").image).toBe("/manus-storage/cxsmo-tread-phase-sneaker-alpha_d319a0ce.png");
-    expect(getCxsmoProduct("mercury-belt-13").image).toBe("/manus-storage/cxsmo-mercury-orbit-belt_a7333191.png");
-    expect(getCxsmoProduct("chrome-puddle-14").image).toBe("/manus-storage/cxsmo-chrome-puddle-sweatpant_1351e925.png");
-    expect(getCxsmoProduct("lunar-veil-15").image).toBe("/manus-storage/cxsmo-lunar-veil-eyewear_a4fe1c13.png");
-    expect(getCxsmoProduct("redline-moto-16").image).toBe("/manus-storage/cxsmo-redline-moto-jacket_778ee18f.png");
-    expect(getCxsmoProduct("silver-crown-case-17").image).toBe("/manus-storage/cxsmo-silver-crown-cosmetic-case_f85dd076.png");
+    expect(getCxsmoProduct("mercury-belt-13").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_33_54PM_9040fa6d.png");
+    expect(getCxsmoProduct("chrome-puddle-14").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_36_41PM_15fc31e0.png");
+    expect(getCxsmoProduct("lunar-veil-15").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_38_54PM_ceda59d3.png");
+    expect(getCxsmoProduct("redline-moto-16").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_31_19PM_a78e56f6.png");
+    expect(getCxsmoProduct("silver-crown-case-17").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_40_56PM_24d03e4f.png");
+    expect(getCxsmoProduct("stellar-cargo-18").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_23_24PM_0e3d74d4.png");
   });
 });
