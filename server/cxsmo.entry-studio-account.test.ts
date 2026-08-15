@@ -136,9 +136,9 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("DROP / OBJECT / SYSTEM");
     expect(entry).toContain("repeat: Infinity");
 	  expect(entryFinalTuning).toContain("padding-right: .08em");
-	  expect(entry).toContain('className="cxsmo-entry__poster-word" aria-hidden="true">CSMO');
-	  expect(entry).toContain('className="cxsmo-entry__editorial-divider"');
-	  expect(entry).not.toContain('cxsmo-entry__poster-word-star">✦');
+	  expect(entry).toContain('className="cxsmo-entry__poster-word" aria-hidden="true">C<span className="cxsmo-entry__poster-word-star">✦</span>SMO');
+	  expect(entry).toContain("function CxsmoEntryItemCarousel()");
+	  expect(entry).toContain('className="cxsmo-entry__item-carousel"');
 	  expect(entry).toContain('aria-label="C✦SMO" initial={reducedMotion');
 	  expect(entry).toContain('className="cxsmo-entry__mark-star">✦</span>SMO</motion.h1>');
 	  expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
@@ -154,7 +154,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(utilityType).toContain(".cxsmo-entry__desktop-note");
 	  expect(utilityType).toContain("color: #df1a22");
 	  expect(editorialSystem).toContain('font-weight:800');
-	  expect(entryLandingRebuild).toContain('cxsmo-entry__editorial-divider');
+	  expect(entryLandingRebuild).toContain('cxsmo-entry__item-carousel');
 	  expect(editorialSystem).toContain('prefers-reduced-motion:reduce');
   });
 

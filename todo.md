@@ -303,3 +303,10 @@
 - [x] Rewrite high-visibility public C✦SMO copy across the landing, shop, product, edits, information, account, checkout, legal, and studio surfaces into concise, consistent, human fashion-commerce language.
 - [x] Add restrained, deliberate shape and typography motion to the landing and editorial sections, with reduced-motion-safe static states and without introducing visual clutter.
 - [x] Validate sitewide editorial copy, utility typography, landing star spacing, divider transition, animated geometric treatments, TypeScript, regression suite, production build, checkpoint, and GitHub synchronization.
+
+- [x] Replace the root landing divider with a clean, animated C✦SMO item carousel that showcases catalogue objects without visual clutter.
+- [x] Correct the large landing ghost word to visibly read C✦SMO and correct the small landing mark to render exactly one tilted dimensional red star as the X, with no stacked or duplicate star.
+- [x] Refine the root Studio Access control into a stronger minimal editorial CTA with clear hierarchy and polished responsive feedback.
+- [x] Raise the signal-event modal above all page content and landing imagery while preserving only the global transition and custom-cursor layers above it.
+- [x] Continue replacing abstract or inaccurate public C✦SMO copy with concise, natural fashion-store language across the core routes.
+- [x] Validate the landing carousel, marks, Studio Access, modal stack, copy, TypeScript, regression suite, production build, checkpoint, and GitHub synchronization.

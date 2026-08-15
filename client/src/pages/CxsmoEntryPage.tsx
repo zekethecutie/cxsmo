@@ -7,7 +7,9 @@ import { CxsmoPromotionPopup } from "@/components/CxsmoPromotionPopup";
 import { useCxsmoSound } from "@/contexts/CxsmoSoundContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { defaultCxsmoPromotion } from "@/lib/cxsmoContent";
-import { useState } from "react";
+import { cxsmoProducts } from "@/lib/cxsmo";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
 import "./cxsmo-entry.css";
 import "./cxsmo-entry-tools.css";
 import "./cxsmo-entry-appearance.css";
@@ -41,6 +43,33 @@ function CxsmoEntryTools() {
   );
 }
 
+function CxsmoEntryItemCarousel() {
+  const reducedMotion = useReducedMotion();
+  const [api, setApi] = useState<CarouselApi>();
+  const [active, setActive] = useState(0);
+  const objects = cxsmoProducts.slice(0, 8);
+  useEffect(() => {
+    if (!api) return;
+    const sync = () => setActive(api.selectedScrollSnap());
+    sync();
+    api.on("select", sync);
+    return () => { api.off("select", sync); };
+  }, [api]);
+  useEffect(() => {
+    if (!api || reducedMotion) return;
+    const timer = window.setInterval(() => api.scrollNext(), 3400);
+    return () => window.clearInterval(timer);
+  }, [api, reducedMotion]);
+  return <section className="cxsmo-entry__item-carousel" aria-labelledby="cxsmo-entry-items-title">
+    <div className="cxsmo-entry__item-carousel-head"><div><p>DROP 01 / SELECTED OBJECTS</p><h2 id="cxsmo-entry-items-title">THE PIECES<br /><em>IN FRAME.</em></h2></div><span aria-live="polite">{String(active + 1).padStart(2, "0")} / {String(objects.length).padStart(2, "0")}</span></div>
+    <Carousel setApi={setApi} opts={{ align: "start", loop: true }} className="cxsmo-entry__item-carousel-track">
+      <CarouselContent className="cxsmo-entry__item-carousel-content">{objects.map((product, index) => <CarouselItem key={product.id} className="cxsmo-entry__item-slide"><Link href={`/cxsmo/products/${product.id}`}><span>0{index + 1} / {product.category}</span><div><img src={product.image} alt="" /></div><b>{product.name}</b><small>{product.color}</small><i>View object <ArrowUpRight size={13} /></i></Link></CarouselItem>)}</CarouselContent>
+      <CarouselPrevious aria-label="Previous featured object" className="cxsmo-entry__item-carousel-prev" />
+      <CarouselNext aria-label="Next featured object" className="cxsmo-entry__item-carousel-next" />
+    </Carousel>
+  </section>;
+}
+
 export function CxsmoEntryPage() {
   const reducedMotion = useReducedMotion();
   const [noticeVisible, setNoticeVisible] = useState(true);
@@ -52,7 +81,7 @@ export function CxsmoEntryPage() {
       <section className="cxsmo-entry__hero cxsmo-entry__hero--poster">
         <p className="cxsmo-entry__poster-kicker">C✦SMO / DIGITAL FASHION SYSTEM</p>
         <motion.p className="cxsmo-entry__signal" aria-hidden="true" animate={reducedMotion ? {} : { x: [0, 18, 0] }} transition={reducedMotion ? { duration: 0 } : { duration: 4.8, repeat: Infinity, ease: "easeInOut" }}>DROP / OBJECT / SYSTEM / DROP / OBJECT / SYSTEM</motion.p>
-        <div className="cxsmo-entry__poster-word" aria-hidden="true">CSMO</div>
+        <div className="cxsmo-entry__poster-word" aria-hidden="true">C<span className="cxsmo-entry__poster-word-star">✦</span>SMO</div>
         <motion.div className="cxsmo-entry__portrait" initial={reducedMotion ? false : { opacity: 0, x: 28, rotate: 2 }} animate={reducedMotion ? { opacity: 1 } : { opacity: 1, x: [0, -7, 0], y: [0, -10, 0], rotate: [0, -1, 0] }} transition={reducedMotion ? { duration: 0 } : { opacity: { duration: .55, delay: .16 }, x: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }, y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }}}>
           <img src="/manus-storage/cxsmo-y2k-editorial-portrait_8aa44fe0.png" alt="C✦SMO Y2K editorial fashion portrait" />
         </motion.div>
@@ -63,7 +92,7 @@ export function CxsmoEntryPage() {
         </div>
         {noticeVisible && <motion.aside className="cxsmo-entry__side-notice" initial={reducedMotion ? false : { opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 18 }}><div><b>Wider view, more layers.</b><span>The editorial sequence expands on desktop and stays composed on mobile.</span></div><button type="button" aria-label="Dismiss viewing note" onClick={() => setNoticeVisible(false)}><X size={15} /></button></motion.aside>}
       </section>
-      <div className="cxsmo-entry__editorial-divider" aria-hidden="true"><span>ENTER THE EDITORIAL</span><i /><span>OBJECT / HUMAN / AFTER-IMAGE</span></div>
+      <CxsmoEntryItemCarousel />
       <section className="cxsmo-entry__fit-poster" aria-labelledby="cxsmo-fit-poster-title">
         <div className="cxsmo-entry__fit-poster-copy"><span>FIT SIGNAL / 02</span><h2 id="cxsmo-fit-poster-title">THE FUTURE<br /><em>REACHES</em> BACK.</h2><p>Blue-silver utility layers, chrome hardware, and a fit built to be seen from every angle.</p><div className="cxsmo-entry__fit-poster-actions"><Link href="/cxsmo/edits">Open the fit edits <ArrowUpRight size={16} /></Link><CxsmoPromotionPopup promotion={defaultCxsmoPromotion} triggerLabel="Open signal event" /></div></div>
         <div className="cxsmo-entry__fit-poster-art"><i aria-hidden="true">✦</i><img src="/manus-storage/cxsmo-blue-silver-fit_9c35c3f3.png" alt="C✦SMO blue and silver futuristic streetwear fit" /><span>OBJECT / HUMAN / SIGNAL</span></div>
