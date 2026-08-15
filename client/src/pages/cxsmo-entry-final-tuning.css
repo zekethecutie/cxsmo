@@ -1,0 +1,9 @@
+.cxsmo-entry__copy h1 { overflow: visible; padding-right: .16em; position: relative; width: max-content; z-index: 7; }
+.cxsmo-entry__copy h1 span { display: inline-block; font-size: 1.16em; margin: 0 -.02em; transform: translateY(-.04em) rotate(9deg); }
+.cxsmo-entry__signal { bottom: 11%; color: rgba(240,236,230,.66); font: 700 9px/1.1 Inter, sans-serif; letter-spacing: .17em; margin: 0; position: absolute; right: clamp(24px, 7vw, 112px); white-space: nowrap; z-index: 5; }
+html.dark .cxsmo-entry__copy h1 { background-image: linear-gradient(140deg, #fff 0%, #f0ece6 34%, #ff4b54 65%, #f0ece6 100%); }
+@media (prefers-reduced-motion: no-preference) { .cxsmo-entry__portrait::after { animation: cxsmo-entry-portrait-halo 4.8s ease-in-out infinite; } }
+@keyframes cxsmo-entry-portrait-halo { 0%,100% { opacity: .42; transform: scale(.94); } 50% { opacity: .8; transform: scale(1.08); } }
+html:not(.dark) .cxsmo-entry__signal { color: rgba(8,8,9,.56); }
+@media (max-width:840px) { .cxsmo-entry__copy h1 { font-size: 23vw; padding-right: .1em; }.cxsmo-entry__signal { bottom: 8%; font-size: 8px; right: 20px; } }
+@media (prefers-reduced-motion:reduce) { .cxsmo-entry__signal { transform:none!important; }.cxsmo-entry__portrait::after { animation:none; } }

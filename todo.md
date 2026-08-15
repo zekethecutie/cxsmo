@@ -251,3 +251,9 @@
 
 - [x] Restore the approved vertical C✦SMO campaign placement and change only front-to-back stacking so the PNG is in front of the toolbar field, the menu stays clickable underneath, and the cursor remains topmost.
 - [x] Validate the front-to-back-only hero repair on desktop and mobile before checkpointing.
+
+- [x] Lock C✦SMO’s hero artwork to the approved light-mode direction in both appearances, strengthening and shifting the left-side red light leak without changing its vertical campaign geometry.
+- [x] Make Navigate and its panel interactive above every hero layer except the campaign PNG and custom cursor, and place the Campaign / Static Bloom card above the transparent campaign image.
+- [x] Replace the thin technical copy system used in C✦SMO utility statements, contact links, legal labels, and recommended-screen text with a solid modern, spatial UI type treatment.
+- [x] Repair the root C✦SMO mark clipping in dark appearance, make its star slightly larger and right-tilted, and add restrained automatic marketing motion/content to the root poster.
+- [x] Preserve the circular light/dark transition at the root entry and validate shared-hero visual consistency, menu clickability, copy typography, root motion, tests, build, checkpoint, and managed GitHub synchronization.
