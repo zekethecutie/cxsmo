@@ -191,14 +191,18 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 
 	it("uses supplied fit-shoot assets as editorial discovery while preserving an explicit no-testimonial boundary", () => {
 		expect(fitCarousel).toContain("cxsmo-fit-black-red-full_f171f1a3.png");
-		expect(fitCarousel).toContain("cxsmo-fit-men-01-splitline-rugby_a7a4ca96.png");
-		expect(fitCarousel).toContain("cxsmo-fit-men-05-chainline-self_318985d3.png");
-		expect(fitCarousel).toContain("cxsmo-fit-women-01-asym-star_5aa95f9c.png");
-		expect(fitCarousel).toContain("cxsmo-fit-women-10-after-dark_a269f518.png");
+		expect(fitCarousel).toContain("cxsmo-fit-men-01-splitline-rugby_7964b7e9.png");
+		expect(fitCarousel).toContain("cxsmo-fit-men-05-chainline-self_9c5b9f2f.png");
+		expect(fitCarousel).toContain("cxsmo-fit-women-01-asym-star_58adba9d.png");
+		expect(fitCarousel).toContain("cxsmo-fit-women-10-after-dark_494dde77.png");
 		expect(fitCarousel).toContain("Every card is an individual fit reference");
 		expect(fitCarousel).toContain('useState<"All" | "Mens" | "Womens">("All")');
 		expect(fitCarousel).toContain("Shop the look");
-		expect(fitCarousel).toContain("Compatible current C✦SMO pieces");
+		expect(fitCarousel).toContain("Listed pieces in this fit");
+		expect(fitCarousel).toContain("Listed pieces in this fit");
+		expect(fitCarousel).toContain("Quick Add to Cart");
+		expect(fitCarousel).toContain("Save to Favorites");
+		expect(fitCarousel).toContain("Render not yet supplied / not shoppable");
 		expect(fitCarousel).toContain("Copy the mockup prompt");
 		expect(fitCarousel).toContain("createPortal");
 		expect(fitCarousel).toContain("Shop links only lead to categories that are presently listed in the C✦SMO catalogue");
