@@ -336,3 +336,8 @@
 - [x] Upload and register the individual model-fit crops as deployment-safe assets with clear fit labels and intended shop-discovery category links.
 - [x] Replace the composite-sheet cards in the Fit Edits library with an individual-look card system that gives each model/outfit its own editorial styling entry.
 - [x] Validate the expanded fit library across desktop/mobile, regression suite, production build, checkpoint, and GitHub synchronization.
+- [x] Surface the C✦SMO mockup-generation brief and its ready-to-copy prompt in an accessible studio/editorial workflow rather than leaving it only in a repository file.
+- [x] Add an accessible Fit Edits filter that lets visitors view All, Mens, or Womens individual styling references.
+- [x] Add a deliberate hover/focus treatment to individual fit cards with a clearly labelled Shop the look action and an explicit compatible-current-catalogue disclosure.
+- [x] Add an accessible quick-view modal for each individual fit with its styling breakdown, compatible listed catalogue pieces, and a shop path without representing unlisted fit-sheet garments as available products.
+- [x] Validate the filtered, shoppable fit library across desktop/mobile, regression suite, production build, checkpoint, and GitHub synchronization.
