@@ -1,0 +1,19 @@
+html[data-cxsmo-tour="active"] [data-cxsmo-tour-target="true"] { filter:brightness(1.08) contrast(1.03); outline:1px solid rgba(240,236,230,.82); outline-offset:8px; scale:1.01; transition:filter .36s cubic-bezier(.16,1,.3,1),outline-color .36s cubic-bezier(.16,1,.3,1),scale .5s cubic-bezier(.16,1,.3,1); }
+.cxsmo-route-tour__spotlight.is-scroll { box-shadow:0 0 0 9999px rgba(8,8,9,.04),20px 22px 0 rgba(223,26,34,.76),0 30px 70px rgba(0,0,0,.62); }
+.cxsmo-route-tour__spotlight.is-hover { border-color:#df1a22; }
+.cxsmo-route-tour__spotlight.is-press::after { background:linear-gradient(135deg,transparent 46%,rgba(223,26,34,.72) 48% 52%,transparent 54%); }
+.cxsmo-route-tour__tooltip { left:var(--callout-x); max-width:min(370px,30vw); top:var(--callout-y); transform:translateY(-50%); }
+.cxsmo-route-tour__tooltip.is-left { transform:translate(-100%,-50%); }
+.cxsmo-route-tour__tooltip.is-left::before { border-color:transparent transparent transparent rgba(240,236,230,.44); border-width:14px 0 14px 20px; left:auto; right:-20px; }
+.cxsmo-route-tour__tooltip.is-left::after { border-color:transparent transparent transparent #080809; border-width:12px 0 12px 18px; left:auto; right:-17px; }
+.cxsmo-route-tour__tooltip.is-top { transform:translate(-50%,-100%); }
+.cxsmo-route-tour__tooltip.is-top::before { border-color:rgba(240,236,230,.44) transparent transparent; border-width:18px 14px 0; left:calc(50% - 14px); top:auto; bottom:-18px; }
+.cxsmo-route-tour__tooltip.is-top::after { border-color:#080809 transparent transparent; border-width:16px 12px 0; left:calc(50% - 12px); top:auto; bottom:-15px; }
+.cxsmo-route-tour__tooltip.is-bottom { transform:translate(-50%,0); }
+.cxsmo-route-tour__tooltip.is-bottom::before { border-color:transparent transparent rgba(240,236,230,.44); border-width:0 14px 18px; left:calc(50% - 14px); top:-18px; }
+.cxsmo-route-tour__tooltip.is-bottom::after { border-color:transparent transparent #080809; border-width:0 12px 16px; left:calc(50% - 12px); top:-15px; }
+.cxsmo-route-tour__tooltip footer span { color:#df1a22; font-family:"Plus Jakarta Sans",sans-serif; }
+.cxsmo-route-tour__intro-label,.cxsmo-route-tour__intro small { font-family:"Plus Jakarta Sans",sans-serif; font-weight:900; }
+.cxsmo-route-tour__intro-subtitle { font-family:"Plus Jakarta Sans",sans-serif; font-weight:800; letter-spacing:.02em; text-transform:none; }
+@media (max-width:720px) { .cxsmo-route-tour__tooltip,.cxsmo-route-tour__tooltip.is-left,.cxsmo-route-tour__tooltip.is-top,.cxsmo-route-tour__tooltip.is-bottom { bottom:24px; left:16px; max-width:calc(100vw - 48px); top:auto; transform:none; }.cxsmo-route-tour__tooltip::before,.cxsmo-route-tour__tooltip.is-left::before,.cxsmo-route-tour__tooltip.is-top::before,.cxsmo-route-tour__tooltip.is-bottom::before { border-color:rgba(240,236,230,.44) transparent transparent; border-width:18px 14px 0; bottom:auto; left:28px; right:auto; top:-18px; }.cxsmo-route-tour__tooltip::after,.cxsmo-route-tour__tooltip.is-left::after,.cxsmo-route-tour__tooltip.is-top::after,.cxsmo-route-tour__tooltip.is-bottom::after { border-color:#080809 transparent transparent; border-width:16px 12px 0; bottom:auto; left:30px; right:auto; top:-15px; } }
+@media (prefers-reduced-motion:reduce) { html[data-cxsmo-tour="active"] [data-cxsmo-tour-target="true"] { filter:none; outline-color:rgba(240,236,230,.5); scale:1; transition:none; } }

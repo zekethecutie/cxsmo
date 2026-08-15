@@ -289,3 +289,10 @@
 - [x] Increase the intended landing C✦SMO star to approximately the surrounding C/S/M/O letter scale without reopening loose spacing or overlap.
 - [x] Make the transparent `/cxsmo` campaign cutout scale up on less-thin desktop ratios so its Z-layer toolbar crossover remains visibly evident beyond narrow displays.
 - [x] Validate the stray-star removal, enlarged wordmark star, responsive campaign crossover, TypeScript, tests, build, checkpoint, and GitHub synchronization.
+
+- [x] Trace and remove the persistent stray star behind the first C in the reusable landing header mark and the large landing composition, then tighten the C✦SMO word spacing without affecting the intended star-as-X construction.
+- [x] Rebuild the C✦SMO guided showcase into a useful target-aware editorial walkthrough with calculated zoom framing, attached non-obstructive callouts, improved intro typography, and no fake cursor choreography.
+- [x] Improve landing CTAs, remove the creator line beneath Studio Access, replace the recommended-screen device note with a dismissible side notification, and reserve portfolio disclosure for unobtrusive footer context.
+- [x] Create composed, motion-aware root landing poster sections using the supplied transparent blue/silver C✦SMO fit asset with code-based depth shadows and clear editorial hierarchy.
+- [x] Add a visitor-controlled, clearly fictional C✦SMO sale-event modal with a polished poster treatment, accessible dismissal, and no commerce claims.
+- [x] Validate the refined landing, guided showcase, modal, typography, interaction and motion behavior, TypeScript, regression suite, production build, checkpoint, and GitHub synchronization.

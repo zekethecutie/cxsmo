@@ -30,11 +30,11 @@ describe("C✦SMO entry, studio, and account expansion", () => {
   it("uses a distinct editorial pre-store entry at the root route", () => {
     expect(app).toContain('<Route path="/" component={CxsmoEntryPage} />');
     expect(entry).toContain("C✦SMO / DIGITAL FASHION SYSTEM");
-    expect(entry).toContain("<CxsmoMark inverse />");
+    expect(entry).toContain('<CxsmoMark className="cxsmo-entry__header-mark" inverse />');
     expect(entry).toContain("function CxsmoEntryTools()");
     expect(entry).toContain("Sound on");
     expect(entry).toContain("Switch to");
-    expect(entry).toContain("Wide screen recommended");
+    expect(entry).toContain("Wider view, more layers.");
     expect(entry).toContain("zheviant2@gmail.com");
     expect(entry).toContain("github.com/zekethecutie");
     expect(entryStyle).toContain("cxsmo-entry__orbit");

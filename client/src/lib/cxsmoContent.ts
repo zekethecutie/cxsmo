@@ -32,7 +32,7 @@ export const defaultCxsmoHero: CxsmoHeroContent = {
 
 export const defaultCxsmoPromotion: CxsmoPromotionContent = {
   enabled: false,
-  message: "DROP 01 / THE AFTER-IMAGE IS LIVE — PORTFOLIO DEMONSTRATION ONLY",
+  message: "SIGNAL EVENT / THE AFTER-IMAGE — A FICTIONAL DROP STUDY",
 };
 export const defaultCxsmoGlobal: CxsmoGlobalContent = {
   notice: "C✦SMO is a fictional fashion-commerce presentation, designed and developed by zxke. No payments or personal information are transmitted.",

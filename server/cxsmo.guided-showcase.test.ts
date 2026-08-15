@@ -15,16 +15,16 @@ const storefrontSource = readFileSync(resolve(process.cwd(), "client/src/pages/C
 const auditRefinementStyle = readFileSync(resolve(process.cwd(), "client/src/pages/cxsmo-audit-refinements.css"), "utf8");
 
 describe("C✦SMO guided player", () => {
-  it("keeps the custom cursor and expanded ten-shot portfolio sequence", () => {
-    expect(showcaseSource).toContain('/manus-storage/cxsmo-custom-cursor_922d53fe.png');
-    expect(showcaseSource.match(/code: "0[0-9]"/g)).toHaveLength(10);
-    expect(showcaseSource).toContain('route: "/cxsmo/support"');
-    expect(showcaseSource).toContain('route: "/cxsmo/disclosure"');
-    expect(showcaseSource).toContain('title: ["THIS IS", "C✦SMO."]');
+  it("keeps the target-aware expanded ten-shot portfolio sequence without a fake cursor", () => {
+    expect(showcaseSource).not.toContain('cxsmo-route-tour__cursor');
+    expect(showcaseSource.match(/code:"0[0-9]"/g)).toHaveLength(10);
+    expect(showcaseSource).toContain('route:"/cxsmo/support"');
+    expect(showcaseSource).toContain('route:"/cxsmo/disclosure"');
+    expect(showcaseSource).toContain('title:["THIS IS","C✦SMO."]');
   });
 
   it("maps every directed scene to a registered public route", () => {
-    const routes = Array.from(showcaseSource.matchAll(/route: "([^\"]+)"/g), (match) => match[1]);
+    const routes = Array.from(showcaseSource.matchAll(/route:"([^\"]+)"/g), (match) => match[1]);
     const registeredRoutes = Array.from(appSource.matchAll(/<Route path="([^\"]+)"/g), (match) => match[1]);
     expect(routes).toHaveLength(10);
     routes.forEach((route) => expect(registeredRoutes).toContain(route.startsWith("/cxsmo/products/") ? "/cxsmo/products/:id" : route));
@@ -42,15 +42,16 @@ describe("C✦SMO guided player", () => {
     expect(showcaseSource).not.toContain('<nav aria-label="Tour scenes">');
   });
 
-  it("keeps a restrained red-gradient intro, target spotlight, editorial tooltip, and a reduced-motion fallback", () => {
-	  expect(tourStyleSource).toContain('.cxsmo-route-tour__cursor img');
-	  expect(tourStyleSource).toContain('mix-blend-mode:screen');
+  it("keeps a restrained red-gradient intro, target spotlight, attached editorial tooltip, and a reduced-motion fallback", () => {
+	  expect(showcaseSource).toContain('dataset.cxsmoTourTarget = "true"');
+	  expect(showcaseSource).toContain('setCallout');
+	  expect(showcaseSource).not.toContain('customCursorAsset');
 	  expect(tourStyleSource).toContain('@media(prefers-reduced-motion:reduce)');
-	  expect(showcaseSource).toContain('reducedMotion ? 0 : 6700');
+	  expect(showcaseSource).toContain('reducedMotion ? 0 : 6100');
 	  expect(showcaseSource).toContain('placeSpotlight');
 	  expect(showcaseSource).toContain('cxsmo-route-tour__spotlight');
 	  expect(showcaseSource).toContain('cxsmo-route-tour__tooltip');
-	  expect(showcaseSource).toContain('no simulated visitor input');
+	  expect(showcaseSource).toContain('no visitor actions are made');
 	  expect(showcaseSource).not.toContain('.click()');
 	  expect(tourStyleSource).toContain('cxsmo-route-tour__spotlight');
 	  expect(tourStyleSource).toContain('cxsmo-route-tour__tooltip');
