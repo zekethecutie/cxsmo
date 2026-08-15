@@ -347,3 +347,7 @@
 - [x] Add a Quick Add to Cart control for each compatible currently listed product inside the Fit Edits breakdown modal, using the existing portfolio-safe bag simulation and clear feedback.
 - [x] Validate numbered fit mappings, inventory planning, fit favorites, breakdown quick-add, responsive interaction states, regression suite, production build, checkpoint, and GitHub synchronization.
 - [x] Replace rectangular multi-model sheet crops with subject-aware individual-fit crops that keep one full outfit per card and remove neighbouring garments, partial figures, and stray accessories from adjacent looks.
+- [x] Rebuild the `/cxsmo` phone hero as a clearly intentional mobile composition with its own focal crop, type scale, copy-safe placement, and action hierarchy rather than a compressed desktop layout.
+- [x] Strengthen Fit Edits individual-card hover, keyboard-focus, touch-press, and modal-entry feedback so the breakdown actions feel responsive and obvious without creating visual clutter.
+- [x] Add a Saved Fits account surface that lists, opens, and removes browser-local saved looks while retaining the existing Saved Objects experience for catalogue products.
+- [x] Validate the mobile hero, card response, Saved Fits management, responsive account flow, regression suite, production build, checkpoint, and GitHub synchronization.

@@ -26,7 +26,7 @@ type FitEntry = {
   alt: string;
 };
 
-const fitLibrary: FitEntry[] = [
+export const cxsmoFitLibrary: FitEntry[] = [
   { index: "M / 01", group: "Mens", title: "Splitline rugby", category: "Graphics", listedIds: ["chrome-puddle-14"], plannedPieces: ["Sheet 02 / #05 — Splitline Rugby Longsleeve"], image: "/manus-storage/cxsmo-fit-men-01-splitline-rugby_7964b7e9.png", alt: "Individual C✦SMO mens look in a black and optic-bone long sleeve" },
   { index: "M / 02", group: "Mens", title: "Orbit ash", category: "Graphics", listedIds: ["gravity-01"], plannedPieces: ["Sheet 02 / #06 — Orbit Ash Hoodie"], image: "/manus-storage/cxsmo-fit-men-02-orbit-ash_056116d2.png", alt: "Individual C✦SMO mens look in an ash hoodie and wide grey cargo denim" },
   { index: "M / 03", group: "Mens", title: "Micro orbit", category: "Graphics", listedIds: ["blxck-pants-10"], plannedPieces: ["Sheet 02 / #07 — Micro Orbit Tee"], image: "/manus-storage/cxsmo-fit-men-03-micro-orbit_f2af6040.png", alt: "Individual C✦SMO mens look in a black micro-orbit T-shirt and wide trousers" },
@@ -72,7 +72,7 @@ export function CxsmoFitLibrary() {
   const [quickAddedId, setQuickAddedId] = useState<string | null>(null);
   const returnFocusRef = useRef<HTMLButtonElement | null>(null);
   const { addToBag, savedFitIds, toggleSavedFit } = useCxsmoDemo();
-  const filteredFits = fitLibrary.filter((fit) => filter === "All" || fit.group === filter);
+  const filteredFits = cxsmoFitLibrary.filter((fit) => filter === "All" || fit.group === filter);
   const listedProducts = activeFit ? activeFit.listedIds.map((id) => cxsmoProducts.find((product) => product.id === id)).filter((product): product is (typeof cxsmoProducts)[number] => Boolean(product)) : [];
   const closeQuickView = () => { setActiveFit(null); setQuickAddedId(null); window.setTimeout(() => returnFocusRef.current?.focus(), 0); };
   const openQuickView = (fit: FitEntry, trigger: HTMLButtonElement) => { returnFocusRef.current = trigger; setQuickAddedId(null); setActiveFit(fit); };
@@ -82,7 +82,7 @@ export function CxsmoFitLibrary() {
   return <section className="cxsmo-fit-library" aria-labelledby="cxsmo-fit-library-title">
     <div className="cxsmo-fit-library__head"><div><p>Fit library / issue 01</p><h2 id="cxsmo-fit-library-title">Worn<br /><em>on purpose.</em></h2></div><span>Every card is an individual fit reference. Shop links only lead to categories that are presently listed in the C✦SMO catalogue.</span></div>
     <article data-cxsmo-hover-sound="zoom" className="cxsmo-fit-library__primary"><img src="/manus-storage/cxsmo-fit-black-red-full_f171f1a3.png" alt="Individual C✦SMO black and red full-fit campaign styling study" /><div><p>Fit frame / 00</p><h3>Blackout hardware</h3><span>A full-fit campaign reference built around red paneling, chrome details, and a lower-volume silhouette.</span><Link href="/cxsmo/shop?category=Outerwear">Shop outerwear <ArrowDownRight size={15} /></Link></div></article>
-    <div className="cxsmo-fit-library__filter-row" role="group" aria-label="Filter individual fit references">{(["All", "Mens", "Womens"] as const).map((item) => <button data-cxsmo-sound="select" className={filter === item ? "is-active" : ""} aria-pressed={filter === item} type="button" onClick={() => setFilter(item)} key={item}>{item} <span>{item === "All" ? fitLibrary.length : fitLibrary.filter((fit) => fit.group === item).length}</span></button>)}</div>
+    <div className="cxsmo-fit-library__filter-row" role="group" aria-label="Filter individual fit references">{(["All", "Mens", "Womens"] as const).map((item) => <button data-cxsmo-sound="select" className={filter === item ? "is-active" : ""} aria-pressed={filter === item} type="button" onClick={() => setFilter(item)} key={item}>{item} <span>{item === "All" ? cxsmoFitLibrary.length : cxsmoFitLibrary.filter((fit) => fit.group === item).length}</span></button>)}</div>
     <p className="cxsmo-fit-library__status" aria-live="polite">{filteredFits.length} individual {filter === "All" ? "fits" : `${filter.toLowerCase()} fits`} / numbered current-piece mapping included where listed</p>
     <div className="cxsmo-fit-library__individual-grid">{filteredFits.map((fit) => {
       const firstListed = cxsmoProducts.find((product) => product.id === fit.listedIds[0]);

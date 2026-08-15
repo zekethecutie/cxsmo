@@ -15,7 +15,7 @@ import { CxsmoStudioGate } from "./pages/CxsmoAdminPage";
 import { CxsmoAccountPage, CxsmoBagPage, CxsmoCheckoutPage, CxsmoDisclosurePage, CxsmoEditsPage, CxsmoHomePage, CxsmoLegalPage, CxsmoPrivacyPage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage, CxsmoTermsPage } from "./pages/CxsmoStorefront";
 import { CxsmoPosterHome } from "./pages/CxsmoPosterHome";
 import { CxsmoEntryPage } from "./pages/CxsmoEntryPage";
-import { CxsmoAccountActivityPage, CxsmoAccountHomePage, CxsmoAccountProfilePage, CxsmoAccountSavesPage } from "./pages/CxsmoAccountPages";
+import { CxsmoAccountActivityPage, CxsmoAccountHomePage, CxsmoAccountProfilePage, CxsmoAccountSavedFitsPage, CxsmoAccountSavesPage } from "./pages/CxsmoAccountPages";
 import "./pages/cxsmo-editorial-system.css";
 
 function Router() {
@@ -44,6 +44,7 @@ function Router() {
       <Route path="/cxsmo/account" component={CxsmoAccountHomePage} />
       <Route path="/cxsmo/account/profile" component={CxsmoAccountProfilePage} />
       <Route path="/cxsmo/account/saves" component={CxsmoAccountSavesPage} />
+      <Route path="/cxsmo/account/fits" component={CxsmoAccountSavedFitsPage} />
       <Route path="/cxsmo/account/activity" component={CxsmoAccountActivityPage} />
       <Route path="/cxsmo/bag" component={CxsmoBagPage} />
       <Route path="/cxsmo/checkout" component={CxsmoCheckoutPage} />
