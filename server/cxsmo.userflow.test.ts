@@ -20,9 +20,9 @@ describe("C✦SMO presentation-first user flow", () => {
 
   it("adds catalogue search and an honest empty discovery state", () => {
     expect(storefront).toContain('const [query, setQuery] = useState("")');
-    expect(storefront).toContain("Search the drop");
-    expect(storefront).toContain("No signal found.");
-    expect(storefront).toContain("This search only reads the twelve fictional catalogue objects in the browser.");
+    expect(storefront).toContain("Search the collection");
+    expect(storefront).toContain("No pieces found.");
+    expect(storefront).toContain("Search stays inside this browser-based C✦SMO collection.");
   });
 
   it("keeps account access browser-local without credentials", () => {

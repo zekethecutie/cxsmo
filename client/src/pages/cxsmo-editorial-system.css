@@ -1,0 +1,14 @@
+:where(.cxsmo-site,.cxsmo-entry) { font-synthesis:none; }
+:where(.cxsmo-site,.cxsmo-entry) :is(p,small,label,button,input,select,textarea,a) { font-family:"Plus Jakarta Sans",Manrope,system-ui,sans-serif; }
+.cxsmo-site :is(.section-label,.cxsmo-legal__meta,.cxsmo-legal__eyebrow,.cxsmo-account-hub__meta,.cxsmo-footer__disclosure),.cxsmo-entry :is(.cxsmo-entry__statement,.cxsmo-entry__poster-kicker,.cxsmo-entry__header p,.cxsmo-entry__footer) { font-weight:800; letter-spacing:.018em; }
+.cxsmo-site :is(label,small,.cxsmo-legal__panel p,.cxsmo-legal__panel small,.cxsmo-footer),.cxsmo-entry .cxsmo-entry__footer { font-weight:700; line-height:1.55; }
+.cxsmo-site :is(button,input,select,textarea),.cxsmo-entry :is(button,input,select,textarea) { font-weight:750; letter-spacing:.01em; }
+.cxsmo-site .section-label { align-items:center; display:inline-flex; gap:8px; position:relative; }
+.cxsmo-site .section-label::after { background:#df1a22; content:""; height:5px; width:5px; }
+.cxsmo-site :is(.cxsmo-shop-toolbar,.cxsmo-info-list,.cxsmo-account-next,.cxsmo-checkout)::before { background:linear-gradient(90deg,#df1a22,transparent); content:""; height:1px; left:0; opacity:.65; position:absolute; right:30%; top:0; }
+.cxsmo-site :is(.cxsmo-shop-toolbar,.cxsmo-info-list,.cxsmo-account-next,.cxsmo-checkout) { position:relative; }
+.cxsmo-site .cxsmo-fit-carousel__stage::after { border:1px solid rgba(240,236,230,.18); content:""; height:22px; position:absolute; right:18px; top:18px; transform:rotate(45deg); width:22px; }
+@media (prefers-reduced-motion:no-preference) { .cxsmo-site .section-label::after { animation:cxsmo-editorial-marker 2.8s ease-in-out infinite; }.cxsmo-site .cxsmo-fit-carousel__stage::after { animation:cxsmo-editorial-diamond 7.5s linear infinite; } }
+@keyframes cxsmo-editorial-marker { 0%,100% { opacity:.5; transform:scale(.72) rotate(0deg); } 50% { opacity:1; transform:scale(1.24) rotate(45deg); } }
+@keyframes cxsmo-editorial-diamond { to { transform:rotate(405deg); } }
+@media (prefers-reduced-motion:reduce) { .cxsmo-site .section-label::after,.cxsmo-site .cxsmo-fit-carousel__stage::after { animation:none; } }

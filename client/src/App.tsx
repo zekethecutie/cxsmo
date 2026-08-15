@@ -16,6 +16,7 @@ import { CxsmoAccountPage, CxsmoBagPage, CxsmoCheckoutPage, CxsmoDisclosurePage,
 import { CxsmoPosterHome } from "./pages/CxsmoPosterHome";
 import { CxsmoEntryPage } from "./pages/CxsmoEntryPage";
 import { CxsmoAccountActivityPage, CxsmoAccountHomePage, CxsmoAccountProfilePage, CxsmoAccountSavesPage } from "./pages/CxsmoAccountPages";
+import "./pages/cxsmo-editorial-system.css";
 
 function Router() {
   const [location] = useLocation();

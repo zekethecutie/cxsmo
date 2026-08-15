@@ -17,6 +17,8 @@ const screenshotRepair = source("client/src/pages/cxsmo-screenshot-repair.css");
 const entryCenteredPoster = source("client/src/pages/cxsmo-entry-centered-poster.css");
 const entryFinalTuning = source("client/src/pages/cxsmo-entry-final-tuning.css");
 const utilityType = source("client/src/pages/cxsmo-utility-type.css");
+const editorialSystem = source("client/src/pages/cxsmo-editorial-system.css");
+const entryLandingRebuild = source("client/src/pages/cxsmo-entry-landing-rebuild.css");
 const layerContract = source("client/src/pages/cxsmo-hero-layer-contract.css");
 const sound = source("client/src/contexts/CxsmoSoundContext.tsx");
 const userflowStyle = source("client/src/pages/cxsmo-userflow.css");
@@ -39,7 +41,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("github.com/zekethecutie");
     expect(entryStyle).toContain("cxsmo-entry__orbit");
     expect(entryAppearance).toContain("html:not(.dark) .cxsmo-entry");
-    expect(entry).toContain("fashion-commerce system built to make the drop feel inevitable");
+    expect(entry).toContain("Independent streetwear, accessories, and beauty pieces built for the after-image.");
     expect(entry).toContain("cxsmo-y2k-editorial-portrait");
     expect(entryPoster).toContain("cxsmo-entry__stage-axis");
   });
@@ -134,7 +136,9 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("DROP / OBJECT / SYSTEM");
     expect(entry).toContain("repeat: Infinity");
 	  expect(entryFinalTuning).toContain("padding-right: .08em");
-	  expect(entry).toContain('className="cxsmo-entry__poster-word" aria-label="C✦SMO">C<span className="cxsmo-entry__poster-word-star">✦</span>SMO');
+	  expect(entry).toContain('className="cxsmo-entry__poster-word" aria-hidden="true">CSMO');
+	  expect(entry).toContain('className="cxsmo-entry__editorial-divider"');
+	  expect(entry).not.toContain('cxsmo-entry__poster-word-star">✦');
 	  expect(entry).toContain('aria-label="C✦SMO" initial={reducedMotion');
 	  expect(entry).toContain('className="cxsmo-entry__mark-star">✦</span>SMO</motion.h1>');
 	  expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
@@ -148,7 +152,10 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(utilityType).toContain('"Plus Jakarta Sans"');
     expect(utilityType).toContain("font-weight: 700");
     expect(utilityType).toContain(".cxsmo-entry__desktop-note");
-    expect(utilityType).toContain("color: #df1a22");
+	  expect(utilityType).toContain("color: #df1a22");
+	  expect(editorialSystem).toContain('font-weight:800');
+	  expect(entryLandingRebuild).toContain('cxsmo-entry__editorial-divider');
+	  expect(editorialSystem).toContain('prefers-reduced-motion:reduce');
   });
 
   it("uses the supplied modern technology-select cue for interactive hover and object-zoom feedback", () => {
