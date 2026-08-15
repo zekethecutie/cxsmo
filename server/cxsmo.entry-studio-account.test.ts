@@ -20,18 +20,6 @@ const account = source("client/src/pages/CxsmoAccountPages.tsx");
 const polish = source("client/src/pages/cxsmo-final-polish.css");
 
 describe("C✦SMO entry, studio, and account expansion", () => {
-  it("keeps the branded application title available to the runtime", () => {
-    expect(process.env.VITE_APP_TITLE).toBe("C✦SMO");
-  });
-  it("keeps the route reveal and cursor outside scroll-transformed content", () => {
-    expect(app).toContain("cxsmo-route-transition__wipe");
-    expect(cursor).toContain("createPortal");
-    expect(cursorStyle).toContain("position:fixed");
-    expect(cursorStyle).toContain("will-change:left,top,opacity");
-    expect(polish).toContain("cxsmo-header__menu-panel");
-    expect(polish).toContain("z-index:600");
-  });
-
   it("uses a distinct editorial pre-store entry at the root route", () => {
     expect(app).toContain('<Route path="/" component={CxsmoEntryPage} />');
     expect(entry).toContain("C✦SMO STUDIOS / DIGITAL FASHION SYSTEM");

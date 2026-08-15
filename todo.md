@@ -86,7 +86,7 @@
 - [x] Enhance shop, product, styling-edit, information, account, bag, and studio routes with consistent poster composition, animated feedback, depth, interactive controls, and responsive visual rhythm.
 - [x] Add a user-controlled appearance setting with a polished theme transition and persistent preference for C✦SMO.
 - [x] Add the creator credit “Developed by zxke” to the C✦SMO footer and confirm it remains visible across public routes.
-- [x] Validate the expanded C✦SMO poster interactions, dark-mode setting, responsive layouts, TypeScript, focused tests, and production build before saving the next checkpoint.
+- [ ] Validate the expanded C✦SMO poster interactions, dark-mode setting, responsive layouts, TypeScript, focused tests, and production build before saving the next checkpoint.
 - [x] Verify the C✦SMO appearance setting in dark and light modes and record route-level results.
 - [ ] Run and document a direct interaction QA pass for poster parallax, scroll-led surfaces, product controls, and studio actions.
 - [x] Define an original C✦SMO visual brief for dynamic East-Asian streetwear fit shoots, transparent garment mockups, graphic poster crops, and an upgraded hero without copying the supplied references or depicting identifiable people from them.
@@ -97,7 +97,7 @@
 - [x] Refine the appearance setting with a smooth theme transition and expand consistent interactive feedback across key controls.
 - [x] Improve the C✦SMO studio dashboard’s scanning, quick-action, and operational-readiness patterns while retaining the portfolio-safe boundary.
 - [x] Implement concrete studio overview refinements for faster scanning, new quick-action controls, and clearer readiness summaries, then capture route-level QA evidence.
-- [x] Validate the enhanced C✦SMO image system, carousel, themes, interactions, responsive layouts, tests, and production build before saving the next checkpoint.
+- [ ] Validate the enhanced C✦SMO image system, carousel, themes, interactions, responsive layouts, tests, and production build before saving the next checkpoint.
 - [x] Define a C✦SMO interaction hierarchy that assigns deliberate hover, press, reveal, menu, scroll, and reduced-motion behavior to public controls without compromising readability or performance.
 - [x] Create original C✦SMO product-mockup and transparent-garment imagery informed by the supplied flat-lay and poster references when image generation becomes available, without copying logos, people, or compositions.
 - [x] Rebuild the C✦SMO product-detail interface with layered product media, more graphic material and size controls, tactile motion feedback, cleaner product information hierarchy, and responsive accessibility.
@@ -234,16 +234,3 @@
 - [x] Remove decorative sparkle-style text glyphs from active C✦SMO copy and retain only the intentional four-point brand-star mark where semantically required.
 - [x] Recalibrate the C✦SMO custom cursor for dependable display, smaller scale, quicker placement, appropriate interaction-target alignment, and reduced-motion-safe fallback.
 - [x] Audit and validate the corrected C✦SMO toolbar, hero layers, root landing, cursor, light/dark desktop and mobile states, tests, production build, and GitHub synchronization before checkpointing.
-
-- [x] Add a visible, reduced-motion-safe route-transition treatment to the C✦SMO pre-store landing and route changes.
-- [x] Recenter the `/` C✦SMO mark as the dominant visual, simplify the animated BLXCK UNIV3RSE object staging, and add restrained gradient and blurred dark depth without clutter.
-- [x] Keep the `/cxsmo` Navigate menu and all header controls above the hero stacking context while allowing only the intended transparent campaign image edge to cross the toolbar plane.
-- [x] Repair the custom cursor so it remains viewport-anchored during scroll and matches pointer coordinates without lag or drift.
-- [x] Increase dark-mode C✦SMO brand-word emphasis with controlled gradient/light treatment while preserving the quieter light-mode bridge.
-- [x] Validate the new motion, menu stacking, campaign face clearance, cursor anchoring, dark/light desktop and mobile states, tests, build, checkpoint, and GitHub synchronization.
-
-- [x] Audit the supplied editorial-poster direction against the current C✦SMO landing and document concrete hierarchy, spacing, typography, depth, motion, and clutter corrections.
-- [x] Resolve all remaining C✦SMO interface defects found during the audit, including missing landing transitions, hero/menu overlap, campaign-face occlusion, cursor anchoring, dark-mode brand emphasis, and mobile layout regressions.
-- [x] Recompose the `/` landing using the poster references as an original C✦SMO direction with a centered focal mark, restrained metadata, clean brutalist framing, and only purposeful animated objects.
-- [x] Validate the complete C✦SMO visual audit across dark/light desktop/mobile states, interaction contracts, tests, build, tracker, checkpoint, and GitHub synchronization.
-- [x] Run and document a focused QA pass for the C✦SMO fit carousel and image-system surfaces across desktop full-page dark/light views, confirming the fixed poster environment, three-second object rotation contract, visible controls, and reduced-motion-safe source behavior.
