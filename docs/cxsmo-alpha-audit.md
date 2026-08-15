@@ -15,3 +15,13 @@ The catalogue also points to the reserved true-alpha generation outputs for Trea
 ## Storefront-stage check
 
 The object stages at `/cxsmo/products/tread-06`, `/cxsmo/products/gloss-07`, `/cxsmo/products/starlight-03`, and `/cxsmo/products/orbit-05` now render the sneaker, lip glaze, shell, and charm as isolated product layers over the existing product-stage graphic treatment. No generation placeholder or solid source backdrop was visible in this pass.
+
+## Consolidated active-catalogue evidence
+
+The eight locally retained core catalogue sources—Gravity Puddle Jean, Orbit Ringer Tee, Starlight Moto Shell, Signal Check Overshirt, Orbit Key Charm, Tread Phase Sneaker, Static Bloom Lip Glaze, and Transit Camera Bag—report the PNG **RGBA** color mode. The active product detail and catalogue surfaces show these objects as isolated layers over interface-authored typography and graphic fields rather than importing solid product backdrops.
+
+The four newer Bluestar and BLXCK UNIV3RSE product layers are likewise already active as isolated object media in the timed lookbook and their public catalogue assignments. No active catalogue product has been identified as retaining a solid source backdrop after this review.
+
+### Canvas-export boundary
+
+No additional canvas-exported transparent hero or product source file is currently present in the project workspace. The existing approved transparent campaign hero and catalogue cutouts remain in use. A later user-provided canvas export can still be imported through the established managed-asset workflow, but no current storefront assignment is blocked by a missing file.
