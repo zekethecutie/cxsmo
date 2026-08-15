@@ -115,7 +115,7 @@
 - [x] Replace any C✦SMO product render that retains a solid background with a true-alpha transparent cutout, beginning with the Tread Phase Sneaker.
 - [x] Create true-alpha replacements for the C✦SMO Starlight Moto Shell, Orbit Key Charm, Tread Phase Sneaker, and Static Lip Glaze, then update the catalogue assignments.
 - [x] Re-run alpha-channel verification and storefront media QA after the final transparent-cutout replacements resolve.
-- [ ] Replace every remaining solid-background C✦SMO image with a true-alpha PNG and place typography, gradients, texture, and dimensional effects in the interface layer behind it.
+- [x] Replace every remaining solid-background C✦SMO image with a true-alpha PNG and place typography, gradients, texture, and dimensional effects in the interface layer behind it.
 - [x] Repair the C✦SMO fit-loop carousel so every “FALLEN / FITTED” study visibly loads its own original image, uses deliberate sizing, and keeps accessible controls.
 - [x] Recompose the C✦SMO hero around a clear transparent fashion object with copy-safe space, stronger focal depth, cleaner visual hierarchy, and less nonessential clutter.
 - [x] Add layered poster techniques behind transparent media, including gradient-depth star shapes, selective geometric accents, clipping, restrained parallax, and editorial typography without copying the supplied reference work.
@@ -143,7 +143,7 @@
 - [ ] Validate the revised hero, carousel, account simulation, theme states, accessibility, tests, and build before the next checkpoint.
 
 # Deferred asset note
-- [ ] When the image-creation allowance is available, replace all remaining opaque product mockups with verified true-alpha PNGs.
+- [x] When the image-creation allowance is available, replace all remaining opaque product mockups with verified true-alpha PNGs.
 - [x] Push the validated C✦SMO project to the selected GitHub repository after final checkpointing.
 - [x] Add country and currency preferences with locale-aware C✦SMO product-price display, an explicit manual override, and clear portfolio-simulation disclosure.
 - [x] Build a non-payment checkout and delivery-address simulation with browser-local inputs, a Google Maps-ready location preview, and no saved personal information.
