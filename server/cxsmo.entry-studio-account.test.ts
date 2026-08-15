@@ -109,10 +109,13 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entryCenteredPoster).toContain("drop-shadow(0 24px 22px");
   });
 
-  it("locks the approved hero treatment and preserves its precise clickable foreground hierarchy", () => {
-    expect(layerContract).toContain("background: linear-gradient(112deg, #310609");
-    expect(layerContract).toContain("radial-gradient(ellipse 78% 122% at -21% 53%");
-    expect(layerContract).toContain("z-index: 900");
+	it("locks the approved hero treatment and preserves its precise clickable foreground hierarchy", () => {
+	  expect(layerContract).toContain("background: linear-gradient(112deg, #310609");
+	  expect(layerContract).toContain("radial-gradient(ellipse 78% 122% at -21% 53%");
+	  expect(layerContract).toContain("height: calc(100% + 84px)");
+	  expect(layerContract).toContain("top: -84px");
+	  expect(layerContract).toContain("transform: none;");
+	  expect(layerContract).toContain("z-index: 900");
     expect(layerContract).toContain("z-index: 1000");
     expect(layerContract).toContain("z-index: 500");
     expect(layerContract).toContain("z-index: 510");
@@ -121,13 +124,17 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(layerContract).toContain("pointer-events: none");
   });
 
-  it("uses a safe root theme wash and dense contemporary utility type with reduced-motion-safe marketing movement", () => {
+	it("uses a safe root theme wash and dense contemporary utility type with reduced-motion-safe marketing movement", () => {
     expect(entry).toContain("cxsmo-theme-wash");
     expect(entry).toContain("DROP / OBJECT / SYSTEM");
     expect(entry).toContain("repeat: Infinity");
-    expect(entryFinalTuning).toContain("padding-right: .16em");
-    expect(entry).toContain('className="cxsmo-entry__poster-word"');
-    expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
+	  expect(entryFinalTuning).toContain("padding-right: .16em");
+	  expect(entry).toContain('className="cxsmo-entry__poster-word"');
+	  expect(entry).toContain('className="cxsmo-entry__poster-word-star">✦</span>SMO');
+	  expect(entry).toContain(">C<span>✦</span>SMO</motion.h1>");
+	  expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
+	  expect(entryFinalTuning).toContain("margin: 0 .085em 0 .1em");
+	  expect(entryFinalTuning).toContain(".cxsmo-entry__poster-word-star");
     expect(entryFinalTuning).toContain("prefers-reduced-motion:reduce");
     expect(utilityType).toContain('"Plus Jakarta Sans"');
     expect(utilityType).toContain("font-weight: 700");
