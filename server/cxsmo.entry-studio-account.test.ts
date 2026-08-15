@@ -191,11 +191,14 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 
 	it("uses supplied fit-shoot assets as editorial discovery while preserving an explicit no-testimonial boundary", () => {
 		expect(fitCarousel).toContain("cxsmo-fit-black-red-full_f171f1a3.png");
-		expect(fitCarousel).toContain("cxsmo-fit-mens-lineup_1b4e867e.png");
-		expect(fitCarousel).toContain("cxsmo-fit-womens-sheet_dcdd78ef.png");
-		expect(fitCarousel).toContain("Product pages only claim what is currently listed in the catalogue");
+		expect(fitCarousel).toContain("cxsmo-fit-men-01-splitline-rugby_a7a4ca96.png");
+		expect(fitCarousel).toContain("cxsmo-fit-men-05-chainline-self_318985d3.png");
+		expect(fitCarousel).toContain("cxsmo-fit-women-01-asym-star_5aa95f9c.png");
+		expect(fitCarousel).toContain("cxsmo-fit-women-10-after-dark_a269f518.png");
+		expect(fitCarousel).toContain("Every card is an individual fit reference");
+		expect(fitCarousel).toContain("Shop links only lead to categories that are presently listed in the C✦SMO catalogue");
 		expect(fitCarousel).toContain("does not fabricate product reviews, ratings, comments, or customer stories");
-		expect(fitLibraryStyle).toContain(".cxsmo-fit-library__grid");
+		expect(fitLibraryStyle).toContain(".cxsmo-fit-library__individual-grid");
 		expect(fitLibraryStyle).toContain("@media (max-width:760px)");
 	});
 });

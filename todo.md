@@ -332,3 +332,7 @@
 - [x] Add an honest community/style-context module that explicitly avoids fabricated testimonials, reviews, ratings, endorsements, or customer claims while allowing future verified content.
 - [x] Create a practical mockup-generation brief that identifies all visible garments, accessories, and footwear in the supplied look assets that are not represented in the current C✦SMO catalogue.
 - [x] Validate the new fit-led routes and mobile layout, regression suite, production build, checkpoint, and GitHub synchronization.
+- [x] Crop the supplied mens and womens C✦SMO multi-model look sheets into individual reusable model-fit images, preserving each complete visible outfit without semantic image alteration.
+- [x] Upload and register the individual model-fit crops as deployment-safe assets with clear fit labels and intended shop-discovery category links.
+- [x] Replace the composite-sheet cards in the Fit Edits library with an individual-look card system that gives each model/outfit its own editorial styling entry.
+- [x] Validate the expanded fit library across desktop/mobile, regression suite, production build, checkpoint, and GitHub synchronization.
