@@ -12,6 +12,7 @@ import "./cxsmo-admin-cms.css";
 import "./cxsmo-simulation-flow.css";
 import "./cxsmo-admin-gate.css";
 import "./cxsmo-admin-interactions.css";
+import "./cxsmo-mobile-native.css";
 
 type Module = "Overview" | "Products" | "Categories" | "Inventory" | "Orders" | "POS" | "Shipping" | "Customers" | "Content" | "Reports";
 const modules: { name: Module; icon: typeof Layers3 }[] = [

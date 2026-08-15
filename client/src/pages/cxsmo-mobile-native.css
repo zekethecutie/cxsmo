@@ -1,0 +1,120 @@
+/* Reusable mark: one CSS-drawn four-point star with no duplicate glyph layer. */
+.cxsmo-mark__star { background:linear-gradient(145deg,#ffadb1 0%,#df1a22 44%,#87050e 100%); clip-path:polygon(50% 0,59% 41%,100% 50%,59% 59%,50% 100%,41% 59%,0 50%,41% 41%); display:inline-block; flex:none; font-size:inherit; height:.72em; margin:0 -.045em 0 .015em; transform:translateY(.035em) rotate(12deg); width:.72em; }
+
+/* Mobile-native composition: a calm shell, one hero focal point, and comfortable touch targets. */
+@media (max-width: 600px) {
+  html { --cxsmo-mobile-gutter: 20px; }
+  body, .cxsmo-site, .cxsmo-entry, .cx-admin { overflow-x: clip; }
+
+  .cxsmo-site .cxsmo-disclaimer { align-items:flex-start; display:flex; font:700 8px/1.42 "Plus Jakarta Sans",sans-serif; gap:9px; letter-spacing:.015em; padding:8px 12px; text-align:left; }
+  .cxsmo-site .cxsmo-disclaimer button { flex:none; margin-top:1px; }
+  .cxsmo-site .cxsmo-header { gap:6px; height:58px; min-height:58px; padding:0 12px; }
+  .cxsmo-site .cxsmo-header > a { flex:none; min-width:67px; }
+  .cxsmo-site .cxsmo-mark { font-size:15px; letter-spacing:-.1em; }
+  .cxsmo-site .cxsmo-mark__star { height:.72em; width:.72em; }
+  .cxsmo-site .cxsmo-header__menu { margin-left:auto!important; min-width:53px; }
+  .cxsmo-site .cxsmo-header__menu-trigger { align-items:center; display:inline-flex; font-size:0!important; gap:3px; height:34px; justify-content:center; min-height:34px; padding:0 8px!important; width:53px; }
+  .cxsmo-site .cxsmo-header__menu-trigger::before { content:"Menu"; font:800 8px "Plus Jakarta Sans",sans-serif; letter-spacing:.07em; text-transform:uppercase; }
+  .cxsmo-site .cxsmo-header__menu-trigger span { font-size:15px; line-height:1; }
+  .cxsmo-site .cxsmo-header__tools { flex:none; gap:4px; }
+  .cxsmo-site .cxsmo-appearance-toggle,.cxsmo-site .cxsmo-sound-toggle,.cxsmo-site .cxsmo-bag-link { align-items:center; box-sizing:border-box; display:inline-flex; height:34px; justify-content:center; min-height:34px; padding:0!important; width:34px; }
+  .cxsmo-site .cxsmo-appearance-toggle b,.cxsmo-site .cxsmo-sound-toggle b { display:none!important; }
+  .cxsmo-site .cxsmo-appearance-toggle span { font-size:17px; line-height:1; }
+  .cxsmo-site .cxsmo-bag-link { font-size:0!important; gap:3px; }
+  .cxsmo-site .cxsmo-bag-link svg { height:14px; width:14px; }
+  .cxsmo-site .cxsmo-bag-link b { font-size:8px; height:14px; width:14px; }
+  .cxsmo-site .cxsmo-header__menu-panel { left:auto!important; max-height:calc(100svh - 82px); overflow:auto; padding:8px!important; right:0!important; top:calc(100% + 8px)!important; width:min(270px,calc(100vw - 24px)); }
+  .cxsmo-site .cxsmo-header__menu-panel a { align-items:center; display:grid!important; font:800 11px "Plus Jakarta Sans",sans-serif!important; gap:10px; grid-template-columns:24px 1fr 15px; min-height:44px; padding:0 10px!important; }
+
+  .cxsmo-site :is(.cxsmo-page-intro,.cxsmo-category-rail,.cxsmo-drop,.cxsmo-service-strip,.cxsmo-product-grid--shop,.cxsmo-account,.cxsmo-bag,.cxsmo-style-rule,.cxsmo-collection-note) { padding-left:var(--cxsmo-mobile-gutter)!important; padding-right:var(--cxsmo-mobile-gutter)!important; }
+  .cxsmo-site .cxsmo-page-intro { padding-bottom:34px!important; padding-top:48px!important; }
+  .cxsmo-site :is(.cxsmo-page-intro h1,.cxsmo-edits-hero h1,.cxsmo-account h1,.cxsmo-bag h1) { font-size:clamp(47px,15vw,64px)!important; line-height:.85!important; }
+  .cxsmo-site .cxsmo-page-intro > p:last-child,.cxsmo-site .cxsmo-edits-hero > div > p:last-child,.cxsmo-site .cxsmo-account > div > p:last-child { font-size:13px; line-height:1.58; }
+  .cxsmo-site .cxsmo-product-grid { gap:28px 12px; }
+  .cxsmo-site .cxsmo-product-card__visual { height:clamp(188px,54vw,218px); padding:10px; }
+  .cxsmo-site .cxsmo-product-card h2 { font-size:13px; line-height:1.13; }
+  .cxsmo-site .cxsmo-product-card__body { padding:11px 1px 9px; }
+  .cxsmo-site .cxsmo-product-card__actions button { min-height:34px; padding:0 7px; }
+  .cxsmo-site .cxsmo-filter-scroll { margin-inline:-4px; padding-inline:4px; }
+  .cxsmo-site .cxsmo-filter-scroll button { min-height:36px; padding:7px 10px; }
+  .cxsmo-site .cxsmo-shop-toolbar { gap:10px; padding-block:12px; }
+  .cxsmo-site .cxsmo-shop-search { min-height:40px; width:100%; }
+  .cxsmo-site .cxsmo-pdp__media { height:380px; }
+  .cxsmo-site .cxsmo-pdp__buy { padding:38px var(--cxsmo-mobile-gutter) 54px!important; }
+  .cxsmo-site .cxsmo-pdp__actions { align-items:stretch; flex-direction:column; }
+  .cxsmo-site .save-wide { min-height:44px; width:100%; }
+  .cxsmo-site .cxsmo-edits-hero > div { padding:50px var(--cxsmo-mobile-gutter)!important; }
+  .cxsmo-site .cxsmo-edits-hero > img { height:280px; }
+  .cxsmo-site .cxsmo-look-grid article { min-height:260px; padding:23px var(--cxsmo-mobile-gutter); }
+  .cxsmo-site .cxsmo-info-list { margin-inline:var(--cxsmo-mobile-gutter); }
+  .cxsmo-site .cxsmo-info-list article button { font-size:17px; gap:10px; grid-template-columns:34px 1fr 25px; padding:22px 0; }
+  .cxsmo-site .cxsmo-info-list article p { font-size:13px; line-height:1.62; margin-left:44px; }
+  .cxsmo-site .cxsmo-bag__lines article { gap:11px; grid-template-columns:82px 1fr 26px; }
+  .cxsmo-site .cxsmo-bag__lines article > div:first-child { height:86px; }
+  .cxsmo-site .cxsmo-bag-summary { padding:34px var(--cxsmo-mobile-gutter) 48px!important; }
+  .cxsmo-site .cxsmo-footer { gap:20px; padding:34px var(--cxsmo-mobile-gutter); }
+  .cxsmo-site .cxsmo-footer > div { gap:13px; }
+
+  .cxsmo-site .cxsmo-modal { align-items:flex-end; padding:12px; }
+  .cxsmo-site .cxsmo-modal > div { border-radius:2px 2px 0 0; max-height:calc(100svh - 24px); overflow:auto; padding:28px 20px 24px; width:100%; }
+  .cxsmo-site .cxsmo-modal h2 { font-size:30px; }
+  .cxsmo-promo-popup__card { max-height:calc(100svh - 32px); overflow:auto; padding:27px 20px!important; width:min(100% - 24px,420px)!important; }
+  .cxsmo-promo-popup__card h2 { font-size:clamp(31px,10vw,43px)!important; }
+
+  .cxsmo-route-tour header { left:12px!important; right:12px!important; top:12px!important; }
+  .cxsmo-route-tour header>span { font-size:8px; max-width:190px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .cxsmo-route-tour header button { min-height:32px; padding:0 9px; }
+  .cxsmo-route-tour__spotlight { transform:translate(-50%,-50%) scale(.62)!important; }
+  .cxsmo-route-tour__cursor { transform:translate(-5%,-5%) scale(.58)!important; }
+  .cxsmo-route-tour__tooltip { bottom:16px!important; left:16px!important; max-width:calc(100vw - 32px)!important; padding:15px 15px 13px!important; }
+  .cxsmo-route-tour__tooltip h2 { font-size:clamp(28px,9vw,38px)!important; margin-bottom:11px; }
+  .cxsmo-route-tour__tooltip article { font-size:11px; line-height:1.48; padding-left:10px; }
+  .cxsmo-route-tour__tooltip>p { margin-bottom:9px; }
+  .cxsmo-route-tour__tooltip footer { margin-top:11px; padding-top:9px; }
+
+  .cxsmo-entry__header { min-height:58px; padding-inline:12px; }
+  .cxsmo-entry__header > p { display:none; }
+  .cxsmo-entry__hero { min-height:640px; }
+  .cxsmo-entry__copy { left:20px; max-width:calc(100vw - 40px); }
+  .cxsmo-entry__statement { max-width:280px; }
+  .cxsmo-entry__side-notice,.cxsmo-entry__desktop-note { display:none!important; }
+  .cxsmo-entry__item-carousel { padding-inline:var(--cxsmo-mobile-gutter); }
+  .cxsmo-entry__fit-poster-copy { padding-inline:var(--cxsmo-mobile-gutter); }
+
+  .cx-admin__header,.cx-admin__main>.cx-admin__notice,.cx-admin__canvas { padding-left:16px!important; padding-right:16px!important; }
+  .cx-admin__header { min-height:62px; }
+  .cx-admin__section-head { align-items:flex-start; flex-direction:column; gap:14px; }
+  .cx-admin__product-list article { gap:10px; grid-template-columns:64px 1fr auto!important; }
+  .cx-admin__product-thumb { height:64px!important; width:64px!important; }
+  .cx-admin__quickbar,.cx-admin__metric-grid,.cx-admin__split-grid { grid-template-columns:1fr!important; }
+}
+
+@media (max-width: 600px) {
+  .cxsmo-poster-home .poster-hero { min-height:620px!important; overflow:hidden!important; }
+  .cxsmo-poster-home .poster-hero__pixel-lattice,.cxsmo-poster-home .poster-hero__red-frame,.cxsmo-poster-home .poster-hero__gradient-star,.cxsmo-poster-home .poster-hero__barcode,.cxsmo-poster-home .poster-hero__scroll { display:none!important; }
+  .cxsmo-poster-home .poster-hero__backword { font-size:26vw!important; left:18px!important; opacity:.18!important; top:11%!important; }
+  .cxsmo-poster-home .poster-hero__object-layer--campaign { height:45%!important; right:-1%!important; top:67px!important; width:86%!important; }
+  .cxsmo-poster-home .poster-hero__object-layer--campaign img { object-position:58% 100%!important; transform:none!important; }
+  .cxsmo-poster-home .poster-hero__type { bottom:38px!important; left:20px!important; right:20px!important; }
+  .cxsmo-poster-home .poster-hero__type>p { font-size:8px!important; letter-spacing:.07em!important; margin-bottom:10px!important; }
+  .cxsmo-poster-home .poster-hero__type h1 { font-size:clamp(48px,15.5vw,60px)!important; line-height:.84!important; margin-bottom:17px!important; }
+  .cxsmo-poster-home .poster-hero__type>div { display:block; }
+  .cxsmo-poster-home .poster-hero__type .poster-text-link,.cxsmo-poster-home .poster-hero__object { display:none!important; }
+  .cxsmo-poster-home .poster-button { font-size:9px; gap:9px; min-height:42px; padding:0 14px; }
+  .cxsmo-poster-home .poster-entry-flow { display:grid; gap:24px; padding:58px var(--cxsmo-mobile-gutter)!important; }
+  .cxsmo-poster-home .poster-entry-flow h2 { font-size:clamp(42px,13vw,56px); line-height:.84; }
+  .cxsmo-poster-home .poster-entry-flow>div>p:last-child { font-size:13px; line-height:1.58; }
+  .cxsmo-poster-home .poster-product-conveyor__item { height:210px!important; width:168px!important; }
+  .cxsmo-poster-home .poster-marquee { min-height:72px; }
+  .cxsmo-poster-home .poster-story { padding:72px var(--cxsmo-mobile-gutter)!important; }
+  .cxsmo-poster-home .poster-story__copy { padding-top:46px!important; }
+  .cxsmo-poster-home .poster-story__copy h2,.cxsmo-poster-home .poster-section-head h2,.cxsmo-poster-home .poster-catalogue-pull h2 { font-size:clamp(40px,12vw,54px); line-height:.83; }
+  .cxsmo-poster-home .poster-story__image { margin-top:46px!important; width:78vw!important; }
+  .cxsmo-poster-home .poster-lookbook { padding:66px var(--cxsmo-mobile-gutter)!important; }
+  .cxsmo-poster-home .poster-lookbook__image { height:76vw!important; }
+  .cxsmo-poster-home .poster-catalogue-pull { padding:64px var(--cxsmo-mobile-gutter)!important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cxsmo-poster-home .poster-hero__object-layer--campaign,.cxsmo-route-tour__spotlight,.cxsmo-route-tour__cursor { transform:none!important; }
+}

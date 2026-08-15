@@ -20,3 +20,11 @@ The follow-up desktop check confirms the corrected approach: the foreground and 
 The full landing check confirms that the carousel controls are now labelled `Back` and `Next`, remain below the card surface, and do not overlap object details. The public shop check confirms that the mapped belt, sweatpant, eyewear, moto jacket, and cosmetic-case renders are present, and that Stellar Cargo Pants appears as object 18 in the Bottoms category.
 
 Mobile full-page verification confirms the repaired one-star root mark, symmetric stacked CTAs, labelled carousel controls, and a responsive Stellar Cargo Pants detail route with its mapped approved render, collection tag, size selection, and portfolio-safe bag action.
+
+## 2026-08-15 — Mobile-native layout pass
+
+The original compact phone audit confirmed the reported density problem: the shared header controls, poster-hero layers, and route-level desktop spacing produced too many competing elements at once. A dedicated mobile-native override now turns the shell into a 58px icon-led header, adds phone-scale gutters and typography, reduces product-card density, and stacks product, bag, checkout, information, account, legal, and studio surfaces with larger breathing room.
+
+The follow-up 375×812 route review confirms the revised root campaign hero has a single readable type block, one clear action, a smaller campaign cutout, and no overlapping study card. The shop, fit edits, information, account, bag, checkout, and studio-gate views now keep control groups touch-safe and visibly separated. The mobile menu, promotion dialog, and guided-tour overlays also receive dedicated compact card and control rules.
+
+The entry-route follow-up also verified the shared CSS-drawn mark remains a single visible star construction at mobile scale. The old desktop-orientation advisory is now removed on compact phones so it cannot crowd the root hero.

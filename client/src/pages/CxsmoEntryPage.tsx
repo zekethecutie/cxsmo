@@ -20,6 +20,7 @@ import "./cxsmo-entry-iconic-poster.css";
 import "./cxsmo-entry-final-tuning.css";
 import "./cxsmo-entry-landing-rebuild.css";
 import "./cxsmo-utility-type.css";
+import "./cxsmo-mobile-native.css";
 
 function CxsmoEntryTools() {
   const { theme, toggleThemeAt } = useTheme();
