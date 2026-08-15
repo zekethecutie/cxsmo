@@ -30,4 +30,4 @@ An uninterrupted follow-up traversal also moved from **Return to storefront** th
 
 ## Scope
 
-This review exercises visible interaction and local-state handoffs. Optional audio audibility, an uninterrupted no-assistance keyboard-only path through product size/add-to-bag actions, and any visitor-provided address values remain outside this pass.
+This review exercises visible interaction and local-state handoffs. A later live browser pass independently confirmed sequential `Tab` progression from the portfolio-disclosure close control to the home link and then to the Navigate trigger on the product page. Optional audio audibility, an uninterrupted no-assistance keyboard-only path through product size/add-to-bag actions, and any visitor-provided address values remain outside this pass.
