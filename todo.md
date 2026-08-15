@@ -316,3 +316,8 @@
 - [x] Replace Mercury Orbit Belt, Chrome Puddle Sweatpant, Lunar Veil Eyewear, Redline Moto Jacket, and Silver Crown Cosmetic Case with the newly supplied transparent approved product renders.
 - [x] Add Stellar Cargo Pants as a new fictional C✦SMO catalogue object with a clear bottoms category, product detail, and inventory/studio visibility.
 - [x] Validate the repaired landing marks, carousel controls, CTA alignment, supplied catalogue media, new product, tests, production build, checkpoint, and GitHub synchronization.
+- [x] Redesign the global C✦SMO mobile header and navigation so its logo, menu trigger, appearance, sound, and bag controls are spacious, touch-safe, and never visually collide.
+- [x] Establish a mobile-native spacing, type-scale, control-size, and card-density system across public, account, checkout, legal, studio, and product routes rather than inheriting compressed desktop layouts.
+- [x] Recompose the `/cxsmo` campaign hero for phone view with deliberate copy-safe space, a smaller clear campaign object, no overlapping wordmark/text/buttons, and a clean mobile-only study-card treatment.
+- [x] Simplify the mobile Navigate menu, guided-showcase overlay, promotion modal, and other layered UI so they do not obstruct content or blur into an unreadable full-screen composition.
+- [x] Validate the redesigned mobile landing, storefront, product, fit edits, information, account, checkout, legal, studio, menu, modal, and guided-showcase surfaces at compact phone dimensions, then run regression tests, production build, checkpoint, and GitHub synchronization.

@@ -27,6 +27,7 @@ const studio = source("client/src/pages/CxsmoAdminPage.tsx");
 const gateStyle = source("client/src/pages/cxsmo-admin-gate.css");
 const account = source("client/src/pages/CxsmoAccountPages.tsx");
 const polish = source("client/src/pages/cxsmo-final-polish.css");
+const mobileNative = source("client/src/pages/cxsmo-mobile-native.css");
 
 describe("C✦SMO entry, studio, and account expansion", () => {
   it("uses a distinct editorial pre-store entry at the root route", () => {
@@ -44,6 +45,17 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("Independent streetwear, accessories, and beauty pieces built for the after-image.");
     expect(entry).toContain("cxsmo-y2k-editorial-portrait");
     expect(entryPoster).toContain("cxsmo-entry__stage-axis");
+  });
+
+  it("keeps a dedicated mobile-native composition for shared shell, poster, overlay, entry, and studio surfaces", () => {
+    expect(entry).toContain('import "./cxsmo-mobile-native.css"');
+    expect(poster).toContain('import "./cxsmo-mobile-native.css"');
+    expect(studio).toContain('import "./cxsmo-mobile-native.css"');
+    expect(mobileNative).toContain(".cxsmo-site .cxsmo-header");
+    expect(mobileNative).toContain(".cxsmo-poster-home .poster-hero");
+    expect(mobileNative).toContain(".cxsmo-route-tour__tooltip");
+    expect(mobileNative).toContain(".cxsmo-entry__hero");
+    expect(mobileNative).toContain(".cx-admin__header");
   });
 
   it("gates the studio with the supplied portfolio code and preserves a storefront return path", () => {
