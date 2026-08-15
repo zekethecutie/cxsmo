@@ -12,6 +12,7 @@ import "./cxsmo-poster-polish.css";
 import "./cxsmo-hero-correction.css";
 import "./cxsmo-hero-layer-repair.css";
 import "./cxsmo-mobile-bridge-polish.css";
+import "./cxsmo-screenshot-repair.css";
 
 const getProduct = (id: string) => cxsmoProducts.find((product) => product.id === id) ?? cxsmoProducts[0];
 

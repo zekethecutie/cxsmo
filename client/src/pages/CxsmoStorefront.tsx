@@ -35,6 +35,7 @@ import "./cxsmo-audit-refinements.css";
 import "./cxsmo-userflow.css";
 import "./cxsmo-route-transition.css";
 import "./cxsmo-final-polish.css";
+import "./cxsmo-screenshot-repair.css";
 
 const heroImage = "/manus-storage/cxsmo-hero-v2_cadfe55c.jpg";
 const ease = [0.16, 1, 0.3, 1] as const;

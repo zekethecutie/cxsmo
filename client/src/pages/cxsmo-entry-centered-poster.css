@@ -1,0 +1,70 @@
+/* A deliberately sparse poster composition: the brand is the focal point; the product layers simply orbit it. */
+@media (min-width: 841px) {
+  .cxsmo-entry__hero--poster {
+    display: block;
+    min-height: calc(100svh - 134px);
+    padding: 0 clamp(28px, 7vw, 118px);
+  }
+
+  .cxsmo-entry__copy {
+    left: 50%;
+    max-width: 720px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -53%);
+    width: min(72vw, 720px);
+    z-index: 7;
+  }
+
+  .cxsmo-entry__copy > p:first-child,
+  .cxsmo-entry__statement,
+  .cxsmo-entry__creator-line { margin-left: auto; margin-right: auto; }
+
+  .cxsmo-entry__copy h1 {
+    background: linear-gradient(128deg, #f0ece6 0%, #fff 32%, #df1a22 62%, #7b0e13 100%);
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 24px 22px rgba(0,0,0,.58));
+    text-shadow: none;
+  }
+
+  .cxsmo-entry__copy h1 span { color: inherit; }
+  .cxsmo-entry__statement { max-width: 430px; text-align: center; }
+  .cxsmo-entry__intro > div { justify-content: center; }
+  .cxsmo-entry__creator-line { text-align: center; }
+
+  .cxsmo-entry__numbers,
+  .cxsmo-entry__stage-axis,
+  .cxsmo-entry__stage-note { display: none; }
+
+  .cxsmo-entry__poster-stage {
+    inset: 0;
+    max-width: none;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .cxsmo-entry__poster-stage:before { inset: 17% 18%; opacity: .55; }
+  .cxsmo-entry__poster-stage:after { opacity: .26; }
+  .cxsmo-entry__stage-title { left: 50%; opacity: .17; top: 16%; transform: translateX(-50%) rotate(-4deg); }
+  .cxsmo-entry__object--primary { height: 46%; left: auto; right: 8%; top: 24%; width: 28%; }
+  .cxsmo-entry__object--pants { height: 37%; left: 9%; top: 49%; width: 23%; }
+  .cxsmo-entry__object--simple { height: 31%; right: 14%; top: 57%; width: 20%; }
+}
+
+@media (max-width: 840px) {
+  .cxsmo-entry__copy h1 {
+    background: linear-gradient(128deg, #f0ece6 0%, #fff 37%, #df1a22 73%, #7b0e13 100%);
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 16px 16px rgba(0,0,0,.5));
+    text-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cxsmo-entry__object { transform: none !important; }
+}
