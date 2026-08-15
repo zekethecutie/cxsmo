@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
+import type { CSSProperties } from "react";
+import { createPortal } from "react-dom";
+
 const cursorAsset = "/manus-storage/cxsmo-custom-cursor_922d53fe.png";
 
 export function CxsmoCustomCursor() {
@@ -37,12 +40,12 @@ export function CxsmoCustomCursor() {
       if (nextInteractive !== lastInteractive.current) { lastInteractive.current = nextInteractive; setInteractive(nextInteractive); }
     };
     const hide = () => setVisible(false);
-    window.addEventListener("pointermove", move, { passive: true });
+    document.addEventListener("pointermove", move, { passive: true });
     document.addEventListener("mouseleave", hide);
     window.addEventListener("blur", hide);
-    return () => { delete document.documentElement.dataset.cxsmoCursor; if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current); window.removeEventListener("pointermove", move); document.removeEventListener("mouseleave", hide); window.removeEventListener("blur", hide); };
+    return () => { delete document.documentElement.dataset.cxsmoCursor; if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current); document.removeEventListener("pointermove", move); document.removeEventListener("mouseleave", hide); window.removeEventListener("blur", hide); };
   }, [enabled]);
 
-  if (!enabled) return null;
-  return <div ref={cursorRef} className={`cxsmo-global-cursor${visible ? " is-visible" : ""}${interactive ? " is-interactive" : ""}`} aria-hidden="true" style={{ "--cursor-x": "-160px", "--cursor-y": "-160px" } as React.CSSProperties}><img src={cursorAsset} alt="" /></div>;
+  if (!enabled || typeof document === "undefined") return null;
+  return createPortal(<div ref={cursorRef} className={`cxsmo-global-cursor${visible ? " is-visible" : ""}${interactive ? " is-interactive" : ""}`} aria-hidden="true" style={{ "--cursor-x": "-160px", "--cursor-y": "-160px" } as CSSProperties}><img src={cursorAsset} alt="" /></div>, document.body);
 }

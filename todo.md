@@ -234,3 +234,10 @@
 - [x] Remove decorative sparkle-style text glyphs from active C✦SMO copy and retain only the intentional four-point brand-star mark where semantically required.
 - [x] Recalibrate the C✦SMO custom cursor for dependable display, smaller scale, quicker placement, appropriate interaction-target alignment, and reduced-motion-safe fallback.
 - [x] Audit and validate the corrected C✦SMO toolbar, hero layers, root landing, cursor, light/dark desktop and mobile states, tests, production build, and GitHub synchronization before checkpointing.
+
+- [x] Restore the user-selected `3c3e34c6` baseline before applying a focused C✦SMO repair pass.
+- [x] Restore the screenshot-matched lower-left C✦SMO hero composition, a face-safe transparent campaign crossover, and a clickable trigger-anchored Navigate menu.
+- [x] Rebuild the `/` pre-store entry around a centered heavy C✦SMO mark, restrained BLXCK UNIV3RSE object motion, graphic poster depth, and creator contact information.
+- [x] Improve the C✦SMO header-star feedback, mount the custom cursor above all route layers with viewport-accurate tracking, and retain reduced-motion fallback.
+- [x] Map interactive hover and object-zoom feedback to the supplied modern technology-select sound while retaining opt-in and touch-safe behavior.
+- [x] Validate the repaired dark/light desktop/mobile views, TypeScript, regression suite, production build, and screenshot-specific source contracts before checkpointing.

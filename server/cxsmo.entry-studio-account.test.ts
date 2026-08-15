@@ -13,6 +13,10 @@ const heroLayerRepair = source("client/src/pages/cxsmo-hero-layer-repair.css");
 const mobileBridgePolish = source("client/src/pages/cxsmo-mobile-bridge-polish.css");
 const cursor = source("client/src/components/CxsmoCustomCursor.tsx");
 const cursorStyle = source("client/src/pages/cxsmo-custom-cursor.css");
+const screenshotRepair = source("client/src/pages/cxsmo-screenshot-repair.css");
+const entryCenteredPoster = source("client/src/pages/cxsmo-entry-centered-poster.css");
+const sound = source("client/src/contexts/CxsmoSoundContext.tsx");
+const userflowStyle = source("client/src/pages/cxsmo-userflow.css");
 const poster = source("client/src/pages/CxsmoPosterHome.tsx");
 const studio = source("client/src/pages/CxsmoAdminPage.tsx");
 const gateStyle = source("client/src/pages/cxsmo-admin-gate.css");
@@ -84,9 +88,29 @@ describe("C✦SMO entry, studio, and account expansion", () => {
   it("keeps the refined custom cursor frame-synced, compact, and free of a target ring", () => {
     expect(cursor).toContain("window.requestAnimationFrame");
     expect(cursor).toContain("latestPosition");
-    expect(cursorStyle).toContain("width:52px");
+    expect(cursor).toContain("createPortal");
+    expect(cursor).toContain('document.addEventListener("pointermove"');
+    expect(cursorStyle).toContain("width:34px");
+    expect(cursorStyle).toContain("z-index:2147483000");
     expect(cursorStyle).toContain(".cxsmo-entry");
     expect(cursorStyle).not.toContain("cxsmo-global-cursor span");
+  });
+
+  it("keeps screenshot-matched hero layering, a trigger-anchored clickable menu, and a centered entry poster contract", () => {
+    expect(screenshotRepair).toContain(".cxsmo-header__menu-panel");
+    expect(screenshotRepair).toContain("position: absolute");
+    expect(screenshotRepair).toContain("pointer-events: auto");
+    expect(screenshotRepair).toContain("height: calc(100% + 84px)");
+    expect(entry).toContain('repeat: Infinity');
+    expect(entryCenteredPoster).toContain("left: 50%");
+    expect(entryCenteredPoster).toContain("drop-shadow(0 24px 22px");
+  });
+
+  it("uses the supplied modern technology-select cue for interactive hover and object-zoom feedback", () => {
+    expect(sound).toContain("cxsmo-modern-technology-select_c5dbba14.wav");
+    expect(sound).toContain('hover: "/manus-storage/cxsmo-modern-technology-select');
+    expect(sound).toContain('zoom: "/manus-storage/cxsmo-modern-technology-select');
+    expect(userflowStyle).toContain("cxsmo-mark-star-refined");
   });
 
   it("removes non-brand sparkle decorations from the active poster route", () => {

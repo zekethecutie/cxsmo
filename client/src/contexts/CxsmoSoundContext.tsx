@@ -19,10 +19,10 @@ const soundSources: Record<CxsmoSoundCue, string> = {
   lock: "/manus-storage/mixkit-computer-digital-lock-2859_6e99bea6.wav",
   double: "/manus-storage/mixkit-fast-double-click-on-mouse-275_35c59510.wav",
   replay: "/manus-storage/mixkit-bonus-earned-in-video-game-2058_6edf4d2a.wav",
-  hover: "/manus-storage/mixkit-fast-double-click-on-mouse-275_35c59510.wav",
-  zoom: "/manus-storage/cxsmo-explainer-pop-hover_e1e79c4e.wav",
+  hover: "/manus-storage/cxsmo-modern-technology-select_c5dbba14.wav",
+  zoom: "/manus-storage/cxsmo-modern-technology-select_c5dbba14.wav",
 };
-const soundVolume: Record<CxsmoSoundCue, number> = { open: .3, click: .23, success: .34, theme: .36, shutter: .3, launch: .46, chapter: .32, finish: .4, nav: .23, primary: .3, select: .24, treasure: .34, lock: .29, double: .2, replay: .38, hover: .19, zoom: .3 };
+const soundVolume: Record<CxsmoSoundCue, number> = { open: .3, click: .23, success: .34, theme: .36, shutter: .3, launch: .46, chapter: .32, finish: .4, nav: .23, primary: .3, select: .24, treasure: .34, lock: .29, double: .2, replay: .38, hover: .27, zoom: .27 };
 const soundStorageKey = "cxsmo-sound-enabled";
 const CxsmoSoundContext = createContext<SoundContextValue | undefined>(undefined);
 

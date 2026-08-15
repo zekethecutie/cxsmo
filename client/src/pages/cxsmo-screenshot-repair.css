@@ -1,0 +1,75 @@
+/* Screenshot-matched hero and header contract: the cutout crosses the toolbar field; controls and menu remain actionable. */
+.cxsmo-site:has(.poster-hero) .cxsmo-header {
+  isolation: auto;
+  overflow: visible;
+  z-index: auto;
+}
+
+.cxsmo-site:has(.poster-hero) .cxsmo-header > a,
+.cxsmo-site:has(.poster-hero) .cxsmo-header__menu,
+.cxsmo-site:has(.poster-hero) .cxsmo-header__tools {
+  position: relative;
+  z-index: 400;
+}
+
+.cxsmo-site .cxsmo-header__menu {
+  position: relative;
+}
+
+.cxsmo-site .cxsmo-header__menu-panel {
+  left: 0;
+  pointer-events: auto;
+  position: absolute;
+  right: auto;
+  top: calc(100% + 11px);
+  z-index: 1000;
+}
+
+.cxsmo-poster-home .poster-hero {
+  isolation: auto;
+  overflow: visible;
+  z-index: auto;
+}
+
+.cxsmo-poster-home .poster-hero__object-layer--campaign {
+  height: calc(100% + 84px);
+  right: calc(-4% + 28px);
+  top: -84px;
+  z-index: 100;
+}
+
+.cxsmo-poster-home .poster-hero__object-layer--campaign img {
+  object-fit: contain;
+  object-position: 100% 100%;
+  transform: translateY(-18px);
+}
+
+.cxsmo-poster-home .poster-hero__type { z-index: 200; }
+.cxsmo-poster-home .poster-hero__object { z-index: 220; }
+.cxsmo-poster-home .poster-hero__barcode,
+.cxsmo-poster-home .poster-hero__scroll { z-index: 230; }
+
+@media (max-width: 800px) {
+  .cxsmo-site .cxsmo-header__menu-panel {
+    left: auto;
+    right: 0;
+    top: calc(100% + 9px);
+  }
+
+  .cxsmo-poster-home .poster-hero__object-layer--campaign {
+    height: 70%;
+    right: 8px;
+    top: -44px;
+    width: 98%;
+  }
+
+  .cxsmo-poster-home .poster-hero__object-layer--campaign img {
+    object-fit: contain;
+    object-position: 100% 100%;
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cxsmo-poster-home .poster-hero__object-layer--campaign { transform: none !important; }
+}
