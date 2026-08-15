@@ -78,7 +78,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 
   it("splits account management into direct shopper destinations and keeps modal entry local", () => {
     expect(app).toContain('path="/cxsmo/account/profile"');
-    expect(app).toContain('path="/cxsmo/account/saves"');
+	expect(app).toContain('path="/cxsmo/account/saves"');
+	expect(app).toContain('path="/cxsmo/account/fits"');
     expect(app).toContain('path="/cxsmo/account/activity"');
     expect(account).toContain('role="dialog"');
     expect(account).toContain('event.key !== "Tab"');
@@ -201,7 +202,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 		expect(fitCarousel).toContain("Listed pieces in this fit");
 		expect(fitCarousel).toContain("Listed pieces in this fit");
 		expect(fitCarousel).toContain("Quick Add to Cart");
-		expect(fitCarousel).toContain("Save to Favorites");
+	expect(fitCarousel).toContain("Save to Favorites");
+	expect(fitCarousel).toContain("export const cxsmoFitLibrary");
 		expect(fitCarousel).toContain("Render not yet supplied / not shoppable");
 		expect(fitCarousel).toContain("Copy the mockup prompt");
 		expect(fitCarousel).toContain("createPortal");
