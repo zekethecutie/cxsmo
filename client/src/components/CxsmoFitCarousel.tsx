@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { cxsmoProducts } from "@/lib/cxsmo";
 import "@/pages/cxsmo-fit-carousel-motion.css";
+import "@/pages/cxsmo-fit-library.css";
 
 const fitNotes = [
   ["Long break", "Low-slung denim, a close tee, and one chrome detail", "gravity-01"],
@@ -32,4 +33,17 @@ export function CxsmoFitCarousel() {
 
 export function CxsmoCommunityEmptyState() {
   return <section className="cxsmo-community"><div><p className="section-label">Verified feedback / locked</p><h2>Good taste needs<br /><em>real voices.</em></h2></div><article><span>0 verified reflections</span><p>C✦SMO does not fabricate product reviews, ratings, comments, or customer stories. A production store can show verified feedback here only after real submissions exist.</p><b>Community surface / ready when true</b></article></section>;
+}
+
+export function CxsmoFitLibrary() {
+  const assets = [
+    { index: "01", title: "Blackout hardware", copy: "A full-fit campaign study built around red paneling, chrome details, and a lower-volume silhouette.", href: "/cxsmo/shop?category=Outerwear", link: "Shop outerwear", image: "/manus-storage/cxsmo-fit-black-red-full_f171f1a3.png", alt: "C✦SMO black and red full fit campaign styling study" },
+    { index: "02", title: "Night uniform", copy: "Five proportions in black, silver, and washed grey—used here as styling reference, not a product claim.", href: "/cxsmo/shop?category=Graphics", link: "Shop graphics", image: "/manus-storage/cxsmo-fit-mens-lineup_1b4e867e.png", alt: "C✦SMO five-look mens styling lineup" },
+    { index: "03", title: "Soft chrome", copy: "A wardrobe research sheet for contrast, layer length, and hardware. Some pieces are still in development.", href: "/cxsmo/shop", link: "Browse the drop", image: "/manus-storage/cxsmo-fit-womens-sheet_dcdd78ef.png", alt: "C✦SMO womens styling research sheet featuring multiple full looks" },
+  ];
+  return <section className="cxsmo-fit-library" aria-labelledby="cxsmo-fit-library-title"><div className="cxsmo-fit-library__head"><div><p>Fit library / issue 01</p><h2 id="cxsmo-fit-library-title">Worn<br /><em>on purpose.</em></h2></div><span>Campaign frames are styling references for the C✦SMO world. Product pages only claim what is currently listed in the catalogue.</span></div><div className="cxsmo-fit-library__grid">{assets.map((asset) => <article data-cxsmo-hover-sound="zoom" className="cxsmo-fit-library__card" key={asset.index}><img src={asset.image} alt={asset.alt} /><div><p>Fit frame / {asset.index}</p><h3>{asset.title}</h3><span>{asset.copy}</span><Link href={asset.href}>{asset.link} <ArrowDownRight size={15} /></Link></div></article>)}<p className="cxsmo-fit-library__note">Fit images guide colour, silhouette, and styling direction. They do not represent reviews, creator endorsements, customer photography, or unlisted inventory.</p></div></section>;
+}
+
+export function CxsmoStyleContext() {
+  return <section className="cxsmo-style-context"><div><p>Community context / editorial only</p><h2>Built from<br /><em>real direction.</em></h2></div><article><span>Style notes, not testimonials</span><p>C✦SMO uses editorial fit studies to show how layers, hardware, and proportion work together. Verified customer reviews, ratings, and endorsements remain unavailable until real approved submissions exist.</p><b>Verified feedback / ready when true</b></article></section>;
 }

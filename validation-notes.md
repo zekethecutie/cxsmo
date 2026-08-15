@@ -34,3 +34,9 @@ The entry-route follow-up also verified the shared CSS-drawn mark remains a sing
 The reusable and root-specific C✦SMO star rules now use a fuller condensed four-point geometry, avoiding the thin diamond-like mark while keeping a single unclipped construction. The Silver Crown object is now the **Silver Crown Crimson Sling Bag** in Lifestyle, and the existing transparent **LOUD ENOUGH Longsleeve** is shop-ready as object 19.
 
 At 257×464, the root landing now keeps only its essential controls with equal clean CTAs, and the storefront hero becomes a restrained 16:10 campaign frame above a smaller headline and one Shop action. The ultra-narrow header removes nonessential sound/disclosure chrome, while the mobile navigation panel has a centred bounded layout to prevent cut-off.
+
+## 2026-08-15 — Fit-library integration
+
+The `/cxsmo/edits` route now uses the supplied black-red full fit, five-look mens lineup, and women’s styling sheet as three distinct editorial frames. Their captions clearly distinguish styling direction from shoppable inventory and guide visitors only toward currently listed categories. Desktop keeps the three-frame composition as an asymmetric fashion spread; phone view stacks it into a readable, full-width sequence without crop loss or overlap.
+
+The adjacent **Community context / editorial only** surface explicitly reserves reviews, ratings, and endorsements for future verified submissions rather than fabricating them. The mockup brief registers 18 uncovered garment and accessory concepts with individual and 4×3-contact-sheet generation prompts.

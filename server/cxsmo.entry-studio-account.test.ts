@@ -28,6 +28,8 @@ const gateStyle = source("client/src/pages/cxsmo-admin-gate.css");
 const account = source("client/src/pages/CxsmoAccountPages.tsx");
 const polish = source("client/src/pages/cxsmo-final-polish.css");
 const mobileNative = source("client/src/pages/cxsmo-mobile-native.css");
+const fitCarousel = source("client/src/components/CxsmoFitCarousel.tsx");
+const fitLibraryStyle = source("client/src/pages/cxsmo-fit-library.css");
 
 describe("C✦SMO entry, studio, and account expansion", () => {
   it("uses a distinct editorial pre-store entry at the root route", () => {
@@ -179,11 +181,21 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(app).toContain("if (reducedMotion) return");
   });
 
-  it("removes non-brand sparkle decorations from the active poster route", () => {
+	it("removes non-brand sparkle decorations from the active poster route", () => {
     expect(poster).not.toContain("Sparkles");
 	  expect(poster).toContain("cxsmo-loud-enough-y2k-shirt-alpha");
 	  expect(poster).toContain("LOUD ENOUGH / SHIRT STUDY");
 	  expect(poster).toContain('useTransform(heroScroll, [0, 1], ["0%", "76%"])');
 	  expect(poster).toContain('String(cxsmoProducts.length).padStart(2, "0")');
-  });
+	});
+
+	it("uses supplied fit-shoot assets as editorial discovery while preserving an explicit no-testimonial boundary", () => {
+		expect(fitCarousel).toContain("cxsmo-fit-black-red-full_f171f1a3.png");
+		expect(fitCarousel).toContain("cxsmo-fit-mens-lineup_1b4e867e.png");
+		expect(fitCarousel).toContain("cxsmo-fit-womens-sheet_dcdd78ef.png");
+		expect(fitCarousel).toContain("Product pages only claim what is currently listed in the catalogue");
+		expect(fitCarousel).toContain("does not fabricate product reviews, ratings, comments, or customer stories");
+		expect(fitLibraryStyle).toContain(".cxsmo-fit-library__grid");
+		expect(fitLibraryStyle).toContain("@media (max-width:760px)");
+	});
 });
