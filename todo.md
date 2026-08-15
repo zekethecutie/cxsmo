@@ -140,7 +140,7 @@
 - [x] Rework the C✦SMO hero into a cleaner scroll-led hierarchy with one focal object, gradient headline treatment, restrained shadows, and distinct scroll rates for background, object, type, and divider.
 - [x] Add a motion-graphic product carousel with scroll-based transitions, layered object choreography, and reduced-motion fallback.
 - [x] Expand the portfolio account simulation with onboarding, taste and genre preferences, style suggestions, measurements, saved recommendations, orders, shipping states, ratings, and comment-ready empty states without fabricating social proof.
-- [ ] Validate the revised hero, carousel, account simulation, theme states, accessibility, tests, and build before the next checkpoint.
+- [x] Validate the revised hero, carousel, account simulation, theme states, accessibility, tests, and build before the next checkpoint.
 
 # Deferred asset note
 - [x] When the image-creation allowance is available, replace all remaining opaque product mockups with verified true-alpha PNGs.
