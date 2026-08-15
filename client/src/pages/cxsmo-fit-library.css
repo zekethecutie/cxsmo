@@ -76,6 +76,13 @@
 .cxsmo-fit-quick-view__planned li b { color:#5a5550; }
 .cxsmo-fit-quick-view__empty { color:#5a5550!important; font:700 12px/1.58 "Plus Jakarta Sans",sans-serif!important; letter-spacing:0!important; margin:12px 0!important; text-transform:none!important; }
 .cxsmo-fit-quick-view__all { align-items:center; display:inline-flex; gap:6px; margin-top:22px; }
+.cxsmo-fit-quick-view__return { align-items:center; color:#080809; display:inline-flex; font:900 9px "Plus Jakarta Sans",sans-serif; gap:6px; letter-spacing:.07em; margin:18px 0 0; text-decoration:none; text-transform:uppercase; }
+.cxsmo-fit-quick-view__return:hover,.cxsmo-fit-quick-view__return:focus-visible { color:#b20e16; outline:none; }
+.cxsmo-fit-quick-view__bundle { background:#e2ddd7; border-left:2px solid #df1a22; display:grid; gap:8px; margin-top:15px; padding:13px; }
+.cxsmo-fit-quick-view__bundle span { color:#b20e16; }
+.cxsmo-fit-quick-view__bundle p { color:#5a5550!important; font:700 11px/1.45 "Plus Jakarta Sans",sans-serif!important; letter-spacing:0!important; margin:0!important; text-transform:none!important; }
+.cxsmo-fit-quick-view__bundle button { align-items:center; background:#080809; border:0; color:#f0ece6; cursor:pointer; display:inline-flex; font:900 8px "Plus Jakarta Sans",sans-serif; gap:5px; justify-content:center; letter-spacing:.06em; min-height:31px; padding:0 9px; text-transform:uppercase; }
+.cxsmo-fit-quick-view__bundle button:hover,.cxsmo-fit-quick-view__bundle button:focus-visible { background:#df1a22; color:#080809; outline:none; }
 .cxsmo-fit-quick-view__close { background:#080809; border:0; color:#f0ece6; cursor:pointer; display:grid; height:36px; place-items:center; position:absolute; right:0; top:0; width:36px; z-index:2; }
 .cxsmo-style-context { background:#f0ece6; color:#080809; display:grid; gap:clamp(30px,6vw,90px); grid-template-columns:1fr 1fr; padding:clamp(54px,8vw,116px) clamp(22px,7vw,112px); }
 .cxsmo-style-context>div>p { color:#b20e16; margin:0 0 14px; }
