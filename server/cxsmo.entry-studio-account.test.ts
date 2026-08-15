@@ -116,6 +116,9 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 	  expect(layerContract).toContain("top: -84px");
 	  expect(layerContract).toContain("@media (min-width: 641px) and (max-width: 1040px)");
 	  expect(layerContract).toContain("width: min(94vw, 840px)");
+	  expect(layerContract).toContain("@media (min-width: 801px) and (max-aspect-ratio: 16 / 10)");
+	  expect(layerContract).toContain("height: calc(100% + 560px)");
+	  expect(layerContract).toContain("width: 128%");
 	  expect(layerContract).toContain("transform: none;");
 	  expect(layerContract).toContain("z-index: 900");
     expect(layerContract).toContain("z-index: 1000");
@@ -135,8 +138,10 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 	  expect(entry).toContain('aria-label="C✦SMO" initial={reducedMotion');
 	  expect(entry).toContain('className="cxsmo-entry__mark-star">✦</span>SMO</motion.h1>');
 	  expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
-	  expect(entryFinalTuning).toContain("font-size: .86em");
-	  expect(entryFinalTuning).toContain("font-size: .66em");
+	  expect(entryFinalTuning).toContain("font-size: 1.08em");
+	  expect(entryFinalTuning).toContain("font-size: 1em");
+	  expect(entryFinalTuning).toContain("color: #df1a22");
+	  expect(entryFinalTuning).toContain("margin: 0 .006em 0 .018em");
 	  expect(entryFinalTuning).toContain(".cxsmo-entry__poster-word-star");
 	  expect(entryFinalTuning).toContain(".cxsmo-entry__mark-star");
     expect(entryFinalTuning).toContain("prefers-reduced-motion:reduce");

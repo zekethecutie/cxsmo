@@ -285,3 +285,7 @@
 - [x] Run and document a browser-level keyboard-only audit of the C✦SMO bag route and its simulation controls, including focus order, quantity/edit or remove action, checkout-preview handoff, and visible local-state feedback.
 - [x] Run and document a keyboard-only audit of post-unlock C✦SMO studio controls, including module navigation and at least one local category, product, or inventory interaction.
 - [x] Enlarge the landing-page C✦SMO in-word four-point star while preserving one-star construction, compact letter spacing, and clear foreground/background separation.
+- [x] Trace and remove the remaining unintended light-mode white-star layers from both landing C✦SMO marks while retaining exactly one intended in-word star per mark.
+- [x] Increase the intended landing C✦SMO star to approximately the surrounding C/S/M/O letter scale without reopening loose spacing or overlap.
+- [x] Make the transparent `/cxsmo` campaign cutout scale up on less-thin desktop ratios so its Z-layer toolbar crossover remains visibly evident beyond narrow displays.
+- [x] Validate the stray-star removal, enlarged wordmark star, responsive campaign crossover, TypeScript, tests, build, checkpoint, and GitHub synchronization.
