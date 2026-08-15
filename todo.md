@@ -3,14 +3,14 @@
 - [x] Upgrade the project to the database-backed full-stack template required for Shopify.
 - [x] Provision a fresh Shopify development store for KNIALL after confirming the irreversible store choice.
 - [x] Register the injected commerce router and required Shopify environment exports before storefront integration.
-- [ ] Seed only one or two genuine KNIALL clothing products after final product names, prices, variants, and approved media are available.
-- [ ] Verify the live Shopify catalog through the supplied storefront probe before rendering commerce data in the UI.
-- [ ] Resolve the live Shopify smoke-test failure by adding approved purchasable KNIALL apparel with real price and media. The current fresh store correctly returns zero products.
+- [x] Archived outside active C✦SMO scope: seed genuine KNIALL products only if that legacy storefront is explicitly resumed with approved product data.
+- [x] Archived outside active C✦SMO scope: verify the legacy live Shopify catalogue only if that storefront is explicitly resumed.
+- [x] Archived outside active C✦SMO scope: resolve the legacy Shopify smoke test only if KNIALL work is explicitly resumed with approved commerce data.
 - [x] Define the light cinematic art direction from Jacket Masters, Webflow showcase patterns, Awwwards level ecommerce references, and selective 21st.dev interaction primitives.
 - [x] Rebuild the visual system from scratch with a calm spatial layout, premium typography pairing, softer surfaces, and clothing first merchandising.
 - [x] Remove all pickleball equipment implications and treat basketball, pickleball, and gym only as clothing use contexts.
 - [x] Create a product first hero with approved KNIALL apparel imagery, atmospheric lighting, subtle motion, and an immediate commerce path.
-- [ ] Implement collections, filters, product detail, variants, size selection, bag, and checkout handoff against real commerce data once KNIALL’s verified product catalog is supplied.
+- [x] Archived outside active C✦SMO scope: implement legacy KNIALL commerce-data routes only if that storefront is explicitly resumed.
 - [x] Add refined scroll choreography, text reveals, marquees, button microinteractions, and reduced motion fallbacks.
 - [x] Add one intentional morph interaction to the visual system without adding visual noise.
 - [x] Replace the interim canvas study with a true WebGL material scene plus a reliable static fallback and performance guardrails.
@@ -258,6 +258,13 @@
 - [x] Re-verify and correct the exact C✦SMO hero front-to-back stack: campaign PNG above the toolbar, Static Bloom card above the PNG, menu below the PNG but interactive, and cursor above all content.
 - [x] Restore a deliberate optional route-transition sound cue without autoplay, repetition, or conflicts with the existing sound preference.
 - [x] Audit the repaired C✦SMO public and local-simulation user flows, then validate visual states, interaction contracts, TypeScript, tests, build, checkpoint, and GitHub synchronization.
+- [x] Restore the intended large background C✦SMO wordmark on the `/` landing while removing only the unintended duplicate star behind the C and retaining the lowered tilted in-word star.
+- [x] Correct the `/cxsmo` hero’s literal front-to-back order so the transparent campaign PNG visibly crosses above the toolbar plane, the Static Bloom card remains above the PNG, the menu stays below the PNG but interactive, and the custom cursor stays topmost.
+- [x] Restore and visibly strengthen the large left-edge red hero light leak in both appearances without changing the approved campaign geometry.
+- [x] Stabilize the `/cxsmo` desktop campaign PNG’s scale and relative composition across wide screen ratios, then provide a purpose-built dynamic mobile hero arrangement rather than allowing desktop rules to collapse.
+- [x] Add restrained red responsive feedback to standard C✦SMO links and make the behavior accessible through focus-visible states and reduced-motion-safe transitions.
+- [x] Generate, integrate, and validate a true-alpha sharp Y2K shirt object for the C✦SMO LOUD ENOUGH section, retaining the existing interface-authored graphic backdrop.
+- [x] Remove legacy KINFORM/KNIALL tasks from the active C✦SMO tracker scope, preserving only a concise archived-dependency note outside the live implementation queue.
 - [x] Make Navigate and its panel interactive above every hero layer except the campaign PNG and custom cursor, and place the Campaign / Static Bloom card above the transparent campaign image.
 - [x] Replace the thin technical copy system used in C✦SMO utility statements, contact links, legal labels, and recommended-screen text with a solid modern, spatial UI type treatment.
 - [x] Repair the root C✦SMO mark clipping in dark appearance, make its star slightly larger and right-tilted, and add restrained automatic marketing motion/content to the root poster.
