@@ -132,15 +132,15 @@
 - [x] Verify the revised C✦SMO preview in both appearance modes after all contrast and clipping corrections are applied.
 - [x] Replace the C✦SMO theme wash with a fast corner-origin stack of small pixel blocks, while preserving an instant reduced-motion fallback.
 - [x] Correct C✦SMO information-desk active-state contrast in both themes so the open row’s title, label, icon, and answer stay readable.
-- [ ] Simplify the C✦SMO hero to one primary transparent fashion object, clearer negative space, and fewer competing background layers.
+- [x] Simplify the C✦SMO hero to one primary transparent fashion object, clearer negative space, and fewer competing background layers.
 - [x] Replace pointer-driven hero movement with deliberate scroll-linked parallax and retain a static reduced-motion fallback.
 - [x] Update the C✦SMO topbar to identify the fictional portfolio demonstration as designed and developed by zxke while retaining the non-payment and privacy boundary.
 - [x] Add controlled CSS drop-shadow and poster-layer separation to C✦SMO mockups where it improves legibility and depth without visual clutter.
 
-- [ ] Rework the C✦SMO hero into a cleaner scroll-led hierarchy with one focal object, gradient headline treatment, restrained shadows, and distinct scroll rates for background, object, type, and divider.
+- [x] Rework the C✦SMO hero into a cleaner scroll-led hierarchy with one focal object, gradient headline treatment, restrained shadows, and distinct scroll rates for background, object, type, and divider.
 - [x] Add a motion-graphic product carousel with scroll-based transitions, layered object choreography, and reduced-motion fallback.
 - [x] Expand the portfolio account simulation with onboarding, taste and genre preferences, style suggestions, measurements, saved recommendations, orders, shipping states, ratings, and comment-ready empty states without fabricating social proof.
-- [ ] Validate the revised hero, carousel, account simulation, theme states, accessibility, tests, and build before the next checkpoint.
+- [x] Validate the revised hero, carousel, account simulation, theme states, accessibility, tests, and build before the next checkpoint.
 
 # Deferred asset note
 - [ ] When the image-creation allowance is available, replace all remaining opaque product mockups with verified true-alpha PNGs.
