@@ -327,3 +327,8 @@
 - [x] Refine mobile button and outlined-control styling into cleaner, less visually heavy touch surfaces across public and studio routes.
 - [x] Recompose the `/cxsmo` mobile hero into a compact landscape campaign stage above clearer, smaller textual controls, and centre the mobile Navigate panel so it remains fully unclipped.
 - [x] Validate fuller stars, corrected catalogue records, LOUD ENOUGH product, mobile controls, landscape hero, navigation panel, tests, production build, checkpoint, and GitHub synchronization.
+- [x] Upload and register the supplied C✦SMO fit-shoot images as deployment-safe editorial assets, with clear individual, group, and outfit-sheet usage mappings.
+- [x] Build a fit-led C✦SMO editorial discovery surface using the supplied campaign/model material for lookbook and product-discovery context without misrepresenting items that are not yet shoppable.
+- [x] Add an honest community/style-context module that explicitly avoids fabricated testimonials, reviews, ratings, endorsements, or customer claims while allowing future verified content.
+- [x] Create a practical mockup-generation brief that identifies all visible garments, accessories, and footwear in the supplied look assets that are not represented in the current C✦SMO catalogue.
+- [x] Validate the new fit-led routes and mobile layout, regression suite, production build, checkpoint, and GitHub synchronization.

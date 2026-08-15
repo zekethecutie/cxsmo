@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 
 import { Link, useRoute } from "wouter";
 import { CxsmoMark } from "@/components/CxsmoMark";
 import { CxsmoAppearanceToggle } from "@/components/CxsmoAppearanceToggle";
-import { CxsmoCommunityEmptyState, CxsmoFitCarousel } from "@/components/CxsmoFitCarousel";
+import { CxsmoCommunityEmptyState, CxsmoFitCarousel, CxsmoFitLibrary, CxsmoStyleContext } from "@/components/CxsmoFitCarousel";
 import { CxsmoAccountPanel } from "@/components/CxsmoAccountPanel";
 import { CxsmoCheckoutSimulation } from "@/components/CxsmoCheckoutSimulation";
 import { CxsmoShowcaseButton } from "@/components/CxsmoGuidedShowcase";
@@ -165,7 +165,7 @@ export function CxsmoEditsPage() {
     ["02", "Silver rain", "Starlight Moto Shell + loose denim", "Outerwear"],
     ["03", "Soft authority", "Signal Check Overshirt + the long break", "Tailoring"],
   ];
-  return <CxsmoShell><section className="cxsmo-edits-hero"><div><p className="section-label">Fit edits / issue 01</p><h1>Wear it<br /><em>your loud.</em></h1><p>Three styling stories built around proportion, texture, and one well-placed chrome detail.</p></div><img src={heroImage} alt="CXSmo campaign group in layered streetwear" /></section><section className="cxsmo-look-grid">{looks.map(([number, title, pieces, category]) => <article key={number}><div><span>{number}</span><i>✦</i></div><p>{category}</p><h2>{title}</h2><span>{pieces}</span><Link href="/cxsmo/shop">Shop the edit <ArrowUpRight size={15} /></Link></article>)}</section><section className="cxsmo-style-rule"><p>THE RULE</p><h2>One oversized shape.<br />One close shape.<br /><em>One memory.</em></h2></section></CxsmoShell>;
+  return <CxsmoShell><section className="cxsmo-edits-hero"><div><p className="section-label">Fit edits / issue 01</p><h1>Wear it<br /><em>your loud.</em></h1><p>Three styling stories built around proportion, texture, and one well-placed chrome detail.</p></div><img src={heroImage} alt="CXSmo campaign group in layered streetwear" /></section><section className="cxsmo-look-grid">{looks.map(([number, title, pieces, category]) => <article key={number}><div><span>{number}</span><i>✦</i></div><p>{category}</p><h2>{title}</h2><span>{pieces}</span><Link href="/cxsmo/shop">Shop the edit <ArrowUpRight size={15} /></Link></article>)}</section><CxsmoFitLibrary /><section className="cxsmo-style-rule"><p>THE RULE</p><h2>One oversized shape.<br />One close shape.<br /><em>One memory.</em></h2></section><CxsmoStyleContext /></CxsmoShell>;
 }
 
 export function CxsmoSupportPage() {
