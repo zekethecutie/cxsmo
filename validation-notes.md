@@ -40,3 +40,7 @@ At 257×464, the root landing now keeps only its essential controls with equal c
 The `/cxsmo/edits` route now uses the supplied black-red full fit, five-look mens lineup, and women’s styling sheet as three distinct editorial frames. Their captions clearly distinguish styling direction from shoppable inventory and guide visitors only toward currently listed categories. Desktop keeps the three-frame composition as an asymmetric fashion spread; phone view stacks it into a readable, full-width sequence without crop loss or overlap.
 
 The adjacent **Community context / editorial only** surface explicitly reserves reviews, ratings, and endorsements for future verified submissions rather than fabricating them. The mockup brief registers 18 uncovered garment and accessory concepts with individual and 4×3-contact-sheet generation prompts.
+
+## 2026-08-15 — Individual fit-library crop extraction
+
+The five mens and ten womens sheet looks are now deterministically cropped into individual full-look PNGs, registered in deployment-safe storage, and rendered as fifteen distinct Fit Edits cards. Each card has its own fit-file identifier, title, alt text, and category-level shop link. Desktop presents the fits as a five-column editorial index; the 375px phone layout reorganizes them as touch-safe two-column cards, with no composite-sheet card retained.
