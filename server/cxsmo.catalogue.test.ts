@@ -3,7 +3,7 @@ import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct } fro
 
 describe("C✦SMO portfolio catalogue", () => {
   it("keeps unique, route-ready fictional products", () => {
-    expect(cxsmoProducts).toHaveLength(18);
+    expect(cxsmoProducts).toHaveLength(19);
     expect(new Set(cxsmoProducts.map((product) => product.id)).size).toBe(cxsmoProducts.length);
     expect(getCxsmoProduct("gravity-01").name).toBe("Gravity Puddle Jean");
     expect(getCxsmoProduct("bluestar-09").name).toBe("Bluestar C✦SMO Jersey");
@@ -12,8 +12,9 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(getCxsmoProduct("chrome-puddle-14").name).toBe("Chrome Puddle Sweatpant");
     expect(getCxsmoProduct("lunar-veil-15").name).toBe("Lunar Veil Eyewear");
     expect(getCxsmoProduct("redline-moto-16").name).toBe("Redline Moto Jacket");
-    expect(getCxsmoProduct("silver-crown-case-17").name).toBe("Silver Crown Cosmetic Case");
+    expect(getCxsmoProduct("silver-crown-case-17").name).toBe("Silver Crown Crimson Sling Bag");
     expect(getCxsmoProduct("stellar-cargo-18").name).toBe("Stellar Cargo Pants");
+    expect(getCxsmoProduct("loud-enough-shirt-19").name).toBe("LOUD ENOUGH Longsleeve");
     expect(getCxsmoProduct("missing-product").id).toBe("gravity-01");
   });
 
@@ -34,5 +35,8 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(getCxsmoProduct("redline-moto-16").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_31_19PM_a78e56f6.png");
     expect(getCxsmoProduct("silver-crown-case-17").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_40_56PM_24d03e4f.png");
     expect(getCxsmoProduct("stellar-cargo-18").image).toBe("/manus-storage/ChatGPTImageAug15,2026,05_23_24PM_0e3d74d4.png");
+    expect(getCxsmoProduct("silver-crown-case-17").category).toBe("Lifestyle");
+    expect(getCxsmoProduct("loud-enough-shirt-19").image).toBe("/manus-storage/cxsmo-loud-enough-y2k-shirt-alpha_a1936a15.png");
+    expect(getCxsmoProduct("loud-enough-shirt-19").category).toBe("Graphics");
   });
 });

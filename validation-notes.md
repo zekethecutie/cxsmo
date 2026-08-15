@@ -28,3 +28,9 @@ The original compact phone audit confirmed the reported density problem: the sha
 The follow-up 375×812 route review confirms the revised root campaign hero has a single readable type block, one clear action, a smaller campaign cutout, and no overlapping study card. The shop, fit edits, information, account, bag, checkout, and studio-gate views now keep control groups touch-safe and visibly separated. The mobile menu, promotion dialog, and guided-tour overlays also receive dedicated compact card and control rules.
 
 The entry-route follow-up also verified the shared CSS-drawn mark remains a single visible star construction at mobile scale. The old desktop-orientation advisory is now removed on compact phones so it cannot crowd the root hero.
+
+## 2026-08-15 — Fuller-star and compact mobile stage follow-up
+
+The reusable and root-specific C✦SMO star rules now use a fuller condensed four-point geometry, avoiding the thin diamond-like mark while keeping a single unclipped construction. The Silver Crown object is now the **Silver Crown Crimson Sling Bag** in Lifestyle, and the existing transparent **LOUD ENOUGH Longsleeve** is shop-ready as object 19.
+
+At 257×464, the root landing now keeps only its essential controls with equal clean CTAs, and the storefront hero becomes a restrained 16:10 campaign frame above a smaller headline and one Shop action. The ultra-narrow header removes nonessential sound/disclosure chrome, while the mobile navigation panel has a centred bounded layout to prevent cut-off.
