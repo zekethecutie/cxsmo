@@ -135,7 +135,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 	  expect(entry).toContain('aria-label="C✦SMO" initial={reducedMotion');
 	  expect(entry).toContain('className="cxsmo-entry__mark-star">✦</span>SMO</motion.h1>');
 	  expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
-	  expect(entryFinalTuning).toContain("margin: 0 -.012em");
+	  expect(entryFinalTuning).toContain("font-size: .86em");
+	  expect(entryFinalTuning).toContain("font-size: .66em");
 	  expect(entryFinalTuning).toContain(".cxsmo-entry__poster-word-star");
 	  expect(entryFinalTuning).toContain(".cxsmo-entry__mark-star");
     expect(entryFinalTuning).toContain("prefers-reduced-motion:reduce");

@@ -78,7 +78,7 @@
 - [x] Validate desktop and mobile presentation, keyboard and reduced-motion behavior, TypeScript, focused tests, and the production build before saving a C✦SMO checkpoint.
 - [x] Apply the exact C✦SMO construction throughout the demonstration so the four-point star visibly replaces the X rather than appearing as a separate accent mark.
 - [x] Correct the brand construction to C✦SMO across the experience: the four-point star replaces the X immediately after the initial C.
-- [ ] Run and document a keyboard-only QA pass across C✦SMO storefront and studio controls, including navigation, product actions, bag form, and fit-guide dialog.
+- [x] Run and document a keyboard-only QA pass across C✦SMO storefront and studio controls, including navigation, product actions, bag form, and fit-guide dialog.
 - [x] Verify and document reduced-motion behavior across C✦SMO animated surfaces after the MotionConfig change.
 - [x] Define and document an original black, red, and bone C✦SMO poster system with layered depth, editorial type hierarchy, cinematic blur, and four-point-star visual language informed by the supplied references without copying them.
 - [x] Create and integrate original C✦SMO fashion visual treatments, including transparent-ready garment treatments and high-fidelity model-led editorial composition when generation or licensed source assets are available.
@@ -280,5 +280,8 @@
 - [x] Reconstruct both landing-page C✦SMO marks as a single exact `C✦SMO` sequence with one in-word four-point star replacing X, no duplicate star, and compact natural letter spacing.
 - [x] Correct the `/cxsmo` hero at compact desktop ratios so its campaign PNG retains the strong wide-screen scale and composition rather than shrinking into a small lower-right case.
 - [x] Restore the scroll-led hero depth so the large background C✦SMO descends faster than the foreground campaign layers without altering the approved front-to-back stack.
-- [ ] Create, integrate, and validate five distinct true-alpha futuristic Y2K catalogue objects: a belt, baggy sweatpants, chrome cosmetic eyewear, red/black leather moto jacket, and silver-star-inspired cosmetic bag.
-- [ ] Validate exact landing marks, compact and wide hero ratios, hero parallax, the expanded catalogue, TypeScript, regression coverage, production build, checkpoint, and GitHub synchronization.
+- [x] Create, integrate, and validate five distinct true-alpha futuristic Y2K catalogue objects: a belt, baggy sweatpants, chrome cosmetic eyewear, red/black leather moto jacket, and silver-star-inspired cosmetic bag.
+- [x] Validate exact landing marks, compact and wide hero ratios, hero parallax, the expanded catalogue, TypeScript, regression coverage, production build, checkpoint, and GitHub synchronization.
+- [x] Run and document a browser-level keyboard-only audit of the C✦SMO bag route and its simulation controls, including focus order, quantity/edit or remove action, checkout-preview handoff, and visible local-state feedback.
+- [x] Run and document a keyboard-only audit of post-unlock C✦SMO studio controls, including module navigation and at least one local category, product, or inventory interaction.
+- [x] Enlarge the landing-page C✦SMO in-word four-point star while preserving one-star construction, compact letter spacing, and clear foreground/background separation.
