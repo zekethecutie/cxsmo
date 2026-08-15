@@ -296,3 +296,10 @@
 - [x] Create composed, motion-aware root landing poster sections using the supplied transparent blue/silver C✦SMO fit asset with code-based depth shadows and clear editorial hierarchy.
 - [x] Add a visitor-controlled, clearly fictional C✦SMO sale-event modal with a polished poster treatment, accessible dismissal, and no commerce claims.
 - [x] Validate the refined landing, guided showcase, modal, typography, interaction and motion behavior, TypeScript, regression suite, production build, checkpoint, and GitHub synchronization.
+
+- [x] Remove the remaining lower landing ghost-star treatment so each C✦SMO landing mark contains only its single intended in-word star, then tighten the star-to-SMO spacing.
+- [x] Design and implement a smooth, animated, geometric divider that deliberately carries the root landing hero into the editorial sections beneath it.
+- [x] Strengthen C✦SMO’s smaller utility typography into a smoother, denser, more dynamic support type system while retaining legibility and responsive spacing.
+- [x] Rewrite high-visibility public C✦SMO copy across the landing, shop, product, edits, information, account, checkout, legal, and studio surfaces into concise, consistent, human fashion-commerce language.
+- [x] Add restrained, deliberate shape and typography motion to the landing and editorial sections, with reduced-motion-safe static states and without introducing visual clutter.
+- [x] Validate sitewide editorial copy, utility typography, landing star spacing, divider transition, animated geometric treatments, TypeScript, regression suite, production build, checkpoint, and GitHub synchronization.
