@@ -7,11 +7,13 @@ export type CxsmoProfile = { displayName: string; styleMode: "Signal" | "Quiet" 
 type CxsmoDemoState = {
   bag: CxsmoBagLine[];
   savedIds: string[];
+  savedFitIds: string[];
   savedRecommendationIds: string[];
   addToBag: (product: CxsmoProduct, size: string) => void;
   removeFromBag: (index: number) => void;
   clearBag: () => void;
   toggleSaved: (id: string) => void;
+  toggleSavedFit: (id: string) => void;
   toggleSavedRecommendation: (id: string) => void;
   profile: CxsmoProfile;
   updateProfile: (update: Partial<CxsmoProfile>) => void;
@@ -26,6 +28,7 @@ const initialProfile: CxsmoProfile = { displayName: "", styleMode: "Signal", des
 export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
   const [bag, setBag] = useState<CxsmoBagLine[]>([]);
   const [savedIds, setSavedIds] = useState<string[]>([]);
+  const [savedFitIds, setSavedFitIds] = useState<string[]>([]);
   const [savedRecommendationIds, setSavedRecommendationIds] = useState<string[]>([]);
   const [profile, setProfile] = useState<CxsmoProfile>(initialProfile);
 
@@ -40,9 +43,10 @@ export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
         if (detected) setProfile({ ...initialProfile, locale, ...detected });
         return;
       }
-      const parsed = JSON.parse(saved) as { bag?: CxsmoBagLine[]; savedIds?: string[]; savedRecommendationIds?: string[]; profile?: Partial<CxsmoProfile> };
+      const parsed = JSON.parse(saved) as { bag?: CxsmoBagLine[]; savedIds?: string[]; savedFitIds?: string[]; savedRecommendationIds?: string[]; profile?: Partial<CxsmoProfile> };
       setBag(parsed.bag ?? []);
       setSavedIds(parsed.savedIds ?? []);
+      setSavedFitIds(parsed.savedFitIds ?? []);
       setSavedRecommendationIds(parsed.savedRecommendationIds ?? []);
       setProfile({ ...initialProfile, ...parsed.profile });
     } catch {
@@ -51,23 +55,25 @@ export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(storageKey, JSON.stringify({ bag, savedIds, savedRecommendationIds, profile }));
-  }, [bag, savedIds, savedRecommendationIds, profile]);
+    window.localStorage.setItem(storageKey, JSON.stringify({ bag, savedIds, savedFitIds, savedRecommendationIds, profile }));
+  }, [bag, savedIds, savedFitIds, savedRecommendationIds, profile]);
 
   const value = useMemo<CxsmoDemoState>(() => ({
     bag,
     savedIds,
+    savedFitIds,
     savedRecommendationIds,
     addToBag: (product, size) => setBag((lines) => [...lines, { productId: product.id, size }]),
     removeFromBag: (index) => setBag((lines) => lines.filter((_, lineIndex) => lineIndex !== index)),
     clearBag: () => setBag([]),
     toggleSaved: (id) => setSavedIds((ids) => ids.includes(id) ? ids.filter((item) => item !== id) : [...ids, id]),
+    toggleSavedFit: (id) => setSavedFitIds((ids) => ids.includes(id) ? ids.filter((item) => item !== id) : [...ids, id]),
     toggleSavedRecommendation: (id) => setSavedRecommendationIds((ids) => ids.includes(id) ? ids.filter((item) => item !== id) : [...ids, id]),
     profile,
     updateProfile: (update) => setProfile((current) => ({ ...current, ...update, isConfigured: true })),
     startLocalAccount: (displayName) => setProfile((current) => ({ ...current, displayName: displayName.trim() || current.displayName || "signal", isConfigured: true, isSignedIn: true })),
     signOutLocalAccount: () => setProfile((current) => ({ ...current, isSignedIn: false })),
-  }), [bag, savedIds, savedRecommendationIds, profile]);
+  }), [bag, savedIds, savedFitIds, savedRecommendationIds, profile]);
 
   return <CxsmoDemoContext.Provider value={value}>{children}</CxsmoDemoContext.Provider>;
 }

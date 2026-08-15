@@ -48,3 +48,9 @@ The five mens and ten womens sheet looks are now deterministically cropped into 
 ## 2026-08-15 — Fit-library discovery controls
 
 The Fit Edits page now presents All, Mens, and Womens filters with an audible live count, and each individual card provides a persistent mobile-safe **Shop the look** path plus a **View breakdown** control. The quick-view is portal-mounted above page content, Escape- and overlay-dismissible, and labels its linked products as compatible current C✦SMO pieces rather than claiming unlisted garments are sold. The Style Notes panel now includes a ready-to-copy transparent mockup master prompt and a Studio asset-map entry point. Desktop and 375px mobile page captures keep the filter controls, actions, and prompt affordance readable without increasing card density.
+
+## 2026-08-15 — Subject-aware crop revision and numbered sheets
+
+The previously overlapping fit-sheet crops were replaced with fifteen non-overlapping, subject-aware boundaries from the original mens and womens sheets. Desktop Fit Edits inspection confirms that each card now shows one central full-outfit subject without adjacent model figures or stray neighbouring garments. The numbered product sheets are registered separately: repeated current catalogue pieces keep their existing SKU assignment, while unrendered pieces remain visibly planned and non-shoppable. On 375px mobile, individual-card actions stack into full-width touch targets to prevent three miniature controls competing inside a two-column card.
+
+The final 375px Fit Edits capture confirms that the revised crops retain one subject per card, with visibly separated sheet boundaries. Each phone card now stacks the save, product-path, and breakdown controls into discrete full-width rows rather than compressing them into a single crowded line.

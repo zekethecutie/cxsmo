@@ -341,3 +341,9 @@
 - [x] Add a deliberate hover/focus treatment to individual fit cards with a clearly labelled Shop the look action and an explicit compatible-current-catalogue disclosure.
 - [x] Add an accessible quick-view modal for each individual fit with its styling breakdown, compatible listed catalogue pieces, and a shop path without representing unlisted fit-sheet garments as available products.
 - [x] Validate the filtered, shoppable fit library across desktop/mobile, regression suite, production build, checkpoint, and GitHub synchronization.
+- [x] Reconcile the numbered supplied product sheets against current C✦SMO catalogue records, documenting exact existing matches, repeated imagery, and distinct ungenerated pieces without adding duplicate SKUs.
+- [x] Replace generic compatible-product mappings in each Fit Edits breakdown with accurate numbered-sheet piece assignments, and label missing rendered pieces as planned editorial references rather than shop inventory.
+- [x] Add a Save to Favorites control to every individual fit card using the existing browser-local save conventions and accessible state feedback.
+- [x] Add a Quick Add to Cart control for each compatible currently listed product inside the Fit Edits breakdown modal, using the existing portfolio-safe bag simulation and clear feedback.
+- [x] Validate numbered fit mappings, inventory planning, fit favorites, breakdown quick-add, responsive interaction states, regression suite, production build, checkpoint, and GitHub synchronization.
+- [x] Replace rectangular multi-model sheet crops with subject-aware individual-fit crops that keep one full outfit per card and remove neighbouring garments, partial figures, and stray accessories from adjacent looks.
