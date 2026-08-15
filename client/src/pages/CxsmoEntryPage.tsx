@@ -51,7 +51,7 @@ export function CxsmoEntryPage() {
       <section className="cxsmo-entry__hero cxsmo-entry__hero--poster">
         <p className="cxsmo-entry__poster-kicker">C✦SMO / DIGITAL FASHION SYSTEM</p>
         <motion.p className="cxsmo-entry__signal" aria-hidden="true" animate={reducedMotion ? {} : { x: [0, 18, 0] }} transition={reducedMotion ? { duration: 0 } : { duration: 4.8, repeat: Infinity, ease: "easeInOut" }}>DROP / OBJECT / SYSTEM / DROP / OBJECT / SYSTEM</motion.p>
-        <div className="cxsmo-entry__poster-word" aria-hidden="true">C<span className="cxsmo-entry__poster-word-space" />SMO</div>
+        <div className="cxsmo-entry__poster-word" aria-hidden="true">C<span className="cxsmo-entry__poster-word-star">✦</span>SMO</div>
         <motion.div className="cxsmo-entry__portrait" initial={reducedMotion ? false : { opacity: 0, x: 28, rotate: 2 }} animate={reducedMotion ? { opacity: 1 } : { opacity: 1, x: [0, -7, 0], y: [0, -10, 0], rotate: [0, -1, 0] }} transition={reducedMotion ? { duration: 0 } : { opacity: { duration: .55, delay: .16 }, x: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }, y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }}}>
           <img src="/manus-storage/cxsmo-y2k-editorial-portrait_8aa44fe0.png" alt="C✦SMO Y2K editorial fashion portrait" />
         </motion.div>
