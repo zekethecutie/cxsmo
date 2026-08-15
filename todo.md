@@ -241,3 +241,13 @@
 - [x] Improve the C✦SMO header-star feedback, mount the custom cursor above all route layers with viewport-accurate tracking, and retain reduced-motion fallback.
 - [x] Map interactive hover and object-zoom feedback to the supplied modern technology-select sound while retaining opt-in and touch-safe behavior.
 - [x] Validate the repaired dark/light desktop/mobile views, TypeScript, regression suite, production build, and screenshot-specific source contracts before checkpointing.
+
+- [x] Establish the exact C✦SMO hero layer hierarchy: transparent campaign PNG above the toolbar field, Navigate panel directly beneath it but clickable, and cursor visually above every layer.
+- [x] Keep the approved light-mode hero composition consistent across both appearances and bring its controlled red hero glow into dark mode without changing the lower hero geometry.
+- [x] Make C✦SMO route and light/dark transitions visibly intentional above page content, while preserving reduced-motion behavior.
+- [x] Audit optional sound routing so the supplied technology-select hover cue plays promptly and consistently for eligible interactive object surfaces.
+- [x] Rebuild `/` into a concise iconic C✦SMO editorial poster with central typography, one primary y2K fashion focal, minimal but powerful supporting information, purposeful glow/star language, and no extraneous guide lines or copy.
+- [x] Validate the rebuilt hero and root poster across desktop/mobile dark/light states, interactive layer contracts, sound behavior, tests, build, checkpoint, and managed GitHub synchronization.
+
+- [x] Restore the approved vertical C✦SMO campaign placement and change only front-to-back stacking so the PNG is in front of the toolbar field, the menu stays clickable underneath, and the cursor remains topmost.
+- [x] Validate the front-to-back-only hero repair on desktop and mobile before checkpointing.

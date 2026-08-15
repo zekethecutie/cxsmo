@@ -19,7 +19,7 @@ function Router() {
   const reducedMotion = useReducedMotion();
   // make sure to consider if you need authentication for certain routes
   return (
-    <AnimatePresence mode="wait" initial={false}><motion.div className="cxsmo-route-transition" key={location} initial={reducedMotion ? false : { opacity: 0, y: 14, scale: .985, filter: "blur(4px)" }} animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }} exit={reducedMotion ? {} : { opacity: 0, y: -8, scale: 1.01, filter: "blur(3px)" }} transition={{ duration: .38, ease: [0.16, 1, .3, 1] }}><Switch>
+    <><AnimatePresence mode="wait" initial={false}>{!reducedMotion && <motion.div className="cxsmo-route-wipe" key={`wipe-${location}`} initial={{ clipPath: "inset(0 100% 0 0)" }} animate={{ clipPath: ["inset(0 100% 0 0)", "inset(0 0 0 0)", "inset(0 0 0 100%)"] }} transition={{ duration: .68, ease: [0.77, 0, .175, 1], times: [0, .38, 1] }} />}</AnimatePresence><AnimatePresence mode="wait" initial={false}><motion.div className="cxsmo-route-transition" key={location} initial={reducedMotion ? false : { opacity: 0, y: 14, scale: .985, filter: "blur(4px)" }} animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }} exit={reducedMotion ? {} : { opacity: 0, y: -8, scale: 1.01, filter: "blur(3px)" }} transition={{ duration: .38, ease: [0.16, 1, .3, 1] }}><Switch>
       <Route path="/" component={CxsmoEntryPage} />
       <Route path="/cxsmo" component={CxsmoPosterHome} />
       <Route path="/cxsmo/shop" component={CxsmoShopPage} />
@@ -40,7 +40,7 @@ function Router() {
       <Route path="/cxsmo/admin" component={CxsmoStudioGate} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
-    </Switch></motion.div></AnimatePresence>
+    </Switch></motion.div></AnimatePresence></>
   );
 }
 
