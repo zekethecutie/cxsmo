@@ -11,3 +11,7 @@ The local `cxsmo-key-charm-alpha-fallback.png` is a full silver four-point-star 
 The catalogue now points to managed transparent candidates for the Starlight Moto Shell (`/manus-storage/cxsmo-starlight-shell-alpha-fallback_a7406211.png`) and Orbit Key Charm (`/manus-storage/cxsmo-key-charm-alpha-fallback_3dd702fb.png`). Both were visually reviewed as clean cutouts before upload.
 
 The catalogue also points to the reserved true-alpha generation outputs for Tread Phase Sneaker (`/manus-storage/cxsmo-tread-phase-sneaker-alpha_d319a0ce.png`) and Static Bloom Lip Glaze (`/manus-storage/cxsmo-static-bloom-lip-glaze-alpha_40b6478e.png`). Those managed paths are wired now so their completed outputs automatically replace their temporary generation placeholders. A future storefront media pass remains necessary before claiming final alpha verification for the generated pair.
+
+## Storefront-stage check
+
+The object stages at `/cxsmo/products/tread-06`, `/cxsmo/products/gloss-07`, `/cxsmo/products/starlight-03`, and `/cxsmo/products/orbit-05` now render the sneaker, lip glaze, shell, and charm as isolated product layers over the existing product-stage graphic treatment. No generation placeholder or solid source backdrop was visible in this pass.
