@@ -160,7 +160,7 @@
 - [x] Build a footer-launched C✦SMO guided showcase that uses optional sound, mograph-style overlays, contextual tooltips, visible progress, pause/exit controls, and never simulates user input or actions on behalf of visitors.
 - [x] Create an animated C✦SMO brand-build introduction within the guided showcase using the supplied game-bonus sound only after an explicit user gesture.
 - [x] Locate and wire the correct newer transparent campaign asset featuring one man and two women into the public C✦SMO hero, replacing the outdated full-background group image.
-- [ ] Import any remaining canvas-approved transparent C✦SMO hero and product-cutout replacement assets once exported into the project workspace, then update the explicitly designated catalogue and poster assignments. The supplied blue-silver fit has been integrated as a root-landing editorial asset, but no replacement mapping for the requested canvas product cutouts has been provided.
+- [x] Import the provided transparent C✦SMO product-cutout replacements into their explicitly mapped catalogue assignments. The supplied blue-silver fit remains integrated as a root-landing editorial asset, while the newly supplied belt, sweatpant, eyewear, moto jacket, cosmetic-case, and cargo-pant assets are live in the catalogue.
 - [x] Reconcile every remaining C✦SMO-specific requirement in the task tracker, separating only genuine external blockers from implementation work that can be completed in the current project.
 - [x] Replace the current overlay-only showcase with a visitor-started, route-aware C✦SMO motion-graphics tour that demonstrates actual public and studio interfaces through controlled navigation, visual cursor choreography, camera-like scene transitions, and pause or exit controls.
 - [x] Use every supplied C✦SMO sound effect in a deliberate, distinct, opt-in interaction or tour moment, without autoplay or repetitive generic clicks.
@@ -310,3 +310,9 @@
 - [x] Raise the signal-event modal above all page content and landing imagery while preserving only the global transition and custom-cursor layers above it.
 - [x] Continue replacing abstract or inaccurate public C✦SMO copy with concise, natural fashion-store language across the core routes.
 - [x] Validate the landing carousel, marks, Studio Access, modal stack, copy, TypeScript, regression suite, production build, checkpoint, and GitHub synchronization.
+- [x] Remove the remaining duplicate landing-wordmark star artifact, protect every point of the intended four-point star from clipping, and verify one exact C✦SMO construction in both foreground and ghost marks.
+- [x] Refine the root landing carousel’s previous/next controls into clearer, more polished editorial navigation with accessible feedback.
+- [x] Make the root Enter the Drop and Studio Access CTAs equal in size and vertically center the Studio Access label for a symmetrical hero action row.
+- [x] Replace Mercury Orbit Belt, Chrome Puddle Sweatpant, Lunar Veil Eyewear, Redline Moto Jacket, and Silver Crown Cosmetic Case with the newly supplied transparent approved product renders.
+- [x] Add Stellar Cargo Pants as a new fictional C✦SMO catalogue object with a clear bottoms category, product detail, and inventory/studio visibility.
+- [x] Validate the repaired landing marks, carousel controls, CTA alignment, supplied catalogue media, new product, tests, production build, checkpoint, and GitHub synchronization.
