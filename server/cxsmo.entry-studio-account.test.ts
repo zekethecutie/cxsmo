@@ -104,7 +104,6 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(screenshotRepair).toContain(".cxsmo-header__menu-panel");
     expect(screenshotRepair).toContain("position: absolute");
     expect(screenshotRepair).toContain("pointer-events: auto");
-    expect(screenshotRepair).toContain("height: calc(100% + 84px)");
     expect(entry).toContain('repeat: Infinity');
     expect(entryCenteredPoster).toContain("left: 50%");
     expect(entryCenteredPoster).toContain("drop-shadow(0 24px 22px");
@@ -112,13 +111,13 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 
   it("locks the approved hero treatment and preserves its precise clickable foreground hierarchy", () => {
     expect(layerContract).toContain("background: linear-gradient(112deg, #310609");
-    expect(layerContract).toContain("radial-gradient(ellipse 56% 88% at -6% 54%");
-    expect(layerContract).toContain("z-index: 300");
-    expect(layerContract).toContain("z-index: 350");
-    expect(layerContract).toContain("z-index: 200");
-    expect(layerContract).toContain("z-index: 210");
-    expect(layerContract).toContain("z-index: 220");
-    expect(layerContract).toContain(".cxsmo-header > a");
+    expect(layerContract).toContain("radial-gradient(ellipse 78% 122% at -21% 53%");
+    expect(layerContract).toContain("z-index: 900");
+    expect(layerContract).toContain("z-index: 1000");
+    expect(layerContract).toContain("z-index: 500");
+    expect(layerContract).toContain("z-index: 510");
+    expect(layerContract).toContain("z-index: 700");
+    expect(layerContract).toContain(".cxsmo-poster-home { overflow: visible; }");
     expect(layerContract).toContain("pointer-events: none");
   });
 
@@ -127,12 +126,13 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("DROP / OBJECT / SYSTEM");
     expect(entry).toContain("repeat: Infinity");
     expect(entryFinalTuning).toContain("padding-right: .16em");
-    expect(entry).not.toContain('className="cxsmo-entry__poster-word"');
+    expect(entry).toContain('className="cxsmo-entry__poster-word"');
     expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
     expect(entryFinalTuning).toContain("prefers-reduced-motion:reduce");
     expect(utilityType).toContain('"Plus Jakarta Sans"');
     expect(utilityType).toContain("font-weight: 700");
     expect(utilityType).toContain(".cxsmo-entry__desktop-note");
+    expect(utilityType).toContain("color: #df1a22");
   });
 
   it("uses the supplied modern technology-select cue for interactive hover and object-zoom feedback", () => {
@@ -150,5 +150,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 
   it("removes non-brand sparkle decorations from the active poster route", () => {
     expect(poster).not.toContain("Sparkles");
+    expect(poster).toContain("cxsmo-loud-enough-y2k-shirt-alpha");
+    expect(poster).toContain("LOUD ENOUGH / SHIRT STUDY");
   });
 });

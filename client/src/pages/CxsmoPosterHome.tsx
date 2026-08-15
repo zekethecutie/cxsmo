@@ -17,7 +17,7 @@ import "./cxsmo-hero-layer-contract.css";
 
 const getProduct = (id: string) => cxsmoProducts.find((product) => product.id === id) ?? cxsmoProducts[0];
 
-const storyObject = getProduct("signal-04");
+const loudEnoughShirtAsset = "/manus-storage/cxsmo-loud-enough-y2k-shirt-alpha_a1936a15.png";
 
 export function CxsmoPosterHome() {
   const { hero, lookbook, productOverrides } = useCxsmoPublishedContent();
@@ -34,7 +34,6 @@ export function CxsmoPosterHome() {
   const posterX = useTransform(scrollYProgress, [0, 1], ["-25%", "28%"]);
   const redX = useTransform(scrollYProgress, [0, 1], ["38%", "-30%"]);
   const heroJean = resolveCxsmoProduct(getProduct("gravity-01"), productOverrides["gravity-01"]);
-  const resolvedStoryObject = resolveCxsmoProduct(storyObject, productOverrides[storyObject.id]);
   const looks = lookbook.map((look) => ({ ...look, product: resolveCxsmoProduct(getProduct(look.productId), productOverrides[look.productId]) }));
   const marqueeObjects = cxsmoProducts.slice(0, 8).map((product) => resolveCxsmoProduct(product, productOverrides[product.id]));
 
@@ -57,7 +56,7 @@ export function CxsmoPosterHome() {
 
     <section className="poster-marquee" aria-label="C✦SMO style statement"><div><span>BIG FIT / SMALL DETAIL / RED ALERT / BIG FIT / SMALL DETAIL / RED ALERT / </span><span>BIG FIT / SMALL DETAIL / RED ALERT / BIG FIT / SMALL DETAIL / RED ALERT / </span></div></section>
 
-    <section className="poster-story" ref={storyRef}><motion.div className="poster-story__ghost" style={{ x: posterX }}>STYLE<br />IS A<br />SIGNAL</motion.div><motion.div className="poster-story__redword" style={{ x: redX }}>LOUD<br />ENOUGH</motion.div><div className="poster-story__copy"><p className="poster-kicker">THE C✦SMO FORMULA</p><h2>Loose where<br />the world pulls.<br /><em>Close where it counts.</em></h2><p>Oversized denim, fitted graphic layers, a chrome interruption. The first C✦SMO drop is built as a style world—and as a clear fashion-commerce story.</p><Link href="/cxsmo/products/gravity-01">Study object 01 <ArrowUpRight size={15} /></Link></div><div className="poster-story__image poster-story__image--cutout"><div><img src={resolvedStoryObject.image} alt={`Transparent ${resolvedStoryObject.name} portfolio product layer`} /></div><span>STYLE FRAME / 01</span></div></section>
+    <section className="poster-story" ref={storyRef}><motion.div className="poster-story__ghost" style={{ x: posterX }}>STYLE<br />IS A<br />SIGNAL</motion.div><motion.div className="poster-story__redword" style={{ x: redX }}>LOUD<br />ENOUGH</motion.div><div className="poster-story__copy"><p className="poster-kicker">THE C✦SMO FORMULA</p><h2>Loose where<br />the world pulls.<br /><em>Close where it counts.</em></h2><p>Oversized denim, fitted graphic layers, a chrome interruption. The first C✦SMO drop is built as a style world—and as a clear fashion-commerce story.</p><Link href="/cxsmo/products/gravity-01">Study object 01 <ArrowUpRight size={15} /></Link></div><div className="poster-story__image poster-story__image--cutout"><div><img src={loudEnoughShirtAsset} alt="Transparent sharp Y2K C✦SMO long-sleeve graphic shirt object" /></div><span>LOUD ENOUGH / SHIRT STUDY</span></div></section>
 
     <section className="poster-lookbook"><div className="poster-section-head"><p>SCROLL THE LOOKBOOK</p><h2>WORN IN<br /><em>MOTION.</em></h2><span>03 object-led styling chapters / 12 portfolio objects</span></div><div className="poster-lookbook__grid">{looks.map((look, index) => <motion.article className={`poster-lookbook__card poster-lookbook__card--${look.tone}`} key={look.tag} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .7, delay: index * .08 }}><div data-cxsmo-hover-sound="zoom" className="poster-lookbook__image"><span className="poster-lookbook__stage-label">{look.product.drop}</span><img src={look.product.image} alt={`Transparent ${look.product.name} product layer for ${look.title}`} /><i>✦</i></div><p>{look.tag}</p><h3>{look.title}</h3><span>{look.note}</span><Link href={`/cxsmo/products/${look.product.id}`}>Shop the formula <ArrowUpRight size={14} /></Link></motion.article>)}</div></section>
 
