@@ -351,3 +351,7 @@
 - [x] Strengthen Fit Edits individual-card hover, keyboard-focus, touch-press, and modal-entry feedback so the breakdown actions feel responsive and obvious without creating visual clutter.
 - [x] Add a Saved Fits account surface that lists, opens, and removes browser-local saved looks while retaining the existing Saved Objects experience for catalogue products.
 - [x] Validate the mobile hero, card response, Saved Fits management, responsive account flow, regression suite, production build, checkpoint, and GitHub synchronization.
+- [x] Add exact deep links from each Saved Fits card into its individual Fit Edits breakdown modal, including direct keyboard-safe focus and a graceful invalid-fit fallback.
+- [x] Add a transparent fit-led recommendation strip to product detail pages, using current fit-library compatibility mappings without claiming that editorial-only pieces are for sale.
+- [x] Reframe Fit Edits breakdown modal imagery at mobile widths so the individual look is centred, fully readable, and does not overlap controls or copy.
+- [x] Validate Saved Fits deep links, fit-led recommendations, modal framing, mobile interaction states, regression suite, production build, checkpoint, and GitHub synchronization.

@@ -37,6 +37,7 @@ import "./cxsmo-final-polish.css";
 import "./cxsmo-screenshot-repair.css";
 import "./cxsmo-utility-type.css";
 import "./cxsmo-mobile-native.css";
+export { CxsmoProductPage } from "./CxsmoProductDetail";
 
 const heroImage = "/manus-storage/cxsmo-hero-v2_cadfe55c.jpg";
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -82,7 +83,7 @@ function CxsmoMenu() {
   return <nav className="cxsmo-header__menu" aria-label="Main navigation"><button ref={triggerRef} className="cxsmo-header__menu-trigger" type="button" aria-expanded={open} aria-haspopup="menu" aria-controls="cxsmo-main-menu" onClick={() => setOpen((current) => !current)} onKeyDown={onTriggerKeyDown}>Navigate <span aria-hidden="true">{open ? "−" : "+"}</span></button><AnimatePresence>{open && <motion.div ref={panelRef} id="cxsmo-main-menu" role="menu" aria-label="C✦SMO destinations" className="cxsmo-header__menu-panel" initial={{ opacity: 0, y: -10, scale: .97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -8, scale: .98 }} transition={{ duration: .23, ease }} onKeyDown={onMenuKeyDown}>{links.map(([label, href, number], index) => <motion.div role="none" key={href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * .045, duration: .2, ease }}><Link role="menuitem" href={href} onClick={() => setOpen(false)}><span>{number}</span>{label}<ArrowUpRight size={14} /></Link></motion.div>)}</motion.div>}</AnimatePresence></nav>;
 }
 
-function ProductMediaStage({ product }: { product: CxsmoProduct }) {
+export function ProductMediaStage({ product }: { product: CxsmoProduct }) {
   const [view, setView] = useState<"object" | "wear">("object");
   const { play } = useCxsmoSound();
   const changeView = (next: "object" | "wear") => { if (next !== view) play("shutter"); setView(next); };
@@ -126,7 +127,7 @@ export function CxsmoShopPage() {
   return <CxsmoShell><section className="cxsmo-page-intro"><p className="section-label">C✦SMO objects</p><h1><TextReveal text="Shop the" /><br /><em>new edit.</em></h1><p>Streetwear, accessories, and beauty objects selected to work together, from the first layer to the last detail.</p></section><section className="cxsmo-shop-toolbar"><label className="cxsmo-shop-search"><Search size={17} /><span className="sr-only">Search catalogue</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search the collection" /></label><div className="cxsmo-filter-scroll" aria-label="Product categories">{cxsmoCategories.map((category) => <button key={category} className={filter === category ? "is-active" : ""} onClick={() => setFilter(category)}>{category}</button>)}</div><label>Sort <select value={sort} onChange={(event) => setSort(event.target.value)}><option>Featured</option><option>Price: low</option><option>Price: high</option></select><ChevronDown size={15} /></label></section><section className="cxsmo-product-grid cxsmo-product-grid--shop" aria-live="polite">{products.map((product, index) => <ProductCard product={product} order={`0${index + 1}`} key={product.id} />)}</section>{!products.length && <section className="cxsmo-empty-state cxsmo-search-empty"><Search size={24} /><h2>No pieces found.</h2><p>Try a product name, category, colour, or drop number. Search stays inside this browser-based C✦SMO collection.</p><button className="cxsmo-button" type="button" onClick={() => { setQuery(""); setFilter("All"); }}>Reset search</button></section>}<section className="cxsmo-collection-note"><p>Looking for more?</p><h2>Accessories and beauty<br />lead the next edit.</h2><span>The collection shown here is a fictional C✦SMO product line for this portfolio presentation.</span></section></CxsmoShell>;
 }
 
-export function CxsmoProductPage() {
+function LegacyCxsmoProductPage() {
   const [, params] = useRoute("/cxsmo/products/:id");
   const rawProduct = getCxsmoProduct(params?.id);
   const { productOverrides } = useCxsmoPublishedContent();

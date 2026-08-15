@@ -30,6 +30,7 @@ const polish = source("client/src/pages/cxsmo-final-polish.css");
 const mobileNative = source("client/src/pages/cxsmo-mobile-native.css");
 const fitCarousel = source("client/src/components/CxsmoFitCarousel.tsx");
 const fitLibraryStyle = source("client/src/pages/cxsmo-fit-library.css");
+const productDetail = source("client/src/pages/CxsmoProductDetail.tsx");
 
 describe("C✦SMO entry, studio, and account expansion", () => {
   it("uses a distinct editorial pre-store entry at the root route", () => {
@@ -203,7 +204,9 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 		expect(fitCarousel).toContain("Listed pieces in this fit");
 		expect(fitCarousel).toContain("Quick Add to Cart");
 	expect(fitCarousel).toContain("Save to Favorites");
-	expect(fitCarousel).toContain("export const cxsmoFitLibrary");
+		expect(fitCarousel).toContain("export const cxsmoFitLibrary");
+		expect(fitCarousel).toContain('new URLSearchParams(window.location.search).get("fit")');
+		expect(fitCarousel).toContain('window.history.replaceState(window.history.state, "", `/cxsmo/edits?fit=${encodeURIComponent(fit.index)}`)');
 		expect(fitCarousel).toContain("Render not yet supplied / not shoppable");
 		expect(fitCarousel).toContain("Copy the mockup prompt");
 		expect(fitCarousel).toContain("createPortal");
@@ -211,6 +214,9 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 		expect(fitCarousel).toContain("does not fabricate product reviews, ratings, comments, or customer stories");
 		expect(fitLibraryStyle).toContain(".cxsmo-fit-library__individual-grid");
 		expect(fitLibraryStyle).toContain(".cxsmo-fit-quick-view");
+		expect(fitLibraryStyle).toContain("grid-template-rows:minmax(0,min(42svh,340px)) auto");
+		expect(account).toContain('href={`/cxsmo/edits?fit=${encodeURIComponent(fit.index)}`}');
+		expect(productDetail).toContain("cxsmo-product-fit-links");
 		expect(fitLibraryStyle).toContain("@media (max-width:760px)");
 	});
 });

@@ -58,3 +58,9 @@ The final 375px Fit Edits capture confirms that the revised crops retain one sub
 ## 2026-08-15 — Mobile hero and fit-card response revision
 
 At 375px, the `/cxsmo` hero now reads as a compact framed campaign image at the top of the page, followed by an independent copy/action area rather than a compressed desktop poster. The campaign frame keeps the model group contained and lets **NO SOFT LANDING.** retain its own clear reading space. The Fit Edits page retains its orderly two-column individual-fit index, while the new border/shadow/press-response treatment provides a stronger discoverability cue without adding background clutter.
+
+## 2026-08-15 — Fit deep links and product-fit suggestions
+
+The 375px Chrome Puddle Sweatpant route now presents a mobile-safe **Styled in Fit Edits** strip with four matching fit references and a clear listed-versus-planned disclosure. The Fit Edits deep-link contract is implemented through the `fit` query value, focus moves to the quick-view close action when opened, and the dialog traps Tab navigation. The initial full-page capture intentionally suppresses fixed overlays, so the query-opened quick-view dialog will be checked in a non-full-page phone viewport before release.
+
+The direct 375px `?fit=M / 01` viewport check now succeeds. It opens the exact **Splitline Rugby** breakdown, frames the single model centrally in the dedicated top media area, keeps the close action clear of the image, and leaves the listed Chrome Puddle Sweatpant plus its quick-add control fully readable below. The planned Splitline Rugby Longsleeve remains explicitly non-shoppable.
