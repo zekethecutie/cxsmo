@@ -1,5 +1,5 @@
 /* Reusable mark: one CSS-drawn four-point star with no duplicate glyph layer. */
-.cxsmo-mark__star { background:linear-gradient(145deg,#ffadb1 0%,#df1a22 44%,#87050e 100%); clip-path:polygon(50% 0,59% 41%,100% 50%,59% 59%,50% 100%,41% 59%,0 50%,41% 41%); display:inline-block; flex:none; font-size:inherit; height:.72em; margin:0 -.045em 0 .015em; transform:translateY(.035em) rotate(12deg); width:.72em; }
+.cxsmo-mark__star { background:linear-gradient(145deg,#ffadb1 0%,#df1a22 44%,#87050e 100%); clip-path:polygon(50% 0,68% 32%,100% 50%,68% 68%,50% 100%,32% 68%,0 50%,32% 32%); display:inline-block; flex:none; font-size:inherit; height:.72em; margin:0 -.045em 0 .015em; transform:translateY(.035em) rotate(12deg); width:.72em; }
 
 /* Mobile-native composition: a calm shell, one hero focal point, and comfortable touch targets. */
 @media (max-width: 600px) {
@@ -23,8 +23,14 @@
   .cxsmo-site .cxsmo-bag-link { font-size:0!important; gap:3px; }
   .cxsmo-site .cxsmo-bag-link svg { height:14px; width:14px; }
   .cxsmo-site .cxsmo-bag-link b { font-size:8px; height:14px; width:14px; }
-  .cxsmo-site .cxsmo-header__menu-panel { left:auto!important; max-height:calc(100svh - 82px); overflow:auto; padding:8px!important; right:0!important; top:calc(100% + 8px)!important; width:min(270px,calc(100vw - 24px)); }
+  .cxsmo-site .cxsmo-header__menu-panel { left:50%!important; max-height:calc(100svh - 82px); overflow:auto; padding:8px!important; right:auto!important; top:calc(100% + 8px)!important; translate:-50% 0!important; width:min(288px,calc(100vw - 32px)); }
   .cxsmo-site .cxsmo-header__menu-panel a { align-items:center; display:grid!important; font:800 11px "Plus Jakarta Sans",sans-serif!important; gap:10px; grid-template-columns:24px 1fr 15px; min-height:44px; padding:0 10px!important; }
+  .cxsmo-site :is(.cxsmo-button,.cxsmo-product-card__actions button,.cxsmo-filter-scroll button,.save-wide,.cxsmo-showcase-launch,.cxsmo-text-button) { border-radius:0!important; box-shadow:none!important; }
+  .cxsmo-site :is(.cxsmo-button,.cxsmo-product-card__actions button,.save-wide) { min-height:42px; }
+  .cxsmo-site .cxsmo-product-card__actions button,.cxsmo-site .save-wide,.cxsmo-site .cxsmo-filter-scroll button { border-color:rgba(8,8,9,.22); }
+  .cxsmo-entry :is(.cxsmo-entry__enter,.cxsmo-entry__underlink) { box-shadow:none!important; min-height:48px; }
+  .cxsmo-entry .cxsmo-entry__underlink { background:rgba(240,236,230,.76); border-color:rgba(8,8,9,.36); }
+  .cxsmo-entry .cxsmo-entry__underlink::before { display:none!important; }
 
   .cxsmo-site :is(.cxsmo-page-intro,.cxsmo-category-rail,.cxsmo-drop,.cxsmo-service-strip,.cxsmo-product-grid--shop,.cxsmo-account,.cxsmo-bag,.cxsmo-style-rule,.cxsmo-collection-note) { padding-left:var(--cxsmo-mobile-gutter)!important; padding-right:var(--cxsmo-mobile-gutter)!important; }
   .cxsmo-site .cxsmo-page-intro { padding-bottom:34px!important; padding-top:48px!important; }
@@ -90,17 +96,18 @@
 }
 
 @media (max-width: 600px) {
-  .cxsmo-poster-home .poster-hero { min-height:620px!important; overflow:hidden!important; }
+  .cxsmo-poster-home .poster-hero { background:#080809!important; min-height:max(430px,calc((100vw - 32px) * .625 + 215px))!important; overflow:hidden!important; }
   .cxsmo-poster-home .poster-hero__pixel-lattice,.cxsmo-poster-home .poster-hero__red-frame,.cxsmo-poster-home .poster-hero__gradient-star,.cxsmo-poster-home .poster-hero__barcode,.cxsmo-poster-home .poster-hero__scroll { display:none!important; }
-  .cxsmo-poster-home .poster-hero__backword { font-size:26vw!important; left:18px!important; opacity:.18!important; top:11%!important; }
-  .cxsmo-poster-home .poster-hero__object-layer--campaign { height:45%!important; right:-1%!important; top:67px!important; width:86%!important; }
-  .cxsmo-poster-home .poster-hero__object-layer--campaign img { object-position:58% 100%!important; transform:none!important; }
-  .cxsmo-poster-home .poster-hero__type { bottom:38px!important; left:20px!important; right:20px!important; }
+  .cxsmo-poster-home .poster-hero::after { background:linear-gradient(135deg,#180608 0%,#7d1118 56%,#110c0d 100%)!important; border:1px solid rgba(240,236,230,.16); content:""!important; height:calc((100vw - 32px) * .625)!important; inset:16px 16px auto!important; position:absolute!important; z-index:0!important; }
+  .cxsmo-poster-home .poster-hero__backword { font-size:20vw!important; left:28px!important; opacity:.23!important; top:28px!important; z-index:1!important; }
+  .cxsmo-poster-home .poster-hero__object-layer--campaign { height:calc((100vw - 32px) * .625)!important; left:16px!important; right:auto!important; top:16px!important; width:calc(100vw - 32px)!important; z-index:2!important; }
+  .cxsmo-poster-home .poster-hero__object-layer--campaign img { object-position:65% 94%!important; transform:none!important; }
+  .cxsmo-poster-home .poster-hero__type { bottom:auto!important; left:20px!important; right:20px!important; top:calc((100vw - 32px) * .625 + 38px)!important; z-index:3!important; }
   .cxsmo-poster-home .poster-hero__type>p { font-size:8px!important; letter-spacing:.07em!important; margin-bottom:10px!important; }
-  .cxsmo-poster-home .poster-hero__type h1 { font-size:clamp(48px,15.5vw,60px)!important; line-height:.84!important; margin-bottom:17px!important; }
+  .cxsmo-poster-home .poster-hero__type h1 { font-size:clamp(40px,13vw,50px)!important; line-height:.82!important; margin-bottom:14px!important; }
   .cxsmo-poster-home .poster-hero__type>div { display:block; }
   .cxsmo-poster-home .poster-hero__type .poster-text-link,.cxsmo-poster-home .poster-hero__object { display:none!important; }
-  .cxsmo-poster-home .poster-button { font-size:9px; gap:9px; min-height:42px; padding:0 14px; }
+  .cxsmo-poster-home .poster-button { box-shadow:none!important; font-size:9px; gap:9px; min-height:40px; padding:0 14px; }
   .cxsmo-poster-home .poster-entry-flow { display:grid; gap:24px; padding:58px var(--cxsmo-mobile-gutter)!important; }
   .cxsmo-poster-home .poster-entry-flow h2 { font-size:clamp(42px,13vw,56px); line-height:.84; }
   .cxsmo-poster-home .poster-entry-flow>div>p:last-child { font-size:13px; line-height:1.58; }
@@ -113,6 +120,22 @@
   .cxsmo-poster-home .poster-lookbook { padding:66px var(--cxsmo-mobile-gutter)!important; }
   .cxsmo-poster-home .poster-lookbook__image { height:76vw!important; }
   .cxsmo-poster-home .poster-catalogue-pull { padding:64px var(--cxsmo-mobile-gutter)!important; }
+}
+
+@media (max-width: 320px) {
+  .cxsmo-site .cxsmo-disclaimer { display:none; }
+  .cxsmo-site .cxsmo-header { gap:3px; padding-inline:8px; }
+  .cxsmo-site .cxsmo-header > a { min-width:56px; }
+  .cxsmo-site .cxsmo-mark { font-size:14px; }
+  .cxsmo-site .cxsmo-header__menu { min-width:42px; }
+  .cxsmo-site .cxsmo-header__menu-trigger { height:30px; min-height:30px; padding:0 5px!important; width:42px; }
+  .cxsmo-site .cxsmo-header__menu-trigger::before { font-size:7px; }
+  .cxsmo-site .cxsmo-header__tools { gap:2px; }
+  .cxsmo-site .cxsmo-sound-toggle { display:none!important; }
+  .cxsmo-site .cxsmo-appearance-toggle,.cxsmo-site .cxsmo-bag-link { height:30px; min-height:30px; width:30px; }
+  .cxsmo-site .cxsmo-bag-link b { font-size:7px; height:12px; width:12px; }
+  .cxsmo-entry .cxsmo-entry__intro > div { gap:10px; }
+  .cxsmo-entry :is(.cxsmo-entry__enter,.cxsmo-entry__underlink) { min-height:44px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

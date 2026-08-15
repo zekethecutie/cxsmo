@@ -321,3 +321,9 @@
 - [x] Recompose the `/cxsmo` campaign hero for phone view with deliberate copy-safe space, a smaller clear campaign object, no overlapping wordmark/text/buttons, and a clean mobile-only study-card treatment.
 - [x] Simplify the mobile Navigate menu, guided-showcase overlay, promotion modal, and other layered UI so they do not obstruct content or blur into an unreadable full-screen composition.
 - [x] Validate the redesigned mobile landing, storefront, product, fit edits, information, account, checkout, legal, studio, menu, modal, and guided-showcase surfaces at compact phone dimensions, then run regression tests, production build, checkpoint, and GitHub synchronization.
+- [x] Restore the fuller, more condensed four-point C✦SMO star construction across the toolbar, root landing, and storefront hero marks without reintroducing duplicate layers or clipping.
+- [x] Rename Silver Crown Cosmetic Case to Silver Crown Crimson Sling Bag and move it from Beauty to Lifestyle across catalogue, shop, product, and studio metadata.
+- [x] Add the existing LOUD ENOUGH transparent shirt object as a purchasable fictional catalogue product with shop, product-detail, and studio visibility.
+- [x] Refine mobile button and outlined-control styling into cleaner, less visually heavy touch surfaces across public and studio routes.
+- [x] Recompose the `/cxsmo` mobile hero into a compact landscape campaign stage above clearer, smaller textual controls, and centre the mobile Navigate panel so it remains fully unclipped.
+- [x] Validate fuller stars, corrected catalogue records, LOUD ENOUGH product, mobile controls, landscape hero, navigation panel, tests, production build, checkpoint, and GitHub synchronization.

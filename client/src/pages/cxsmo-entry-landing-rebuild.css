@@ -1,6 +1,6 @@
 .cxsmo-entry .cxsmo-mark { align-items:center; display:inline-flex; gap:0; letter-spacing:-.065em; line-height:1; white-space:nowrap; }
 .cxsmo-entry .cxsmo-mark__letter { display:inline-block; }
-.cxsmo-entry .cxsmo-mark__star,.cxsmo-entry__copy h1 .cxsmo-entry__mark-star,.cxsmo-entry__poster-word-star { background:linear-gradient(145deg,#ffb0b4 0%,#df1a22 44%,#87050e 100%); clip-path:polygon(50% 0,59% 41%,100% 50%,59% 59%,50% 100%,41% 59%,0 50%,41% 41%); color:transparent; display:inline-block; flex:none; font-size:inherit; font-style:normal; height:.78em; letter-spacing:0; line-height:1; overflow:visible; -webkit-text-fill-color:transparent; width:.78em; }
+.cxsmo-entry .cxsmo-mark__star,.cxsmo-entry__copy h1 .cxsmo-entry__mark-star,.cxsmo-entry__poster-word-star { background:linear-gradient(145deg,#ffb0b4 0%,#df1a22 44%,#87050e 100%); clip-path:polygon(50% 0,68% 32%,100% 50%,68% 68%,50% 100%,32% 68%,0 50%,32% 32%); color:transparent; display:inline-block; flex:none; font-size:inherit; font-style:normal; height:.78em; letter-spacing:0; line-height:1; overflow:visible; -webkit-text-fill-color:transparent; width:.78em; }
 .cxsmo-entry .cxsmo-mark__star { margin:0 -.05em 0 .01em; transform:translateY(.04em) rotate(12deg); }
 .cxsmo-entry__header-mark { font-size:1.05em; }
 .cxsmo-entry__copy h1 { align-items:center; display:inline-flex; gap:0; letter-spacing:-.095em; }
