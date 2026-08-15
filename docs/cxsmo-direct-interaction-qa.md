@@ -18,6 +18,16 @@ The account-entry dialog opened and dismissed with `Escape` while clearly statin
 
 The C✦SMO studio gate accepted the supplied portfolio code, exposed the local inventory surface, and **Save allocation** changed to **Allocation saved** while stating that no inventory feed or stock reservation had been created.
 
+## Keyboard follow-up: live control activation
+
+A live keyboard pass began at the dismissible portfolio notice, then traversed sequentially through the C✦SMO home link, Navigate trigger, appearance control, sound preference, bag link, and the product object-stage controls. The Navigate menu opened with **Enter**, closed with **Escape**, and returned focus to the trigger.
+
+On the Tread Phase Sneaker page, sequential **Tab** navigation reached the **Fit guide** trigger. **Enter** opened the labelled dialog, and **Escape** restored focus to that trigger. The focused **M** size control accepted **Space**, and the focused **Add to bag** action accepted **Enter**, changing its visible state to **Added to bag** and incrementing the local bag count. The populated bag’s **Add order info** control opened its browser-local form with **Enter**, while **Close request** also collapsed it with **Enter**. No form field was populated and no personal information was transmitted.
+
+Within the unlocked C✦SMO studio, the focused **Inventory** navigation control opened the inventory room with **Enter**. The focused **Save allocation** action then responded to **Enter** with the visible **Allocation saved** state and the existing local-only inventory disclaimer.
+
+An uninterrupted follow-up traversal also moved from **Return to storefront** through **Overview**, **Products**, **Categories**, and **Inventory** using only sequential **Tab** presses, then opened the inventory room with **Enter**. This confirms the studio navigation path itself does not depend on pointer input.
+
 ## Scope
 
-This review exercises visible interaction and local-state handoffs. Audio audibility, full keyboard tab order, and any visitor-provided address values remain outside this pass.
+This review exercises visible interaction and local-state handoffs. Optional audio audibility, an uninterrupted no-assistance keyboard-only path through product size/add-to-bag actions, and any visitor-provided address values remain outside this pass.

@@ -114,8 +114,11 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(layerContract).toContain("background: linear-gradient(112deg, #310609");
     expect(layerContract).toContain("radial-gradient(ellipse 56% 88% at -6% 54%");
     expect(layerContract).toContain("z-index: 300");
-    expect(layerContract).toContain("z-index: 260");
     expect(layerContract).toContain("z-index: 350");
+    expect(layerContract).toContain("z-index: 200");
+    expect(layerContract).toContain("z-index: 210");
+    expect(layerContract).toContain("z-index: 220");
+    expect(layerContract).toContain(".cxsmo-header > a");
     expect(layerContract).toContain("pointer-events: none");
   });
 
@@ -124,9 +127,11 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain("DROP / OBJECT / SYSTEM");
     expect(entry).toContain("repeat: Infinity");
     expect(entryFinalTuning).toContain("padding-right: .16em");
-    expect(entryFinalTuning).toContain("rotate(9deg)");
+    expect(entry).not.toContain('className="cxsmo-entry__poster-word"');
+    expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
     expect(entryFinalTuning).toContain("prefers-reduced-motion:reduce");
-    expect(utilityType).toContain("font-weight: 650");
+    expect(utilityType).toContain('"Plus Jakarta Sans"');
+    expect(utilityType).toContain("font-weight: 700");
     expect(utilityType).toContain(".cxsmo-entry__desktop-note");
   });
 
@@ -135,6 +140,12 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(sound).toContain('hover: "/manus-storage/cxsmo-modern-technology-select');
     expect(sound).toContain('zoom: "/manus-storage/cxsmo-modern-technology-select');
     expect(userflowStyle).toContain("cxsmo-mark-star-refined");
+  });
+
+  it("plays one optional chapter cue after a real route change without sounding on initial render", () => {
+    expect(app).toContain("const previousLocation = useRef<string | null>(null)");
+    expect(app).toContain('play("chapter")');
+    expect(app).toContain("if (reducedMotion) return");
   });
 
   it("removes non-brand sparkle decorations from the active poster route", () => {

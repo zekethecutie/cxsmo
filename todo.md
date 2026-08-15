@@ -253,6 +253,11 @@
 - [x] Validate the front-to-back-only hero repair on desktop and mobile before checkpointing.
 
 - [x] Lock C✦SMO’s hero artwork to the approved light-mode direction in both appearances, strengthening and shifting the left-side red light leak without changing its vertical campaign geometry.
+- [x] Repair the C✦SMO landing mark in both appearances: remove the unintended extra star, restore the intended star within the wordmark, and lower that tilted star by 2px without clipping the final O.
+- [x] Strengthen the active C✦SMO utility type system so small editorial, footer, legal, contact, and support copy uses a more dynamic, dense, modern interface treatment.
+- [x] Re-verify and correct the exact C✦SMO hero front-to-back stack: campaign PNG above the toolbar, Static Bloom card above the PNG, menu below the PNG but interactive, and cursor above all content.
+- [x] Restore a deliberate optional route-transition sound cue without autoplay, repetition, or conflicts with the existing sound preference.
+- [x] Audit the repaired C✦SMO public and local-simulation user flows, then validate visual states, interaction contracts, TypeScript, tests, build, checkpoint, and GitHub synchronization.
 - [x] Make Navigate and its panel interactive above every hero layer except the campaign PNG and custom cursor, and place the Campaign / Static Bloom card above the transparent campaign image.
 - [x] Replace the thin technical copy system used in C✦SMO utility statements, contact links, legal labels, and recommended-screen text with a solid modern, spatial UI type treatment.
 - [x] Repair the root C✦SMO mark clipping in dark appearance, make its star slightly larger and right-tilted, and add restrained automatic marketing motion/content to the root poster.
