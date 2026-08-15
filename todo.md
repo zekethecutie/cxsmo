@@ -265,6 +265,9 @@
 - [x] Add restrained red responsive feedback to standard C✦SMO links and make the behavior accessible through focus-visible states and reduced-motion-safe transitions.
 - [x] Generate, integrate, and validate a true-alpha sharp Y2K shirt object for the C✦SMO LOUD ENOUGH section, retaining the existing interface-authored graphic backdrop.
 - [x] Remove legacy KINFORM/KNIALL tasks from the active C✦SMO tracker scope, preserving only a concise archived-dependency note outside the live implementation queue.
+- [x] Restore the `/cxsmo` campaign PNG to the approved pre-regression Y placement, changing only its Z-layer relationship to the toolbar rather than moving it upward.
+- [x] Correct the landing wordmark construction: large background reads C✦SMO with a clean in-word star after C; foreground mark reads C✦SMO with one lower, slightly tilted star after C and no star colliding with the C.
+- [x] Validate the corrected hero and landing marks against the supplied desktop reference composition, plus a considered mobile state, before checkpointing and GitHub synchronization.
 - [x] Make Navigate and its panel interactive above every hero layer except the campaign PNG and custom cursor, and place the Campaign / Static Bloom card above the transparent campaign image.
 - [x] Replace the thin technical copy system used in C✦SMO utility statements, contact links, legal labels, and recommended-screen text with a solid modern, spatial UI type treatment.
 - [x] Repair the root C✦SMO mark clipping in dark appearance, make its star slightly larger and right-tilted, and add restrained automatic marketing motion/content to the root poster.

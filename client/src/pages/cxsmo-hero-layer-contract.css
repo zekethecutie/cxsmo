@@ -38,19 +38,19 @@
 
 .cxsmo-poster-home .poster-hero__object-layer--campaign {
   bottom: auto;
-  height: calc(100% + 170px);
+  height: calc(100% + 84px);
   overflow: visible;
   pointer-events: none;
-  right: clamp(-90px, -3.4vw, -28px);
-  top: -170px;
-  width: clamp(940px, 76vw, 1420px);
+  right: calc(-5% + 34px);
+  top: -84px;
+  width: min(71vw, 1040px);
   z-index: 900;
 }
 
 .cxsmo-poster-home .poster-hero__object-layer--campaign img {
   object-fit: contain;
   object-position: 100% 100%;
-  transform: translateY(-258px);
+  transform: none;
 }
 
 /* The screenshot’s light red field becomes a controlled shared campaign light. */
@@ -81,16 +81,13 @@ html:not(.dark) .cxsmo-poster-home .poster-hero::before {
   }
 
   .cxsmo-poster-home .poster-hero__object-layer--campaign {
-    height: 78%;
-    right: -18%;
-    top: -126px;
-    width: 132%;
+    height: 70%;
+    right: 8px;
+    top: -44px;
+    width: 98%;
   }
 
-  .cxsmo-poster-home .poster-hero__object-layer--campaign img { transform: translateY(-176px); }
-
-  .cxsmo-poster-home .poster-hero__type { bottom: 15%; z-index: 920; }
-  .cxsmo-poster-home .poster-hero__object { bottom: 5%; right: 4%; width: min(190px, 54vw); z-index: 1000; }
+  .cxsmo-poster-home .poster-hero__object-layer--campaign img { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
