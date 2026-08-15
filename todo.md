@@ -272,3 +272,7 @@
 - [x] Replace the thin technical copy system used in C✦SMO utility statements, contact links, legal labels, and recommended-screen text with a solid modern, spatial UI type treatment.
 - [x] Repair the root C✦SMO mark clipping in dark appearance, make its star slightly larger and right-tilted, and add restrained automatic marketing motion/content to the root poster.
 - [x] Preserve the circular light/dark transition at the root entry and validate shared-hero visual consistency, menu clickability, copy typography, root motion, tests, build, checkpoint, and managed GitHub synchronization.
+
+- [x] Move the C✦SMO theme transition, page-route transition, and custom cursor to a global presentation layer above every platform surface while retaining pointer safety, focus behavior, and reduced-motion fallbacks.
+- [x] Rebuild the visitor-started C✦SMO player as a route-aware UI showcase that scrolls and navigates through real page surfaces, presents visual hover/click responses without synthesizing visitor input, and uses editorial tooltip narratives with spotlight/vignette focus framing.
+- [x] Validate the global overlay hierarchy and redesigned guided showcase across key routes, add regression coverage, and synchronize the verified checkpoint to GitHub.

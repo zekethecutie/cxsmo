@@ -11,7 +11,6 @@ import { CxsmoShowcaseButton } from "@/components/CxsmoGuidedShowcase";
 import { CxsmoCustomCursor } from "@/components/CxsmoCustomCursor";
 import { CxsmoPromotionPopup } from "@/components/CxsmoPromotionPopup";
 import { useCxsmoDemo } from "@/contexts/CxsmoDemoContext";
-import { useTheme } from "@/contexts/ThemeContext";
 import { useCxsmoSound } from "@/contexts/CxsmoSoundContext";
 import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct, type CxsmoProduct } from "@/lib/cxsmo";
 import { resolveCxsmoProduct, useCxsmoPublishedContent } from "@/lib/cxsmoContent";
@@ -43,7 +42,6 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 export function CxsmoShell({ children }: { children: ReactNode }) {
   const { bag } = useCxsmoDemo();
-  const { isTransitioning, transitionTarget } = useTheme();
   const { play } = useCxsmoSound();
   const { promotion, global } = useCxsmoPublishedContent();
   const reducedMotion = useReducedMotion();
@@ -51,7 +49,7 @@ export function CxsmoShell({ children }: { children: ReactNode }) {
   const [markSpin, setMarkSpin] = useState(false);
   const dismissNotice = () => { window.sessionStorage.setItem("cxsmo-disclaimer-hidden", "true"); setNoticeVisible(false); };
   const spinMark = () => { if (markSpin) return; play("chapter"); setMarkSpin(true); window.setTimeout(() => setMarkSpin(false), 720); };
-  return <MotionConfig reducedMotion={reducedMotion ? "always" : "never"}><CxsmoCustomCursor /><main className="cxsmo-site"><div className={`cxsmo-theme-wash${isTransitioning ? " is-active" : ""}`} data-target={transitionTarget} aria-hidden="true">{isTransitioning && Array.from({ length: 144 }, (_, index) => <i key={index} style={{ "--pixel": index } as CSSProperties} />)}</div>{noticeVisible && <div className="cxsmo-disclaimer"><span>{global.notice}</span><button type="button" aria-label="Dismiss portfolio disclosure for this session" onClick={dismissNotice}><X size={14} /></button></div>}{promotion.enabled && <div className="cxsmo-promo-bar">{promotion.message}</div>}<CxsmoPromotionPopup promotion={promotion} /><header className="cxsmo-header"><Link href="/cxsmo" aria-label="C✦SMO home" onClick={spinMark}><CxsmoMark spin={markSpin} /></Link><CxsmoMenu /><div className="cxsmo-header__tools"><CxsmoAppearanceToggle /><Link className="cxsmo-bag-link" href="/cxsmo/bag"><ShoppingBag size={16} /> Bag <b>{bag.length}</b></Link></div></header>{children}<footer className="cxsmo-footer"><CxsmoMark inverse /><p>{global.footerIntro}</p><p className="cxsmo-footer__credit">{global.footerCredit}</p><p className="cxsmo-footer__disclosure">Fictional fashion-commerce UI/UX presentation. Browser-local interactions only; no payment or personal information is transmitted.</p><div><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/account">Account</Link><Link href="/cxsmo/checkout">Checkout</Link><Link href="/cxsmo/legal">Terms + privacy</Link><CxsmoShowcaseButton /></div></footer></main></MotionConfig>;
+  return <MotionConfig reducedMotion={reducedMotion ? "always" : "never"}><CxsmoCustomCursor /><main className="cxsmo-site">{noticeVisible && <div className="cxsmo-disclaimer"><span>{global.notice}</span><button type="button" aria-label="Dismiss portfolio disclosure for this session" onClick={dismissNotice}><X size={14} /></button></div>}{promotion.enabled && <div className="cxsmo-promo-bar">{promotion.message}</div>}<CxsmoPromotionPopup promotion={promotion} /><header className="cxsmo-header"><Link href="/cxsmo" aria-label="C✦SMO home" onClick={spinMark}><CxsmoMark spin={markSpin} /></Link><CxsmoMenu /><div className="cxsmo-header__tools"><CxsmoAppearanceToggle /><Link className="cxsmo-bag-link" href="/cxsmo/bag"><ShoppingBag size={16} /> Bag <b>{bag.length}</b></Link></div></header>{children}<footer className="cxsmo-footer"><CxsmoMark inverse /><p>{global.footerIntro}</p><p className="cxsmo-footer__credit">{global.footerCredit}</p><p className="cxsmo-footer__disclosure">Fictional fashion-commerce UI/UX presentation. Browser-local interactions only; no payment or personal information is transmitted.</p><div><Link href="/cxsmo/shop">Shop</Link><Link href="/cxsmo/account">Account</Link><Link href="/cxsmo/checkout">Checkout</Link><Link href="/cxsmo/legal">Terms + privacy</Link><CxsmoShowcaseButton /></div></footer></main></MotionConfig>;
 }
 
 function CxsmoMenu() {

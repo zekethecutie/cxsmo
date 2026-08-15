@@ -22,7 +22,7 @@ describe("C✦SMO reduced-motion contract", () => {
   it("pauses directed and timed sequences when reduced motion is requested", () => {
     expect(tourSource).toContain('behavior: reducedMotion ? "auto" : "smooth"');
     expect(tourSource).toContain('if (!active || !playing || reducedMotion) return;');
-    expect(tourSource).toContain('setPlaying(reducedMotion !== true)');
+    expect(tourSource).toContain('setPlaying(!reducedMotion)');
     expect(carouselSource).toContain("if (paused || reducedMotion) return");
     expect(carouselSource).toContain("initial={reducedMotion ? false");
   });

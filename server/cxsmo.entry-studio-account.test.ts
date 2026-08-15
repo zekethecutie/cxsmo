@@ -125,7 +125,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
   });
 
 	it("uses a safe root theme wash and dense contemporary utility type with reduced-motion-safe marketing movement", () => {
-    expect(entry).toContain("cxsmo-theme-wash");
+    expect(app).toContain("<CxsmoThemeWash />");
     expect(entry).toContain("DROP / OBJECT / SYSTEM");
     expect(entry).toContain("repeat: Infinity");
 	  expect(entryFinalTuning).toContain("padding-right: .16em");
