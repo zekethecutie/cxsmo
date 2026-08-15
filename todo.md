@@ -276,3 +276,9 @@
 - [x] Move the C✦SMO theme transition, page-route transition, and custom cursor to a global presentation layer above every platform surface while retaining pointer safety, focus behavior, and reduced-motion fallbacks.
 - [x] Rebuild the visitor-started C✦SMO player as a route-aware UI showcase that scrolls and navigates through real page surfaces, presents visual hover/click responses without synthesizing visitor input, and uses editorial tooltip narratives with spotlight/vignette focus framing.
 - [x] Validate the global overlay hierarchy and redesigned guided showcase across key routes, add regression coverage, and synchronize the verified checkpoint to GitHub.
+
+- [x] Reconstruct both landing-page C✦SMO marks as a single exact `C✦SMO` sequence with one in-word four-point star replacing X, no duplicate star, and compact natural letter spacing.
+- [x] Correct the `/cxsmo` hero at compact desktop ratios so its campaign PNG retains the strong wide-screen scale and composition rather than shrinking into a small lower-right case.
+- [x] Restore the scroll-led hero depth so the large background C✦SMO descends faster than the foreground campaign layers without altering the approved front-to-back stack.
+- [ ] Create, integrate, and validate five distinct true-alpha futuristic Y2K catalogue objects: a belt, baggy sweatpants, chrome cosmetic eyewear, red/black leather moto jacket, and silver-star-inspired cosmetic bag.
+- [ ] Validate exact landing marks, compact and wide hero ratios, hero parallax, the expanded catalogue, TypeScript, regression coverage, production build, checkpoint, and GitHub synchronization.

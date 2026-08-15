@@ -90,6 +90,22 @@ html:not(.dark) .cxsmo-poster-home .poster-hero::before {
   .cxsmo-poster-home .poster-hero__object-layer--campaign img { transform: none; }
 }
 
+/* Keep the wide hero’s confidence on compact desktop and tablet ratios. */
+@media (min-width: 641px) and (max-width: 1040px) {
+  .cxsmo-poster-home .poster-hero__object-layer--campaign {
+    height: calc(100% + 84px);
+    right: -5%;
+    top: -84px;
+    width: min(94vw, 840px);
+  }
+
+  .cxsmo-poster-home .poster-hero__object-layer--campaign img {
+    object-fit: contain;
+    object-position: 100% 100%;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cxsmo-poster-home .poster-hero__object-layer--campaign { transform: none !important; }
 }

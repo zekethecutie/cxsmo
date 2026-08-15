@@ -2,7 +2,7 @@ export type CxsmoProduct = {
   id: string;
   drop: string;
   name: string;
-  category: "Denim" | "Graphics" | "Outerwear" | "Tailoring" | "Accessories" | "Footwear" | "Beauty" | "Lifestyle";
+  category: "Denim" | "Bottoms" | "Graphics" | "Outerwear" | "Tailoring" | "Accessories" | "Footwear" | "Beauty" | "Lifestyle";
   color: string;
   price: number;
   image: string;
@@ -11,7 +11,7 @@ export type CxsmoProduct = {
   details: string[];
 };
 
-export const cxsmoCategories = ["All", "New drop", "Denim", "Graphics", "Outerwear", "Tailoring", "Accessories", "Footwear", "Beauty", "Lifestyle"] as const;
+export const cxsmoCategories = ["All", "New drop", "Denim", "Bottoms", "Graphics", "Outerwear", "Tailoring", "Accessories", "Footwear", "Beauty", "Lifestyle"] as const;
 
 export const cxsmoProducts: CxsmoProduct[] = [
   {
@@ -157,6 +157,66 @@ export const cxsmoProducts: CxsmoProduct[] = [
     description: "A heavier fictional graphic longsleeve, built around a large orbit strike and wrapped four-point-star sleeve language.",
     fit: "Boxy, heavyweight layer",
     details: ["Fictional heavyweight jersey concept", "Large orbital transfer", "Continuous sleeve graphic"],
+  },
+  {
+    id: "mercury-belt-13",
+    drop: "13",
+    name: "Mercury Orbit Belt",
+    category: "Accessories",
+    color: "Ink / Brushed Chrome",
+    price: 68,
+    image: "/manus-storage/cxsmo-mercury-orbit-belt_a7333191.png",
+    description: "A narrow technical belt with a sculpted orbit buckle and polished metal loops that turns a low-slung fit into its own signal.",
+    fit: "Adjustable, one size",
+    details: ["Technical leather-look strap", "Orbit buckle with four-point-star cutout", "Chrome cable-loop hardware"],
+  },
+  {
+    id: "chrome-puddle-14",
+    drop: "14",
+    name: "Chrome Puddle Sweatpant",
+    category: "Bottoms",
+    color: "Graphite / Mercury",
+    price: 158,
+    image: "/manus-storage/cxsmo-chrome-puddle-sweatpant_1351e925.png",
+    description: "A deliberately oversized fleece sweatpant with a long pooled hem, reflective contour panels, and enough volume to make the shoe line disappear.",
+    fit: "Ultra-wide, puddle-length leg",
+    details: ["Heavy brushed fleece concept", "Reflective contour piping", "Four-point-star hip tab"],
+  },
+  {
+    id: "lunar-veil-15",
+    drop: "15",
+    name: "Lunar Veil Eyewear",
+    category: "Accessories",
+    color: "Chrome / Lilac Smoke",
+    price: 112,
+    image: "/manus-storage/cxsmo-lunar-veil-eyewear_a4fe1c13.png",
+    description: "A wraparound chrome visor imagined as the final cosmetic layer: soft smoke lens, clean silver architecture, no excess.",
+    fit: "One size",
+    details: ["Sculptural wrap frame", "Smoke-to-lilac lens study", "Chrome star temple detail"],
+  },
+  {
+    id: "redline-moto-16",
+    drop: "16",
+    name: "Redline Moto Jacket",
+    category: "Outerwear",
+    color: "Signal Red / Black",
+    price: 326,
+    image: "/manus-storage/cxsmo-redline-moto-jacket_778ee18f.png",
+    description: "A sharp cropped moto jacket with deep black leather, signal-red panel cuts, and bright hardware placed only where the light finds it.",
+    fit: "Cropped boxy body, wide sleeve",
+    details: ["Leather-look panel construction", "Polished chrome zip hardware", "Tonal star cuff emboss"],
+  },
+  {
+    id: "silver-crown-case-17",
+    drop: "17",
+    name: "Silver Crown Cosmetic Case",
+    category: "Beauty",
+    color: "Pearl Chrome / Signal Red",
+    price: 74,
+    image: "/manus-storage/cxsmo-silver-crown-cosmetic-case_f85dd076.png",
+    description: "A compact silver beauty case with a raised star-crown closure and a signal-red lining flash—a fictional object for the top of a tote.",
+    fit: "One size",
+    details: ["Pearlescent technical nylon concept", "Chrome star-crown clasp", "Fictional beauty accessory"],
   },
 ];
 

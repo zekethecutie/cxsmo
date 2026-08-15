@@ -114,6 +114,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 	  expect(layerContract).toContain("radial-gradient(ellipse 78% 122% at -21% 53%");
 	  expect(layerContract).toContain("height: calc(100% + 84px)");
 	  expect(layerContract).toContain("top: -84px");
+	  expect(layerContract).toContain("@media (min-width: 641px) and (max-width: 1040px)");
+	  expect(layerContract).toContain("width: min(94vw, 840px)");
 	  expect(layerContract).toContain("transform: none;");
 	  expect(layerContract).toContain("z-index: 900");
     expect(layerContract).toContain("z-index: 1000");
@@ -128,13 +130,14 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(app).toContain("<CxsmoThemeWash />");
     expect(entry).toContain("DROP / OBJECT / SYSTEM");
     expect(entry).toContain("repeat: Infinity");
-	  expect(entryFinalTuning).toContain("padding-right: .16em");
-	  expect(entry).toContain('className="cxsmo-entry__poster-word"');
-	  expect(entry).toContain('className="cxsmo-entry__poster-word-star">✦</span>SMO');
-	  expect(entry).toContain(">C<span>✦</span>SMO</motion.h1>");
+	  expect(entryFinalTuning).toContain("padding-right: .08em");
+	  expect(entry).toContain('className="cxsmo-entry__poster-word" aria-label="C✦SMO">C<span className="cxsmo-entry__poster-word-star">✦</span>SMO');
+	  expect(entry).toContain('aria-label="C✦SMO" initial={reducedMotion');
+	  expect(entry).toContain('className="cxsmo-entry__mark-star">✦</span>SMO</motion.h1>');
 	  expect(entryFinalTuning).toContain("translateY(2px) rotate(12deg)");
-	  expect(entryFinalTuning).toContain("margin: 0 .085em 0 .1em");
+	  expect(entryFinalTuning).toContain("margin: 0 -.012em");
 	  expect(entryFinalTuning).toContain(".cxsmo-entry__poster-word-star");
+	  expect(entryFinalTuning).toContain(".cxsmo-entry__mark-star");
     expect(entryFinalTuning).toContain("prefers-reduced-motion:reduce");
     expect(utilityType).toContain('"Plus Jakarta Sans"');
     expect(utilityType).toContain("font-weight: 700");
@@ -157,7 +160,9 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 
   it("removes non-brand sparkle decorations from the active poster route", () => {
     expect(poster).not.toContain("Sparkles");
-    expect(poster).toContain("cxsmo-loud-enough-y2k-shirt-alpha");
-    expect(poster).toContain("LOUD ENOUGH / SHIRT STUDY");
+	  expect(poster).toContain("cxsmo-loud-enough-y2k-shirt-alpha");
+	  expect(poster).toContain("LOUD ENOUGH / SHIRT STUDY");
+	  expect(poster).toContain('useTransform(heroScroll, [0, 1], ["0%", "76%"])');
+	  expect(poster).toContain('String(cxsmoProducts.length).padStart(2, "0")');
   });
 });
