@@ -196,9 +196,15 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 		expect(fitCarousel).toContain("cxsmo-fit-women-01-asym-star_5aa95f9c.png");
 		expect(fitCarousel).toContain("cxsmo-fit-women-10-after-dark_a269f518.png");
 		expect(fitCarousel).toContain("Every card is an individual fit reference");
+		expect(fitCarousel).toContain('useState<"All" | "Mens" | "Womens">("All")');
+		expect(fitCarousel).toContain("Shop the look");
+		expect(fitCarousel).toContain("Compatible current C✦SMO pieces");
+		expect(fitCarousel).toContain("Copy the mockup prompt");
+		expect(fitCarousel).toContain("createPortal");
 		expect(fitCarousel).toContain("Shop links only lead to categories that are presently listed in the C✦SMO catalogue");
 		expect(fitCarousel).toContain("does not fabricate product reviews, ratings, comments, or customer stories");
 		expect(fitLibraryStyle).toContain(".cxsmo-fit-library__individual-grid");
+		expect(fitLibraryStyle).toContain(".cxsmo-fit-quick-view");
 		expect(fitLibraryStyle).toContain("@media (max-width:760px)");
 	});
 });

@@ -44,3 +44,7 @@ The adjacent **Community context / editorial only** surface explicitly reserves 
 ## 2026-08-15 — Individual fit-library crop extraction
 
 The five mens and ten womens sheet looks are now deterministically cropped into individual full-look PNGs, registered in deployment-safe storage, and rendered as fifteen distinct Fit Edits cards. Each card has its own fit-file identifier, title, alt text, and category-level shop link. Desktop presents the fits as a five-column editorial index; the 375px phone layout reorganizes them as touch-safe two-column cards, with no composite-sheet card retained.
+
+## 2026-08-15 — Fit-library discovery controls
+
+The Fit Edits page now presents All, Mens, and Womens filters with an audible live count, and each individual card provides a persistent mobile-safe **Shop the look** path plus a **View breakdown** control. The quick-view is portal-mounted above page content, Escape- and overlay-dismissible, and labels its linked products as compatible current C✦SMO pieces rather than claiming unlisted garments are sold. The Style Notes panel now includes a ready-to-copy transparent mockup master prompt and a Studio asset-map entry point. Desktop and 375px mobile page captures keep the filter controls, actions, and prompt affordance readable without increasing card density.
