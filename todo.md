@@ -86,9 +86,9 @@
 - [x] Enhance shop, product, styling-edit, information, account, bag, and studio routes with consistent poster composition, animated feedback, depth, interactive controls, and responsive visual rhythm.
 - [x] Add a user-controlled appearance setting with a polished theme transition and persistent preference for C✦SMO.
 - [x] Add the creator credit “Developed by zxke” to the C✦SMO footer and confirm it remains visible across public routes.
-- [ ] Validate the expanded C✦SMO poster interactions, dark-mode setting, responsive layouts, TypeScript, focused tests, and production build before saving the next checkpoint.
+- [x] Validate the expanded C✦SMO poster interactions, dark-mode setting, responsive layouts, TypeScript, focused tests, and production build before saving the next checkpoint.
 - [x] Verify the C✦SMO appearance setting in dark and light modes and record route-level results.
-- [ ] Run and document a direct interaction QA pass for poster parallax, scroll-led surfaces, product controls, and studio actions.
+- [x] Run and document a direct interaction QA pass for poster parallax, scroll-led surfaces, product controls, and studio actions.
 - [x] Define an original C✦SMO visual brief for dynamic East-Asian streetwear fit shoots, transparent garment mockups, graphic poster crops, and an upgraded hero without copying the supplied references or depicting identifiable people from them.
 - [x] Generate and integrate distinct original C✦SMO visual assets: an upgraded hero, multiple full-body fit-shoot compositions, transparent-background garment renders, and product-level mockups.
 - [x] Replace repeated campaign imagery across the public storefront with the distinct C✦SMO image set and retain accurate alternative text.
@@ -97,7 +97,7 @@
 - [x] Refine the appearance setting with a smooth theme transition and expand consistent interactive feedback across key controls.
 - [x] Improve the C✦SMO studio dashboard’s scanning, quick-action, and operational-readiness patterns while retaining the portfolio-safe boundary.
 - [x] Implement concrete studio overview refinements for faster scanning, new quick-action controls, and clearer readiness summaries, then capture route-level QA evidence.
-- [ ] Validate the enhanced C✦SMO image system, carousel, themes, interactions, responsive layouts, tests, and production build before saving the next checkpoint.
+- [x] Validate the enhanced C✦SMO image system, carousel, themes, interactions, responsive layouts, tests, and production build before saving the next checkpoint.
 - [x] Define a C✦SMO interaction hierarchy that assigns deliberate hover, press, reveal, menu, scroll, and reduced-motion behavior to public controls without compromising readability or performance.
 - [x] Create original C✦SMO product-mockup and transparent-garment imagery informed by the supplied flat-lay and poster references when image generation becomes available, without copying logos, people, or compositions.
 - [x] Rebuild the C✦SMO product-detail interface with layered product media, more graphic material and size controls, tactile motion feedback, cleaner product information hierarchy, and responsive accessibility.
@@ -123,7 +123,7 @@
 - [x] Improve the C✦SMO dark/light transition with a brief, accessible pixel-field effect and retain an instant reduced-motion fallback.
 - [x] Expand C✦SMO account, comments, order, saved-item, address, and account-preference simulations with explicit portfolio-only states and no fabricated user-generated content.
 - [x] Add modern studio simulations for storefront customization, workflow comments, and operational settings while preserving the fictional non-payment boundary.
-- [ ] Audit public and studio surfaces for deliberate motion, keyboard behavior, hover/press feedback, hierarchy, spacing, and reduced-motion fallbacks.
+- [x] Audit public and studio surfaces for deliberate motion, keyboard behavior, hover/press feedback, hierarchy, spacing, and reduced-motion fallbacks.
 - [x] Push the completed C✦SMO project history and current work to the selected GitHub repository after final validation and checkpointing.
 - [x] Capture and review C✦SMO preview screenshots in both light and dark themes across public and studio routes, recording text-contrast, clipping, overflow, and spacing defects.
 - [x] Correct light- and dark-theme text visibility so display, support, label, and control copy remains readable against every route-specific surface.
@@ -140,7 +140,7 @@
 - [x] Rework the C✦SMO hero into a cleaner scroll-led hierarchy with one focal object, gradient headline treatment, restrained shadows, and distinct scroll rates for background, object, type, and divider.
 - [x] Add a motion-graphic product carousel with scroll-based transitions, layered object choreography, and reduced-motion fallback.
 - [x] Expand the portfolio account simulation with onboarding, taste and genre preferences, style suggestions, measurements, saved recommendations, orders, shipping states, ratings, and comment-ready empty states without fabricating social proof.
-- [x] Validate the revised hero, carousel, account simulation, theme states, accessibility, tests, and build before the next checkpoint.
+- [ ] Validate the revised hero, carousel, account simulation, theme states, accessibility, tests, and build before the next checkpoint.
 
 # Deferred asset note
 - [ ] When the image-creation allowance is available, replace all remaining opaque product mockups with verified true-alpha PNGs.
@@ -209,7 +209,7 @@
 - [x] Refine remaining light-mode route treatment, move the hero composition further left, reduce global custom-cursor scale, use the explainer-pop cue for zooming object hovers, and add a branded logo-star spin interaction.
 - [x] Reframe the C✦SMO player as a product-and-platform explainer with a longer held intro and only Exit visible during directed playback.
 - [x] Map the user-supplied explainer-pop audio to C✦SMO zooming object hover surfaces while preserving opt-in playback and cooldown safeguards.
-- [ ] Run and document a manual interaction QA pass for poster parallax, lookbook controls, product actions, hover/press cues, local account access, checkout-preview, studio actions, and the exit-only player sequence.
+- [x] Run and document a manual interaction QA pass for poster parallax, lookbook controls, product actions, hover/press cues, local account access, checkout-preview, studio actions, and the exit-only player sequence.
 - [x] Improve C✦SMO’s browser-local shopper, user, business, and store simulation flows with clearer fictional userflow and operating-state handoffs.
 - [x] Rebuild the C✦SMO player intro as a simpler red-gradient brand field with a longer hold, no cursor target box, and animated cursor choreography that points to meaningful route areas.
 - [x] Speed up the scroll-led depth of the STYLE IS A SIGNAL and LOUD ENOUGH sections, let the background C✦SMO, group study, and refined barcode travel deliberately, and remove visual clutter from the barcode treatment.
