@@ -207,6 +207,9 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 		expect(fitCarousel).toContain("export const cxsmoFitLibrary");
 		expect(fitCarousel).toContain('new URLSearchParams(window.location.search).get("fit")');
 		expect(fitCarousel).toContain('window.history.replaceState(window.history.state, "", `/cxsmo/edits?fit=${encodeURIComponent(fit.index)}`)');
+		expect(fitCarousel).toContain("Back to Saved Fits");
+		expect(fitCarousel).toContain("Available listed pairing");
+		expect(account).toContain('&from=saved-fits');
 		expect(fitCarousel).toContain("Render not yet supplied / not shoppable");
 		expect(fitCarousel).toContain("Copy the mockup prompt");
 		expect(fitCarousel).toContain("createPortal");
@@ -215,7 +218,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 		expect(fitLibraryStyle).toContain(".cxsmo-fit-library__individual-grid");
 		expect(fitLibraryStyle).toContain(".cxsmo-fit-quick-view");
 		expect(fitLibraryStyle).toContain("grid-template-rows:minmax(0,min(42svh,340px)) auto");
-		expect(account).toContain('href={`/cxsmo/edits?fit=${encodeURIComponent(fit.index)}`}');
+		expect(account).toContain('href={`/cxsmo/edits?fit=${encodeURIComponent(fit.index)}&from=saved-fits`}');
 		expect(productDetail).toContain("cxsmo-product-fit-links");
 		expect(fitLibraryStyle).toContain("@media (max-width:760px)");
 	});

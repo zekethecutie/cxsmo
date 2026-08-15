@@ -355,3 +355,7 @@
 - [x] Add a transparent fit-led recommendation strip to product detail pages, using current fit-library compatibility mappings without claiming that editorial-only pieces are for sale.
 - [x] Reframe Fit Edits breakdown modal imagery at mobile widths so the individual look is centred, fully readable, and does not overlap controls or copy.
 - [x] Validate Saved Fits deep links, fit-led recommendations, modal framing, mobile interaction states, regression suite, production build, checkpoint, and GitHub synchronization.
+- [x] Rebuild the `/cxsmo` phone hero from a clean mobile-specific composition, with a single stable campaign-image block, simpler copy hierarchy, controlled negative space, and no leftover desktop-poster treatment.
+- [x] Add a Back to Saved Fits control from each query-opened Fit Edits breakdown when a visitor enters from the Saved Fits account route.
+- [x] Add only complete-look bundle actions that contain verified currently listed catalogue products, with clear portfolio-safe local-bag behaviour and no claim that planned editorial garments are purchasable.
+- [x] Validate the rebuilt phone hero, Saved Fits return navigation, truthful bundle actions, responsive states, regression suite, production build, checkpoint, and GitHub synchronization.

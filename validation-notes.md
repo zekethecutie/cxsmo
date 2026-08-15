@@ -64,3 +64,7 @@ At 375px, the `/cxsmo` hero now reads as a compact framed campaign image at the 
 The 375px Chrome Puddle Sweatpant route now presents a mobile-safe **Styled in Fit Edits** strip with four matching fit references and a clear listed-versus-planned disclosure. The Fit Edits deep-link contract is implemented through the `fit` query value, focus moves to the quick-view close action when opened, and the dialog traps Tab navigation. The initial full-page capture intentionally suppresses fixed overlays, so the query-opened quick-view dialog will be checked in a non-full-page phone viewport before release.
 
 The direct 375px `?fit=M / 01` viewport check now succeeds. It opens the exact **Splitline Rugby** breakdown, frames the single model centrally in the dedicated top media area, keeps the close action clear of the image, and leaves the listed Chrome Puddle Sweatpant plus its quick-add control fully readable below. The planned Splitline Rugby Longsleeve remains explicitly non-shoppable.
+
+## 2026-08-15 — Phone hero reset and listed-pairing bundle
+
+The rebuilt 375px `/cxsmo` hero now uses one contained horizontal campaign panel, separate copy beneath it, and an even two-action row. It no longer attempts to position the campaign object, headline, and controls inside a compressed desktop poster field. The Saved Fits-origin `M / 05` breakdown presents two verified current products—Silver Crown Crimson Sling Bag and BLXCK UNIV3RSE Pants—and makes the **Available listed pairing** action explicit. Planned garments are excluded by the on-screen disclosure.
