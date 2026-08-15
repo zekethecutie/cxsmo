@@ -112,9 +112,9 @@
 - [x] Resume the prepared C✦SMO image batch with an upgraded hero, three distinct fit-shoot compositions, and isolated transparent garment renders for the core product stories.
 - [x] Verify every generated C✦SMO asset URL resolves to a completed final image rather than a generating or failed placeholder, and replace any unsuccessful output.
 - [x] Document route-level visual QA for the C✦SMO hero, fit carousel, catalogue, and product pages, including clean transparency, distinct media, and accurate alt text.
-- [ ] Replace any C✦SMO product render that retains a solid background with a true-alpha transparent cutout, beginning with the Tread Phase Sneaker.
-- [ ] Create true-alpha replacements for the C✦SMO Starlight Moto Shell, Orbit Key Charm, Tread Phase Sneaker, and Static Lip Glaze, then update the catalogue assignments.
-- [ ] Re-run alpha-channel verification and storefront media QA after the final transparent-cutout replacements resolve.
+- [x] Replace any C✦SMO product render that retains a solid background with a true-alpha transparent cutout, beginning with the Tread Phase Sneaker.
+- [x] Create true-alpha replacements for the C✦SMO Starlight Moto Shell, Orbit Key Charm, Tread Phase Sneaker, and Static Lip Glaze, then update the catalogue assignments.
+- [x] Re-run alpha-channel verification and storefront media QA after the final transparent-cutout replacements resolve.
 - [ ] Replace every remaining solid-background C✦SMO image with a true-alpha PNG and place typography, gradients, texture, and dimensional effects in the interface layer behind it.
 - [x] Repair the C✦SMO fit-loop carousel so every “FALLEN / FITTED” study visibly loads its own original image, uses deliberate sizing, and keeps accessible controls.
 - [x] Recompose the C✦SMO hero around a clear transparent fashion object with copy-safe space, stronger focal depth, cleaner visual hierarchy, and less nonessential clutter.
