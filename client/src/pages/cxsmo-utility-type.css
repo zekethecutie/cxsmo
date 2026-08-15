@@ -1,0 +1,7 @@
+/* Solid, contemporary utility type replaces the brittle mono copy on service labels and contact surfaces. */
+.cxsmo-entry__statement,.cxsmo-entry__desktop-note,.cxsmo-entry__footer,.cxsmo-entry__footer a,.cxsmo-site .section-label,.cxsmo-site .poster-hero__scroll,.cxsmo-site .poster-hero__barcode,.cxsmo-site .poster-entry-flow p,.cxsmo-site .cxsmo-footer,.cxsmo-site .cxsmo-legal__meta,.cxsmo-site .cxsmo-legal__eyebrow,.cxsmo-site .cxsmo-account-hub__meta {
+  font-family: Inter, Manrope, system-ui, sans-serif;
+  font-weight: 650;
+  letter-spacing: .015em;
+}
+.cxsmo-entry__desktop-note span,.cxsmo-entry__footer a,.cxsmo-site .poster-entry-flow p,.cxsmo-site .cxsmo-footer__disclosure { line-height: 1.45; }

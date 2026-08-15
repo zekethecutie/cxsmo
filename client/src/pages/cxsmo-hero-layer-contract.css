@@ -3,7 +3,7 @@
   isolation: auto;
   overflow: visible;
   position: sticky;
-  z-index: 40;
+  z-index: 250;
 }
 
 .cxsmo-site:has(.poster-hero) .cxsmo-header__menu {
@@ -17,14 +17,15 @@
   position: absolute;
   right: auto;
   top: calc(100% + 11px);
-  z-index: 2;
+  z-index: 260;
 }
 
 .cxsmo-poster-home .poster-hero {
+  background: linear-gradient(112deg, #310609 0%, #150708 47%, #18080b 100%) !important;
   isolation: auto;
   overflow: visible;
   position: relative;
-  z-index: 100;
+  z-index: auto;
 }
 
 .cxsmo-poster-home .poster-hero__object-layer--campaign {
@@ -35,7 +36,7 @@
   right: calc(-5% + 34px);
   top: -84px;
   width: min(71vw, 1040px);
-  z-index: 180;
+  z-index: 300;
 }
 
 .cxsmo-poster-home .poster-hero__object-layer--campaign img {
@@ -47,17 +48,22 @@
 /* The screenshot’s light red field becomes a controlled shared campaign light. */
 .cxsmo-poster-home .poster-hero::before {
   background:
-    radial-gradient(ellipse 44% 78% at 10% 52%, rgba(223, 26, 34, .34), transparent 68%),
+    radial-gradient(ellipse 56% 88% at -6% 54%, rgba(239, 31, 43, .55), transparent 71%),
     radial-gradient(ellipse 30% 44% at 70% 34%, rgba(223, 26, 34, .12), transparent 74%),
     linear-gradient(112deg, transparent 0 62%, rgba(240, 236, 230, .05) 62% 63%, transparent 63%);
 }
 
 html:not(.dark) .cxsmo-poster-home .poster-hero::before {
   background:
-    radial-gradient(ellipse 46% 82% at 10% 51%, rgba(223, 26, 34, .28), transparent 69%),
+    radial-gradient(ellipse 56% 88% at -6% 54%, rgba(239, 31, 43, .55), transparent 71%),
     radial-gradient(ellipse 30% 44% at 70% 34%, rgba(223, 26, 34, .1), transparent 74%),
     linear-gradient(112deg, transparent 0 62%, rgba(8, 8, 9, .07) 62% 63%, transparent 63%);
 }
+
+.cxsmo-poster-home .poster-hero__backword { color: #df1a22; opacity: .48; }
+.cxsmo-poster-home .poster-hero__type { z-index: 20; }
+.cxsmo-poster-home .poster-hero__barcode, .cxsmo-poster-home .poster-hero__scroll { z-index: 30; }
+.cxsmo-poster-home .poster-hero__object { z-index: 350; }
 
 @media (max-width: 800px) {
   .cxsmo-site:has(.poster-hero) .cxsmo-header__menu-panel {

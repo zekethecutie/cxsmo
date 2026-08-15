@@ -15,6 +15,9 @@ const cursor = source("client/src/components/CxsmoCustomCursor.tsx");
 const cursorStyle = source("client/src/pages/cxsmo-custom-cursor.css");
 const screenshotRepair = source("client/src/pages/cxsmo-screenshot-repair.css");
 const entryCenteredPoster = source("client/src/pages/cxsmo-entry-centered-poster.css");
+const entryFinalTuning = source("client/src/pages/cxsmo-entry-final-tuning.css");
+const utilityType = source("client/src/pages/cxsmo-utility-type.css");
+const layerContract = source("client/src/pages/cxsmo-hero-layer-contract.css");
 const sound = source("client/src/contexts/CxsmoSoundContext.tsx");
 const userflowStyle = source("client/src/pages/cxsmo-userflow.css");
 const poster = source("client/src/pages/CxsmoPosterHome.tsx");
@@ -105,6 +108,26 @@ describe("C✦SMO entry, studio, and account expansion", () => {
     expect(entry).toContain('repeat: Infinity');
     expect(entryCenteredPoster).toContain("left: 50%");
     expect(entryCenteredPoster).toContain("drop-shadow(0 24px 22px");
+  });
+
+  it("locks the approved hero treatment and preserves its precise clickable foreground hierarchy", () => {
+    expect(layerContract).toContain("background: linear-gradient(112deg, #310609");
+    expect(layerContract).toContain("radial-gradient(ellipse 56% 88% at -6% 54%");
+    expect(layerContract).toContain("z-index: 300");
+    expect(layerContract).toContain("z-index: 260");
+    expect(layerContract).toContain("z-index: 350");
+    expect(layerContract).toContain("pointer-events: none");
+  });
+
+  it("uses a safe root theme wash and dense contemporary utility type with reduced-motion-safe marketing movement", () => {
+    expect(entry).toContain("cxsmo-theme-wash");
+    expect(entry).toContain("DROP / OBJECT / SYSTEM");
+    expect(entry).toContain("repeat: Infinity");
+    expect(entryFinalTuning).toContain("padding-right: .16em");
+    expect(entryFinalTuning).toContain("rotate(9deg)");
+    expect(entryFinalTuning).toContain("prefers-reduced-motion:reduce");
+    expect(utilityType).toContain("font-weight: 650");
+    expect(utilityType).toContain(".cxsmo-entry__desktop-note");
   });
 
   it("uses the supplied modern technology-select cue for interactive hover and object-zoom feedback", () => {
