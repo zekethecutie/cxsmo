@@ -106,3 +106,9 @@ Twenty-eight clearly numbered apparel, footwear, accessories, and lifestyle rend
 The poor rectangular contact-sheet crops were replaced with item-aware transparent silhouettes. The reusable `build_smart_silhouettes.py` process removes the sheet background, strips the visual number labels and neighboring-product bleed, normalizes the isolated subject onto a padded 1200×1500 transparent canvas, and uses high-quality Lanczos resampling for consistent storefront scale. Fifteen additional clean product cutouts were created from the new mens reference sheet, and the catalogue expanded to 62 distinct objects.
 
 The supplied mens sheet is now retained both as a full-context Fit Edits album and as ten full-figure individual cards, rather than collapsing the looks into overly tight crops. The Git-tracked public bundle now contains 115 active files. Desktop and mobile visual checks, TypeScript, 58 active tests, production build, and direct `/images/` HTTP checks passed.
+
+## 2026-08-16 — corrective media and product-detail pass
+
+The girls’ Fit Edits album now preserves the image-first presentation without forcing the editorial copy over the model spread on phone layouts. All shop-card product assets use a shared geometric centre anchor. The Star Mini Pack and Starfade Puddle Jean were removed rather than leaving a rectangular or fragmented mask visible to visitors.
+
+Product-detail Worn Context now only opens an exact Fit Edits association. Products without a documented fit relationship instead show an honest disabled state. The product-stage labels no longer collide, and title/price blocks wrap independently on narrow screens. The direct public bundle contains 113 active files and the catalogue contains 60 products.

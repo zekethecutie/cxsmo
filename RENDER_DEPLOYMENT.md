@@ -1,6 +1,6 @@
 # C✦SMO deployment on Render
 
-The repository includes **115 active C✦SMO media files** in `client/public/images/`: 57 managed-media recoveries, directly supplied studio and fit assets, and clean transparent product silhouettes. During `pnpm run build`, Vite copies that directory into `dist/public/images/`; the production server serves it from `/images/...`. No database, storage secret, Manus account, or `VITE_CXSMO_USE_PORTABLE_MEDIA` setting is required for images or sound effects on Render.
+The repository includes **113 active C✦SMO media files** in `client/public/images/`: 57 managed-media recoveries, directly supplied studio and fit assets, and clean transparent product silhouettes. During `pnpm run build`, Vite copies that directory into `dist/public/images/`; the production server serves it from `/images/...`. No database, storage secret, Manus account, or `VITE_CXSMO_USE_PORTABLE_MEDIA` setting is required for images or sound effects on Render.
 
 | Render setting | Value |
 |---|---|

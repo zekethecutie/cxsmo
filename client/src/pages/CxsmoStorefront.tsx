@@ -14,6 +14,7 @@ import { useCxsmoDemo } from "@/contexts/CxsmoDemoContext";
 import { useCxsmoSound } from "@/contexts/CxsmoSoundContext";
 import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct, type CxsmoProduct } from "@/lib/cxsmo";
 import { resolveCxsmoProduct, useCxsmoPublishedContent } from "@/lib/cxsmoContent";
+import { cxsmoFitLibrary } from "@/components/CxsmoFitCarousel";
 import { preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
 import "./cxsmo.css";
 import "./cxsmo-media-overrides.css";
@@ -88,8 +89,12 @@ function CxsmoMenu() {
 export function ProductMediaStage({ product }: { product: CxsmoProduct }) {
   const [view, setView] = useState<"object" | "wear">("object");
   const { play } = useCxsmoSound();
+  const wornFit = cxsmoFitLibrary.find((fit) => fit.listedIds.includes(product.id));
+  const hasWornFit = Boolean(wornFit);
+  const wornImage = wornFit?.image ?? product.image;
+  const wornAlt = wornFit ? `${wornFit.title} C✦SMO Fit Edits reference including ${product.name}` : `${product.name} has no linked Fit Edits reference yet`;
   const changeView = (next: "object" | "wear") => { if (next !== view) play("shutter"); setView(next); };
-  return <div data-cxsmo-hover-sound="zoom" className={`cxsmo-product-stage cxsmo-product-stage--${view}`}><div className="cxsmo-product-stage__meta"><span>Object signal / {product.drop}</span><strong>C✦SMO</strong></div><div className="cxsmo-product-stage__asset"><span className="cxsmo-product-stage__micro">Worn in motion / object focus</span><img src={product.image} alt={`${product.name} isolated product view`} /></div><div className="cxsmo-product-stage__campaign"><img src={heroImage} alt="C✦SMO styling campaign context" /></div><div data-cxsmo-sound-silent className="cxsmo-product-stage__orbit"><button type="button" className={view === "object" ? "is-active" : ""} aria-pressed={view === "object"} onClick={() => changeView("object")}>Object stage</button><button type="button" className={view === "wear" ? "is-active" : ""} aria-pressed={view === "wear"} onClick={() => changeView("wear")}>Worn context</button></div><span className="cxsmo-product-stage__index">01 / 02</span></div>;
+  return <div data-cxsmo-hover-sound="zoom" className={`cxsmo-product-stage cxsmo-product-stage--${view}`}><div className="cxsmo-product-stage__meta"><span>Object signal / {product.drop}</span><strong>C✦SMO</strong></div><div className="cxsmo-product-stage__asset"><span className="cxsmo-product-stage__micro">Object stage / isolated view</span><img src={product.image} alt={`${product.name} isolated product view`} /></div><div className="cxsmo-product-stage__campaign"><img src={wornImage} alt={wornAlt} />{wornFit ? <span>Fit file / {wornFit.index}</span> : <span>No linked fit yet</span>}</div><div data-cxsmo-sound-silent className="cxsmo-product-stage__orbit"><button type="button" className={view === "object" ? "is-active" : ""} aria-pressed={view === "object"} onClick={() => changeView("object")}>Object stage</button><button type="button" disabled={!hasWornFit} className={view === "wear" ? "is-active" : ""} aria-pressed={view === "wear"} onClick={() => changeView("wear")}>{hasWornFit ? "Worn context" : "No linked fit"}</button></div><span className="cxsmo-product-stage__index">01 / 02</span></div>;
 }
 
 function TextReveal({ text }: { text: string }) {

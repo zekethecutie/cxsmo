@@ -395,3 +395,8 @@
 - [x] Add the supplied mens fit sheet as a full-context Fit Edits album and crop its individual models with complete silhouettes.
 - [x] Map and add clearly identifiable newly supplied numbered pieces to the catalogue, including clean public image paths and non-ambiguous descriptions.
 - [x] Validate corrected catalogue media at desktop and mobile, run regression/Render checks, and synchronize all corrected images and records to GitHub.
+
+- [x] Repair the girls’ “More than one angle” Fit Edits album framing so the full cast is legible and not visually squeezed or obscured.
+- [x] Centre affected shop-card products, remove the non-transparent Star Mini Pack, and replace or revert failed transparency masks rather than presenting broken silhouettes.
+- [x] Link Worn Context product previews only to relevant Fit Edits records and fix product-detail typos, overflows, and stacked text.
+- [x] Validate repaired desktop/mobile catalogue and product-detail views, then synchronize all corrections to GitHub.

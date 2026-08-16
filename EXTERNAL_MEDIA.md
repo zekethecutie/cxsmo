@@ -43,11 +43,11 @@ The repository intentionally keeps the portable archive separate from the manage
 
 ## Git and large files
 
-The current complete export is approximately 131 MB. It is committed under `client/public/images/` for direct GitHub checkout access and is also delivered as a versioned GitHub Release archive for one-file external deployment. The manifest and generated allowlist remain in Git so every external deployment can verify which media files are present.
+The current complete export is approximately 126 MB. It is committed under `client/public/images/` for direct GitHub checkout access and is also delivered as a versioned GitHub Release archive for one-file external deployment. The manifest and generated allowlist remain in Git so every external deployment can verify which media files are present.
 
 ## Current archive status
 
-The current C✦SMO public bundle contains **115 active files**: 57 recovered managed references, supplied studio and fit media, and clean transparent product silhouettes. This covers campaign imagery, product renders, fit crops, cursor art, and sound effects, with no missing active source records. Archived KINFORM/KNIALL and test-only references are intentionally outside the current C✦SMO export scope.
+The current C✦SMO public bundle contains **113 active files**: 57 recovered managed references, supplied studio and fit media, and clean transparent product silhouettes. This covers campaign imagery, product renders, fit crops, cursor art, and sound effects, with no missing active source records. Archived KINFORM/KNIALL and test-only references are intentionally outside the current C✦SMO export scope.
 
 ## Future recovery handling
 
