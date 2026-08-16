@@ -400,3 +400,14 @@
 - [x] Centre affected shop-card products, remove the non-transparent Star Mini Pack, and replace or revert failed transparency masks rather than presenting broken silhouettes.
 - [x] Link Worn Context product previews only to relevant Fit Edits records and fix product-detail typos, overflows, and stacked text.
 - [x] Validate repaired desktop/mobile catalogue and product-detail views, then synchronize all corrections to GitHub.
+
+- [x] Rebuild the girls’ “More than one angle” Fit Edits album as a balanced image-led spread rather than an empty desktop stage with corner thumbnails.
+- [x] Identify and remove or replace remaining raw contact-sheet cards and failed masks, including broken alpha artifacts on existing catalogue items.
+- [x] Make external deployments use tracked public assets only, removing Manus-storage fallback requests that fail on Render.
+- [x] Add browser-locale currency detection with a visible manual selector and clearly labeled simulation display pricing.
+- [x] Validate the rebuilt albums, clean external media paths, currency display, and responsive layout before synchronizing the repair to GitHub.
+
+- [x] Audit the public build for unnecessary platform/tooling references, retain required factual disclosures, and add an author-owned developer console/contact message for zxke.
+- [x] Reconcile every Fit Edits breakdown against the current 60-item catalogue so listed product links represent only accurate visible or documented pieces, with missing items explicitly marked planned rather than implied for sale.
+- [x] Make the Git-tracked public-media bundle checkpoint-safe without degrading active Render asset paths, then revalidate the external build and GitHub handoff.
+- [ ] Validate the public metadata, developer message, exact Fit Edits mappings, static media delivery, tests, production build, checkpoint, and GitHub synchronization.

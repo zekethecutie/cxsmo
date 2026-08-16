@@ -12,10 +12,10 @@ describe("C✦SMO sitewide content defaults", () => {
     const source = cxsmoProducts[0];
     const resolved = resolveCxsmoProduct(source, {
       name: "Gravity / edited",
-      image: "/manus-storage/studio-test.png",
+      image: "/images/studio-test.png",
     });
     expect(resolved.name).toBe("Gravity / edited");
-    expect(resolved.image).toBe("/manus-storage/studio-test.png");
+    expect(resolved.image).toBe("/images/studio-test.png");
     expect(resolved.id).toBe(source.id);
     expect(resolved.price).toBe(source.price);
     expect(resolved.category).toBe(source.category);

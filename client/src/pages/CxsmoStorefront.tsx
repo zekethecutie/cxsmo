@@ -15,7 +15,6 @@ import { useCxsmoSound } from "@/contexts/CxsmoSoundContext";
 import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct, type CxsmoProduct } from "@/lib/cxsmo";
 import { resolveCxsmoProduct, useCxsmoPublishedContent } from "@/lib/cxsmoContent";
 import { cxsmoFitLibrary } from "@/components/CxsmoFitCarousel";
-import { preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
 import "./cxsmo.css";
 import "./cxsmo-media-overrides.css";
 import "./cxsmo-reduced-motion.css";
@@ -41,7 +40,7 @@ import "./cxsmo-utility-type.css";
 import "./cxsmo-mobile-native.css";
 export { CxsmoProductPage } from "./CxsmoProductDetail";
 
-const heroImage = preferCxsmoPublicMedia("/manus-storage/cxsmo-hero-v2_cadfe55c.jpg");
+const heroImage = "/images/cxsmo-hero-v2_cadfe55c.jpg";
 const fitEditsStudioImage = "/images/cxsmo-fit-edits-studio-campaign.png";
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -114,7 +113,7 @@ export function ProductCard({ product, order = "01" }: { product: CxsmoProduct; 
   const [added, setAdded] = useState(false);
   const save = savedIds.includes(product.id);
   function quickAdd() { addToBag(product, "M"); play("success"); setAdded(true); window.setTimeout(() => setAdded(false), 1500); }
-  return <article className="cxsmo-product-card" data-cxsmo-hover-sound="chapter"><Link className="cxsmo-product-card__visual" href={`/cxsmo/products/${product.id}`}><span>{order}</span><img src={presentedProduct.image} alt={presentedProduct.name} /><em>{presentedProduct.category}</em></Link><div className="cxsmo-product-card__body"><div><p>{presentedProduct.color}</p><h2>{presentedProduct.name}</h2></div><strong>{formatCxsmoPrice(presentedProduct.price, profile.locale, profile.currency)}</strong></div><div className="cxsmo-product-card__actions"><button data-cxsmo-sound-silent onClick={quickAdd}>{added ? <><Check size={15} /> Added</> : <><Plus size={15} /> Quick add</>}</button><button aria-label={`Save ${presentedProduct.name}`} className={save ? "is-saved" : ""} onClick={() => toggleSaved(product.id)}><Heart size={17} fill={save ? "currentColor" : "none"} /></button></div></article>;
+  return <article className="cxsmo-product-card" data-cxsmo-hover-sound="chapter"><Link className="cxsmo-product-card__visual" href={`/cxsmo/products/${product.id}`}><span>{order}</span><img src={presentedProduct.image} alt={presentedProduct.name} /><em>{presentedProduct.category}</em></Link><div className="cxsmo-product-card__body"><div><p>{presentedProduct.color}</p><h2>{presentedProduct.name}</h2></div><strong>{formatCxsmoPrice(presentedProduct.price, profile.locale, profile.currency, profile.currencyRate)}</strong></div><div className="cxsmo-product-card__actions"><button data-cxsmo-sound-silent onClick={quickAdd}>{added ? <><Check size={15} /> Added</> : <><Plus size={15} /> Quick add</>}</button><button aria-label={`Save ${presentedProduct.name}`} className={save ? "is-saved" : ""} onClick={() => toggleSaved(product.id)}><Heart size={17} fill={save ? "currentColor" : "none"} /></button></div></article>;
 }
 
 export function CxsmoHomePage() {

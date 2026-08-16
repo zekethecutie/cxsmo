@@ -1,6 +1,5 @@
 import { trpc } from "@/lib/trpc";
 import type { CxsmoProduct } from "@/lib/cxsmo";
-import { preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
 
 export type CxsmoHeroContent = {
   eyebrow: string;
@@ -24,7 +23,7 @@ export const defaultCxsmoHero: CxsmoHeroContent = {
   lineOne: "NO",
   emphasis: "SOFT",
   lineThree: "LANDING.",
-  assetUrl: "/manus-storage/cxsmo-hero-one-man-two-women_f25e55a6.webp",
+  assetUrl: "/images/cxsmo-hero-one-man-two-women_f25e55a6.webp",
   assetAlt: "Three adult fictional C✦SMO campaign models—one man and two women—in coordinated Y2K streetwear on a transparent layer",
   objectLabel: "CAMPAIGN / 01",
   objectName: "STATIC BLOOM / GROUP STUDY",
@@ -63,7 +62,7 @@ export function useCxsmoPublishedContent() {
   const productOverrides = Object.fromEntries((contentQuery.data ?? []).filter((entry) => entry.contentKey.startsWith("product.")).map((entry) => [entry.contentKey.replace("product.", ""), objectPayload<CxsmoProductOverride>(entry.payload, {})]));
   const hero = objectPayload(find("hero") ?? "", defaultCxsmoHero);
   return {
-    hero: { ...hero, assetUrl: preferCxsmoPublicMedia(hero.assetUrl) },
+    hero,
     promotion: objectPayload(find("promotion") ?? "", defaultCxsmoPromotion),
     global: objectPayload(find("global") ?? "", defaultCxsmoGlobal),
     lookbook: lookbookPayload.cards,
@@ -74,5 +73,5 @@ export function useCxsmoPublishedContent() {
 
 export function resolveCxsmoProduct(product: CxsmoProduct, override?: CxsmoProductOverride): CxsmoProduct {
   const resolved = override ? { ...product, ...override } : product;
-  return { ...resolved, image: preferCxsmoPublicMedia(resolved.image) };
+  return resolved;
 }

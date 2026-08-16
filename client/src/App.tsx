@@ -11,7 +11,6 @@ import { CxsmoSoundProvider } from "./contexts/CxsmoSoundContext";
 import { useCxsmoSound } from "./contexts/CxsmoSoundContext";
 import { CxsmoTourProvider } from "./components/CxsmoGuidedShowcase";
 import { CxsmoThemeWash } from "./components/CxsmoThemeWash";
-import { CxsmoPublicMediaFallback } from "./components/CxsmoPublicMediaFallback";
 import { CxsmoStudioGate } from "./pages/CxsmoAdminPage";
 import { CxsmoAccountPage, CxsmoBagPage, CxsmoCheckoutPage, CxsmoDisclosurePage, CxsmoEditsPage, CxsmoHomePage, CxsmoLegalPage, CxsmoPrivacyPage, CxsmoProductPage, CxsmoShopPage, CxsmoSupportPage, CxsmoTermsPage } from "./pages/CxsmoStorefront";
 import { CxsmoPosterHome } from "./pages/CxsmoPosterHome";
@@ -67,7 +66,6 @@ function App() {
 	      <CxsmoSoundProvider>
 	      <TooltipProvider>
 	        <CxsmoDemoProvider>
-	          <CxsmoPublicMediaFallback />
 	          <Toaster />
 	          <CxsmoThemeWash />
 	          <CxsmoTourProvider><Router /></CxsmoTourProvider>

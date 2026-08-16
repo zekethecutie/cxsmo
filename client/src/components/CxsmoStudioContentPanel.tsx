@@ -11,7 +11,7 @@ import "@/pages/cxsmo-admin-sitewide.css";
 import "@/pages/cxsmo-admin-sitewide-fix.css";
 
 type Props = { published: boolean; setPublished: (value: boolean) => void };
-const starterAssets = [{ name: "Three-person chrome campaign", url: "/manus-storage/cxsmo-hero-campaign_f5a1c0fc.jpg", alt: defaultCxsmoHero.assetAlt }, { name: "Black-red walking campaign", url: "/manus-storage/cxsmo-hero-v2_cadfe55c.jpg", alt: "Three adult C✦SMO models walking through a black-and-red campaign set" }, ...cxsmoProducts.map((product) => ({ name: product.name, url: product.image, alt: `Transparent ${product.name} product render` }))];
+const starterAssets = [{ name: "Three-person chrome campaign", url: "/images/cxsmo-hero-campaign_f5a1c0fc.jpg", alt: defaultCxsmoHero.assetAlt }, { name: "Black-red walking campaign", url: "/images/cxsmo-hero-v2_cadfe55c.jpg", alt: "Three adult C✦SMO models walking through a black-and-red campaign set" }, ...cxsmoProducts.map((product) => ({ name: product.name, url: product.image, alt: `Transparent ${product.name} product render` }))];
 const decode = <T,>(payload: string | undefined, fallback: T): T => { try { return payload ? { ...fallback, ...(JSON.parse(payload) as Partial<T>) } : fallback; } catch { return fallback; } };
 
 export function CxsmoStudioContentPanel({ published, setPublished }: Props) {

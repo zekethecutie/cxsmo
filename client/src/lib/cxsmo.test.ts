@@ -16,6 +16,7 @@ describe("C✦SMO catalogue", () => {
 
   it("formats fictional portfolio pricing consistently without payment claims", () => {
     expect(formatCxsmoPrice(184)).toBe("$184");
+    expect(formatCxsmoPrice(184, "en-PH", "PHP", 58)).toBe("₱10,672");
     expect(cxsmoProducts.every((product) => product.price > 0 && product.details.length > 0)).toBe(true);
   });
 });

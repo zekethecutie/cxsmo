@@ -7,8 +7,8 @@ const soundSource = readFileSync(resolve(process.cwd(), "client/src/contexts/Cxs
 describe("C✦SMO optional sound contract", () => {
   it("keeps the supplied library plus the dedicated modern technology-select cue mapped to hover controls", () => {
     expect(soundSource.match(/mixkit-[^"']+\.wav/g)).toHaveLength(15);
-    expect(soundSource).toContain('hover: "/manus-storage/cxsmo-modern-technology-select_c5dbba14.wav"');
-    expect(soundSource).toContain('zoom: "/manus-storage/cxsmo-modern-technology-select_c5dbba14.wav"');
+    expect(soundSource).toContain('hover: "/images/cxsmo-modern-technology-select_c5dbba14.wav"');
+    expect(soundSource).toContain('zoom: "/images/cxsmo-modern-technology-select_c5dbba14.wav"');
     ["open", "click", "success", "theme", "shutter", "launch", "chapter", "finish", "nav", "primary", "select", "treasure", "lock", "double", "replay", "hover", "zoom"].forEach((cue) => expect(soundSource).toContain(`${cue}:`));
   });
 
@@ -21,7 +21,7 @@ describe("C✦SMO optional sound contract", () => {
     expect(soundSource).toContain('if (event.pointerType === "touch") return');
     expect(soundSource).toContain("new Map<CxsmoSoundCue, number>()");
     expect(soundSource).toContain("activeAudio.current.add(audio)");
-    expect(soundSource).toContain("new Audio(publicSource)");
+    expect(soundSource).toContain("new Audio(soundSources[cue])");
     expect(soundSource).toContain("now - (lastPlayed.current.get(cue) ?? 0)");
     expect(soundSource).toContain("hoverTargets.current.get(element) ?? 0) < 110");
   });

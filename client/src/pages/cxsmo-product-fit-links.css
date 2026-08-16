@@ -14,7 +14,7 @@
 .cxsmo-product-fit-links a b { font:900 24px/.86 "Archivo Black",sans-serif; letter-spacing:-.07em; text-transform:uppercase; }
 .cxsmo-product-fit-links a small { align-items:center; display:flex; gap:5px; }
 .cxsmo-pdp__title { align-items:flex-start; gap:18px; }
-.cxsmo-pdp__title h1 { max-width:13ch; overflow-wrap:anywhere; }
+.cxsmo-pdp__title h1 { font-size:clamp(42px,5vw,78px); hyphens:none; max-width:13ch; overflow-wrap:normal; word-break:normal; }
 .cxsmo-pdp__title strong { flex:0 0 auto; white-space:nowrap; }
 .cxsmo-product-fit-links a:is(:hover,:focus-visible) { background:#df1a22; color:#080809; outline:none; transform:translateY(-4px); }
 .cxsmo-product-fit-links a:is(:hover,:focus-visible) img { transform:scale(1.04); }

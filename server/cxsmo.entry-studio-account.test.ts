@@ -172,8 +172,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 
   it("uses the supplied modern technology-select cue for interactive hover and object-zoom feedback", () => {
     expect(sound).toContain("cxsmo-modern-technology-select_c5dbba14.wav");
-    expect(sound).toContain('hover: "/manus-storage/cxsmo-modern-technology-select');
-    expect(sound).toContain('zoom: "/manus-storage/cxsmo-modern-technology-select');
+    expect(sound).toContain('hover: "/images/cxsmo-modern-technology-select');
+    expect(sound).toContain('zoom: "/images/cxsmo-modern-technology-select');
     expect(userflowStyle).toContain("cxsmo-mark-star-refined");
   });
 

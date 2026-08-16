@@ -112,3 +112,25 @@ The supplied mens sheet is now retained both as a full-context Fit Edits album a
 The girls’ Fit Edits album now preserves the image-first presentation without forcing the editorial copy over the model spread on phone layouts. All shop-card product assets use a shared geometric centre anchor. The Star Mini Pack and Starfade Puddle Jean were removed rather than leaving a rectangular or fragmented mask visible to visitors.
 
 Product-detail Worn Context now only opens an exact Fit Edits association. Products without a documented fit relationship instead show an honest disabled state. The product-stage labels no longer collide, and title/price blocks wrap independently on narrow screens. The direct public bundle contains 113 active files and the catalogue contains 60 products.
+
+## 2026-08-16 — final album source review
+
+The supplied women’s top album frame is a complete 1024×760 four-model horizontal composition. It is now treated as an image-led editorial plate rather than two constrained thumbnails; supporting copy sits in its own deliberate column so it does not obscure the models or make the image look like a broken composite.
+
+## 2026-08-16 — final public-media, currency, and product-detail release check
+
+Desktop and 375px route captures confirm that the Fit Edits albums remain image-led, shop cards use clean centred silhouettes, and product titles retain whole-word wrapping. The shared header exposes the USD/local-currency selector, while the browser-local currency formatter is protected by a Philippine-peso regression assertion. `pnpm check`, the 58-passing/1-skipped regression suite, and the production build all complete successfully. The only build advisory is the existing large client-bundle warning.
+
+## 2026-08-16 — Fit Edits mapping source review
+
+The reviewed men’s source plate visibly contains the Black Star Overshirt, White Star Hood, Spear Rib Tank, Washed Star Hood, Contrast Halfzip, Flame Star Crew, Washed Orbit Knit, Flame Track Hoodie, Star Trucker, and Chain Star Moto alongside the associated wide-leg pieces. The women’s source plate confirms a mix of currently catalogued components—such as Lace Corset Top, Web Tie Tank, Pleated Belt Skirt, Lace Tiered Skirt, Stud Cargo Short, Chain Cargo Short, Stellar Cargo Pants, Cloud Legwarmer, and Buckle Stack Boot—and styling elements for which no direct product render exists. Final quick-view links must therefore surface only those verified catalogue matches and leave the remainder explicitly planned.
+
+The individual women’s source crops confirm that W / 01 uses an asymmetric black star top with black star-marked wide pants and a shoulder bag, none of which has a direct one-to-one current render. W / 02 combines the White Star Hood with a grey washed wide cargo/denim piece; only the White Star Hood is an exact current catalogue match, while the grey lower remains a planned editorial item rather than a generic substitute.
+
+W / 03 visibly contains the Lace Corset Top, Pleated Belt Skirt, and Buckle Stack Boot; its black shoulder bag does not have a confirmed one-to-one product render. W / 05 is a white hooded/layered set with a tiered mini, soft legwarmers, and a silver bag; only the Lace Tiered Skirt and Cloud Legwarmer are exact catalogue matches, while the rest remains planned.
+
+## 2026-08-16 — direct-public release audit
+
+All active C✦SMO product, campaign, Fit Edits, cursor, and sound references now resolve directly from the tracked `/images` bundle. The public asset folder contains no file above 1 MB, and direct probes return `200` with the expected PNG or WAV content types for a renamed product render, a fit crop, and the hover cue. The production bundle has no explicit managed-storage, generator-name, or generative-tool strings in its delivered public files; its document head identifies **zxke** as author and creator.
+
+The W / 03 Lunar Corset quick-view was captured at desktop and 375px. It visibly lists the exact Lace Corset Top, Pleated Belt Skirt, and Buckle Stack Boot, keeps the unrelated black shoulder bag under planned rather than sale, and retains readable mobile actions. TypeScript, 59 active tests with 1 skipped, and the production build pass after the direct-public conversion.

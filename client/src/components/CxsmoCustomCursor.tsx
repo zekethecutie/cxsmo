@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { createPortal } from "react-dom";
 
-const cursorAsset = "/manus-storage/cxsmo-custom-cursor_922d53fe.png";
+const cursorAsset = "/images/cxsmo-custom-cursor_922d53fe.png";
 
 export function CxsmoCustomCursor() {
   const [enabled, setEnabled] = useState(false);

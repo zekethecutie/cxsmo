@@ -63,7 +63,7 @@ describe("C✦SMO guided player", () => {
   it("keeps the sitewide cursor limited to fine pointers with form and player fallbacks", () => {
     expect(globalCursorSource).toContain('(hover: hover) and (pointer: fine)');
     expect(globalCursorSource).toContain('(prefers-reduced-motion: reduce)');
-    expect(globalCursorSource).toContain('/manus-storage/cxsmo-custom-cursor_922d53fe.png');
+    expect(globalCursorSource).toContain('/images/cxsmo-custom-cursor_922d53fe.png');
     expect(globalCursorStyle).toContain('input');
     expect(globalCursorStyle).toContain('cursor:text');
     expect(globalCursorStyle).toContain('html[data-cxsmo-tour="active"] .cxsmo-global-cursor');

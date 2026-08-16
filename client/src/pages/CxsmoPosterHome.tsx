@@ -18,7 +18,7 @@ import "./cxsmo-mobile-native.css";
 
 const getProduct = (id: string) => cxsmoProducts.find((product) => product.id === id) ?? cxsmoProducts[0];
 
-const loudEnoughShirtAsset = "/manus-storage/cxsmo-loud-enough-y2k-shirt-alpha_a1936a15.png";
+const loudEnoughShirtAsset = "/images/cxsmo-loud-enough-y2k-shirt-alpha_a1936a15.png";
 
 export function CxsmoPosterHome() {
   const { hero, lookbook, productOverrides } = useCxsmoPublishedContent();

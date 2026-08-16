@@ -21,8 +21,10 @@ describe("C✦SMO locale and checkout simulation", () => {
   it("keeps locale preferences browser-local with region-aware default currencies", () => {
     expect(demoSource).toContain('const storageKey = "cxsmo-demo-state"');
     expect(demoSource).toContain("navigator.language");
-    expect(demoSource).toContain('PH: { country: "Philippines", currency: "PHP" }');
-    expect(demoSource).toContain('JP: { country: "Japan", currency: "JPY" }');
+    expect(demoSource).toContain('currency: "PHP" as const, fallbackRate: 58');
+    expect(demoSource).toContain('currency: "JPY" as const, fallbackRate: 155');
+    expect(demoSource).toContain('https://open.er-api.com/v6/latest/USD');
+    expect(demoSource).toContain("currencyRate");
     expect(demoSource).toContain('window.localStorage.setItem(storageKey');
   });
 

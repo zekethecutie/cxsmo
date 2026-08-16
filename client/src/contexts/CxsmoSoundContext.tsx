@@ -1,27 +1,26 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useRef, useState } from "react";
-import { cxsmoManagedMediaUrl, preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
 
 export type CxsmoSoundCue = "open" | "click" | "success" | "theme" | "shutter" | "launch" | "chapter" | "finish" | "nav" | "primary" | "select" | "treasure" | "lock" | "double" | "replay" | "hover" | "zoom";
 type SoundContextValue = { enabled: boolean; toggle: () => void; play: (cue: CxsmoSoundCue) => void };
 
 const soundSources: Record<CxsmoSoundCue, string> = {
-  open: "/manus-storage/mixkit-opening-software-interface-2578_66a94353.wav",
-  click: "/manus-storage/mixkit-interface-device-click-2577_c336aeda.wav",
-  success: "/manus-storage/mixkit-quick-positive-video-game-notification-interface-265_b60b25e0.wav",
-  theme: "/manus-storage/mixkit-magic-sparkle-whoosh-2350_41bf53fc.wav",
-  shutter: "/manus-storage/mixkit-camera-digital-shutter-1432_50c392db.wav",
-  launch: "/manus-storage/mixkit-game-bonus-reached-2065_6a20f363.wav",
-  chapter: "/manus-storage/mixkit-explainer-video-pops-whoosh-light-pop-3005_c618143d.wav",
-  finish: "/manus-storage/mixkit-quick-win-video-game-notification-269_6c476a70.wav",
-  nav: "/manus-storage/mixkit-game-click-1114_ccfb20bb.wav",
-  primary: "/manus-storage/mixkit-hard-pop-click-2364_776e6480.wav",
-  select: "/manus-storage/mixkit-select-click-1109_176ff20b.wav",
-  treasure: "/manus-storage/mixkit-video-game-treasure-2066_800e9e65.wav",
-  lock: "/manus-storage/mixkit-computer-digital-lock-2859_6e99bea6.wav",
-  double: "/manus-storage/mixkit-fast-double-click-on-mouse-275_35c59510.wav",
-  replay: "/manus-storage/mixkit-bonus-earned-in-video-game-2058_6edf4d2a.wav",
-  hover: "/manus-storage/cxsmo-modern-technology-select_c5dbba14.wav",
-  zoom: "/manus-storage/cxsmo-modern-technology-select_c5dbba14.wav",
+  open: "/images/mixkit-opening-software-interface-2578_66a94353.wav",
+  click: "/images/mixkit-interface-device-click-2577_c336aeda.wav",
+  success: "/images/mixkit-quick-positive-video-game-notification-interface-265_b60b25e0.wav",
+  theme: "/images/mixkit-magic-sparkle-whoosh-2350_41bf53fc.wav",
+  shutter: "/images/mixkit-camera-digital-shutter-1432_50c392db.wav",
+  launch: "/images/mixkit-game-bonus-reached-2065_6a20f363.wav",
+  chapter: "/images/mixkit-explainer-video-pops-whoosh-light-pop-3005_c618143d.wav",
+  finish: "/images/mixkit-quick-win-video-game-notification-269_6c476a70.wav",
+  nav: "/images/mixkit-game-click-1114_ccfb20bb.wav",
+  primary: "/images/mixkit-hard-pop-click-2364_776e6480.wav",
+  select: "/images/mixkit-select-click-1109_176ff20b.wav",
+  treasure: "/images/mixkit-video-game-treasure-2066_800e9e65.wav",
+  lock: "/images/mixkit-computer-digital-lock-2859_6e99bea6.wav",
+  double: "/images/mixkit-fast-double-click-on-mouse-275_35c59510.wav",
+  replay: "/images/mixkit-bonus-earned-in-video-game-2058_6edf4d2a.wav",
+  hover: "/images/cxsmo-modern-technology-select_c5dbba14.wav",
+  zoom: "/images/cxsmo-modern-technology-select_c5dbba14.wav",
 };
 const soundVolume: Record<CxsmoSoundCue, number> = { open: .3, click: .23, success: .34, theme: .36, shutter: .3, launch: .46, chapter: .32, finish: .4, nav: .23, primary: .3, select: .24, treasure: .34, lock: .29, double: .2, replay: .38, hover: .27, zoom: .27 };
 const soundCooldown: Partial<Record<CxsmoSoundCue, number>> = { click: 34, nav: 42, select: 38, double: 42, hover: 72, zoom: 72 };
@@ -39,23 +38,14 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
     const now = Date.now();
     if (now - (lastPlayed.current.get(cue) ?? 0) < (soundCooldown[cue] ?? 0)) return;
     lastPlayed.current.set(cue, now);
-    const managedSource = cxsmoManagedMediaUrl(soundSources[cue]);
-    const publicSource = preferCxsmoPublicMedia(managedSource);
-    const audio = new Audio(publicSource);
+    const audio = new Audio(soundSources[cue]);
     audio.volume = soundVolume[cue];
     audio.preload = "auto";
     activeAudio.current.add(audio);
     const cleanup = () => activeAudio.current.delete(audio);
-    const retryManagedSource = () => {
-      if (audio.dataset.cxsmoManagedFallback === "true" || publicSource === managedSource) { cleanup(); return; }
-      audio.dataset.cxsmoManagedFallback = "true";
-      audio.src = managedSource;
-      audio.load();
-      void audio.play().catch(cleanup);
-    };
     audio.addEventListener("ended", cleanup, { once: true });
-    audio.addEventListener("error", retryManagedSource, { once: true });
-    void audio.play().catch(retryManagedSource);
+    audio.addEventListener("error", cleanup, { once: true });
+    void audio.play().catch(cleanup);
   }, []);
   const play = useCallback((cue: CxsmoSoundCue) => { if (enabledRef.current) playRaw(cue); }, [playRaw]);
   const toggle = useCallback(() => { const next = !enabledRef.current; setEnabled(next); if (next) window.setTimeout(() => playRaw("open"), 0); }, [playRaw]);
