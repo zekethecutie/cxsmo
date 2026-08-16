@@ -1,6 +1,6 @@
 # C✦SMO external media workflow
 
-The managed C✦SMO site continues to use its `/manus-storage/...` references as the default. That path is backed by the project’s managed media storage and is not replaced by this export. The portable workflow exists for a GitHub checkout, a local machine, or an external deployment such as Render.
+The GitHub and Render C✦SMO build uses the committed `/images/...` public bundle by default. The original `/manus-storage/...` paths are retained only as a fallback when a public file fails, so external hosting does not depend on Manus media storage.
 
 ## Export the media bundle
 
@@ -25,7 +25,7 @@ pnpm media:prepare
 pnpm build
 ```
 
-The `CXSMO_ALLOW_MISSING_MEDIA=1` flag is intentionally required while `MISSING-SOURCES.md` contains entries. Remove the flag after every source has been recovered. The preparation command writes `client/public/images/` for the external build only; that generated directory is ignored by Git and is not the managed Manus source of truth.
+The `CXSMO_ALLOW_MISSING_MEDIA=1` flag is intentionally required while `MISSING-SOURCES.md` contains entries. Remove the flag after every source has been recovered. The preparation command can refresh `client/public/images/`, which is now Git-tracked as the direct external public bundle.
 
 A Render build command can be:
 
@@ -43,11 +43,11 @@ The repository intentionally keeps the portable archive separate from the manage
 
 ## Git and large files
 
-The current complete export is approximately 40 MB. It is committed under `client/public/images/` for direct GitHub checkout access and is also delivered as a versioned GitHub Release archive for one-file external deployment. The manifest and generated allowlist remain in Git so every external deployment can verify which media files are present.
+The current complete export is approximately 47 MB. It is committed under `client/public/images/` for direct GitHub checkout access and is also delivered as a versioned GitHub Release archive for one-file external deployment. The manifest and generated allowlist remain in Git so every external deployment can verify which media files are present.
 
 ## Current archive status
 
-The current **v2** C✦SMO portable archive contains all **57 active C✦SMO media references**—campaign imagery, product renders, fit crops, cursor art, and sound effects—with no missing active source records. Archived KINFORM/KNIALL and test-only references are intentionally outside the current C✦SMO export scope.
+The current C✦SMO public bundle contains **89 active files**: 57 recovered managed references plus 32 directly supplied studio, album, and numbered-catalogue assets. This covers campaign imagery, product renders, fit crops, cursor art, and sound effects, with no missing active source records. Archived KINFORM/KNIALL and test-only references are intentionally outside the current C✦SMO export scope.
 
 ## Future recovery handling
 

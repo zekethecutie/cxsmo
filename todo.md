@@ -385,3 +385,8 @@
 - [x] Diagnose the Render deployment logs and active site to identify why Git-tracked C✦SMO images and sounds are not resolving.
 - [x] Make `/images/...` the automatic external-host media default while retaining managed storage only as a Manus-host fallback.
 - [x] Validate static image/audio serving, document the Render environment warnings, and synchronize the repair to GitHub.
+
+- [x] Replace the Fit Edits “Wear it your loud” campaign image with the supplied C✦SMO studio photo.
+- [x] Extract, label, and add clearly identifiable numbered supplied clothing, accessory, and cosmetic renders to the C✦SMO inventory without inventing ambiguous product details.
+- [x] Revise Fit Edits gallery crops to preserve fuller styling context and adjacent-piece visibility without cutting off the main model fit.
+- [x] Copy all new supplied media to `client/public/images/`, validate Render-ready paths and responsive views, and synchronize the expanded catalogue to GitHub.

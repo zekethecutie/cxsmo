@@ -3,7 +3,7 @@ import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct } fro
 
 describe("C✦SMO portfolio catalogue", () => {
   it("keeps unique, route-ready fictional products", () => {
-    expect(cxsmoProducts).toHaveLength(19);
+    expect(cxsmoProducts).toHaveLength(47);
     expect(new Set(cxsmoProducts.map((product) => product.id)).size).toBe(cxsmoProducts.length);
     expect(getCxsmoProduct("gravity-01").name).toBe("Gravity Puddle Jean");
     expect(getCxsmoProduct("bluestar-09").name).toBe("Bluestar C✦SMO Jersey");
@@ -15,6 +15,8 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(getCxsmoProduct("silver-crown-case-17").name).toBe("Silver Crown Crimson Sling Bag");
     expect(getCxsmoProduct("stellar-cargo-18").name).toBe("Stellar Cargo Pants");
     expect(getCxsmoProduct("loud-enough-shirt-19").name).toBe("LOUD ENOUGH Longsleeve");
+    expect(getCxsmoProduct("core-tee-40").name).toBe("Core Oval Tee");
+    expect(getCxsmoProduct("lunar-visor-67").name).toBe("Lunar Visor");
     expect(getCxsmoProduct("missing-product").id).toBe("gravity-01");
   });
 
@@ -38,5 +40,7 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(getCxsmoProduct("silver-crown-case-17").category).toBe("Lifestyle");
     expect(getCxsmoProduct("loud-enough-shirt-19").image).toBe("/images/cxsmo-loud-enough-y2k-shirt-alpha_a1936a15.png");
     expect(getCxsmoProduct("loud-enough-shirt-19").category).toBe("Graphics");
+    expect(getCxsmoProduct("starburst-knit-41").image).toBe("/images/cxsmo-catalogue-10-starburst-knit.png");
+    expect(getCxsmoProduct("lunar-visor-67").image).toBe("/images/cxsmo-catalogue-39-lunar-visor.png");
   });
 });
