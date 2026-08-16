@@ -380,4 +380,4 @@
 
 - [x] Remove the C✦SMO copy-prompt/editorial prompt surface from the public site footer or nearby public-facing sections.
 - [x] Propose, implement, and validate a more deliberate mobile-only C✦SMO hero composition without changing the approved desktop presentation.
-- [ ] Copy all 57 active C✦SMO media files into the requested Git-tracked `client/public/images/` directory and synchronize the complete source and media directory to GitHub.
+- [x] Copy all 57 active C✦SMO media files into the requested Git-tracked `client/public/images/` directory and synchronize the complete source and media directory to GitHub.
