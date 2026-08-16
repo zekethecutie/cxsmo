@@ -390,3 +390,8 @@
 - [x] Extract, label, and add clearly identifiable numbered supplied clothing, accessory, and cosmetic renders to the C✦SMO inventory without inventing ambiguous product details.
 - [x] Revise Fit Edits gallery crops to preserve fuller styling context and adjacent-piece visibility without cutting off the main model fit.
 - [x] Copy all new supplied media to `client/public/images/`, validate Render-ready paths and responsive views, and synchronize the expanded catalogue to GitHub.
+
+- [x] Replace rectangular numbered-sheet crops with clean item-aware masked silhouettes that remove labels, neighboring products, and sheet artifacts while retaining accurate garment contours.
+- [x] Add the supplied mens fit sheet as a full-context Fit Edits album and crop its individual models with complete silhouettes.
+- [x] Map and add clearly identifiable newly supplied numbered pieces to the catalogue, including clean public image paths and non-ambiguous descriptions.
+- [x] Validate corrected catalogue media at desktop and mobile, run regression/Render checks, and synchronize all corrected images and records to GitHub.

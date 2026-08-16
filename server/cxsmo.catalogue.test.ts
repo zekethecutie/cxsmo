@@ -3,7 +3,7 @@ import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct } fro
 
 describe("C✦SMO portfolio catalogue", () => {
   it("keeps unique, route-ready fictional products", () => {
-    expect(cxsmoProducts).toHaveLength(47);
+    expect(cxsmoProducts).toHaveLength(62);
     expect(new Set(cxsmoProducts.map((product) => product.id)).size).toBe(cxsmoProducts.length);
     expect(getCxsmoProduct("gravity-01").name).toBe("Gravity Puddle Jean");
     expect(getCxsmoProduct("bluestar-09").name).toBe("Bluestar C✦SMO Jersey");
@@ -17,6 +17,8 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(getCxsmoProduct("loud-enough-shirt-19").name).toBe("LOUD ENOUGH Longsleeve");
     expect(getCxsmoProduct("core-tee-40").name).toBe("Core Oval Tee");
     expect(getCxsmoProduct("lunar-visor-67").name).toBe("Lunar Visor");
+    expect(getCxsmoProduct("chain-star-moto-77").name).toBe("Chain Star Moto");
+    expect(getCxsmoProduct("star-chain-cargo-82").name).toBe("Star Chain Cargo");
     expect(getCxsmoProduct("missing-product").id).toBe("gravity-01");
   });
 

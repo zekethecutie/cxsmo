@@ -100,3 +100,9 @@ The shared resolver now selects `/images/<basename>` automatically for known com
 The Fit Edits “Wear it your loud” campaign now uses the supplied two-model studio photo. The supplied eight-look fit album is presented as two wide contextual frames so the surrounding pieces stay legible rather than being forced into a narrow isolated crop. The individual Fit Edits cards retain full-outfit framing with a smaller hover scale and a reserved text band.
 
 Twenty-eight clearly numbered apparel, footwear, accessories, and lifestyle renders were cropped from the supplied sheets and added to the catalogue alongside the supplied studio and album media. The C✦SMO catalogue now contains 47 items and the Git-tracked public bundle contains 89 files. TypeScript, all 58 active tests, and a production-like build passed; HTTP checks returned `200 OK` for the new studio campaign, top album frame, and Lunar Visor render under `/images/`.
+
+## 2026-08-16 — clean silhouette and mens fit correction
+
+The poor rectangular contact-sheet crops were replaced with item-aware transparent silhouettes. The reusable `build_smart_silhouettes.py` process removes the sheet background, strips the visual number labels and neighboring-product bleed, normalizes the isolated subject onto a padded 1200×1500 transparent canvas, and uses high-quality Lanczos resampling for consistent storefront scale. Fifteen additional clean product cutouts were created from the new mens reference sheet, and the catalogue expanded to 62 distinct objects.
+
+The supplied mens sheet is now retained both as a full-context Fit Edits album and as ten full-figure individual cards, rather than collapsing the looks into overly tight crops. The Git-tracked public bundle now contains 115 active files. Desktop and mobile visual checks, TypeScript, 58 active tests, production build, and direct `/images/` HTTP checks passed.

@@ -9,6 +9,7 @@ sheet_09_16 = UPLOAD / 'ChatGPTImageAug16,2026,04_38_29PM.png'
 sheet_17_36 = UPLOAD / 'ChatGPTImageAug16,2026,04_43_05PM(2).png'
 studio_campaign = UPLOAD / 'ChatGPTImageAug16,2026,04_56_39PM.png'
 fit_album = UPLOAD / 'ChatGPTImageAug16,2026,04_45_51PM.png'
+mens_fit_album = UPLOAD / 'ChatGPTImageAug16,2026,05_03_34PM.png'
 
 crop_specs = [
     (sheet_09_16, 'cxsmo-catalogue-09-core-tee.png', (32, 36, 426, 488)),
@@ -60,7 +61,22 @@ def main() -> None:
     copy_full(fit_album, 'cxsmo-fit-edits-album-01.png')
     export_crop(fit_album, 'cxsmo-fit-edits-album-top.png', (0, 0, 1024, 760))
     export_crop(fit_album, 'cxsmo-fit-edits-album-bottom.png', (0, 735, 1024, 1536))
-    print(f'Prepared {len(crop_specs) + 4} C✦SMO public assets in {PUBLIC}')
+    copy_full(mens_fit_album, 'cxsmo-fit-edits-mens-album-02.png')
+    mens_crops = [
+        ('cxsmo-fit-men-06-overshirt.png', (42, 0, 308, 512)),
+        ('cxsmo-fit-men-07-white-hood.png', (296, 0, 616, 512)),
+        ('cxsmo-fit-men-08-star-tank.png', (598, 0, 926, 512)),
+        ('cxsmo-fit-men-09-washed-hood.png', (900, 0, 1234, 512)),
+        ('cxsmo-fit-men-10-contrast-track.png', (1216, 0, 1536, 512)),
+        ('cxsmo-fit-men-11-flame-sleeve.png', (42, 500, 308, 1024)),
+        ('cxsmo-fit-men-12-washed-knit.png', (290, 500, 618, 1024)),
+        ('cxsmo-fit-men-13-layered-hood.png', (594, 500, 930, 1024)),
+        ('cxsmo-fit-men-14-charcoal-cargo.png', (898, 500, 1232, 1024)),
+        ('cxsmo-fit-men-15-moto-layer.png', (1208, 500, 1536, 1024)),
+    ]
+    for output_name, box in mens_crops:
+        export_crop(mens_fit_album, output_name, box)
+    print(f'Prepared {len(crop_specs) + 15} C✦SMO public assets in {PUBLIC}')
 
 
 if __name__ == '__main__':
