@@ -431,4 +431,4 @@
 - [x] Replace the intrusive image-overlay event marker with a deliberate product-card promotion and price-treatment hierarchy that remains readable, image-safe, and explicitly portfolio-simulated.
 - [x] Keep the feedback interface populated only by browser-local visitor input or honest empty states while completing the requested visual system.
 - [x] Repair Star Ruched Top without erasing its right sleeve; repair Bolt Raglan with its full long sleeves; restore the Midnight Star Sweatpant lower-right pooled hem/detail; and remove the false centre hole from the solo Stellar Cargo Pants image using source-specific treatment.
-- [ ] Validate masks, desktop/mobile Fit Edits composition, event hierarchy, local participation controls, tests, production build, checkpoint, and GitHub synchronization.
+- [x] Validate masks, desktop/mobile Fit Edits composition, event hierarchy, local participation controls, tests, production build, checkpoint, and GitHub synchronization.
