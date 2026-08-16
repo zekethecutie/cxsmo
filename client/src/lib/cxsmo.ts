@@ -1,3 +1,5 @@
+import { preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
+
 export type CxsmoProduct = {
   id: string;
   drop: string;
@@ -13,7 +15,7 @@ export type CxsmoProduct = {
 
 export const cxsmoCategories = ["All", "New drop", "Denim", "Bottoms", "Graphics", "Outerwear", "Tailoring", "Accessories", "Footwear", "Beauty", "Lifestyle"] as const;
 
-export const cxsmoProducts: CxsmoProduct[] = [
+const cxsmoProductSource: CxsmoProduct[] = [
   { id: "gravity-01", drop: "01", name: "Gravity Puddle Jean", category: "Denim", color: "Static Grey", price: 184, image: "/manus-storage/cxsmo-gravity-jean-v3_abb22ebf.png", description: "Low-slung volume, a long break, and a washed graphite surface that catches light in motion.", fit: "Ultra-relaxed, puddle-length leg", details: ["12.5 oz washed denim", "Curved outseam", "Chrome star-loop charm"] },
   { id: "orbit-02", drop: "02", name: "Orbit Ringer Tee", category: "Graphics", color: "Milk / Ink", price: 76, image: "/manus-storage/cxsmo-orbit-tee-v3_20bdb89a.png", description: "A close-but-not-tight ringer tee with a small orbital star print and soft, worn-in ribbing.", fit: "Fitted shoulder, easy body", details: ["Cotton rib jersey", "Contrast binding", "Original star-orbit graphic"] },
   { id: "starlight-03", drop: "03", name: "Starlight Moto Shell", category: "Outerwear", color: "Night Chrome", price: 268, image: "/manus-storage/cxsmo-starlight-shell-alpha-fallback_a7406211.png", description: "A boxy outer layer made to sit over a tiny tee or a full jersey stack, with a reflective edge flash.", fit: "Cropped, relaxed shoulder", details: ["Water-resistant shell", "Polished zip pull", "Removable star patch"] },
@@ -34,6 +36,8 @@ export const cxsmoProducts: CxsmoProduct[] = [
   { id: "stellar-cargo-18", drop: "18", name: "Stellar Cargo Pants", category: "Bottoms", color: "Pearl / Chrome", price: 196, image: "/manus-storage/ChatGPTImageAug15,2026,05_23_24PM_0e3d74d4.png", description: "A high-volume pearl cargo with polished hardware, articulated pockets, and star-shaped details that keep the silhouette sharp from every angle.", fit: "Ultra-relaxed cargo leg, adjustable hem", details: ["Technical pearl nylon study", "Layered utility pockets", "Adjustable bungee cuffs"] },
   { id: "loud-enough-shirt-19", drop: "19", name: "LOUD ENOUGH Longsleeve", category: "Graphics", color: "Ink / Signal Red", price: 128, image: "/manus-storage/cxsmo-loud-enough-y2k-shirt-alpha_a1936a15.png", description: "A sharp graphic long sleeve with a high-contrast C✦SMO print and close-cut base layer fit for building beneath a wide silhouette.", fit: "Fitted base layer, long sleeve", details: ["Transparent graphic-object render", "High-contrast front artwork", "Cuff-length sleeve profile"] },
 ];
+
+export const cxsmoProducts: CxsmoProduct[] = cxsmoProductSource.map((product) => ({ ...product, image: preferCxsmoPublicMedia(product.image) }));
 
 export const getCxsmoProduct = (id?: string) => cxsmoProducts.find((product) => product.id === id) ?? cxsmoProducts[0];
 
