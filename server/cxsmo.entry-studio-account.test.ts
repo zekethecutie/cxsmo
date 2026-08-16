@@ -210,8 +210,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 		expect(fitCarousel).toContain("Back to Saved Fits");
 		expect(fitCarousel).toContain("Available listed pairing");
 		expect(account).toContain('&from=saved-fits');
-		expect(fitCarousel).toContain("Render not yet supplied / not shoppable");
-		expect(fitCarousel).toContain("Copy the mockup prompt");
+			expect(fitCarousel).toContain("Render not yet supplied / not shoppable");
+			expect(fitCarousel).not.toContain("Copy the mockup prompt");
 		expect(fitCarousel).toContain("createPortal");
 		expect(fitCarousel).toContain("Shop links only lead to categories that are presently listed in the C✦SMO catalogue");
 		expect(fitCarousel).toContain("does not fabricate product reviews, ratings, comments, or customer stories");
@@ -220,6 +220,8 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 		expect(fitLibraryStyle).toContain("grid-template-rows:minmax(0,min(42svh,340px)) auto");
 		expect(account).toContain('href={`/cxsmo/edits?fit=${encodeURIComponent(fit.index)}&from=saved-fits`}');
 		expect(productDetail).toContain("cxsmo-product-fit-links");
-		expect(fitLibraryStyle).toContain("@media (max-width:760px)");
+			expect(fitLibraryStyle).toContain("@media (max-width:760px)");
+			expect(poster).toContain("poster-hero__mobile-meta");
+			expect(mobileNative).toContain("poster-hero__mobile-meta");
 	});
 });

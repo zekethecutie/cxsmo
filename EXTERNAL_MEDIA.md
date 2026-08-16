@@ -12,7 +12,7 @@ pnpm media:export
 
 This scans active client references, searches the configured local source roots, creates an external `cxsmo-portable-media/` bundle, and writes its manifest plus a generated recoverable-filename allowlist into the source tree. The external bundle is packaged as a GitHub Release asset rather than committed inside the publishable project directory. Each manifest record includes the managed reference, portable path, stable public image path, source path, MIME type, byte count, SHA-256 digest, and copy status. `MISSING-SOURCES.md` lists active references whose original local file is not present in the current workspace.
 
-The exporter uses explicit aliases for source files whose local names differ from their managed hashed names, including the current WebP product renders and technology-select sound. It records unavailable historical or previously uploaded source files rather than inventing replacements. The generated allowlist is intentionally small and Git-tracked; the actual large media archive is delivered through the repository release.
+The exporter uses explicit aliases for source files whose local names differ from their managed hashed names, including the current WebP product renders and technology-select sound. The generated allowlist is Git-tracked, and the complete current active asset set is also committed directly in `client/public/images/` as requested. The release archive remains available as a single download for external deployments.
 
 At runtime, C✦SMO checks the generated recoverable-filename allowlist. The managed site always uses `/manus-storage/<filename>`. An external deployment opts into `/images/<filename>` by setting `VITE_CXSMO_USE_PORTABLE_MEDIA=true` only after extracting the release archive and preparing its checkout. Files absent from the allowlist remain on their original managed URL, and public-image load failures restore the managed URL automatically.
 
@@ -43,7 +43,7 @@ The repository intentionally keeps the portable archive separate from the manage
 
 ## Git and large files
 
-The current recovered export is approximately 19 MB. It is delivered as a versioned GitHub Release archive because the project publisher rejects large binary files in the source tree. The manifest and generated allowlist remain in Git so every external deployment can verify which media files are present and which are still missing.
+The current complete export is approximately 40 MB. It is committed under `client/public/images/` for direct GitHub checkout access and is also delivered as a versioned GitHub Release archive for one-file external deployment. The manifest and generated allowlist remain in Git so every external deployment can verify which media files are present.
 
 ## Current archive status
 

@@ -115,5 +115,4 @@ client/public/__manus__/version.json
 
 # Generated external-deployment media staging and portable release working files
 client/public/manus-storage/
-client/public/images/
 portable-media/

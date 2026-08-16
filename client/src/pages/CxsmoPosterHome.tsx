@@ -43,6 +43,7 @@ export function CxsmoPosterHome() {
       <div className="poster-hero__pixel-lattice" aria-hidden="true" />
       <motion.div className="poster-hero__backword" style={{ x: heroWordX, y: heroWordY }}>C✦SMO</motion.div>
       <div className="poster-hero__red-frame" aria-hidden="true" />
+      <div className="poster-hero__mobile-meta"><span>CAMPAIGN / 01</span><span>STATIC BLOOM</span></div>
       <motion.div className="poster-hero__object-layer poster-hero__object-layer--campaign" style={{ y: heroObjectY, rotate: heroObjectRotate }}>
         <img src={hero.assetUrl} alt={hero.assetAlt} />
       </motion.div>

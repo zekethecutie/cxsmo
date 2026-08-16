@@ -377,3 +377,7 @@
 - [x] Replace checkpoint-blocking duplicate binaries in the publishable C✦SMO project tree with a repository-safe portable media archive and manifest handoff that does not require the user to upload files manually.
 - [x] Preserve managed media URLs in the live site while documenting how a GitHub checkout or external host obtains the recoverable portable asset archive.
 - [x] Validate clean checkpoint readiness, TypeScript, tests, production build, and GitHub handoff after removing local binary duplicates.
+
+- [x] Remove the C✦SMO copy-prompt/editorial prompt surface from the public site footer or nearby public-facing sections.
+- [x] Propose, implement, and validate a more deliberate mobile-only C✦SMO hero composition without changing the approved desktop presentation.
+- [ ] Copy all 57 active C✦SMO media files into the requested Git-tracked `client/public/images/` directory and synchronize the complete source and media directory to GitHub.
