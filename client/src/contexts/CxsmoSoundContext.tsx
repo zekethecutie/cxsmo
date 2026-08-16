@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { cxsmoManagedMediaUrl, preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
 
 export type CxsmoSoundCue = "open" | "click" | "success" | "theme" | "shutter" | "launch" | "chapter" | "finish" | "nav" | "primary" | "select" | "treasure" | "lock" | "double" | "replay" | "hover" | "zoom";
 type SoundContextValue = { enabled: boolean; toggle: () => void; play: (cue: CxsmoSoundCue) => void };
@@ -23,22 +24,38 @@ const soundSources: Record<CxsmoSoundCue, string> = {
   zoom: "/manus-storage/cxsmo-modern-technology-select_c5dbba14.wav",
 };
 const soundVolume: Record<CxsmoSoundCue, number> = { open: .3, click: .23, success: .34, theme: .36, shutter: .3, launch: .46, chapter: .32, finish: .4, nav: .23, primary: .3, select: .24, treasure: .34, lock: .29, double: .2, replay: .38, hover: .27, zoom: .27 };
+const soundCooldown: Partial<Record<CxsmoSoundCue, number>> = { click: 34, nav: 42, select: 38, double: 42, hover: 72, zoom: 72 };
 const soundStorageKey = "cxsmo-sound-enabled";
 const CxsmoSoundContext = createContext<SoundContextValue | undefined>(undefined);
 
 export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
   const [enabled, setEnabled] = useState(() => { const stored = window.localStorage.getItem(soundStorageKey); return stored === null ? true : stored === "true"; });
   const enabledRef = useRef(enabled);
-  const lastPlayed = useRef(0);
+  const lastPlayed = useRef(new Map<CxsmoSoundCue, number>());
+  const activeAudio = useRef(new Set<HTMLAudioElement>());
   const hoverTargets = useRef(new WeakMap<HTMLElement, number>());
   useEffect(() => { enabledRef.current = enabled; window.localStorage.setItem(soundStorageKey, String(enabled)); }, [enabled]);
   const playRaw = useCallback((cue: CxsmoSoundCue) => {
     const now = Date.now();
-    if (["click", "nav", "select", "double", "hover"].includes(cue) && now - lastPlayed.current < 80) return;
-    lastPlayed.current = now;
-    const audio = new Audio(soundSources[cue]);
+    if (now - (lastPlayed.current.get(cue) ?? 0) < (soundCooldown[cue] ?? 0)) return;
+    lastPlayed.current.set(cue, now);
+    const managedSource = cxsmoManagedMediaUrl(soundSources[cue]);
+    const publicSource = preferCxsmoPublicMedia(managedSource);
+    const audio = new Audio(publicSource);
     audio.volume = soundVolume[cue];
-    void audio.play().catch(() => undefined);
+    audio.preload = "auto";
+    activeAudio.current.add(audio);
+    const cleanup = () => activeAudio.current.delete(audio);
+    const retryManagedSource = () => {
+      if (audio.dataset.cxsmoManagedFallback === "true" || publicSource === managedSource) { cleanup(); return; }
+      audio.dataset.cxsmoManagedFallback = "true";
+      audio.src = managedSource;
+      audio.load();
+      void audio.play().catch(cleanup);
+    };
+    audio.addEventListener("ended", cleanup, { once: true });
+    audio.addEventListener("error", retryManagedSource, { once: true });
+    void audio.play().catch(retryManagedSource);
   }, []);
   const play = useCallback((cue: CxsmoSoundCue) => { if (enabledRef.current) playRaw(cue); }, [playRaw]);
   const toggle = useCallback(() => { const next = !enabledRef.current; setEnabled(next); if (next) window.setTimeout(() => playRaw("open"), 0); }, [playRaw]);
@@ -63,7 +80,7 @@ export function CxsmoSoundProvider({ children }: { children: ReactNode }) {
       const element = event.target instanceof Element ? event.target.closest<HTMLElement>("button, a, [data-cxsmo-hover-sound]") : null;
       if (!element || element.closest("[data-cxsmo-hover-silent]") || !element.closest(".cxsmo-site, .cxsmo-entry")) return;
       const now = Date.now();
-      if (now - (hoverTargets.current.get(element) ?? 0) < 340) return;
+      if (now - (hoverTargets.current.get(element) ?? 0) < 110) return;
       hoverTargets.current.set(element, now);
       const explicit = element.dataset.cxsmoHoverSound as CxsmoSoundCue | undefined;
       play(explicit && explicit in soundSources ? explicit : "hover");

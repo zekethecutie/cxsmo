@@ -359,3 +359,21 @@
 - [x] Add a Back to Saved Fits control from each query-opened Fit Edits breakdown when a visitor enters from the Saved Fits account route.
 - [x] Add only complete-look bundle actions that contain verified currently listed catalogue products, with clear portfolio-safe local-bag behaviour and no claim that planned editorial garments are purchasable.
 - [x] Validate the rebuilt phone hero, Saved Fits return navigation, truthful bundle actions, responsive states, regression suite, production build, checkpoint, and GitHub synchronization.
+
+- [x] Create a tracked portable-media export for C✦SMO hero images, product/mockup renders, fit crops, and sound resources so a GitHub checkout can deploy the same media outside Manus.
+- [x] Add a versioned media manifest with local paths, deployed URLs, MIME types, byte sizes, and SHA-256 hashes, plus a reproducible export/update script.
+- [x] Preserve the current Manus deployment-safe media references while documenting the external-deployment preparation command and local fallback paths.
+- [x] Audit Git-tracked media size and external-hosting constraints, then validate a clean checkout/build with portable media resolution before checkpointing and synchronizing GitHub.
+- [ ] Recover or receive the 29 currently referenced managed-media sources that are not present in the restored local workspace before claiming the external bundle is complete.
+
+- [x] Add a Git-tracked `client/public/images/` bundle containing recoverable C✦SMO photos, product renders, fit crops, sounds, and other website resources.
+- [x] Update the portable-media workflow to populate `client/public/images/` with stable local paths while preserving managed `/manus-storage/` references as the default.
+- [x] Validate the tracked media bundle with TypeScript, tests, production build, and a clean external-media preparation path.
+
+- [x] Route recoverable C✦SMO media through the Git-tracked `/images/...` public bundle when available, with managed media retained as the fallback for unrecovered files.
+- [x] Replace queued interaction-audio playback with independent, low-latency sound instances that can overlap safely and respond immediately to eligible hover, press, and feedback events.
+- [x] Add regression coverage and validate media resolution, concurrent audio behavior, TypeScript, tests, and production build.
+
+- [x] Replace checkpoint-blocking duplicate binaries in the publishable C✦SMO project tree with a repository-safe portable media archive and manifest handoff that does not require the user to upload files manually.
+- [x] Preserve managed media URLs in the live site while documenting how a GitHub checkout or external host obtains the recoverable portable asset archive.
+- [x] Validate clean checkpoint readiness, TypeScript, tests, production build, and GitHub handoff after removing local binary duplicates.

@@ -68,3 +68,17 @@ The direct 375px `?fit=M / 01` viewport check now succeeds. It opens the exact *
 ## 2026-08-15 — Phone hero reset and listed-pairing bundle
 
 The rebuilt 375px `/cxsmo` hero now uses one contained horizontal campaign panel, separate copy beneath it, and an even two-action row. It no longer attempts to position the campaign object, headline, and controls inside a compressed desktop poster field. The Saved Fits-origin `M / 05` breakdown presents two verified current products—Silver Crown Crimson Sling Bag and BLXCK UNIV3RSE Pants—and makes the **Available listed pairing** action explicit. Planned garments are excluded by the on-screen disclosure.
+
+## 2026-08-15 — Portable media export workflow
+
+The recovered workspace now has a reproducible `pnpm media:export` workflow that scans 70 active `/manus-storage` references, copies 41 locally recoverable image, fit-crop, product, and sound resources into `portable-media/manus-storage/`, and writes `portable-media/manifest.json` with source paths, MIME types, byte counts, and SHA-256 hashes. The export totals 19,734,868 bytes.
+
+`CXSMO_ALLOW_MISSING_MEDIA=1 pnpm media:prepare` successfully stages those 41 files at the exact `/manus-storage/...` paths expected by an external Render or local build. With the generated staging present, `pnpm check`, the full suite, and `pnpm build` all succeed: 56 tests pass with 1 skipped. The generated `client/public/manus-storage/` directory is removed after validation and ignored by Git.
+
+Twenty-nine active managed-media references remain explicitly listed in `portable-media/MISSING-SOURCES.md` because their original local files are absent from the restored workspace. No replacement files were fabricated; the external bundle is therefore documented as partial until those originals are supplied.
+
+## 2026-08-16 — Public-media runtime and audio-layer follow-up
+
+The runtime now uses the generated recoverable filename allowlist to serve copied C✦SMO imagery and sound effects from `/images/<filename>`. It leaves unrecovered historical references on their managed `/manus-storage/<filename>` paths, and image requests revert to the managed URL if a copied public file fails. A direct local probe returned HTTP 200 with `image/png` for the recoverable Mercury Orbit Belt public asset, while the newer campaign hero remains intentionally outside the public allowlist because its original source is absent.
+
+The sound layer no longer uses one shared timestamp that suppresses different cues in sequence. It creates independent audio instances, retains small per-cue throttles and per-element hover cooldowns to prevent an audio storm, reduces hover response delay to 110 ms, and supports a managed-source retry if a copied sound file is unavailable. TypeScript, 58 active tests with 1 skipped, and the production build all pass.
