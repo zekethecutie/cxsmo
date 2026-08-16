@@ -88,3 +88,9 @@ The sound layer no longer uses one shared timestamp that suppresses different cu
 The previously unavailable active C✦SMO media was recovered from the running managed project endpoint into the external archive. The exporter now excludes only archived KINFORM/KNIALL and test-only references, leaving a complete active C✦SMO manifest of **57 references, 57 copied assets, and 0 missing sources**. The completed bundle contains 39,907,813 bytes of media and is packaged as `cxsmo-portable-media-v2.zip` for repository release distribution.
 
 Strict external validation succeeds without `CXSMO_ALLOW_MISSING_MEDIA`: `pnpm media:prepare` stages all 57 files, `VITE_CXSMO_USE_PORTABLE_MEDIA=true pnpm build` completes, and the generated `client/public/images/` plus `dist/` output are removed again before checkpointing. The live project retains managed `/manus-storage` URLs by default, while external hosts can opt into the completed archive.
+
+## 2026-08-16 — Render public-media repair
+
+The Render deployment at the time of investigation was serving commit `b2d07c0`, whose client still emitted `/manus-storage/...` paths unless an external flag was supplied. Render cannot access those project-private paths, so images and audio failed despite the 57 files being committed to `client/public/images/`.
+
+The shared resolver now selects `/images/<basename>` automatically for known committed C✦SMO media. Catalogue products, product overrides, published hero content, Fit Edits crops, static campaign media, and independent audio cues all use the same public-first resolver; managed paths are retry-only fallbacks. A production-like build copied all 57 files into `dist/public/images/`, and direct HTTP checks returned `200 OK` for both the campaign WebP and technology-select WAV. TypeScript and 58 tests passed with 1 skipped. `RENDER_DEPLOYMENT.md` records the no-secret Render build and start commands; the missing OAuth URL log is unrelated to static media.

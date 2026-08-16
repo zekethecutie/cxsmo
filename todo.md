@@ -384,4 +384,4 @@
 
 - [x] Diagnose the Render deployment logs and active site to identify why Git-tracked C✦SMO images and sounds are not resolving.
 - [x] Make `/images/...` the automatic external-host media default while retaining managed storage only as a Manus-host fallback.
-- [ ] Validate static image/audio serving, document the Render environment warnings, and synchronize the repair to GitHub.
+- [x] Validate static image/audio serving, document the Render environment warnings, and synchronize the repair to GitHub.
