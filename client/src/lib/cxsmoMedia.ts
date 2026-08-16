@@ -3,7 +3,7 @@ import { cxsmoPublicMediaBasenames } from "@/lib/cxsmoPublicMedia.generated";
 const managedPrefix = "/manus-storage/";
 const publicPrefix = "/images/";
 const publicMediaBasenames = new Set<string>(cxsmoPublicMediaBasenames);
-const usePortableMedia = import.meta.env.VITE_CXSMO_USE_PORTABLE_MEDIA === "true";
+const usePublicMedia = import.meta.env.VITE_CXSMO_USE_MANAGED_MEDIA !== "true";
 
 function mediaFilename(source: string) {
   return source.slice(managedPrefix.length).split("/").at(-1);
@@ -31,10 +31,10 @@ export function cxsmoManagedMediaUrl(source: string) {
 }
 
 /**
- * C✦SMO's external archive deliberately mirrors managed basenames. Managed
- * storage remains the production default; an external host opts into `/images`
- * only after installing the archive and setting VITE_CXSMO_USE_PORTABLE_MEDIA.
+ * C✦SMO's committed public bundle mirrors managed basenames. Git and external
+ * hosts use `/images` automatically; managed storage is only an explicit
+ * fallback or an opt-in development override.
  */
 export function preferCxsmoPublicMedia(source: string) {
-  return usePortableMedia && hasCxsmoPublicMedia(source) ? cxsmoPublicMediaUrl(source) : source;
+  return usePublicMedia && hasCxsmoPublicMedia(source) ? cxsmoPublicMediaUrl(source) : source;
 }

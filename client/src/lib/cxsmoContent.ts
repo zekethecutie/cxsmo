@@ -1,5 +1,6 @@
 import { trpc } from "@/lib/trpc";
 import type { CxsmoProduct } from "@/lib/cxsmo";
+import { preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
 
 export type CxsmoHeroContent = {
   eyebrow: string;
@@ -60,8 +61,9 @@ export function useCxsmoPublishedContent() {
   const find = (contentKey: string) => contentQuery.data?.find((entry) => entry.contentKey === contentKey)?.payload;
   const lookbookPayload = objectPayload<{ cards: CxsmoLookbookCard[] }>(find("lookbook") ?? "", { cards: defaultCxsmoLookbook });
   const productOverrides = Object.fromEntries((contentQuery.data ?? []).filter((entry) => entry.contentKey.startsWith("product.")).map((entry) => [entry.contentKey.replace("product.", ""), objectPayload<CxsmoProductOverride>(entry.payload, {})]));
+  const hero = objectPayload(find("hero") ?? "", defaultCxsmoHero);
   return {
-    hero: objectPayload(find("hero") ?? "", defaultCxsmoHero),
+    hero: { ...hero, assetUrl: preferCxsmoPublicMedia(hero.assetUrl) },
     promotion: objectPayload(find("promotion") ?? "", defaultCxsmoPromotion),
     global: objectPayload(find("global") ?? "", defaultCxsmoGlobal),
     lookbook: lookbookPayload.cards,
@@ -71,5 +73,6 @@ export function useCxsmoPublishedContent() {
 }
 
 export function resolveCxsmoProduct(product: CxsmoProduct, override?: CxsmoProductOverride): CxsmoProduct {
-  return override ? { ...product, ...override } : product;
+  const resolved = override ? { ...product, ...override } : product;
+  return { ...resolved, image: preferCxsmoPublicMedia(resolved.image) };
 }

@@ -381,3 +381,7 @@
 - [x] Remove the C✦SMO copy-prompt/editorial prompt surface from the public site footer or nearby public-facing sections.
 - [x] Propose, implement, and validate a more deliberate mobile-only C✦SMO hero composition without changing the approved desktop presentation.
 - [x] Copy all 57 active C✦SMO media files into the requested Git-tracked `client/public/images/` directory and synchronize the complete source and media directory to GitHub.
+
+- [x] Diagnose the Render deployment logs and active site to identify why Git-tracked C✦SMO images and sounds are not resolving.
+- [x] Make `/images/...` the automatic external-host media default while retaining managed storage only as a Manus-host fallback.
+- [ ] Validate static image/audio serving, document the Render environment warnings, and synchronize the repair to GitHub.

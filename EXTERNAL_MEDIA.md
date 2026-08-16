@@ -14,15 +14,15 @@ This scans active client references, searches the configured local source roots,
 
 The exporter uses explicit aliases for source files whose local names differ from their managed hashed names, including the current WebP product renders and technology-select sound. The generated allowlist is Git-tracked, and the complete current active asset set is also committed directly in `client/public/images/` as requested. The release archive remains available as a single download for external deployments.
 
-At runtime, C✦SMO checks the generated recoverable-filename allowlist. The managed site always uses `/manus-storage/<filename>`. An external deployment opts into `/images/<filename>` by setting `VITE_CXSMO_USE_PORTABLE_MEDIA=true` only after extracting the release archive and preparing its checkout. Files absent from the allowlist remain on their original managed URL, and public-image load failures restore the managed URL automatically.
+At runtime, C✦SMO checks the generated recoverable-filename allowlist and automatically uses `/images/<filename>` for every matching committed public asset. This is the standard GitHub, local, and Render behavior; `VITE_CXSMO_USE_MANAGED_MEDIA=true` is the only opt-in override for an environment that intentionally wants managed storage first. Public-image load failures restore the managed URL automatically.
 
 ## Prepare a local or Render build
 
 For an external checkout, download and extract the matching `cxsmo-portable-media` GitHub Release archive beside the project directory. Then stage the recovered files under `client/public/images/`:
 
 ```bash
-CXSMO_ALLOW_MISSING_MEDIA=1 pnpm media:prepare
-VITE_CXSMO_USE_PORTABLE_MEDIA=true pnpm build
+pnpm media:prepare
+pnpm build
 ```
 
 The `CXSMO_ALLOW_MISSING_MEDIA=1` flag is intentionally required while `MISSING-SOURCES.md` contains entries. Remove the flag after every source has been recovered. The preparation command writes `client/public/images/` for the external build only; that generated directory is ignored by Git and is not the managed Manus source of truth.
@@ -30,7 +30,7 @@ The `CXSMO_ALLOW_MISSING_MEDIA=1` flag is intentionally required while `MISSING-
 A Render build command can be:
 
 ```bash
-pnpm media:prepare && VITE_CXSMO_USE_PORTABLE_MEDIA=true pnpm build
+pnpm media:prepare && pnpm build
 ```
 
 For a strict release, use `CXSMO_FAIL_ON_MISSING=1 pnpm media:export` and omit `CXSMO_ALLOW_MISSING_MEDIA=1`. The export will stop instead of producing a partial media bundle.

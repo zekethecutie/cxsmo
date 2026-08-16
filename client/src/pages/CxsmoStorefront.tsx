@@ -14,6 +14,7 @@ import { useCxsmoDemo } from "@/contexts/CxsmoDemoContext";
 import { useCxsmoSound } from "@/contexts/CxsmoSoundContext";
 import { cxsmoCategories, cxsmoProducts, formatCxsmoPrice, getCxsmoProduct, type CxsmoProduct } from "@/lib/cxsmo";
 import { resolveCxsmoProduct, useCxsmoPublishedContent } from "@/lib/cxsmoContent";
+import { preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
 import "./cxsmo.css";
 import "./cxsmo-media-overrides.css";
 import "./cxsmo-reduced-motion.css";
@@ -39,7 +40,7 @@ import "./cxsmo-utility-type.css";
 import "./cxsmo-mobile-native.css";
 export { CxsmoProductPage } from "./CxsmoProductDetail";
 
-const heroImage = "/manus-storage/cxsmo-hero-v2_cadfe55c.jpg";
+const heroImage = preferCxsmoPublicMedia("/manus-storage/cxsmo-hero-v2_cadfe55c.jpg");
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export function CxsmoShell({ children }: { children: ReactNode }) {

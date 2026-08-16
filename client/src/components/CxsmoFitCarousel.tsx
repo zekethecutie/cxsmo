@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { Link } from "wouter";
 import { useCxsmoDemo } from "@/contexts/CxsmoDemoContext";
 import { cxsmoProducts } from "@/lib/cxsmo";
+import { preferCxsmoPublicMedia } from "@/lib/cxsmoMedia";
 import "@/pages/cxsmo-fit-carousel-motion.css";
 import "@/pages/cxsmo-fit-library.css";
 
@@ -26,7 +27,7 @@ type FitEntry = {
   alt: string;
 };
 
-export const cxsmoFitLibrary: FitEntry[] = [
+const cxsmoFitLibrarySource: FitEntry[] = [
   { index: "M / 01", group: "Mens", title: "Splitline rugby", category: "Graphics", listedIds: ["chrome-puddle-14"], plannedPieces: ["Sheet 02 / #05 — Splitline Rugby Longsleeve"], image: "/manus-storage/cxsmo-fit-men-01-splitline-rugby_7964b7e9.png", alt: "Individual C✦SMO mens look in a black and optic-bone long sleeve" },
   { index: "M / 02", group: "Mens", title: "Orbit ash", category: "Graphics", listedIds: ["gravity-01"], plannedPieces: ["Sheet 02 / #06 — Orbit Ash Hoodie"], image: "/manus-storage/cxsmo-fit-men-02-orbit-ash_056116d2.png", alt: "Individual C✦SMO mens look in an ash hoodie and wide grey cargo denim" },
   { index: "M / 03", group: "Mens", title: "Micro orbit", category: "Graphics", listedIds: ["blxck-pants-10"], plannedPieces: ["Sheet 02 / #07 — Micro Orbit Tee"], image: "/manus-storage/cxsmo-fit-men-03-micro-orbit_f2af6040.png", alt: "Individual C✦SMO mens look in a black micro-orbit T-shirt and wide trousers" },
@@ -43,6 +44,8 @@ export const cxsmoFitLibrary: FitEntry[] = [
   { index: "W / 09", group: "Womens", title: "Cloud sweater", category: "Lifestyle", listedIds: [], plannedPieces: ["Unnumbered fit piece — Cloud Sweater", "Unnumbered fit piece — Layered Mini Skirt"], image: "/manus-storage/cxsmo-fit-women-09-cloud-sweater_a66e5d09.png", alt: "Individual C✦SMO womens look with oversized grey sweater and layered skirt" },
   { index: "W / 10", group: "Womens", title: "After dark", category: "Outerwear", listedIds: [], plannedPieces: ["Unnumbered fit piece — After Dark Halter Top", "Unnumbered fit piece — Moto Cargo Pant"], image: "/manus-storage/cxsmo-fit-women-10-after-dark_494dde77.png", alt: "Individual C✦SMO womens look with black halter top and baggy moto pants" },
 ];
+
+export const cxsmoFitLibrary = cxsmoFitLibrarySource.map((fit) => ({ ...fit, image: preferCxsmoPublicMedia(fit.image) }));
 
 export function CxsmoFitCarousel() {
   const [active, setActive] = useState(0);
@@ -87,7 +90,7 @@ export function CxsmoFitLibrary() {
 
   return <section className="cxsmo-fit-library" aria-labelledby="cxsmo-fit-library-title">
     <div className="cxsmo-fit-library__head"><div><p>Fit library / issue 01</p><h2 id="cxsmo-fit-library-title">Worn<br /><em>on purpose.</em></h2></div><span>Every card is an individual fit reference. Shop links only lead to categories that are presently listed in the C✦SMO catalogue.</span></div>
-    <article data-cxsmo-hover-sound="zoom" className="cxsmo-fit-library__primary"><img src="/manus-storage/cxsmo-fit-black-red-full_f171f1a3.png" alt="Individual C✦SMO black and red full-fit campaign styling study" /><div><p>Fit frame / 00</p><h3>Blackout hardware</h3><span>A full-fit campaign reference built around red paneling, chrome details, and a lower-volume silhouette.</span><Link href="/cxsmo/shop?category=Outerwear">Shop outerwear <ArrowDownRight size={15} /></Link></div></article>
+    <article data-cxsmo-hover-sound="zoom" className="cxsmo-fit-library__primary"><img src={preferCxsmoPublicMedia("/manus-storage/cxsmo-fit-black-red-full_f171f1a3.png")} alt="Individual C✦SMO black and red full-fit campaign styling study" /><div><p>Fit frame / 00</p><h3>Blackout hardware</h3><span>A full-fit campaign reference built around red paneling, chrome details, and a lower-volume silhouette.</span><Link href="/cxsmo/shop?category=Outerwear">Shop outerwear <ArrowDownRight size={15} /></Link></div></article>
     <div className="cxsmo-fit-library__filter-row" role="group" aria-label="Filter individual fit references">{(["All", "Mens", "Womens"] as const).map((item) => <button data-cxsmo-sound="select" className={filter === item ? "is-active" : ""} aria-pressed={filter === item} type="button" onClick={() => setFilter(item)} key={item}>{item} <span>{item === "All" ? cxsmoFitLibrary.length : cxsmoFitLibrary.filter((fit) => fit.group === item).length}</span></button>)}</div>
     <p className="cxsmo-fit-library__status" aria-live="polite">{filteredFits.length} individual {filter === "All" ? "fits" : `${filter.toLowerCase()} fits`} / numbered current-piece mapping included where listed</p>
     <div className="cxsmo-fit-library__individual-grid">{filteredFits.map((fit) => {
