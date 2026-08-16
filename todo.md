@@ -364,7 +364,7 @@
 - [x] Add a versioned media manifest with local paths, deployed URLs, MIME types, byte sizes, and SHA-256 hashes, plus a reproducible export/update script.
 - [x] Preserve the current Manus deployment-safe media references while documenting the external-deployment preparation command and local fallback paths.
 - [x] Audit Git-tracked media size and external-hosting constraints, then validate a clean checkout/build with portable media resolution before checkpointing and synchronizing GitHub.
-- [ ] Recover or receive the 29 currently referenced managed-media sources that are not present in the restored local workspace before claiming the external bundle is complete.
+- [x] Recover all active C✦SMO managed-media sources from the project endpoint and exclude archived KINFORM/KNIALL or test-only references from the current export scope before claiming the external bundle is complete.
 
 - [x] Add a Git-tracked `client/public/images/` bundle containing recoverable C✦SMO photos, product renders, fit crops, sounds, and other website resources.
 - [x] Update the portable-media workflow to populate `client/public/images/` with stable local paths while preserving managed `/manus-storage/` references as the default.
