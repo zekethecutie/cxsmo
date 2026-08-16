@@ -82,3 +82,9 @@ Twenty-nine active managed-media references remain explicitly listed in `portabl
 The runtime now uses the generated recoverable filename allowlist to serve copied C✦SMO imagery and sound effects from `/images/<filename>`. It leaves unrecovered historical references on their managed `/manus-storage/<filename>` paths, and image requests revert to the managed URL if a copied public file fails. A direct local probe returned HTTP 200 with `image/png` for the recoverable Mercury Orbit Belt public asset, while the newer campaign hero remains intentionally outside the public allowlist because its original source is absent.
 
 The sound layer no longer uses one shared timestamp that suppresses different cues in sequence. It creates independent audio instances, retains small per-cue throttles and per-element hover cooldowns to prevent an audio storm, reduces hover response delay to 110 ms, and supports a managed-source retry if a copied sound file is unavailable. TypeScript, 58 active tests with 1 skipped, and the production build all pass.
+
+## 2026-08-16 — Complete active C✦SMO media archive
+
+The previously unavailable active C✦SMO media was recovered from the running managed project endpoint into the external archive. The exporter now excludes only archived KINFORM/KNIALL and test-only references, leaving a complete active C✦SMO manifest of **57 references, 57 copied assets, and 0 missing sources**. The completed bundle contains 39,907,813 bytes of media and is packaged as `cxsmo-portable-media-v2.zip` for repository release distribution.
+
+Strict external validation succeeds without `CXSMO_ALLOW_MISSING_MEDIA`: `pnpm media:prepare` stages all 57 files, `VITE_CXSMO_USE_PORTABLE_MEDIA=true pnpm build` completes, and the generated `client/public/images/` plus `dist/` output are removed again before checkpointing. The live project retains managed `/manus-storage` URLs by default, while external hosts can opt into the completed archive.

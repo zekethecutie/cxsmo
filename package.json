@@ -111,6 +111,7 @@
     "shopify:probe": "tsx scripts/shopify-probe.runner.ts",
     "media:export": "node scripts/export_portable_media.mjs",
     "media:prepare": "node scripts/prepare_external_media.mjs",
+    "media:recover": "node scripts/recover_managed_media.mjs",
     "start": "NODE_ENV=production node dist/index.js",
     "test": "vitest run"
   },

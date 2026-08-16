@@ -45,6 +45,10 @@ The repository intentionally keeps the portable archive separate from the manage
 
 The current recovered export is approximately 19 MB. It is delivered as a versioned GitHub Release archive because the project publisher rejects large binary files in the source tree. The manifest and generated allowlist remain in Git so every external deployment can verify which media files are present and which are still missing.
 
-## Current limitation
+## Current archive status
 
-The exporter cannot recover a managed storage object when the original local source is no longer present and the managed URL is private to the WebDev runtime. Those entries remain explicit in `portable-media/MISSING-SOURCES.md`; supply the original file, place it in one of the configured source roots, rerun `pnpm media:export`, and commit the refreshed bundle and manifest. Until then, the external bundle is intentionally partial rather than misleadingly presented as complete.
+The current **v2** C✦SMO portable archive contains all **57 active C✦SMO media references**—campaign imagery, product renders, fit crops, cursor art, and sound effects—with no missing active source records. Archived KINFORM/KNIALL and test-only references are intentionally outside the current C✦SMO export scope.
+
+## Future recovery handling
+
+If a future managed object is not present in the local source roots, run `pnpm media:recover` while the project endpoint is available, then rerun `pnpm media:export`. If the managed endpoint cannot serve it, `MISSING-SOURCES.md` remains explicit rather than allowing an incomplete archive to be presented as complete.

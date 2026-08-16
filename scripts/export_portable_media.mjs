@@ -10,6 +10,7 @@ const sourceRoots = [
   resolve(process.env.CXSMO_STATIC_ASSETS_ROOT ?? "/home/ubuntu/webdev-static-assets"),
   resolve(process.env.CXSMO_UPLOAD_ROOT ?? "/home/ubuntu/upload"),
   resolve(process.env.CXSMO_LOCAL_MEDIA_ROOT ?? join(projectRoot, "client/public")),
+  join(outputRoot, "images"),
 ];
 const mediaExtensions = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".wav", ".mp3", ".ogg", ".m4a", ".webm", ".mp4"]);
 const sourceAliases = {
@@ -18,6 +19,21 @@ const sourceAliases = {
   "cxsmo-starlight-shell-alpha-fallback_a7406211.png": "cxsmo-starlight-shell-v3.webp",
   "cxsmo-static-bloom-lip-glaze-alpha_40b6478e.png": "cxsmo-static-lip-glaze-v2.webp",
 };
+const archivedReferenceNames = new Set([
+  "2d17320ab5a2f8d30ac4f501b1e9856247ea78fa_5971fd32.png",
+  "basketball-athlete_fd96ca68.jpg",
+  "basketball-campaign_25f68b92.jpg",
+  "kinform-admin-operations-flatlay_5709f29c.jpg",
+  "kinform-aero-shell-transparent_890111a4.png",
+  "kinform-arc-trouser-transparent_19735ece.png",
+  "kinform-campaign-anchor_7fc7d378.jpg",
+  "kinform-expansion-campaign-anchor_8f5b5a34.jpg",
+  "kinform-form-overshirt-transparent_c4924b0d.png",
+  "kinform-line-tee-detail-replacement_f052c194.jpg",
+  "kinform-structured-tee_fd877bd2.png",
+  "kniall-light-material-atmosphere_b0819876.jpg",
+  "studio-test.png",
+]);
 
 function walk(dir) {
   if (!existsSync(dir)) return [];
@@ -49,13 +65,13 @@ function findCandidate(expectedName, sourceFiles) {
   return sameStem.find((filePath) => extname(filePath).toLowerCase() === expectedExtension) ?? sameStem[0] ?? sourceFiles.find((filePath) => normalizedStem(filePath).startsWith(expectedStem) || expectedStem.startsWith(normalizedStem(filePath)));
 }
 function collectRefs() {
-  if (existsSync(refsFile)) return readFileSync(refsFile, "utf8").split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+  if (existsSync(refsFile)) return readFileSync(refsFile, "utf8").split(/\r?\n/).map((line) => line.trim()).filter(Boolean).filter((reference) => !archivedReferenceNames.has(basename(reference)));
   const references = new Set();
   for (const filePath of walk(join(projectRoot, "client/src"))) {
     if (!/[jt]sx?$/.test(filePath)) continue;
     for (const match of readFileSync(filePath, "utf8").matchAll(/\/manus-storage\/([A-Za-z0-9_.,\/-]+)/g)) references.add(`/manus-storage/${match[1]}`);
   }
-  return [...references].sort();
+  return [...references].filter((reference) => !archivedReferenceNames.has(basename(reference))).sort();
 }
 
 const refs = collectRefs();
