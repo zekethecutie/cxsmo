@@ -39,6 +39,7 @@ import "./cxsmo-screenshot-repair.css";
 import "./cxsmo-utility-type.css";
 import "./cxsmo-mobile-native.css";
 import "./cxsmo-commerce-simulation.css";
+import "./cxsmo-feedback-and-promo.css";
 export { CxsmoProductPage } from "./CxsmoProductDetail";
 
 const heroImage = "/images/cxsmo-hero-v2_cadfe55c.jpg";
@@ -115,7 +116,7 @@ export function ProductCard({ product, order = "01" }: { product: CxsmoProduct; 
   const [added, setAdded] = useState(false);
   const save = savedIds.includes(product.id);
   function quickAdd() { addToBag(product, "M"); play("success"); setAdded(true); window.setTimeout(() => setAdded(false), 1500); }
-  return <article className="cxsmo-product-card" data-cxsmo-hover-sound="chapter"><Link className="cxsmo-product-card__visual" href={`/cxsmo/products/${product.id}`}><span>{order}</span>{promotion.enabled && promotion.productId === product.id && <b className="cxsmo-product-card__event">{promotion.discountLabel ?? "Event marker"}</b>}<img src={presentedProduct.image} alt={presentedProduct.name} /><em>{presentedProduct.category}</em></Link><div className="cxsmo-product-card__body"><div><p>{presentedProduct.color}</p><h2>{presentedProduct.name}</h2></div><strong>{formatCxsmoPrice(presentedProduct.price, profile.locale, profile.currency, profile.currencyRate)}</strong></div><div className="cxsmo-product-card__actions"><button data-cxsmo-sound-silent onClick={quickAdd}>{added ? <><Check size={15} /> Added</> : <><Plus size={15} /> Quick add</>}</button><button aria-label={`Save ${presentedProduct.name}`} className={save ? "is-saved" : ""} onClick={() => toggleSaved(product.id)}><Heart size={17} fill={save ? "currentColor" : "none"} /></button></div></article>;
+  return <article className="cxsmo-product-card" data-cxsmo-hover-sound="chapter"><Link className="cxsmo-product-card__visual" href={`/cxsmo/products/${product.id}`}><span>{order}</span><img src={presentedProduct.image} alt={presentedProduct.name} /><em>{presentedProduct.category}</em></Link><div className="cxsmo-product-card__body"><div><p>{presentedProduct.color}</p><h2>{presentedProduct.name}</h2>{promotion.enabled && promotion.productId === product.id && <span className="cxsmo-product-card__event">Portfolio event · {promotion.discountLabel ?? "Preview"}</span>}</div><strong>{formatCxsmoPrice(presentedProduct.price, profile.locale, profile.currency, profile.currencyRate)}</strong></div><div className="cxsmo-product-card__actions"><button data-cxsmo-sound-silent onClick={quickAdd}>{added ? <><Check size={15} /> Added</> : <><Plus size={15} /> Quick add</>}</button><button aria-label={`Save ${presentedProduct.name}`} className={save ? "is-saved" : ""} onClick={() => toggleSaved(product.id)}><Heart size={17} fill={save ? "currentColor" : "none"} /></button></div></article>;
 }
 
 export function CxsmoHomePage() {

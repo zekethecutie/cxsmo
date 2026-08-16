@@ -419,3 +419,16 @@
 - [x] Investigate a privacy-conscious location-selection approach for the simulated checkout and implement only the supported, clearly disclosed portion.
 - [x] Rebuild the mobile-native hero and product-detail view for softer, clearer, less cluttered composition; remove low-value thin corner labels where they distract from content.
 - [x] Validate repaired assets, responsive flows, search, colour selection, simulated incentives, checkout/location behavior, accessibility, tests, production build, checkpoint, and GitHub synchronization.
+
+- [x] Repair the remaining public mask issues on Star Ruched Top, Bolt Raglan, and Midnight Star Sweatpant without introducing source-sheet artifacts or changing verified garment details.
+- [x] Rebuild the women’s “More than one angle” Fit Edits section as a balanced full-cast editorial plate with visible imagery rather than a small corner thumbnail beside empty space.
+- [x] Replace the current Signal Week campaign with an intentional home-only sale preview: product-led visual, deliberate discount badge placement, countdown, and dismissible post-entry overlay that does not block browsing.
+- [x] Improve browser-local participation by allowing visitors to stage their own note and optional local image preview while keeping reviews, ratings, testimonials, customer identities, orders, and social proof empty.
+- [x] Build a presentation-ready review-experience component gallery with rich empty, loading, media, rating-control, size-and-finish metadata, purchase-detail layout, moderation, and browser-local-composer states, without false buyer identities, purchases, ratings, comments, testimonials, or social proof.
+- [x] Preserve a clear non-customer-content boundary across the review showcase while making the visual system and browser-local interaction states presentation-ready.
+- [x] Add a visible empty Shopee/Lazada-style feedback section on product pages with rating summary, stars, filters, size/colour/purchase-detail controls, photo preview, and browser-local submission preview; do not fabricate customer entries.
+- [x] Ensure all feedback controls are interactive and browser-local, while avoiding fictional customer identities, purchase claims, ratings, or comments.
+- [x] Replace the intrusive image-overlay event marker with a deliberate product-card promotion and price-treatment hierarchy that remains readable, image-safe, and explicitly portfolio-simulated.
+- [x] Keep the feedback interface populated only by browser-local visitor input or honest empty states while completing the requested visual system.
+- [x] Repair Star Ruched Top without erasing its right sleeve; repair Bolt Raglan with its full long sleeves; restore the Midnight Star Sweatpant lower-right pooled hem/detail; and remove the false centre hole from the solo Stellar Cargo Pants image using source-specific treatment.
+- [ ] Validate masks, desktop/mobile Fit Edits composition, event hierarchy, local participation controls, tests, production build, checkpoint, and GitHub synchronization.

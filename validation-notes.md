@@ -168,3 +168,17 @@ At 375px, the public Star Spear Tank product page now presents a complete black 
 ## 2026-08-16 — masking and commerce-flow release validation
 
 The final release run passes TypeScript, **64 active tests with 1 skipped**, and the production build. The browser-local bag preserves selected finish and size; the account workspace is accessible from primary navigation; the home-only event treatment is visibly labelled as a portfolio interaction preview; product discussion keeps reviews and ratings empty; and the checkout map permits a browser-session pin without retaining or submitting address data. No active public image exceeds the 1 MB checkpoint threshold.
+
+## 2026-08-16 — follow-up masking audit
+
+The current Star Ruched Top retains a detached white source-sheet numeral in the upper-right transparent field, while the garment itself is intact. The current Bolt Raglan torso has usable alpha but resolves as a sleeveless crop rather than the advertised long raglan garment, so it needs a source-faithful full-garment replacement rather than further edge cleanup.
+
+The Midnight Star Sweatpant source is visually complete but has a hard, uneven lower-leg crop that gives the wide pooled hem a broken cut-off edge. The women’s album source is a high-quality four-model 1024×760 composition with subjects occupying the full plate. The reported tiny upper-left output is therefore a layout/positioning error, not an image-source limitation: it should be rendered as a single full-width fashion plate above its editorial copy rather than two stacked background frames on the right.
+
+The untouched Bolt Raglan crop contains both long navy sleeves, the white body, and bolt graphic; the previous repair discarded the sleeve regions during segmentation. The Midnight Star Sweatpant crop likewise contains the full pooled wide-leg silhouette but includes only a narrow source-sheet strip beneath the hem. Both can be repaired with conservative source-contour alpha masks rather than substituting unrelated garments.
+
+The first scaled Bolt Raglan candidate preserves the sleeves but its broad outer envelope retains source background and is rejected pending the split-contour revision. The Star Ruched Top candidate removes the detached numeral but retains a thin upper-right source-sheet streak above the sleeve; a smaller targeted alpha exclusion is required before promotion.
+
+The lightweight model cleanly segments the white raglan body but cannot retain the dark sleeves, while manual sleeve composites retain grey source-sheet field or detach from the body. Those candidates are rejected. The existing clean public raglan torso remains the least misleading image until a dedicated transparent long-sleeve source or an image-generation quota is available; no background-contaminated replacement will be promoted.
+
+The Midnight Star Sweatpant candidate retains a grey source-field strip along its left leg and is rejected. The Star Ruched Top candidate still contains a black horizontal artifact extending from the right shoulder beyond the sleeve; it requires a precise alpha exclusion along the detached extension before promotion. Only source-faithful repairs that remove artifacts without cutting garment structure will replace public assets.

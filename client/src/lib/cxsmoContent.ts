@@ -32,9 +32,9 @@ export const defaultCxsmoHero: CxsmoHeroContent = {
 
 export const defaultCxsmoPromotion: CxsmoPromotionContent = {
   enabled: true,
-  message: "SIGNAL WEEK / PORTFOLIO EVENT",
-  discountLabel: "20% event marker",
-  voucherLabel: "SIGNAL-20 preview",
+  message: "REDLINE EDIT / STUDIO PREVIEW",
+  discountLabel: "20% layout study",
+  voucherLabel: "REDLINE-20 / preview",
   durationMinutes: 15,
   productId: "redline-moto-16",
 };

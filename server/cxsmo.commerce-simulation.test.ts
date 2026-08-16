@@ -8,6 +8,7 @@ const productDetail = source("client/src/pages/CxsmoProductDetail.tsx");
 const checkout = source("client/src/components/CxsmoCheckoutSimulation.tsx");
 const storefront = source("client/src/pages/CxsmoStorefront.tsx");
 const promotion = source("client/src/lib/cxsmoContent.ts");
+const promotionPopup = source("client/src/components/CxsmoPromotionPopup.tsx");
 const catalogue = source("client/src/lib/cxsmo.ts");
 
 describe("C✦SMO browser-local commerce simulation", () => {
@@ -20,10 +21,13 @@ describe("C✦SMO browser-local commerce simulation", () => {
   });
 
   it("keeps promotion and bag incentives visibly non-transactional", () => {
-    expect(promotion).toContain('SIGNAL WEEK / PORTFOLIO EVENT');
+    expect(promotion).toContain('REDLINE EDIT / STUDIO PREVIEW');
     expect(storefront).toContain('No discount, voucher, or delivery promise is applied.');
     expect(storefront).toContain('Voucher layout preview selected');
     expect(storefront).toContain('location === "/cxsmo"');
+    expect(promotionPopup).toContain('C✦SMO / EVENT SIMULATION');
+    expect(promotionPopup).toContain('featuredProduct');
+    expect(promotionPopup).toContain('no price, order, or fulfilment promise changes');
   });
 
   it("provides a session-only map pin without retaining an address", () => {
@@ -33,9 +37,17 @@ describe("C✦SMO browser-local commerce simulation", () => {
   });
 
   it("keeps the product discussion surface honest instead of inventing social proof", () => {
-    expect(productDetail).toContain('customer reviews, ratings, and endorsements empty rather than inventing social proof');
-    expect(productDetail).toContain('Nothing is published or sent.');
+    expect(productDetail).toContain('There are no published customer ratings, comments, purchases, or testimonials in this portfolio.');
+    expect(productDetail).toContain('No feedback yet.');
+    expect(productDetail).toContain('Stage local preview');
+    expect(productDetail).toContain('Preview ready for this session only. It is not published, rated, or sent as a customer record.');
     expect(productDetail).not.toContain('verified buyer');
+  });
+
+  it("keeps the promotion label in catalogue card copy rather than over product media", () => {
+    expect(storefront).toContain('cxsmo-product-card__event');
+    expect(storefront).toContain('Portfolio event ·');
+    expect(storefront).not.toContain('cxsmo-product-card__image"><span className="cxsmo-product-card__event"');
   });
 
   it("correctly identifies the repaired technical cargo object as pants", () => {
