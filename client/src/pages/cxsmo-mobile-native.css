@@ -123,6 +123,26 @@
   .cxsmo-poster-home .poster-lookbook { padding:66px var(--cxsmo-mobile-gutter)!important; }
   .cxsmo-poster-home .poster-lookbook__image { height:76vw!important; }
   .cxsmo-poster-home .poster-catalogue-pull { padding:64px var(--cxsmo-mobile-gutter)!important; }
+
+  .cxsmo-site .cxsmo-hero { background:linear-gradient(155deg,#0d0d0f 0%,#180b0e 58%,#09090a 100%)!important; display:flex!important; flex-direction:column!important; min-height:0!important; padding:12px 14px 30px!important; }
+  .cxsmo-site .cxsmo-hero__media { aspect-ratio:4/3!important; border:1px solid rgba(240,236,230,.18); border-radius:16px!important; inset:auto!important; margin:0 0 28px!important; overflow:hidden!important; position:relative!important; width:100%!important; }
+  .cxsmo-site .cxsmo-hero__media img { object-position:54% 48%!important; transform:scale(1.03); }
+  .cxsmo-site .cxsmo-hero__media:after { background:linear-gradient(0deg,rgba(8,8,9,.66),rgba(8,8,9,.05) 62%)!important; }
+  .cxsmo-site .cxsmo-hero__glow { background:radial-gradient(circle,rgba(223,26,34,.58),transparent 68%)!important; height:42vw!important; right:-7%!important; top:-12%!important; width:42vw!important; }
+  .cxsmo-site .cxsmo-hero__copy { align-self:auto!important; padding:0 7px 10px!important; }
+  .cxsmo-site .cxsmo-hero__copy>p { color:#ffabb0!important; font:800 8px "Plus Jakarta Sans",sans-serif!important; letter-spacing:.11em!important; margin-bottom:13px!important; }
+  .cxsmo-site .cxsmo-hero h1 { font-size:clamp(51px,15vw,63px)!important; letter-spacing:-.075em!important; line-height:.82!important; margin-bottom:23px!important; max-width:7ch!important; }
+  .cxsmo-site .cxsmo-hero h1 em { color:#ffabb0!important; }
+  .cxsmo-site .cxsmo-hero__copy>div { align-items:stretch; display:grid!important; gap:9px!important; grid-template-columns:1fr 1fr!important; }
+  .cxsmo-site .cxsmo-hero__copy .cxsmo-button,.cxsmo-site .cxsmo-hero__copy .cxsmo-underlink { border-radius:999px!important; font-size:9px!important; justify-content:center!important; margin:0!important; min-height:45px!important; padding:0 10px!important; text-align:center!important; }
+  .cxsmo-site .cxsmo-hero__copy .cxsmo-underlink { border:1px solid rgba(240,236,230,.3); text-decoration:none!important; }
+  .cxsmo-site .cxsmo-hero__orbit { border-top:1px solid rgba(240,236,230,.15); bottom:auto!important; color:#c9c4c0!important; font:800 8px "Plus Jakarta Sans",sans-serif!important; left:auto!important; margin:15px 7px 0!important; padding-top:11px!important; position:relative!important; right:auto!important; }
+  .cxsmo-site .cxsmo-hero__orbit b { display:none; }
+  .cxsmo-site .cxsmo-pdp--story .cxsmo-product-stage { border-radius:0 0 18px 18px; min-height:350px!important; }
+  .cxsmo-site .cxsmo-pdp--story .cxsmo-pdp__buy { padding:31px var(--cxsmo-mobile-gutter) 46px!important; }
+  .cxsmo-site .cxsmo-pdp__title { align-items:flex-start!important; flex-direction:column!important; gap:11px!important; }
+  .cxsmo-site .cxsmo-pdp__title h1 { font-size:clamp(43px,13vw,57px)!important; max-width:10ch!important; }
+  .cxsmo-site .cxsmo-product-stage__micro { display:none!important; }
 }
 
 @media (max-width: 320px) {

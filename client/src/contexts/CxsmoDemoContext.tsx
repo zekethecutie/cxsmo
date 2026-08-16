@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";
 import { CxsmoProduct } from "@/lib/cxsmo";
 
-export type CxsmoBagLine = { productId: string; size: string };
+export type CxsmoBagLine = { productId: string; size: string; color?: string };
 export type CxsmoProfile = { displayName: string; styleMode: "Signal" | "Quiet" | "Chrome"; destination: string; country: string; locale: string; currency: "USD" | "PHP" | "JPY" | "CNY" | "EUR"; currencyRate: number; currencyUpdatedAt: number | null; tastes: string[]; height: string; waist: string; shoeSize: string; updatesEnabled: boolean; isConfigured: boolean; isSignedIn: boolean };
 
 type CxsmoDemoState = {
@@ -9,7 +9,7 @@ type CxsmoDemoState = {
   savedIds: string[];
   savedFitIds: string[];
   savedRecommendationIds: string[];
-  addToBag: (product: CxsmoProduct, size: string) => void;
+  addToBag: (product: CxsmoProduct, size: string, color?: string) => void;
   removeFromBag: (index: number) => void;
   clearBag: () => void;
   toggleSaved: (id: string) => void;
@@ -76,7 +76,7 @@ export function CxsmoDemoProvider({ children }: { children: ReactNode }) {
     savedIds,
     savedFitIds,
     savedRecommendationIds,
-    addToBag: (product, size) => setBag((lines) => [...lines, { productId: product.id, size }]),
+    addToBag: (product, size, color) => setBag((lines) => [...lines, { productId: product.id, size, color: color ?? product.color }]),
     removeFromBag: (index) => setBag((lines) => lines.filter((_, lineIndex) => lineIndex !== index)),
     clearBag: () => setBag([]),
     toggleSaved: (id) => setSavedIds((ids) => ids.includes(id) ? ids.filter((item) => item !== id) : [...ids, id]),

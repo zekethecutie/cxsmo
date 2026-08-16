@@ -13,7 +13,7 @@ export type CxsmoHeroContent = {
   objectPriceNote: string;
 };
 
-export type CxsmoPromotionContent = { enabled: boolean; message: string };
+export type CxsmoPromotionContent = { enabled: boolean; message: string; discountLabel?: string; voucherLabel?: string; durationMinutes?: number; productId?: string };
 export type CxsmoGlobalContent = { notice: string; footerIntro: string; footerCredit: string };
 export type CxsmoLookbookCard = { tag: string; title: string; note: string; productId: string; tone: "red" | "bone" | "ink" };
 export type CxsmoProductOverride = Partial<Pick<CxsmoProduct, "name" | "description" | "image">>;
@@ -31,8 +31,12 @@ export const defaultCxsmoHero: CxsmoHeroContent = {
 };
 
 export const defaultCxsmoPromotion: CxsmoPromotionContent = {
-  enabled: false,
-  message: "THE SIGNAL EVENT",
+  enabled: true,
+  message: "SIGNAL WEEK / PORTFOLIO EVENT",
+  discountLabel: "20% event marker",
+  voucherLabel: "SIGNAL-20 preview",
+  durationMinutes: 15,
+  productId: "redline-moto-16",
 };
 export const defaultCxsmoGlobal: CxsmoGlobalContent = {
   notice: "C✦SMO is a fictional fashion-commerce presentation, designed and developed by zxke. No payments or personal information are transmitted.",

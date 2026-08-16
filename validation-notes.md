@@ -134,3 +134,37 @@ W / 03 visibly contains the Lace Corset Top, Pleated Belt Skirt, and Buckle Stac
 All active C✦SMO product, campaign, Fit Edits, cursor, and sound references now resolve directly from the tracked `/images` bundle. The public asset folder contains no file above 1 MB, and direct probes return `200` with the expected PNG or WAV content types for a renamed product render, a fit crop, and the hover cue. The production bundle has no explicit managed-storage, generator-name, or generative-tool strings in its delivered public files; its document head identifies **zxke** as author and creator.
 
 The W / 03 Lunar Corset quick-view was captured at desktop and 375px. It visibly lists the exact Lace Corset Top, Pleated Belt Skirt, and Buckle Stack Boot, keeps the unrelated black shoulder bag under planned rather than sale, and retains readable mobile actions. TypeScript, 59 active tests with 1 skipped, and the production build pass after the direct-public conversion.
+
+## 2026-08-16 — reported mask repair audit
+
+The current Star Beanie public PNG contains only the chrome four-point-star patch; its knit body has been removed, so it requires a complete product-object reconstruction rather than alpha cleanup. The Bolt Raglan retains the garment body but has a transparency tear through the inner right sleeve/underarm plus residual contact-sheet number pixels; it requires a targeted sleeve reconstruction while preserving its white body, navy raglan sleeves, and bolt chest graphic.
+
+The Star Spear Tank preserves its main body and spear graphic but has a large unintended alpha hole through the upper-left chest and rough removed-edge artifacts around both shoulder straps; it requires targeted garment reconstruction. The Chain Cargo Short retains a complete item silhouette but has rough alpha edges and a missing/partially removed lower-right chain loop; it requires a constrained detail-and-edge cleanup rather than a new product concept.
+
+The Midnight Star Sweatpant is a largely complete navy wide-leg object with rough perimeter alpha and some lost lower-hem definition; it needs conservative edge restoration. The item currently labeled **Midnight Cargo Skirt** is visibly a pair of black technical cargo pants with two separated legs and hardware/chain details. Its public name, fit copy, and details must be corrected to a pants record; it also needs lower-leg edge cleanup but no silhouette reclassification beyond the accurate name.
+
+The Chrome Charm Bag has a largely intact silver shoulder-bag body but its upper/right strap is fragmented and contact-sheet remnants remain in the alpha edge. The original 17–36 numbered render sheet confirms that 17 is the Bolt Raglan, 18 is the Star Spear Tank, 25 is the Chain Cargo Short, 27 is the Midnight Star Sweatpant, 29 is the technical cargo pant, and 34 is the Chrome Charm Bag. Raw source crops can therefore be rebuilt from the original sheet without inventing different product designs.
+
+The source sheet retains a complete black Star Beanie around its chrome patch and a complete Bolt Raglan body and sleeves. The initial beanie crop included a source ordinal tag, so its top boundary was narrowed before re-segmentation. These source crops support a deterministic clean-alpha fallback while image-generation capacity is unavailable.
+
+The first lighter re-segmentation candidate still removes the black Star Beanie body and is rejected. The same pipeline produces an accepted Bolt Raglan candidate: it removes the source-sheet ordinal/background and repairs the previously missing inner right sleeve, although its source crop does not preserve the full lower sleeves. Subsequent candidates must be reviewed individually; no rejected silhouette will be promoted to the public bundle.
+
+The regenerated Star Spear Tank loses the white garment and retains only its dark printed spear, so it is rejected. The regenerated Chain Cargo Short retains the full cargo short and chain loop with cleaner source-sheet separation; it is acceptable as an interim repair candidate pending direct storefront review.
+
+The regenerated Midnight Star Sweatpant retains the navy wide-leg shape, chrome leg graphics, and complete hem more cleanly than the previous public asset; it is accepted. The regenerated Midnight Cargo Pant retains both technical legs, hardware, chains, and the visible boot-covered lower edge; it is accepted and confirms the catalogue must call it a pant rather than a skirt.
+
+The regenerated Chrome Charm Bag retains the complete silver shoulder-bag body, strap, star hardware, and charm with no source-sheet remnant; it is accepted. The manually bounded Star Beanie recovery retains its complete rib-knit body and chrome four-point-star patch. Its source outline is intentionally conservative around the dark fabric edge and is accepted over the previous star-only failure.
+
+The final manual Star Spear Tank contour eliminates the prior alpha holes but exposes too much original sheet background around the straps and body edge, so it is rejected. The existing Star Spear Tank remains unchanged pending a semantic image repair; the accepted Star Beanie, Bolt Raglan, Chain Cargo Short, Midnight Star Sweatpant, Midnight Cargo Pant, and Chrome Charm Bag candidates were promoted to the tracked public bundle.
+
+At 375px, the repaired Star Beanie now renders as a complete black knit object with its chrome star patch in the product stage, and the associated detail page retains a clean hierarchy without the previous dense stage metadata. The phone shop has a readable search-first introduction, filter rail, and centred product cards. The campaign notice is intentionally restricted to the `/cxsmo` home route so product and shop tasks are not blocked by the event modal.
+
+The 375px home hero now presents as a contained 4:3 campaign frame above a tighter, editorial type/action stack. The home-only Signal Week event is a compact bottom toast with a visible close control, countdown, and portfolio-event label; it leaves the campaign image and headline readable and no longer blocks the shop or product routes.
+
+The existing clean C✦SMO spear-tank render was evaluated as a replacement after chroma-key residue removal. It is a complete black rib tank with a centered silver four-point spear graphic, clean transparent edges, and no masking holes. It is approved to replace the damaged white Star Spear Tank image, with the catalogue record updated to its actual **Ink / Silver** colourway rather than claiming the previous white variant.
+
+At 375px, the public Star Spear Tank product page now presents a complete black rib tank with a silver spear graphic, intact alpha edge, concise Ink / Silver product language, and no source-sheet artifact or masking hole. The former Midnight Cargo Skirt product page now accurately reads **Midnight Cargo Pant** and presents a complete dual-leg technical cargo silhouette with its chain hardware intact.
+
+## 2026-08-16 — masking and commerce-flow release validation
+
+The final release run passes TypeScript, **64 active tests with 1 skipped**, and the production build. The browser-local bag preserves selected finish and size; the account workspace is accessible from primary navigation; the home-only event treatment is visibly labelled as a portfolio interaction preview; product discussion keeps reviews and ratings empty; and the checkout map permits a browser-session pin without retaining or submitting address data. No active public image exceeds the 1 MB checkpoint threshold.

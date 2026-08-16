@@ -411,3 +411,11 @@
 - [x] Reconcile every Fit Edits breakdown against the current 60-item catalogue so listed product links represent only accurate visible or documented pieces, with missing items explicitly marked planned rather than implied for sale.
 - [x] Make the Git-tracked public-media bundle checkpoint-safe without degrading active Render asset paths, then revalidate the external build and GitHub handoff.
 - [x] Validate the public metadata, developer message, exact Fit Edits mappings, static media delivery, tests, production build, checkpoint, and GitHub synchronization.
+
+- [x] Repair the specified public product masks: Star Beanie, Bolt Raglan, Star Spear Tank, Chain Cargo Short, Midnight Star Sweatpant, Midnight Cargo Pant, and Chrome Charm Bag; retain clean transparent silhouettes and accurate category names.
+- [x] Audit and simplify the storefront user journey around header navigation, product search, filters, colour choices, bag incentives, and clear simulated checkout progression.
+- [x] Add transparent portfolio-demo promotion states such as a limited-time event, product discount treatments, voucher/free-shipping concepts, and countdown behavior without deceptive commerce claims.
+- [x] Add an honest product discussion and style-feedback surface without fabricated comments, ratings, reviews, testimonials, customer names, orders, or social proof.
+- [x] Investigate a privacy-conscious location-selection approach for the simulated checkout and implement only the supported, clearly disclosed portion.
+- [x] Rebuild the mobile-native hero and product-detail view for softer, clearer, less cluttered composition; remove low-value thin corner labels where they distract from content.
+- [ ] Validate repaired assets, responsive flows, search, colour selection, simulated incentives, checkout/location behavior, accessibility, tests, production build, checkpoint, and GitHub synchronization.

@@ -11,7 +11,7 @@ describe("C✦SMO locale and checkout simulation", () => {
   it("keeps the delivery map as a browser-only preview with an explicit staged-state boundary", () => {
     expect(checkoutSource).toContain('const steps = ["Review", "Address", "Delivery", "Confirm"]');
     expect(checkoutSource).toContain("MapView");
-    expect(checkoutSource).toContain('title: "Browser-only delivery preview"');
+    expect(checkoutSource).toContain('title: "Browser-session delivery preview"');
     expect(checkoutSource).toContain("No payment, order, address, or contact information is transmitted or retained by C✦SMO");
     expect(checkoutSource).toContain('disabled={!acknowledged}');
     expect(checkoutSource).toContain("No order reference, receipt, payment, or personal-data record has been created.");
