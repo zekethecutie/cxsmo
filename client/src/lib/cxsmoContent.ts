@@ -40,8 +40,8 @@ export const defaultCxsmoPromotion: CxsmoPromotionContent = {
 };
 export const defaultCxsmoGlobal: CxsmoGlobalContent = {
   notice: "C✦SMO is a fictional fashion-commerce presentation, designed and developed by zxke. No payments or personal information are transmitted.",
-  footerIntro: "Future-pop wardrobe objects, fashioned as a portfolio demonstration.",
-  footerCredit: "Developed by zxke",
+  footerIntro: "An original fashion-commerce portfolio prototype with responsive storefront, product, and browser-local flow design.",
+  footerCredit: "zxke — art direction, UX, and front-end build",
 };
 
 export const defaultCxsmoLookbook: CxsmoLookbookCard[] = [

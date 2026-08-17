@@ -9,3 +9,8 @@ html.dark .cxsmo-entry__poster-word { background-image: linear-gradient(120deg, 
 html:not(.dark) .cxsmo-entry__signal { color: rgba(8,8,9,.56); }
 @media (max-width:840px) { .cxsmo-entry__copy h1 { font-size: 23vw; padding-right: .1em; }.cxsmo-entry__poster-word { font-size: 32vw; left: 47%; opacity: .42; top: 64%; transform: translate(-50%, -50%); }.cxsmo-entry__signal { display: none; } }
 @media (prefers-reduced-motion:reduce) { .cxsmo-entry__signal { transform:none!important; }.cxsmo-entry__portrait::after { animation:none; } }
+.cxsmo-entry__proof { display:flex; flex-wrap:wrap; gap:7px 12px; list-style:none; margin:16px 0 0; padding:0; position:relative; z-index:7; }
+.cxsmo-entry__proof li { color:rgba(240,236,230,.78); font:800 9px/1.2 "Plus Jakarta Sans",sans-serif; letter-spacing:.075em; text-transform:uppercase; }
+.cxsmo-entry__proof li:not(:last-child)::after { color:#df1a22; content:"/"; margin-left:12px; }
+.cxsmo-entry__footer p { color:rgba(240,236,230,.72); font:700 12px/1.45 "Plus Jakarta Sans",sans-serif; margin:8px 0 0; max-width:34ch; }
+@media (max-width:840px) { .cxsmo-entry__statement { background:linear-gradient(90deg,rgba(8,8,9,.74),rgba(8,8,9,.38),transparent); box-decoration-break:clone; display:inline; max-width:27ch; padding:3px 6px 4px; }.cxsmo-entry__proof { background:rgba(8,8,9,.5); display:grid; gap:6px 12px; grid-template-columns:max-content max-content; margin-top:12px; padding:6px 7px; width:max-content; }.cxsmo-entry__proof li { font-size:8px; }.cxsmo-entry__proof li:not(:last-child)::after { display:none; } }

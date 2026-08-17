@@ -439,3 +439,5 @@
 - [x] Deepen product-detail editorial stages with a more immersive object story, material/fit narrative, and product-context progression while preserving accessible commerce controls.
 - [x] Validate supplied-sheet crops, catalogue completeness, feedback interactions, responsive product-detail storytelling, tests, production build, checkpoint, and GitHub synchronization.
 - [x] Rebuild the women’s “More than one angle” album so its full-cast images occupy the primary editorial plate instead of rendering as a tiny top-right thumbnail beside empty space; verify desktop and mobile, then checkpoint and synchronize GitHub.
+- [x] Analyze the supplied Instagram reference and translate its transferable visual, editorial, and interaction principles into original, prioritized C✦SMO improvements without reproducing its specific composition or assets.
+- [x] Polish high-visibility C✦SMO portfolio and storefront copy so zxke’s role, the demonstrated system, and its live proof read specific, concise, and factual rather than abstract or generic; validate the responsive presentation, then checkpoint and synchronize GitHub.

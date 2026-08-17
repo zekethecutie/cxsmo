@@ -80,25 +80,26 @@ export function CxsmoEntryPage() {
       <CxsmoCustomCursor />
       <header className="cxsmo-entry__header"><CxsmoMark className="cxsmo-entry__header-mark" inverse /><p>DROP 01 / 2026</p><CxsmoEntryTools /></header>
       <section className="cxsmo-entry__hero cxsmo-entry__hero--poster">
-        <p className="cxsmo-entry__poster-kicker">C✦SMO / DIGITAL FASHION SYSTEM</p>
-        <motion.p className="cxsmo-entry__signal" aria-hidden="true" animate={reducedMotion ? {} : { x: [0, 18, 0] }} transition={reducedMotion ? { duration: 0 } : { duration: 4.8, repeat: Infinity, ease: "easeInOut" }}>DROP / OBJECT / SYSTEM / DROP / OBJECT / SYSTEM</motion.p>
+        <p className="cxsmo-entry__poster-kicker">C✦SMO / FASHION-COMMERCE PROTOTYPE</p>
+        <motion.p className="cxsmo-entry__signal" aria-hidden="true" animate={reducedMotion ? {} : { x: [0, 18, 0] }} transition={reducedMotion ? { duration: 0 } : { duration: 4.8, repeat: Infinity, ease: "easeInOut" }}>ART DIRECTION / PRODUCT SYSTEM / FRONT-END BUILD</motion.p>
         <div className="cxsmo-entry__poster-word" aria-hidden="true">C<span className="cxsmo-entry__poster-word-star" />SMO</div>
         <motion.div className="cxsmo-entry__portrait" initial={reducedMotion ? false : { opacity: 0, x: 28, rotate: 2 }} animate={reducedMotion ? { opacity: 1 } : { opacity: 1, x: [0, -7, 0], y: [0, -10, 0], rotate: [0, -1, 0] }} transition={reducedMotion ? { duration: 0 } : { opacity: { duration: .55, delay: .16 }, x: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }, y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }}}>
           <img src="/images/cxsmo-y2k-editorial-portrait_8aa44fe0.png" alt="C✦SMO Y2K editorial fashion portrait" />
         </motion.div>
         <div className="cxsmo-entry__copy">
           <motion.h1 aria-label="C✦SMO" initial={reducedMotion ? false : { opacity: 0, y: 42, scaleY: .84 }} animate={{ opacity: 1, y: 0, scaleY: 1 }} transition={{ duration: .74, delay: .08, ease: [0.16, 1, .3, 1] }}>C<span className="cxsmo-entry__mark-star" aria-hidden="true" />SMO</motion.h1>
-          <p className="cxsmo-entry__statement">Independent streetwear, accessories, and beauty pieces built for the after-image.</p>
+          <p className="cxsmo-entry__statement">Fashion-commerce direction and front-end build by zxke.</p>
+          <ul className="cxsmo-entry__proof" aria-label="C✦SMO portfolio proof"><li>Art direction</li><li>Product system</li><li>Local commerce flow</li><li>Studio UI</li></ul>
           <motion.div className="cxsmo-entry__intro" initial={reducedMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .5, delay: .24 }}><div><Link className="cxsmo-entry__enter" href="/cxsmo">Enter the drop <ArrowDownRight size={17} /></Link><Link className="cxsmo-entry__underlink" href="/cxsmo/admin">Studio access <ArrowUpRight size={15} /></Link></div></motion.div>
         </div>
-        {noticeVisible && <motion.aside className="cxsmo-entry__side-notice" initial={reducedMotion ? false : { opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 18 }}><div><b>Wider view, more layers.</b><span>The editorial sequence expands on desktop and stays composed on mobile.</span></div><button type="button" aria-label="Dismiss viewing note" onClick={() => setNoticeVisible(false)}><X size={15} /></button></motion.aside>}
+        {noticeVisible && <motion.aside className="cxsmo-entry__side-notice" initial={reducedMotion ? false : { opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 18 }}><div><b>Start with the work. Then inspect the system.</b><span>Storefront, Fit Edits, local bag, checkout preview, and studio remain usable across desktop and mobile.</span></div><button type="button" aria-label="Dismiss viewing note" onClick={() => setNoticeVisible(false)}><X size={15} /></button></motion.aside>}
       </section>
       <CxsmoEntryItemCarousel />
       <section className="cxsmo-entry__fit-poster" aria-labelledby="cxsmo-fit-poster-title">
-        <div className="cxsmo-entry__fit-poster-copy"><span>FIT SIGNAL / 02</span><h2 id="cxsmo-fit-poster-title">THE FUTURE<br /><em>REACHES</em> BACK.</h2><p>Blue-silver utility layers, chrome hardware, and a fit built to be seen from every angle.</p><div className="cxsmo-entry__fit-poster-actions"><Link href="/cxsmo/edits">Open the fit edits <ArrowUpRight size={16} /></Link><CxsmoPromotionPopup promotion={defaultCxsmoPromotion} triggerLabel="Open signal event" /></div></div>
+        <div className="cxsmo-entry__fit-poster-copy"><span>FIT EDITS / LIVE PROOF</span><h2 id="cxsmo-fit-poster-title">THE FUTURE<br /><em>REACHES</em> BACK.</h2><p>A live fit-edit system for testing scale, contrast, hardware, and full-look context before the individual product detail.</p><div className="cxsmo-entry__fit-poster-actions"><Link href="/cxsmo/edits">Inspect fit edits <ArrowUpRight size={16} /></Link><CxsmoPromotionPopup promotion={defaultCxsmoPromotion} triggerLabel="Open signal event" /></div></div>
         <div className="cxsmo-entry__fit-poster-art"><i aria-hidden="true">✦</i><img src="/images/cxsmo-blue-silver-fit_9c35c3f3.png" alt="C✦SMO blue and silver futuristic streetwear fit" /><span>OBJECT / HUMAN / SIGNAL</span></div>
       </section>
-      <footer className="cxsmo-entry__footer"><div><span>Designed + developed by zxke</span></div><nav aria-label="C✦SMO studio contact"><a href="mailto:zheviant2@gmail.com"><Mail size={14} /> zheviant2@gmail.com</a><a href="https://github.com/zekethecutie" target="_blank" rel="noreferrer">GitHub / zekethecutie</a><a href="/cxsmo/disclosure">Portfolio disclosure</a></nav></footer>
+      <footer className="cxsmo-entry__footer"><div><span>zxke / art direction, UX, and front-end build</span><p>Have a fashion, lifestyle, or commerce brief? Work with zxke.</p></div><nav aria-label="C✦SMO studio contact"><a href="mailto:zheviant2@gmail.com"><Mail size={14} /> zheviant2@gmail.com</a><a href="https://github.com/zekethecutie" target="_blank" rel="noreferrer">GitHub / zekethecutie</a><a href="/cxsmo/disclosure">Portfolio disclosure</a></nav></footer>
     </main>
   );
 }

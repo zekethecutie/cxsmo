@@ -35,17 +35,20 @@ const productDetail = source("client/src/pages/CxsmoProductDetail.tsx");
 describe("C✦SMO entry, studio, and account expansion", () => {
   it("uses a distinct editorial pre-store entry at the root route", () => {
     expect(app).toContain('<Route path="/" component={CxsmoEntryPage} />');
-    expect(entry).toContain("C✦SMO / DIGITAL FASHION SYSTEM");
+    expect(entry).toContain("C✦SMO / FASHION-COMMERCE PROTOTYPE");
     expect(entry).toContain('<CxsmoMark className="cxsmo-entry__header-mark" inverse />');
     expect(entry).toContain("function CxsmoEntryTools()");
     expect(entry).toContain("Sound on");
     expect(entry).toContain("Switch to");
-    expect(entry).toContain("Wider view, more layers.");
+    expect(entry).toContain("Start with the work. Then inspect the system.");
     expect(entry).toContain("zheviant2@gmail.com");
     expect(entry).toContain("github.com/zekethecutie");
     expect(entryStyle).toContain("cxsmo-entry__orbit");
     expect(entryAppearance).toContain("html:not(.dark) .cxsmo-entry");
-    expect(entry).toContain("Independent streetwear, accessories, and beauty pieces built for the after-image.");
+    expect(entry).toContain("Fashion-commerce direction and front-end build by zxke.");
+    expect(entry).toContain("cxsmo-entry__proof");
+    expect(entry).toContain("Local commerce flow");
+    expect(entry).toContain("Have a fashion, lifestyle, or commerce brief? Work with zxke.");
     expect(entry).toContain("cxsmo-y2k-editorial-portrait");
     expect(entryPoster).toContain("cxsmo-entry__stage-axis");
   });
@@ -149,7 +152,7 @@ describe("C✦SMO entry, studio, and account expansion", () => {
 
 	it("uses a safe root theme wash and dense contemporary utility type with reduced-motion-safe marketing movement", () => {
     expect(app).toContain("<CxsmoThemeWash />");
-    expect(entry).toContain("DROP / OBJECT / SYSTEM");
+    expect(entry).toContain("ART DIRECTION / PRODUCT SYSTEM / FRONT-END BUILD");
     expect(entry).toContain("repeat: Infinity");
 	  expect(entryFinalTuning).toContain("padding-right: .08em");
 	  expect(entry).toContain('className="cxsmo-entry__poster-word" aria-hidden="true">C<span className="cxsmo-entry__poster-word-star" />SMO');
