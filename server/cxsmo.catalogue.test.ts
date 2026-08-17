@@ -39,6 +39,11 @@ describe("C✦SMO portfolio catalogue", () => {
     expect(getCxsmoProduct("redline-moto-16").image).toBe("/images/cxsmo-redline-moto-16.png");
     expect(getCxsmoProduct("silver-crown-case-17").image).toBe("/images/cxsmo-silver-crown-sling-17.png");
     expect(getCxsmoProduct("stellar-cargo-18").image).toBe("/images/cxsmo-stellar-cargo-18.png");
+    expect(getCxsmoProduct("stellar-cargo-18").image).not.toContain("regenerated");
+    expect(getCxsmoProduct("star-beanie-46").image).toBe("/images/cxsmo-star-beanie-46-regenerated.png");
+    expect(getCxsmoProduct("bolt-raglan-48").image).toBe("/images/cxsmo-bolt-raglan-48-regenerated.png");
+    expect(getCxsmoProduct("star-ruched-top-52").image).toBe("/images/cxsmo-star-ruched-top-52-regenerated.png");
+    expect(getCxsmoProduct("midnight-star-sweatpant-58").image).toBe("/images/cxsmo-midnight-star-sweatpant-58-regenerated.png");
     expect(getCxsmoProduct("silver-crown-case-17").category).toBe("Lifestyle");
     expect(getCxsmoProduct("loud-enough-shirt-19").image).toBe("/images/cxsmo-loud-enough-y2k-shirt-alpha_a1936a15.png");
     expect(getCxsmoProduct("loud-enough-shirt-19").category).toBe("Graphics");

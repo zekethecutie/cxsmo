@@ -432,3 +432,9 @@
 - [x] Keep the feedback interface populated only by browser-local visitor input or honest empty states while completing the requested visual system.
 - [x] Repair Star Ruched Top without erasing its right sleeve; repair Bolt Raglan with its full long sleeves; restore the Midnight Star Sweatpant lower-right pooled hem/detail; and remove the false centre hole from the solo Stellar Cargo Pants image using source-specific treatment.
 - [x] Validate masks, desktop/mobile Fit Edits composition, event hierarchy, local participation controls, tests, production build, checkpoint, and GitHub synchronization.
+- [x] Preserve Stellar Cargo Pants as a direct solo-image crop with no further masking or alpha reconstruction.
+- [x] Crop the newly spaced regenerated Star Ruched Top, Bolt Raglan, star-detail sweatpant, and Star Beanie source sheet into clean individual catalogue-ready assets.
+- [x] Reconcile all supplied product-sheet pieces against the active catalogue, then add only clearly identifiable missing objects with accurate names, categories, and direct public image paths.
+- [x] Expand the browser-local feedback composer with meaningful rating categories and a clear local-only rating summary, without creating fabricated customer entries or aggregate social proof.
+- [x] Deepen product-detail editorial stages with a more immersive object story, material/fit narrative, and product-context progression while preserving accessible commerce controls.
+- [ ] Validate supplied-sheet crops, catalogue completeness, feedback interactions, responsive product-detail storytelling, tests, production build, checkpoint, and GitHub synchronization.

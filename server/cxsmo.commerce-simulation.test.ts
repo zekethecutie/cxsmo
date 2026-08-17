@@ -40,8 +40,19 @@ describe("C✦SMO browser-local commerce simulation", () => {
     expect(productDetail).toContain('There are no published customer ratings, comments, purchases, or testimonials in this portfolio.');
     expect(productDetail).toContain('No feedback yet.');
     expect(productDetail).toContain('Stage local preview');
-    expect(productDetail).toContain('Preview ready for this session only. It is not published, rated, or sent as a customer record.');
+    expect(productDetail).toContain('It is not published, rated, or sent as a customer record.');
+    expect(productDetail).toContain('Fit + silhouette');
+    expect(productDetail).toContain('Finish + material');
+    expect(productDetail).toContain('Styling context');
+    expect(productDetail).toContain('Local preview staged: overall');
     expect(productDetail).not.toContain('verified buyer');
+  });
+
+  it("uses an editorial object sequence to deepen the product-detail story without inventing production claims", () => {
+    expect(productDetail).toContain('Not just');
+    expect(productDetail).toContain('the front view.');
+    expect(productDetail).toContain('Editorial product study / fictional portfolio object');
+    expect(productDetail).toContain('The material callout is part of the visual language');
   });
 
   it("keeps the promotion label in catalogue card copy rather than over product media", () => {
