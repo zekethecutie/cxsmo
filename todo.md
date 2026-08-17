@@ -438,3 +438,4 @@
 - [x] Expand the browser-local feedback composer with meaningful rating categories and a clear local-only rating summary, without creating fabricated customer entries or aggregate social proof.
 - [x] Deepen product-detail editorial stages with a more immersive object story, material/fit narrative, and product-context progression while preserving accessible commerce controls.
 - [x] Validate supplied-sheet crops, catalogue completeness, feedback interactions, responsive product-detail storytelling, tests, production build, checkpoint, and GitHub synchronization.
+- [x] Rebuild the women’s “More than one angle” album so its full-cast images occupy the primary editorial plate instead of rendering as a tiny top-right thumbnail beside empty space; verify desktop and mobile, then checkpoint and synchronize GitHub.
